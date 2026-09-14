@@ -195,12 +195,10 @@ export default function Page() {
                 <a
                   className={"service-text-link"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jill%20Kirkley"
+                    "/therapists/jill-kirkley/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
-                  {"Read counselor profile ↗"}
+                  {"Read counselor profile →"}
                 </a>
               </div>
             </article>
@@ -225,12 +223,10 @@ export default function Page() {
                 <a
                   className={"service-text-link"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Denise%20Santos"
+                    "/therapists/denise-santos/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
-                  {"Read counselor profile ↗"}
+                  {"Read counselor profile →"}
                 </a>
               </div>
             </article>

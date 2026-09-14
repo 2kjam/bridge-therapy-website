@@ -1,0 +1,172 @@
+.therapist-profile {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 32px 64px;
+}
+.profile-breadcrumb {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  max-height: none;
+  overflow: visible;
+  box-shadow: none;
+}
+.profile-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  font-size: 14px;
+}
+.profile-breadcrumb li + li:before {
+  content: "→";
+  margin-right: 10px;
+  color: var(--muted);
+}
+.profile-breadcrumb a,
+.profile-details a,
+.profile-contact > a:not(.button) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.profile-intro {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: 48px;
+}
+.profile-intro > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.profile-intro h1 {
+  font-size: clamp(36px, 4vw, 54px);
+  margin: 12px 0 16px;
+}
+.profile-intro h2 {
+  font-size: 28px;
+  margin: 28px 0 12px;
+}
+.profile-credential {
+  font-size: 18px;
+  font-weight: 600;
+}
+.profile-role {
+  color: var(--muted);
+  margin-top: 6px;
+}
+.profile-intro h2 ~ p {
+  margin-bottom: 16px;
+  line-height: 1.65;
+}
+.profile-intro .button,
+.profile-contact .button {
+  display: inline-block;
+  margin-top: 8px;
+  max-width: 100%;
+  text-align: center;
+}
+.therapist-profile .profile-inquiry {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+.profile-details {
+  max-width: 840px;
+  margin: 48px auto 0;
+}
+.profile-details section {
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+.profile-details h2,
+.profile-contact h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin: 0 0 16px;
+}
+.profile-details p {
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+.profile-details ul {
+  padding-left: 22px;
+  line-height: 1.7;
+}
+.profile-details li {
+  margin-bottom: 8px;
+}
+.profile-focus {
+  columns: 2;
+  column-gap: 36px;
+}
+.profile-focus li {
+  break-inside: avoid;
+}
+.profile-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  list-style: none;
+  padding: 0 !important;
+}
+.profile-contact {
+  background: #f1ede5;
+  border-radius: 4px;
+  padding: 36px;
+  text-align: center;
+  margin-top: 24px;
+}
+.profile-contact > p {
+  max-width: 660px;
+  margin: 0 auto 16px;
+  line-height: 1.65;
+}
+.profile-contact > a:last-child {
+  display: inline-block;
+  margin-top: 20px;
+}
+@media (max-width: 800px) {
+  .profile-intro {
+    gap: 28px;
+    grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+  .profile-intro h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 600px) {
+  .therapist-profile {
+    padding: 24px 24px 48px;
+  }
+  .profile-intro {
+    grid-template-columns: 1fr;
+  }
+  .profile-intro > img {
+    grid-row: 2;
+    max-width: 260px;
+    margin: auto;
+  }
+  .profile-intro > div {
+    grid-row: 1;
+  }
+  .profile-details {
+    margin-top: 32px;
+  }
+  .profile-focus {
+    columns: 1;
+  }
+  .profile-services {
+    grid-template-columns: 1fr;
+  }
+  .profile-contact {
+    padding: 28px 20px;
+  }
+}

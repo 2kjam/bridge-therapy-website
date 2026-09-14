@@ -10,7 +10,7 @@ export function TherapistsAndLocation() {
           <article className={"ivory-person"}>
             <a
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jennifer%20Wood"
+                "/therapists/jennifer-wood/"
               }
             >
               <img
@@ -26,7 +26,7 @@ export function TherapistsAndLocation() {
             <a
               className={"person-link"}
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jennifer%20Wood"
+                "/therapists/jennifer-wood/"
               }
             >
               {"Meet Jennifer "}
@@ -36,7 +36,7 @@ export function TherapistsAndLocation() {
           <article className={"ivory-person"}>
             <a
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Erin%20Young"
+                "/therapists/erin-young/"
               }
             >
               <img
@@ -52,7 +52,7 @@ export function TherapistsAndLocation() {
             <a
               className={"person-link"}
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Erin%20Young"
+                "/therapists/erin-young/"
               }
             >
               {"Meet Erin "}
@@ -62,7 +62,7 @@ export function TherapistsAndLocation() {
           <article className={"ivory-person"}>
             <a
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Alyxandrah%20White"
+                "/therapists/alyxandrah-white/"
               }
             >
               <img
@@ -78,7 +78,7 @@ export function TherapistsAndLocation() {
             <a
               className={"person-link"}
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Alyxandrah%20White"
+                "/therapists/alyxandrah-white/"
               }
             >
               {"Meet Alyx "}
@@ -88,7 +88,7 @@ export function TherapistsAndLocation() {
           <article className={"ivory-person"}>
             <a
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kelley%20Bell"
+                "/therapists/kelley-bell/"
               }
             >
               <img
@@ -104,7 +104,7 @@ export function TherapistsAndLocation() {
             <a
               className={"person-link"}
               href={
-                "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kelley%20Bell"
+                "/therapists/kelley-bell/"
               }
             >
               {"Meet Kelley "}

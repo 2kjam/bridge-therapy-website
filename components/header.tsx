@@ -119,11 +119,9 @@ export function Header() {
               </p>
               <a
                 className={"view-all"}
-                href={"https://www.thebridgetherapy.com/meet-the-team"}
-                target={"_blank"}
-                rel={"noopener"}
+                href={"/therapists/"}
               >
-                {"View All Therapists ↗"}
+                {"View All Therapists →"}
               </a>
             </div>
             <TeamCarousel>
@@ -131,10 +129,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jennifer%20Wood"
+                    "/therapists/jennifer-wood/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/jennifer.jpg"}
@@ -150,10 +146,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Erin%20Young"
+                    "/therapists/erin-young/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/erin.jpg"}
@@ -169,10 +163,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jill%20Kirkley"
+                    "/therapists/jill-kirkley/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/jill.jpg"}
@@ -188,10 +180,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Alyxandrah%20White"
+                    "/therapists/alyxandrah-white/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/alyx.jpg"}
@@ -247,10 +237,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kelley%20Bell"
+                    "/therapists/kelley-bell/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/kelley.jpg"}
@@ -266,10 +254,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Denise%20Santos"
+                    "/therapists/denise-santos/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/denise.jpg"}

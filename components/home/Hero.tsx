@@ -20,10 +20,6 @@ export function Hero() {
             "Compassionate, professional counseling for individuals, couples, and families—grounded in hope and a Christian perspective."
           }
         </p>
-        <p>
-          Christian counseling for individuals, couples, children, and families in
-          Tyler, Texas.
-        </p>
         <div className={"ivory-actions"}>
           <a className={"button"} href={"/contact/"}>
             {"Book an Appointment"}
