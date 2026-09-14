@@ -5,17 +5,17 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const logos = [
   ["aetna.png", "Aetna"],
-  ["allied.png", "Allied Healthcare"],
-  ["blue-cross.jpg", "Blue Cross Blue Shield"],
-  ["christus.png", "CHRISTUS Health"],
-  ["cigna.jpg", "Cigna"],
-  ["healthfirst.jpg", "HealthFirst"],
+  ["allied-transparent.png", "Allied Healthcare"],
+  ["blue-cross-transparent.png", "Blue Cross Blue Shield"],
+  ["christus-transparent.png", "CHRISTUS Health"],
+  ["cigna-transparent.png", "Cigna"],
+  ["healthfirst-transparent.png", "HealthFirst"],
   ["humana.png", "Humana"],
-  ["meritain.jpg", "Meritain Health"],
+  ["meritain-transparent.png", "Meritain Health"],
   ["multiplan.png", "MultiPlan"],
-  ["umr.png", "UMR"],
+  ["umr-transparent.png", "UMR"],
   ["webtpa.png", "WebTPA"],
-  ["magellan.png", "Magellan Health"],
+  ["magellan-transparent.png", "Magellan Health"],
 ] as const;
 
 export function InsuranceCarousel() {
@@ -101,6 +101,13 @@ export function InsuranceCarousel() {
                   width="180"
                   height="72"
                   decoding="async"
+                  // These originals have no surrounding transparent padding.
+                  // Balance their painted width with the other wordmarks.
+                  style={
+                    file === "humana.png" || file === "webtpa.png"
+                      ? { width: "92%" }
+                      : undefined
+                  }
                 />
               </li>
             )),

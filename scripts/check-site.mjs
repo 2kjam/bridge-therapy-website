@@ -41,6 +41,31 @@ function signature(node) {
   ];
 }
 
+function expectedSignature(node) {
+  // The frozen migration reference predates the insurance asset cleanup.
+  // Assert the exact new sources/sizing without ignoring other image attributes.
+  const replacements = {
+    "allied.png": "allied-transparent.png",
+    "blue-cross.jpg": "blue-cross-transparent.png",
+    "christus.png": "christus-transparent.png",
+    "cigna.jpg": "cigna-transparent.png",
+    "healthfirst.jpg": "healthfirst-transparent.png",
+    "meritain.jpg": "meritain-transparent.png",
+    "umr.png": "umr-transparent.png",
+    "magellan.png": "magellan-transparent.png",
+  };
+  return signature(node).map((entry) => {
+    const prefix = "/assets/insurance/";
+    if (entry.tag !== "img" || !entry.attrs.src?.startsWith(prefix))
+      return entry;
+    const file = entry.attrs.src.slice(prefix.length);
+    if (replacements[file]) entry.attrs.src = prefix + replacements[file];
+    if (file === "humana.png" || file === "webtpa.png")
+      entry.attrs.style = "width:92%";
+    return entry;
+  });
+}
+
 for (const route of routes.filter((route) => route !== "/children-families/")) {
   const filename = route === "/" ? "index.html" : `${route.slice(1, -1)}.html`;
   const builtFile = path.join(".next/server/app", filename);
@@ -64,7 +89,7 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     const original = elements(legacy, tag)[0];
     assert.deepEqual(
       signature(current),
-      signature(original),
+      expectedSignature(original),
       `${route}: ${tag} elements or attributes changed`,
     );
     assert.equal(
