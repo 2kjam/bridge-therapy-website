@@ -57,6 +57,10 @@ body p{line-height:1.5}html{scroll-padding-top:100px}
 .site-footer.ivory-footer a:focus-visible{outline:2px solid #41543c;outline-offset:4px;border-radius:2px}
 
 
+/* Homepage search heading and supporting brand message. */
+.ivory-hero-copy h1{font-size:clamp(36px,3.6vw,52px);line-height:1.08;letter-spacing:-.035em;margin:0 0 12px;text-wrap:balance}
+.ivory-hero-copy>p.hero-brand{font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}
+
 /* Edge-to-edge insurance carousel; retain touch and keyboard scrolling. */
 .insurance-strip{padding-inline:0}
 .insurance-heading{padding-inline:max(24px,calc((100% - 1240px)/2))}

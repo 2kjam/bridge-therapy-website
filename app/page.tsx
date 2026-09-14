@@ -8,7 +8,7 @@ import { Faith } from "@/components/home/Faith";
 import { TherapistsAndLocation } from "@/components/home/TherapistsAndLocation";
 import { NextSteps } from "@/components/home/NextSteps";
 export const metadata: Metadata = {
-  title: "Christian Counseling in Tyler, TX | The Bridge",
+  title: "Counseling & Therapy in Tyler, TX | The Bridge",
   description:
     "Meet The Bridge Therapeutic Services. Christian counseling for individuals, couples, children, and families in Tyler, Texas.",
 };
