@@ -1,0 +1,37 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+.npmrc
+
+# Dependencies and generated build/test output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.next/
+.nuxt/
+out/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.log
+
+# Local backups, tooling, and editor/OS files
+design-backups/
+.codex/
+.agents/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*~

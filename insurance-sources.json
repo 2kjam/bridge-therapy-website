@@ -1,0 +1,62 @@
+[
+  {
+    "name": "aetna",
+    "file": "aetna.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265731117-1HE9A1XXJTAGGNW2UNCH/Aetna-Logo-PNG-Transparent-2.png"
+  },
+  {
+    "name": "allied",
+    "file": "allied.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265730059-XFFOOZT0FESLY14ZKXT4/allied-healthcare-squarelogo-1471336575528.png"
+  },
+  {
+    "name": "blue-cross",
+    "file": "blue-cross.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265730822-DKKJ6YQTSY754V5GIW73/bluecross.jpg"
+  },
+  {
+    "name": "christus",
+    "file": "christus.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265731618-Y68OWG4PACLARG78MW0Q/christus-logo.png"
+  },
+  {
+    "name": "cigna",
+    "file": "cigna.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265732054-5WJIT3U7409CTJ9EVWB4/cigna-logo-1.jpg"
+  },
+  {
+    "name": "healthfirst",
+    "file": "healthfirst.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265732181-X5BUUPRENAGDXJSMDQWE/health+first+logo.jpg"
+  },
+  {
+    "name": "humana",
+    "file": "humana.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265732938-S4YVAYU97GM020DB4LCN/humana-logo.png"
+  },
+  {
+    "name": "meritain",
+    "file": "meritain.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265733570-K4KBQWM7DIBFQTB9HF8C/Meritain_Aetna-Logo---4-Color.jpg"
+  },
+  {
+    "name": "multiplan",
+    "file": "multiplan.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265733636-7J0DU5DMEHE1EBKQW7LE/MultiPlan.png"
+  },
+  {
+    "name": "umr",
+    "file": "umr.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265733931-CMQE1X5CWQIS58JNMVAI/umr-logo.png"
+  },
+  {
+    "name": "webtpa",
+    "file": "webtpa.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546265734244-NLGMEYDOQJN270KPVXDM/WebTPA-Logo-New_ClearBackground.png"
+  },
+  {
+    "name": "magellan",
+    "file": "magellan.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546266617747-7S7F1KUHTZCDXFQJ7B50/magellan-health-counseling-works-pllc-health-care-students-attitudes-5ae82156094200.0780965515251623260379.png"
+  }
+]

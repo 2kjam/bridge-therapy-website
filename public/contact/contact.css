@@ -1,0 +1,16 @@
+.contact-page{background:#fffcfa}
+.contact-intro{max-width:1280px;margin:auto;padding:28px 5% 64px}
+.contact-breadcrumb{font-size:14px;color:var(--muted);margin-bottom:42px}.contact-breadcrumb a{text-decoration:underline;text-underline-offset:4px}.contact-breadcrumb span{margin:0 10px}
+.contact-layout{display:grid;grid-template-columns:1.05fr 1fr;gap:70px;align-items:center}
+.contact-copy h1{font-size:clamp(40px,4.5vw,60px);letter-spacing:-1.5px;margin:18px 0 24px}.contact-copy h1 span{color:#568a91}
+.contact-copy>p:not(.eyebrow){font-size:20px;color:#47656b;max-width:530px}.contact-copy .contact-reassurance{font-size:17px!important;margin-top:24px}
+.contact-options{padding:34px;background:#fff;border:1px solid #edc7bf;border-top:6px solid #efa9a3;border-radius:12px;box-shadow:0 14px 35px #2854560a}
+.contact-options h2{font-size:29px;margin:0 0 13px}.contact-options>p{color:var(--muted);font-size:17px;margin-bottom:24px}
+.contact-options .button{width:100%;font-size:19px}.contact-email{display:block;border:1px solid #b7cfd0;border-radius:5px;padding:15px;text-align:center;font-weight:800;margin-top:14px;background:#f3f8f6;overflow-wrap:anywhere}.contact-email:hover{background:#e7f1ef}
+.contact-options .contact-note{font-size:15px;margin:20px 0 0;color:#47656b}
+.contact-visit{padding:55px max(5%,calc((100% - 1152px)/2));background:#eef5f3;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.contact-visit h2{font-size:36px;margin:15px 0 22px}.contact-visit address{font:inherit;line-height:1.8}.contact-directions{display:inline-block;margin-top:22px;border-bottom:1px solid #739a9c;padding-bottom:4px;font-weight:900}
+.visit-note{padding:30px;border-left:4px solid #efa9a3;background:#fff}.visit-note h3{font-size:23px;margin:0 0 14px}.visit-note p{color:#47656b;font-size:18px}
+.contact-faq{max-width:1152px;margin:auto;padding:65px 5% 75px}.contact-faq h2{font-size:36px;margin:15px 0 30px}.contact-faq details{border-bottom:1px solid #cbdedd;padding:20px 0}.contact-faq summary{cursor:pointer;font-size:20px;font-weight:800;line-height:1.5}.contact-faq details p{color:#47656b;font-size:18px;max-width:800px;padding:15px 0 0}.contact-faq details a{text-decoration:underline;text-underline-offset:4px}.contact-faq summary:focus-visible{outline:3px solid var(--coral);outline-offset:5px}
+@media(max-width:850px){.contact-layout{grid-template-columns:1fr;gap:30px}.contact-intro{padding-bottom:40px}.contact-breadcrumb{margin-bottom:30px}.contact-copy h1{max-width:650px}.contact-copy>p:not(.eyebrow){max-width:650px}.contact-options{max-width:650px;width:100%}.contact-visit{gap:30px}.contact-faq{padding-top:45px}}
+@media(max-width:600px){.contact-copy h1{font-size:42px}.contact-copy>p:not(.eyebrow){font-size:19px}.contact-options{padding:25px 20px}.contact-options h2{font-size:26px}.contact-options .button{font-size:18px;padding:15px 10px}.contact-email{font-size:16px}.contact-visit{grid-template-columns:1fr;padding-top:40px;padding-bottom:40px}.contact-visit h2,.contact-faq h2{font-size:31px}.visit-note{padding:24px}.contact-faq summary{font-size:19px}}

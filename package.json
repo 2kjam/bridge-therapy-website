@@ -1,0 +1,1 @@
+{"name":"the-bridge-website","version":"0.1.0","private":true,"scripts":{"dev":"node server.cjs","check":"node --check public/app.js && node --check public/homepage-motion.js && node check-site.cjs"}}
