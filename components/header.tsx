@@ -1,0 +1,408 @@
+import { HeaderFrame, MobileToggle, Navigation, NavMenu } from "./navigation";
+import { TeamCarousel } from "./team-carousel";
+import { PreviewTrigger } from "./site-interactions";
+export function Header() {
+  return (
+    <HeaderFrame>
+      <div className={"header-inner"}>
+        <a className={"brand"} href={"/"} aria-label={"The Bridge home"}>
+          <img
+            src={"/assets/ivory-logo.svg"}
+            width={"280"}
+            height={"68"}
+            alt={"The Bridge Therapeutic Services"}
+          />
+        </a>
+        <MobileToggle />
+        {"\n"}
+        <Navigation>
+          <a className={"nav-direct"} href={"/#why-the-bridge"}>
+            {"About"}
+          </a>
+          {"\n"}
+          <NavMenu
+            id="care-panel"
+            panelClassName="mega"
+            label={
+              <>
+                {"Counseling Services "}
+                <span aria-hidden={"true"}>{"⌄"}</span>
+              </>
+            }
+          >
+            <div className={"mega-columns"}>
+              <section>
+                <h2>{"Who we help"}</h2>
+                <a href={"/individual-counseling-tyler/"}>{"Individuals"}</a>
+                <a href={"/marriage-counseling-tyler/"}>{"Couples"}</a>
+                <a href={"/family-counseling-tyler/"}>{"Families"}</a>
+                <a href={"/child-teen-counseling-tyler/"}>
+                  {"Child & Teen Counseling"}
+                </a>
+                <a href={"/parenting-support-tyler/"}>{"Parents"}</a>
+                <PreviewTrigger
+                  service={"Military & Deployment Support"}
+                  href={"/#services"}
+                >
+                  {"Military families"}
+                </PreviewTrigger>
+              </section>
+              <section>
+                <h2>{"What we help with"}</h2>
+                <a href={"/anxiety-counseling-tyler/"}>{"Anxiety & stress"}</a>
+                <a href={"/depression-counseling-tyler/"}>{"Depression"}</a>
+                <a href={"/trauma-therapy-tyler/"}>{"Trauma & PTSD"}</a>
+                <a href={"/grief-counseling-tyler/"}>{"Grief & loss"}</a>
+                <a href={"/marriage-counseling-tyler/"}>
+                  {"Relationship concerns"}
+                </a>
+                <a href={"/life-transitions-counseling-tyler/"}>
+                  {"Life transitions"}
+                </a>
+                <a href={"/adhd-counseling-tyler/"}>{"ADHD"}</a>
+              </section>
+              <section>
+                <h2>{"Our approach"}</h2>
+                <a href={"/christian-counseling-tyler/"}>
+                  {"Christian counseling"}
+                </a>
+                <a href={"/emdr-therapy-tyler/"}>{"EMDR therapy"}</a>
+                <a href={"/premarital-counseling-tyler/"}>
+                  {"Premarital counseling"}
+                </a>
+                <a href={"/pregnancy-postpartum-counseling-tyler/"}>
+                  {"Pregnancy & postpartum"}
+                </a>
+                <a className={"view-all"} href={"/#services"}>
+                  {"View all specialties →"}
+                </a>
+              </section>
+            </div>
+            <a className={"menu-feature"} href={"/contact/"}>
+              <img
+                src={"/assets/erin.jpg"}
+                alt={"Erin Young, co-owner of The Bridge"}
+              />
+              <span>
+                <strong>{"Not sure where to start?"}</strong>
+                {"Our office can help you find the right fit."}
+                <b>{"Contact us →"}</b>
+              </span>
+            </a>
+            <div className={"mega-bottom"}>
+              {"Support starts with a conversation."}
+              <a href={"/contact/"}>{"Book an Appointment →"}</a>
+            </div>
+          </NavMenu>
+          {"\n"}
+          <NavMenu
+            id="team-panel"
+            panelClassName="mega team-menu"
+            label={
+              <>
+                {"Our Therapists "}
+                <span aria-hidden={"true"}>{"⌄"}</span>
+              </>
+            }
+          >
+            <div className={"menu-intro"}>
+              <p className={"eyebrow"}>{"MEET THE BRIDGE"}</p>
+              <h2>
+                {"Real people. "}
+                <br />
+                {"Personal care."}
+              </h2>
+              <p>
+                {
+                  "Get to know our counselors and find a connection that feels right."
+                }
+              </p>
+              <a
+                className={"view-all"}
+                href={"https://www.thebridgetherapy.com/meet-the-team"}
+                target={"_blank"}
+                rel={"noopener"}
+              >
+                {"View All Therapists ↗"}
+              </a>
+            </div>
+            <TeamCarousel>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jennifer%20Wood"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/jennifer.jpg"}
+                    alt={"Jennifer Wood, LPC-S"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Jennifer Wood, LPC-S"}</strong>
+                  <span>{"Co-owner · Counselor–Supervisor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Erin%20Young"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/erin.jpg"}
+                    alt={"Erin Young, LCSW-S"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Erin Young, LCSW-S"}</strong>
+                  <span>{"Co-owner · Social Worker–Supervisor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jill%20Kirkley"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/jill.jpg"}
+                    alt={"Jill Kirkley, LPC"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Jill Kirkley, LPC"}</strong>
+                  <span>{"Licensed Professional Counselor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Alyxandrah%20White"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/alyx.jpg"}
+                    alt={"Alyxandrah “Alyx” White"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Alyxandrah “Alyx” White"}</strong>
+                  <span>{"LMFT, C-DBT · Marriage & Family Therapist"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Misty%20Shultz"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/misty.jpg"}
+                    alt={"Misty Shultz, LPC"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Misty Shultz, LPC"}</strong>
+                  <span>{"Licensed Professional Counselor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kim%20Gonzales"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/kim.jpg"}
+                    alt={"Kim Gonzales, LMSW"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Kim Gonzales, LMSW"}</strong>
+                  <span>
+                    {"Master Social Worker · Supervised by Erin Young, LCSW-S"}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kelley%20Bell"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/kelley.jpg"}
+                    alt={"Kelley Bell, LPC"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Kelley Bell, LPC"}</strong>
+                  <span>{"Licensed Professional Counselor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Denise%20Santos"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/denise.jpg"}
+                    alt={"Denise Santos, LPC"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Denise Santos, LPC"}</strong>
+                  <span>{"Licensed Professional Counselor"}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/sarah-bell.jpg"}
+                    alt={"Sarah Bell, LPC-A"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Sarah Bell, LPC-A"}</strong>
+                  <span>
+                    {
+                      "Counselor Associate · Supervised by Whitney Briggs, LPC-S"
+                    }
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className={"portrait-card"}
+                  href={
+                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Critzman"
+                  }
+                  target={"_blank"}
+                  rel={"noopener"}
+                >
+                  <img
+                    src={"/assets/sarah-critzman.jpg"}
+                    alt={"Sarah Critzman, LMSW"}
+                    width={"240"}
+                    height={"280"}
+                  />
+                  <strong>{"Sarah Critzman, LMSW"}</strong>
+                  <span>
+                    {
+                      "Master Social Worker · Supervised by Christi Lawson, LCSW-S"
+                    }
+                  </span>
+                </a>
+              </li>
+            </TeamCarousel>
+            <div className={"mega-bottom"}>
+              {"Find someone you feel comfortable talking to."}
+              <a href={"/contact/"}>{"Let us help you choose →"}</a>
+            </div>
+          </NavMenu>
+          {"\n"}
+          <NavMenu
+            id="about-panel"
+            panelClassName="mega about-menu"
+            label={
+              <>
+                {"Resources "}
+                <span aria-hidden={"true"}>{"⌄"}</span>
+              </>
+            }
+          >
+            <section>
+              <h2>{"About The Bridge"}</h2>
+              <a
+                href={"https://www.thebridgetherapy.com/our-story"}
+                target={"_blank"}
+                rel={"noopener"}
+              >
+                {"Our story ↗"}
+              </a>
+              <a
+                href={"https://www.thebridgetherapy.com/what-we-believe"}
+                target={"_blank"}
+                rel={"noopener"}
+              >
+                {"What we believe ↗"}
+              </a>
+              <a
+                href={"https://www.thebridgetherapy.com/blog"}
+                target={"_blank"}
+                rel={"noopener"}
+              >
+                {"Articles & resources ↗"}
+              </a>
+            </section>
+            <section>
+              <h2>{"Your first step"}</h2>
+              <a href={"/contact/"}>{"Book an appointment"}</a>
+              <a href={"/contact/#questions"}>
+                {"Questions about getting started"}
+              </a>
+              <a href={"/contact/#location"}>{"Location & contact details"}</a>
+              <a href={"tel:9032838729"}>{"Call (903) 283-8729"}</a>
+            </section>
+            <a
+              className={"menu-feature wide"}
+              href={"https://www.thebridgetherapy.com/what-we-believe"}
+              target={"_blank"}
+              rel={"noopener"}
+            >
+              <img
+                src={"/assets/team.jpg"}
+                alt={"A stone bridge surrounded by greenery"}
+              />
+              <span>
+                <strong>{"Connecting faith and care."}</strong>
+                {"Discover the heart behind The Bridge."}
+                <b>{"Our approach ↗"}</b>
+              </span>
+            </a>
+          </NavMenu>
+          {"\n"}
+          <a className={"nav-direct"} href={"/contact/"}>
+            {"Contact"}
+          </a>
+          <a className={"button header-cta"} href={"/contact/"}>
+            {"Book an Appointment"}
+          </a>
+        </Navigation>
+      </div>
+    </HeaderFrame>
+  );
+}

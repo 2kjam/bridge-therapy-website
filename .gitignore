@@ -22,6 +22,8 @@ out/
 playwright-report/
 test-results/
 *.tsbuildinfo
+next-env.d.ts
+.netlify/
 *.log
 
 # Local backups, tooling, and editor/OS files
