@@ -126,28 +126,28 @@ test("desktop hover moves between menus without a stale close timer", async ({
   await expect(page.locator("#team-panel")).toBeHidden();
 });
 
-test("existing specialty and chat preview dialogs retain their behavior", async ({
+test("specialty preview and inquiry launcher open independently", async ({
   page,
 }) => {
   await page.goto("/");
   await page.locator(".specialty-directory summary").click();
   await page
-    .getByRole("button", { name: /^Military deployment/ })
+    .getByRole("button", { name: /^Anger/ })
     .click();
   const dialog = page.locator("#detail-dialog");
   await expect(dialog).toBeVisible();
   await expect(page.locator("#detail-title")).toHaveText(
-    "Military & Deployment Support",
+    "Anger Counseling",
   );
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
   await page.locator("#chat-open").click();
-  await expect(page.locator("#detail-title")).toHaveText("How can we help?");
-  await page.getByRole("button", { name: "Close preview" }).click();
-  await expect(dialog).toBeHidden();
+  await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
+  await page.locator("#inquiry-widget-panel").getByRole("button", { name: "Close inquiry assistant", exact: true }).click();
+  await expect(page.locator("#inquiry-widget-panel")).toHaveCount(0);
   await page.locator("#chat-open").click();
-  await page.mouse.click(1, 1);
-  await expect(dialog).toBeHidden();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#inquiry-widget-panel")).toHaveCount(0);
 });
 
 test("insurance animation pauses, resumes, and respects reduced motion", async ({
@@ -217,7 +217,7 @@ test("contact links and native FAQ work after navigation", async ({ page }) => {
     page.locator(".contact-options a[href^='tel:']"),
   ).toHaveAttribute("href", "tel:9032838729");
   await page.locator("#chat-open").click();
-  await expect(page.locator("#detail-dialog")).toBeVisible();
+  await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
   expect(errors).toEqual([]);
 });
 
@@ -234,7 +234,7 @@ test("all content routes render without hydration errors", async ({ page }) => {
     expect(response?.status(), route).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
     await page.locator("#chat-open").click();
-    await expect(page.locator("#detail-dialog")).toBeVisible();
+    await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
     await page.keyboard.press("Escape");
     expect(
       await page.evaluate(

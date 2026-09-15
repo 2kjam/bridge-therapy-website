@@ -222,7 +222,7 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       const staticForm = elements(definition, "form")[0];
       const fieldNames = (form) => all(form, (n) => ["input", "select", "textarea"].includes(n.tagName)).map((n) => attr(n, "name")).sort();
       assert.deepEqual(fieldNames(visibleForm), fieldNames(staticForm));
-      assert.deepEqual(fieldNames(staticForm), ["form-name", "first_name", "last_name", "email", "phone", "preferred_therapist", "message", "bot-field"].sort());
+      assert.deepEqual(fieldNames(staticForm), ["form-name", "first_name", "last_name", "email", "phone", "preferred_therapist", "message", "bot-field", "source_page", "inquiry_source"].sort());
       for (const form of [visibleForm, staticForm]) {
         assert.equal(attr(form, "name"), "bridge-contact-inquiry");
         assert.equal(attr(form, "data-netlify-honeypot"), "bot-field");
@@ -231,7 +231,7 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       assert.equal(attr(staticForm, "data-netlify"), "true");
       assert.equal(attr(visibleForm, "action"), "/__forms.html");
       assert.equal(attr(visibleForm, "method"), "post");
-      assert.deepEqual(elements(inquiry, "input").map((n) => attr(n, "name")), ["form-name", "first_name", "last_name", "email", "phone", "bot-field"]);
+      assert.deepEqual(elements(inquiry, "input").map((n) => attr(n, "name")), ["form-name", "source_page", "inquiry_source", "first_name", "last_name", "email", "phone", "bot-field"]);
       assert.equal(elements(inquiry, "option").length, 11);
       assert.equal(attr(elements(inquiry, "textarea")[0], "maxlength"), "2000");
       assert.ok(normalizedText(inquiry).includes("Please do not include sensitive medical or personal health information in this form."));
@@ -265,7 +265,8 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   }
   const styles = (doc) =>
     elements(doc, "link")
-      .filter((node) => attr(node, "rel") === "stylesheet")
+      // Keep the legacy cascade exact; the new widget uses isolated CSS-module classes.
+      .filter((node) => attr(node, "rel") === "stylesheet" && !attr(node, "href").startsWith("/_next/static/"))
       .map((node) => attr(node, "href"));
   assert.deepEqual(
     styles(built),
@@ -490,6 +491,8 @@ for (const [term, expected] of focusMappings) {
   assert.deepEqual(actual.sort(), expected.sort(), String(term));
 }
 for (const [route, doc] of pages) {
+  assert.equal(all(doc, (n) => attr(n, "id") === "chat-open").length, 1, `${route}: expected one inquiry launcher`);
+  assert.ok(!normalizedText(doc).includes("Chat preview:"), `${route}: obsolete chat placeholder`);
   if (route.startsWith("/therapists/") && route !== "/therapists/") {
     const contacts = elements(elements(doc, "main")[0], "a").filter((n) => attr(n, "href")?.startsWith("/contact/"));
     assert.equal(contacts.length, 2);

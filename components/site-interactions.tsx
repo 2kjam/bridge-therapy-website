@@ -11,6 +11,8 @@ import {
   type ReactNode,
 } from "react";
 
+import { InquiryWidget } from "./inquiry-widget";
+
 type Preview = { title: string; copy: string };
 type SiteUI = {
   openPanel: string | null;
@@ -71,30 +73,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-      <button
-        className="chat-button"
-        id="chat-open"
-        aria-haspopup="dialog"
-        onClick={() =>
-          showPreview({
-            title: "How can we help?",
-            copy: "Chat preview: the custom assistant will be built in a later step. It will help visitors find practice information and connect with the office to schedule.",
-          })
-        }
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path d="M20 11.5a8 8 0 0 1-8 8H5l-4 3 1.5-6A8 8 0 1 1 20 11.5Z" />
-          <path d="M6 10h8M6 14h5" />
-        </svg>
-        {" How can we help?"}
-      </button>
+      <InquiryWidget />
       <dialog
         ref={dialog}
         id="detail-dialog"

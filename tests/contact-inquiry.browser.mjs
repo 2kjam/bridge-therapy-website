@@ -16,10 +16,12 @@ try {
     assert.equal(route.request().method(), "POST");
     assert.equal(route.request().headers()["content-type"], "application/x-www-form-urlencoded");
     const payload = new URLSearchParams(route.request().postData());
-    assert.deepEqual([...payload.keys()].sort(), ["form-name", "first_name", "last_name", "email", "phone", "preferred_therapist", "message", "bot-field"].sort());
+    assert.deepEqual([...payload.keys()].sort(), ["form-name", "first_name", "last_name", "email", "phone", "preferred_therapist", "message", "bot-field", "source_page", "inquiry_source"].sort());
     assert.equal(payload.get("form-name"), "bridge-contact-inquiry");
     assert.equal(payload.get("preferred_therapist"), "erin-young");
     assert.equal(payload.get("bot-field"), "");
+    assert.equal(payload.get("source_page"), "/contact/");
+    assert.equal(payload.get("inquiry_source"), "contact_form");
     if (mode === "network-error") return route.abort();
     await route.fulfill({
       status: mode === "success" ? 200 : 503,

@@ -22,6 +22,20 @@ export const limits = {
   "bot-field": 200,
 };
 export type Inquiry = Record<keyof typeof limits, string>;
+export async function sendInquiry(data: Inquiry, sourcePage: string, inquirySource: "contact_form" | "chat_widget") {
+  const response = await fetch("/__forms.html", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      "form-name": "bridge-contact-inquiry",
+      ...data,
+      source_page: sourcePage,
+      inquiry_source: inquirySource,
+    }).toString(),
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!response.ok) throw new Error("Inquiry submission failed");
+}
 export function therapistValue(value: string | null) {
   return therapists.some(([slug]) => slug === value) ? value! : "";
 }

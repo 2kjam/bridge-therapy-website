@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   limits,
+  sendInquiry,
   therapists,
   therapistValue,
   validateInquiry,
@@ -44,20 +45,9 @@ export function ContactInquiry() {
     busy.current = true;
     setPending(true);
     try {
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ "form-name": "bridge-contact-inquiry", ...checked.data }).toString(),
-        signal: AbortSignal.timeout(20000),
-      });
-      if (response.ok) {
-        form.reset();
-        setSent(true);
-      } else {
-        setNotice(
-          "Your inquiry could not be sent. Please try again, or use the phone or email below.",
-        );
-      }
+      await sendInquiry(checked.data, window.location.pathname, "contact_form");
+      form.reset();
+      setSent(true);
     } catch {
       setNotice(
         "Your inquiry could not be sent. Please try again, or use the phone or email below.",
@@ -103,6 +93,8 @@ export function ContactInquiry() {
       {!sent && (
         <form name="bridge-contact-inquiry" action="/__forms.html" method="post" data-netlify-honeypot="bot-field" onSubmit={submit} noValidate>
           <input type="hidden" name="form-name" value="bridge-contact-inquiry" />
+          <input type="hidden" name="source_page" value="/contact/" />
+          <input type="hidden" name="inquiry_source" value="contact_form" />
           <div className="inquiry-grid">
             {(
               [

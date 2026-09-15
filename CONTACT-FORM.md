@@ -1,10 +1,10 @@
 # Contact inquiry: Netlify Forms
 
-The existing Contact UI submits a URL-encoded AJAX POST to `/__forms.html`. Netlify detects the hidden definition in `public/__forms.html` during deployment and processes submissions. No custom email API, database, email SDK, secret environment variables, or sender-domain DNS setup is required.
+The full Contact form and sitewide conversational inquiry widget submit a URL-encoded AJAX POST to `/__forms.html`. Netlify detects the hidden definition in `public/__forms.html` during deployment and processes submissions. No custom email API, database, email SDK, secret environment variables, or sender-domain DNS setup is required.
 
 Form name: `bridge-contact-inquiry`.
 
-Fields: `first_name`, `last_name`, `email`, `phone`, `preferred_therapist`, `message`. Transport also includes `form-name` and the empty `bot-field` honeypot. No source URL, query string, browser/debug data or extra intake fields are collected. Preferred therapist stores the allowlisted slug (or an empty value for help choosing); all ten profile query parameters continue to preselect the editable dropdown.
+Fields: `first_name`, `last_name`, `email`, `phone`, `preferred_therapist`, `message`, `source_page`, `inquiry_source`. Transport also includes `form-name` and the empty `bot-field` honeypot. Source context is the pathname only, without query strings or fragments. `inquiry_source` is `contact_form` or `chat_widget`. No browser/debug data or extra intake fields are collected. Preferred therapist stores the allowlisted slug (or an empty value for help choosing); all ten profile query parameters continue to preselect the editable dropdown.
 
 The static definition carries `data-netlify="true"` and `data-netlify-honeypot="bot-field"`. The visible form includes the same field names and honeypot, which is offscreen, excluded from keyboard navigation and hidden from assistive technology. Netlify performs spam filtering; local tests cannot establish its effectiveness. The site check enforces synchronization of both forms, their name and honeypot.
 
@@ -29,3 +29,19 @@ Successful HTTP acceptance shows the existing success message on Contact. HTTP e
 - Local Next.js does not process Netlify Forms. Real acceptance, storage, spam classification and notification delivery require the later authorized staging deployment and manual test above.
 
 References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms), [Netlify setup](https://docs.netlify.com/manage/forms/setup/), [notifications](https://docs.netlify.com/manage/forms/notifications/).
+
+## Conversational inquiry widget
+
+The widget replaces the old chat-preview launcher inside the shared SiteProvider. Specialty preview dialogs are preserved. This is a deterministic form, with no AI or live staff connection.
+
+Flow: welcome/privacy warning -> first name -> last name -> email -> optional phone -> preferred therapist -> optional message -> review/edit -> submit -> accepted/error. It uses the same shared validator, field limits, honeypot and submission helper as Contact. Answers stay in component memory, including when closed/reopened or retrying; page navigation/reload discards them. After success only the first name remains for the thank-you. There is no saved transcript.
+
+A small prompt appears after four seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
+
+On first opening, a therapist profile pathname preselects the matching allowlisted therapist; all other paths default to help choosing. Selection remains editable. No clinical inference is made. source_page records that opening pathname only.
+
+The panel is non-modal, keyboard accessible, returns focus to the launcher on closing, and closes with Escape while focus is inside. Each new question receives focus; submission status and errors use live regions. The panel uses dynamic viewport height, safe-area spacing and internal scrolling; it adds no motion effects.
+
+Run node tests/inquiry-widget.browser.mjs against the same local port 3011 for controlled widget tests. All POSTs are mocked. This includes prompt timing, session dismissal, keyboard/focus, validation, all ten profile selections, editing, phone/message skips, failure/retry, payload/storage checks and responsive sizes.
+
+The existing backend is reported proven on staging. After the next authorized deployment, confirm Netlify re-detects the additional source_page and inquiry_source fields. Send one non-sensitive widget test and one Contact test, confirm both appear under bridge-contact-inquiry with the correct source values, and verify the existing office notification still arrives. These new widget submissions and additional fields have not yet been verified on Netlify. Do not create a second form or notification if the existing one already covers this form.
