@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import assert from "node:assert/strict";
 import { chromium, expect } from "@playwright/test";
 import os from "node:os";
@@ -11,6 +12,8 @@ try {
  await page.route('**/__forms.html', async route=> {
   assert.equal(route.request().method(),'POST');
   payload=Object.fromEntries(new URLSearchParams(route.request().postData())); calls++;
+  assert.equal(route.request().headers()['content-type'],'application/x-www-form-urlencoded');
+  if(mode==='static') return route.fulfill({status:200,contentType:'text/html',body:fs.readFileSync('public/__forms.html','utf8')});
   if(mode==='network') return route.abort();
   await route.fulfill({status:mode==='success'?200:503,contentType:'text/html',body:mode==='success'?'Accepted':'Unavailable'});
  });
@@ -48,8 +51,9 @@ try {
  assert.deepEqual(Object.keys(payload).sort(),['form-name','first_name','last_name','email','phone','preferred_therapist','message','source_page','inquiry_source','bot-field'].sort());
  assert.equal(payload['form-name'],'bridge-contact-inquiry');
  mode='network'; await button('Send Inquiry').click(); await expect(button('Send Inquiry')).toBeEnabled(); await expect(page.locator('#widget-error')).toContainText("wasn't sent");
+ mode='static'; await button('Send Inquiry').click(); await expect(button('Send Inquiry')).toBeEnabled(); await expect(page.locator('#widget-error')).toContainText("wasn't sent"); await expect(panel).toContainText('Edited Visitor');
  mode='success'; await button('Send Inquiry').click(); await expect(panel.locator('h2')).toContainText('Your inquiry has been sent');
- assert.equal(calls,3);
+ assert.equal(calls,4);
  await expect(panel).toContainText('does not confirm an appointment');
  const storage=await page.evaluate(()=>({session:{...sessionStorage},local:{...localStorage}}));
  assert.deepEqual(storage,{session:{'bridge-inquiry-prompt-shown':'1'},local:{}});

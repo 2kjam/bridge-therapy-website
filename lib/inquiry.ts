@@ -23,6 +23,9 @@ export const limits = {
 };
 export type Inquiry = Record<keyof typeof limits, string>;
 export async function sendInquiry(data: Inquiry, sourcePage: string, inquirySource: "contact_form" | "chat_widget") {
+  // A filled/missing honeypot can be silently discarded by Netlify. Never
+  // present that as successful delivery, or remove the value to bypass it.
+  if (data["bot-field"] !== "") throw new Error("Inquiry submission failed");
   const response = await fetch("/__forms.html", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -35,6 +38,12 @@ export async function sendInquiry(data: Inquiry, sourcePage: string, inquirySour
     signal: AbortSignal.timeout(20000),
   });
   if (!response.ok) throw new Error("Inquiry submission failed");
+  const body = await response.text();
+  // A static-file fallback can return 200 without processing the POST. This
+  // catches our form blueprint, including Netlify's post-processed version.
+  // It is a negative guard, not proof of storage or spam-filter acceptance.
+  if (/<form\b[^>]*\bname\s*=\s*["']?bridge-contact-inquiry(?:["'\s>])/i.test(body))
+    throw new Error("Form definition returned instead of a submission response");
 }
 export function therapistValue(value: string | null) {
   return therapists.some(([slug]) => slug === value) ? value! : "";

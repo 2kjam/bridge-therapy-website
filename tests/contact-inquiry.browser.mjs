@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
 import os from "node:os";
@@ -22,6 +23,7 @@ try {
     assert.equal(payload.get("bot-field"), "");
     assert.equal(payload.get("source_page"), "/contact/");
     assert.equal(payload.get("inquiry_source"), "contact_form");
+    if (mode === "static") return route.fulfill({status:200, contentType:"text/html", body:fs.readFileSync("public/__forms.html","utf8")});
     if (mode === "network-error") return route.abort();
     await route.fulfill({
       status: mode === "success" ? 200 : 503,
@@ -93,6 +95,11 @@ try {
   await page.getByRole("button", { name: "Send Inquiry" }).click();
   await page.getByRole("alert").getByText(/could not be sent/).waitFor();
   assert.equal(await page.locator("#inquiry-first_name").inputValue(), "Test");
+  mode = "static";
+  await page.getByRole("button", { name: "Send Inquiry" }).click();
+  await page.getByRole("alert").getByText(/could not be sent/).waitFor();
+  assert.equal(await page.locator("#inquiry-first_name").inputValue(), "Test");
+  assert.equal(await page.getByRole("heading", {name:"Thank you for reaching out."}).count(), 0);
   mode = "success";
   await page.getByRole("button", { name: "Send Inquiry" }).click();
   await page
