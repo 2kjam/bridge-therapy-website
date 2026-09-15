@@ -172,6 +172,37 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     for (const node of headings) node.parentNode = heroCopy;
     heroCopy.childNodes.splice(heading, 1, ...headings);
   }
+  // Six approved contextual link edits; preserve the rest of the frozen reference.
+  function appendHtml(node, html) {
+    const children = parseFragment(html).childNodes;
+    children.forEach((child) => { child.parentNode = node; });
+    node.childNodes.push(...children);
+  }
+  if (route === "/") {
+    const section = all(legacy, (node) => attr(node, "id") === "services")[0];
+    appendHtml(elements(section, "p")[0], ' Explore <a href="/individual-counseling-tyler/">Individual counseling</a>.');
+  }
+  if (route === "/individual-counseling-tyler/") {
+    const related = all(legacy, (node) => attr(node, "class") === "related-care")[0];
+    const link = parseFragment('<a class="service-text-link" href="/trauma-therapy-tyler/">Trauma counseling</a>').childNodes[0];
+    link.parentNode = related;
+    related.childNodes.unshift(link);
+  }
+  if (route === "/depression-counseling-tyler/") {
+    const related = all(legacy, (node) => attr(node, "class") === "related-care")[0];
+    const paragraph = parseFragment('<p>If you are experiencing depression during pregnancy or after childbirth, explore <a href="/pregnancy-postpartum-counseling-tyler/">Pregnancy and postpartum counseling</a>.</p>').childNodes[0];
+    paragraph.parentNode = related.parentNode;
+    related.parentNode.childNodes.splice(related.parentNode.childNodes.indexOf(related), 0, paragraph);
+  }
+  if (route === "/contact/") {
+    const link = elements(elements(legacy, "main")[0], "a").find((node) => attr(node, "href") === "/#therapists");
+    link.attrs.find(({name}) => name === "href").value = "/therapists/";
+  }
+  if (route === "/divorce-blended-family-counseling-tyler/") {
+    const paragraphs = elements(legacy, "p");
+    appendHtml(paragraphs.find((node) => normalizedText(node).startsWith("Explore communication about children")), ' You can also explore <a href="/parenting-support-tyler/">parenting support</a>.');
+    appendHtml(paragraphs.find((node) => normalizedText(node).startsWith("Family change can bring different concerns")), ' If a younger family member needs their own space to talk, explore <a href="/child-teen-counseling-tyler/">support for children and teens</a>.');
+  }
   pages.set(route, built);
   const ids = all(built, (node) => attr(node, "id") !== undefined).map((node) =>
     attr(node, "id"),
@@ -179,7 +210,33 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   assert.equal(new Set(ids).size, ids.length, `${route}: duplicate IDs`);
   assert.equal(elements(built, "h1").length, 1, `${route}: main heading`);
   for (const tag of ["title", "header", "main", "footer"]) {
-    const current = elements(built, tag)[0];
+    let current = elements(built, tag)[0];
+    if (route === "/contact/" && tag === "main") {
+      // Validate the new form separately, while preserving every pre-existing contact element.
+      current = parse(fs.readFileSync(builtFile, "utf8"));
+      current = elements(current, "main")[0];
+      const inquiry = all(current, (node) => attr(node, "id") === "inquiry")[0];
+      assert.ok(inquiry);
+      const visibleForm = elements(inquiry, "form")[0];
+      const definition = parse(fs.readFileSync("public/__forms.html", "utf8"));
+      const staticForm = elements(definition, "form")[0];
+      const fieldNames = (form) => all(form, (n) => ["input", "select", "textarea"].includes(n.tagName)).map((n) => attr(n, "name")).sort();
+      assert.deepEqual(fieldNames(visibleForm), fieldNames(staticForm));
+      assert.deepEqual(fieldNames(staticForm), ["form-name", "first_name", "last_name", "email", "phone", "preferred_therapist", "message", "bot-field"].sort());
+      for (const form of [visibleForm, staticForm]) {
+        assert.equal(attr(form, "name"), "bridge-contact-inquiry");
+        assert.equal(attr(form, "data-netlify-honeypot"), "bot-field");
+        assert.equal(attr(elements(form, "input").find((n) => attr(n, "name") === "form-name"), "value"), "bridge-contact-inquiry");
+      }
+      assert.equal(attr(staticForm, "data-netlify"), "true");
+      assert.equal(attr(visibleForm, "action"), "/__forms.html");
+      assert.equal(attr(visibleForm, "method"), "post");
+      assert.deepEqual(elements(inquiry, "input").map((n) => attr(n, "name")), ["form-name", "first_name", "last_name", "email", "phone", "bot-field"]);
+      assert.equal(elements(inquiry, "option").length, 11);
+      assert.equal(attr(elements(inquiry, "textarea")[0], "maxlength"), "2000");
+      assert.ok(normalizedText(inquiry).includes("Please do not include sensitive medical or personal health information in this form."));
+      inquiry.parentNode.childNodes = inquiry.parentNode.childNodes.filter((n) => n !== inquiry);
+    }
     const original = elements(legacy, tag)[0];
     assert.deepEqual(
       signature(current),
@@ -433,6 +490,11 @@ for (const [term, expected] of focusMappings) {
   assert.deepEqual(actual.sort(), expected.sort(), String(term));
 }
 for (const [route, doc] of pages) {
+  if (route.startsWith("/therapists/") && route !== "/therapists/") {
+    const contacts = elements(elements(doc, "main")[0], "a").filter((n) => attr(n, "href")?.startsWith("/contact/"));
+    assert.equal(contacts.length, 2);
+    contacts.forEach((n) => assert.equal(attr(n, "href"), `/contact/?therapist=${route.split("/")[2]}`));
+  }
   assert.ok(!/Military|Psychological (?:assessment|testing)/i.test(normalizedText(doc)), route + ": removed service");
   for (const node of all(
     doc,

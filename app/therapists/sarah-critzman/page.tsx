@@ -60,7 +60,7 @@ export default function SarahCritzmanPage() {
               point for meaningful change. Her Christian perspective includes a
               hope for growth rooted in grace.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=sarah-critzman">
               Ask About Working With Sarah
             </a>
             <p className="profile-inquiry">
@@ -124,7 +124,7 @@ export default function SarahCritzmanPage() {
             can discuss your questions, your concerns, and the next steps for an
             appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=sarah-critzman">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

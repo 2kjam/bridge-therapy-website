@@ -65,7 +65,7 @@ export default function SarahBellPage() {
               about the depth of a person’s heart and the value of
               understanding.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=sarah-bell">
               Ask About Working With Sarah
             </a>
             <p className="profile-inquiry">
@@ -128,7 +128,7 @@ export default function SarahBellPage() {
             discuss your questions, your concerns, and the next steps for an
             appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=sarah-bell">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

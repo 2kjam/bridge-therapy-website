@@ -1,3 +1,4 @@
+import { ContactInquiry } from "@/components/contact-inquiry";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
@@ -93,6 +94,7 @@ export default function Page() {
           {"\n  "}
         </section>
         {"\n  "}
+        <ContactInquiry />
         <section
           className={"contact-visit"}
           id={"location"}
@@ -161,7 +163,7 @@ export default function Page() {
             <summary>{"Do I need to choose a therapist first?"}</summary>
             <p>
               {"No. You can "}
-              <a href={"/#therapists"}>{"get to know our counselors"}</a>
+              <a href={"/therapists/"}>{"get to know our counselors"}</a>
               {
                 " first, or contact our office for help finding a fit. If you have someone in mind, mention their name when you reach out."
               }

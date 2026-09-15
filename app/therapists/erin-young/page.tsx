@@ -69,7 +69,7 @@ export default function ErinYoungPage() {
               can tell our office what brings you to counseling and ask about
               working with Erin.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=erin-young">
               Ask About Working With Erin
             </a>
             <p className="profile-inquiry">
@@ -151,7 +151,7 @@ export default function ErinYoungPage() {
             you’re looking for. We can discuss the next steps for an appointment
             inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=erin-young">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

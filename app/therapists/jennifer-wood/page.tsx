@@ -71,7 +71,7 @@ export default function JenniferWoodPage() {
               depression. Jennifer’s experience includes these concerns, and our
               office can help you consider whether working with her may be a fit.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=jennifer-wood">
               Ask About Working With Jennifer
             </a>
             <p className="profile-inquiry">
@@ -156,7 +156,7 @@ export default function JenniferWoodPage() {
             can discuss your needs and the next steps for an appointment
             inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=jennifer-wood">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

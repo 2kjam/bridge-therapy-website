@@ -315,6 +315,7 @@ export default function Page() {
           <h2 id={"depression-related-title"}>
             {"Related counseling services."}
           </h2>
+          <p>If you are experiencing depression during pregnancy or after childbirth, explore <a href="/pregnancy-postpartum-counseling-tyler/">Pregnancy and postpartum counseling</a>.</p>
           <div className={"related-care"}>
             <a
               className={"service-text-link"}

@@ -92,6 +92,7 @@ export default function Page() {
                 {
                   "Explore communication about children, expectations, and boundaries as parenting responsibilities change."
                 }
+                {" You can also explore "}<a href="/parenting-support-tyler/">parenting support</a>{"."}
               </p>
             </article>
             <article>
@@ -120,6 +121,7 @@ export default function Page() {
               {
                 "Family change can bring different concerns for each person involved. Counseling provides space to discuss those experiences and the relationships you want to work on, with room for questions about faith and personal values."
               }
+              {" If a younger family member needs their own space to talk, explore "}<a href="/child-teen-counseling-tyler/">support for children and teens</a>{"."}
             </p>
             <a
               className={"service-text-link"}

@@ -56,7 +56,7 @@ export default function KimGonzalesPage() {
               they can feel heard and respectfully challenged. Her work makes
               room for the concerns you bring and the support you need.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=kim-gonzales">
               Ask About Working With Kim
             </a>
             <p className="profile-inquiry">
@@ -134,7 +134,7 @@ export default function KimGonzalesPage() {
             discuss your questions, your concerns, and the next steps for an
             appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=kim-gonzales">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

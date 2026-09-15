@@ -57,7 +57,7 @@ export default function MistyShultzPage() {
               She hopes to help people move beyond discouragement toward a
               greater sense of purpose, joy, and peace.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=misty-shultz">
               Ask About Working With Misty
             </a>
             <p className="profile-inquiry">
@@ -133,7 +133,7 @@ export default function MistyShultzPage() {
             discuss your questions, your concerns, and the next steps for an
             appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=misty-shultz">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

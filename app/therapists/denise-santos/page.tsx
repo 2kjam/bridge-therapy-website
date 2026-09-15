@@ -66,7 +66,7 @@ export default function DeniseSantosPage() {
               confidence and rediscover purpose through life’s challenges and
               changes.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=denise-santos">
               Ask About Working With Denise
             </a>
             <p className="profile-inquiry">
@@ -137,7 +137,7 @@ export default function DeniseSantosPage() {
             questions and what brings you to counseling so we can discuss the
             next steps for an appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=denise-santos">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

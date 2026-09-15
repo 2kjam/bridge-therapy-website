@@ -64,7 +64,7 @@ export default function JillKirkleyPage() {
               and spiritual concerns, our office can help you consider whether
               Jill may be a fit.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=jill-kirkley">
               Ask About Working With Jill
             </a>
             <p className="profile-inquiry">
@@ -142,7 +142,7 @@ export default function JillKirkleyPage() {
             discuss your questions, your concerns, and the next steps for an
             appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=jill-kirkley">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

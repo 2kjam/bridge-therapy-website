@@ -66,7 +66,7 @@ export default function KelleyBellPage() {
               people to recognize their value. Tell our office what brings you
               to counseling and ask whether Kelley may be a fit.
             </p>
-            <a className="button" href="/contact/">
+            <a className="button" href="/contact/?therapist=kelley-bell">
               Ask About Working With Kelley
             </a>
             <p className="profile-inquiry">
@@ -140,7 +140,7 @@ export default function KelleyBellPage() {
             support you’re seeking. We can help you understand the next steps
             for an appointment inquiry.
           </p>
-          <a className="button" href="/contact/">
+          <a className="button" href="/contact/?therapist=kelley-bell">
             Contact Our Office
           </a>
           <p className="profile-inquiry">

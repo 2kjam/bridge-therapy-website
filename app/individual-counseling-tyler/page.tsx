@@ -360,6 +360,7 @@ export default function Page() {
             {"More ways to find support."}
           </h2>
           <div className={"related-care"}>
+            <a className="service-text-link" href="/trauma-therapy-tyler/">Trauma counseling</a>
             <a
               className={"service-text-link"}
               href={"/pregnancy-postpartum-counseling-tyler/"}

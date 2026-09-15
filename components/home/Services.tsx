@@ -11,6 +11,7 @@ export function Services() {
         {
           "We help individuals, couples, and families find hope, healing, and a healthier path forward."
         }
+        {" Explore "}<a href="/individual-counseling-tyler/">Individual counseling</a>{"."}
       </p>
       <div className={"ivory-service-grid"}>
         <a
