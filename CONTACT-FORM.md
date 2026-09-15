@@ -34,11 +34,11 @@ References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms),
 
 The widget replaces the old chat-preview launcher inside the shared SiteProvider. Specialty preview dialogs are preserved. This is a deterministic form, with no AI or live staff connection.
 
-Flow: welcome/privacy warning -> first name -> last name -> email -> optional phone -> preferred therapist -> optional message -> review/edit -> submit -> accepted/error. It uses the same shared validator, field limits, honeypot and submission helper as Contact. Answers stay in component memory, including when closed/reopened or retrying; page navigation/reload discards them. After success only the first name remains for the thank-you. There is no saved transcript.
+Flow: original welcome/name prompt -> first name -> email -> optional phone -> optional message -> review/edit -> submit -> accepted/error. Chat does not collect or submit last_name; source-aware validation continues to require it for Contact. It uses the same shared validator, field limits, honeypot and submission helper as Contact. Answers stay in component memory, including when closed/reopened or retrying; page navigation/reload discards them. After success only the first name remains for the thank-you. There is no saved transcript.
 
 A small prompt appears after approximately 1.5 seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
 
-On first opening, a therapist profile pathname preselects the matching allowlisted therapist; all other paths default to help choosing. Selection remains editable. No clinical inference is made. source_page records that opening pathname only.
+On first opening, a therapist profile pathname preselects the matching allowlisted therapist; all other paths default to help choosing. The chat offers no therapist selection or therapist review/edit controls; automatic profile context remains in the payload. The Contact dropdown remains editable. No clinical inference is made. source_page records that opening pathname only.
 
 The panel is non-modal, keyboard accessible, returns focus to the launcher on closing, and closes with Escape while focus is inside. Each new question receives focus; submission status and errors use live regions. The panel uses dynamic viewport height, safe-area spacing and internal scrolling; it adds no motion effects.
 

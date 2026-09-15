@@ -27,6 +27,11 @@ const valid = {
 
 test("validation and therapist allowlist", () => {
   assert.deepEqual(validateInquiry(valid).errors, {});
+  const {last_name, ...chat} = valid;
+  assert.equal(last_name, "Visitor");
+  assert.deepEqual(validateInquiry(chat, "chat_widget").errors, {});
+  assert.ok(validateInquiry(chat, "contact_form").errors.last_name);
+  assert.ok(!("last_name" in validateInquiry(valid, "chat_widget").data));
   for (const key of ["first_name", "last_name", "email"])
     assert.ok(validateInquiry({ ...valid, [key]: "" }).errors[key]);
   assert.ok(validateInquiry({ ...valid, email: "invalid" }).errors.email);
@@ -53,18 +58,22 @@ test("both sources construct the same Netlify request; mocked responses do not p
  try {
   globalThis.fetch = async (url, options) => { requests.push({url,...options}); return new Response("Mock HTTP response only", {status:200}); };
   await sendInquiry(sample, "/contact/", "contact_form");
-  await sendInquiry(sample, "/therapists/erin-young/", "chat_widget");
+  const {last_name, ...chat} = sample;
+  assert.ok(last_name);
+  await assert.rejects(sendInquiry(chat, "/contact/", "contact_form"), /validation/);
+  assert.equal(requests.length, 1);
+  await sendInquiry(chat, "/therapists/erin-young/", "chat_widget");
   for (const [i, request] of requests.entries()) {
    assert.equal(request.url, "/__forms.html"); assert.equal(request.method,"POST");
    assert.deepEqual(request.headers, {"Content-Type":"application/x-www-form-urlencoded"});
    const params=new URLSearchParams(request.body);
-   assert.deepEqual([...params.keys()].sort(), fields);
+   assert.deepEqual([...params.keys()].sort(), i === 0 ? fields : fields.filter(key => key !== "last_name"));
    assert.equal(params.get("form-name"), "bridge-contact-inquiry");
    assert.equal(params.get("source_page"), i===0 ? "/contact/" : "/therapists/erin-young/");
    assert.equal(params.get("inquiry_source"), i===0 ? "contact_form" : "chat_widget");
-   for (const [key,value] of Object.entries(sample)) assert.equal(params.get(key),value);
+   for (const [key,value] of Object.entries(i === 0 ? sample : chat)) assert.equal(params.get(key),value);
   }
-  const core = request => { const p=new URLSearchParams(request.body); p.delete("source_page"); p.delete("inquiry_source"); return p.toString(); };
+  const core = request => { const p=new URLSearchParams(request.body); p.delete("last_name"); p.delete("source_page"); p.delete("inquiry_source"); return p.toString(); };
   assert.equal(core(requests[0]),core(requests[1]));
   for (const source of ["contact_form","chat_widget"]) {
    for (const html of [definition, definition.replaceAll('data-netlify="true"','').replaceAll('data-netlify-honeypot="bot-field"','')]) {

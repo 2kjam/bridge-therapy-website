@@ -24,7 +24,7 @@ try {
  const proceed=()=>button('Send answer').click();
  const bubble=text=>expect(log.locator('[data-speaker="visitor"]').filter({hasText:text}).last()).toBeVisible();
  async function details() {
-  await button('Start').click(); await answer('Test'); await proceed(); await answer('Visitor'); await proceed(); await answer('visitor@example.com'); await proceed(); await button('Skip').click();
+  await answer('Test'); await proceed(); await answer('visitor@example.com'); await proceed(); await button('Skip').click();
  }
  await page.clock.install(); await page.clock.pauseAt(await page.evaluate(()=>Date.now()+1000));
  await page.goto(base+'/',{waitUntil:'networkidle'});
@@ -33,7 +33,7 @@ try {
  await expect(page.getByRole('button',{name:'Dismiss welcome prompt'})).toHaveCount(0);
  await page.clock.fastForward(1);
  await expect(page.getByRole('button',{name:'Dismiss welcome prompt'})).toBeVisible();
- const oldWelcome = "Hi! Welcome to The Bridge Therapeutic Services. If you have any questions, or would like to schedule an appointment, please answer the following questions and we'll get back to you as soon as possible!";
+ const oldWelcome = "Hi. Welcome to The Bridge Therapeutic Services. Thank you for visiting our website. If you would like to make an appointment, or just have questions, please answer the following questions and we'll get back to you as soon as possible. Thank you.";
  await expect(page.getByRole('button',{name:oldWelcome,exact:true})).toBeVisible();
  await expect(page.getByRole('button',{name:oldWelcome,exact:true}).locator('..')).not.toContainText('sensitive medical');
  await page.clock.resume();
@@ -41,79 +41,76 @@ try {
  await page.reload({waitUntil:'networkidle'}); await page.waitForTimeout(4300);
  await expect(page.getByRole('button',{name:'Dismiss welcome prompt'})).toHaveCount(0);
  await page.locator('#chat-open').focus(); await page.keyboard.press('Enter');
- await expect(panel).toBeVisible(); await expect(button('Start')).toBeFocused();
+ await expect(panel).toBeVisible(); await expect(page.locator('#widget-answer')).toBeFocused();
+ await expect(panel).not.toContainText(/(?:inquiry|submitting)[^.]*confirm[^.]*appointment/i);
  const avatars=panel.locator('img[src="/assets/chat-assistant.webp"]');
- assert.ok(await avatars.count()>=4);
+ assert.ok(await avatars.count()>=2);
  assert.ok(await avatars.evaluateAll(images=>images.every(img=>img.complete&&img.naturalWidth===256&&img.alt==='')));
  await expect(page.locator('#chat-open img')).toHaveAttribute('src','/assets/chat-assistant.webp');
- await expect(log.getByText(/sensitive medical/)).toBeVisible();
- await button('Start').click(); await expect(page.locator('#widget-answer')).toBeFocused(); await proceed(); await expect(page.locator('#widget-error')).toContainText('Enter your first name');
+ await expect(log.locator('[data-speaker="assistant"] p')).toHaveText([oldWelcome, 'Can I get your name?']);
+ await expect(page.locator('#widget-answer')).toBeFocused(); await expect(page.locator('#widget-answer')).toHaveAttribute('placeholder','Type an answer'); await proceed(); await expect(page.locator('#widget-error')).toContainText('Enter your first name');
  await page.clock.pauseAt(await page.evaluate(()=>Date.now()+1000));
  await answer('Test'); await proceed(); await bubble('Test');
  await expect(log.locator('[data-speaker="visitor"] img')).toHaveCount(0);
  assert.equal(await log.locator('[data-speaker="assistant"] img').count(),await log.locator('[data-speaker="assistant"]').count());
  await expect(log.locator('[data-typing]')).toBeVisible();
  await page.clock.fastForward(499);
- await expect(log).not.toContainText("Thanks, Test. What's your last name?");
+ await expect(log).not.toContainText("What is your email address?");
  await page.emulateMedia({reducedMotion:'reduce'});
  assert.equal(await log.locator('[data-typing] i').first().evaluate(n=>getComputedStyle(n).animationName),'none');
  await page.clock.fastForward(301);
- await page.clock.resume(); await expect(log).toContainText("Thanks, Test. What's your last name?");
+ await page.clock.resume(); await expect(log).toContainText("What is your email address?");
  await expect(page.locator('#widget-answer')).toHaveValue('');
- await proceed(); await expect(page.locator('#widget-error')).toContainText('Enter your last name');
- await answer('Visitor'); await proceed(); await answer('invalid'); await proceed(); await expect(page.locator('#widget-error')).toContainText('valid email');
+ await answer('invalid'); await proceed(); await expect(page.locator('#widget-error')).toContainText('valid email');
  await expect(log.locator('[data-speaker="visitor"]').filter({hasText:'invalid'})).toHaveCount(0);
- await answer('visitor@example.com'); await proceed(); await button('Skip').click(); await bubble('Skip');
+ await answer('visitor@example.com'); await proceed(); await expect(page.locator('#widget-answer')).toHaveAttribute('placeholder','Type phone number'); await button('Skip').click(); await bubble('Skip');
  await expect(panel.locator('select')).toHaveCount(0);
- await expect(panel.getByRole('button',{name:'Not sure — help me choose',exact:true})).toBeVisible();
- await button('Erin Young').click(); await bubble('Erin Young');
+ await expect(panel.getByRole('button', {name:/therapist|Erin Young/i})).toHaveCount(0);
  await button('Add a message').click(); await expect(page.locator('#widget-privacy')).toBeVisible();
  await answer('Synthetic widget test & encoding + only'); await proceed(); await bubble('Synthetic widget test');
- await expect(log.locator('dl').last()).toContainText('Erin Young');
+ await expect(log.locator('dl').last()).not.toContainText(/therapist|last name/i);
  await button('Make a Change').click(); await button('First name').click(); await expect(page.locator('#widget-answer')).toHaveValue('Test');
- await answer('Edited'); await proceed(); await expect(log.locator('dl').last()).toContainText('Edited Visitor');
+ await answer('Edited'); await proceed(); await expect(log.locator('dl').last()).toContainText('Edited');
  await button('Make a Change').click(); await button('Phone').click(); await answer('903-555-0100'); await proceed();
  await expect(log.locator('dl').last()).toContainText('903-555-0100');
  assert.ok(await log.evaluate(n=>n.scrollHeight-n.clientHeight-n.scrollTop<3));
  await page.keyboard.press('Escape'); await expect(panel).toHaveCount(0); await expect(page.locator('#chat-open')).toBeFocused();
- await page.locator('#chat-open').click(); await expect(log.locator('dl').last()).toContainText('Edited Visitor');
+ await page.locator('#chat-open').click(); await expect(log.locator('dl').last()).toContainText('Edited');
+ await expect(panel).not.toContainText(/(?:inquiry|submitting)[^.]*confirm[^.]*appointment/i);
  await button('Send Inquiry').click(); await expect(button('Try Again')).toBeEnabled(); await expect(log).toContainText("wasn't sent");
  assert.equal(payload.source_page,'/'); assert.equal(payload.inquiry_source,'chat_widget');
- assert.equal(payload.first_name,'Edited'); assert.equal(payload.preferred_therapist,'erin-young');
+ assert.equal(payload.first_name,'Edited'); assert.equal(payload.preferred_therapist,'');
  assert.equal(payload['bot-field'],''); assert.equal(payload.message,'Synthetic widget test & encoding + only');
- assert.deepEqual(Object.keys(payload).sort(),['form-name','first_name','last_name','email','phone','preferred_therapist','message','source_page','inquiry_source','bot-field'].sort());
+ assert.deepEqual(Object.keys(payload).sort(),['form-name','first_name','email','phone','preferred_therapist','message','source_page','inquiry_source','bot-field'].sort());
  assert.equal(payload['form-name'],'bridge-contact-inquiry');
+ assert.ok(!('last_name' in payload));
+ await expect(panel).not.toContainText(/last name/i);
+ await expect(panel.locator('[autocomplete="family-name"]')).toHaveCount(0);
  for(const failure of ['network','static']) {mode=failure; await button('Try Again').click(); await expect(button('Try Again')).toBeEnabled(); await expect(log).toContainText("wasn't sent");}
- mode='success'; await button('Try Again').click(); await expect(log).toContainText('Your inquiry has been sent');
+ mode='success'; await button('Try Again').click(); await expect(log).toContainText('Perfect. Thank you.');
  assert.equal(calls,4);
- await expect(log).toContainText('does not confirm an appointment');
+ await expect(panel).not.toContainText(/(?:inquiry|submitting)[^.]*confirm[^.]*appointment/i);
  const storage=await page.evaluate(()=>({session:{...sessionStorage},local:{...localStorage}}));
  assert.deepEqual(storage,{session:{'bridge-inquiry-prompt-shown':'1'},local:{}});
  await button('Restart conversation').click();
  await expect(log.locator('[data-speaker="visitor"]')).toHaveCount(0);
- await button('Start').click(); await expect(log.locator('[data-typing]')).toBeVisible();
+ await answer('Reset test'); await proceed(); await expect(log.locator('[data-typing]')).toBeVisible();
  await button('Restart conversation').click(); await page.waitForTimeout(850);
- await expect(button('Start')).toBeVisible(); await expect(log).not.toContainText('What is your first name?');
- await button('Start').click(); await expect(page.locator('#widget-answer')).toHaveValue('');
+ await expect(page.locator('#widget-answer')).toBeVisible(); await expect(log).not.toContainText('What is your email address?');
+ await expect(page.locator('#widget-answer')).toHaveValue('');
  const slugs=['jennifer-wood','erin-young','jill-kirkley','alyxandrah-white','misty-shultz','kim-gonzales','kelley-bell','denise-santos','sarah-bell','sarah-critzman'];
- const first=['Jennifer','Erin','Jill','Alyx','Misty','Kim','Kelley','Denise','Sarah','Sarah'];
- for(const [i,slug] of slugs.entries()) {
+ for(const slug of slugs) {
   await page.goto(base+'/therapists/'+slug+'/?ignored=private',{waitUntil:'networkidle'});
   await page.locator('#chat-open').click(); await details();
   await button('Restart conversation').click(); await details();
-  await expect(log).toContainText("'s profile"); await button('Yes, '+first[i]).click();
-  await button('No, send my inquiry').click(); await button('Send Inquiry').click(); await expect(log).toContainText('Your inquiry has been sent');
+  await expect(panel).not.toContainText(/therapist in mind|last name|would you like to ask about/i);
+  await button('No, send my inquiry').click(); await button('Send Inquiry').click(); await expect(log).toContainText('Perfect. Thank you.');
   assert.equal(payload.source_page,'/therapists/'+slug+'/'); assert.equal(payload.preferred_therapist,slug); assert.equal(payload.message,'');
  }
- await page.goto(base+'/therapists/jennifer-wood/',{waitUntil:'networkidle'});
- await page.locator('#chat-open').click(); await details(); await button("I'm not sure").click();
- await button('No, send my inquiry').click(); await button('Make a Change').click(); await button('Therapist').click();
- await button('Jill Kirkley').click(); await expect(log.locator('dl').last()).toContainText('Jill Kirkley');
- await button('Send Inquiry').click(); await expect(log).toContainText('Your inquiry has been sent'); assert.equal(payload.preferred_therapist,'jill-kirkley');
  for(const width of [375,390,768,1440]) {
   await page.setViewportSize({width,height:844});
   await page.goto(base+'/therapists/jennifer-wood/',{waitUntil:'networkidle'}); await page.locator('#chat-open').click(); await details();
-  await button('Help me choose someone else').click(); await button('Denise Santos').click();
+
   await button('Add a message').click();
   await expect(panel.locator('input:not([name="bot-field"]),textarea')).toHaveCount(1);
   const bounds=await panel.boundingBox(); assert.ok(bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=width&&bounds.y+bounds.height<=844);
@@ -128,5 +125,5 @@ try {
   }
  }
  assert.deepEqual(errors,[]);
- console.log('PASS: transcript/bubbles, composer, scroll, validation, skip/message, chips, all 10 profile confirmations, alternative therapist, edit/retry, delayed prompt/session, focus/Escape, unchanged payload, mocked HTTP/network/static errors and success, storage privacy, four widths and reduced-height viewport. No real submissions.');
+ console.log('PASS: transcript/bubbles, composer, scroll, validation, skip/message, chips, all 10 automatic profile contexts, no therapist selection or last name, edit/retry, delayed prompt/session, focus/Escape, source-aware payload, mocked HTTP/network/static errors and success, storage privacy, four widths and reduced-height viewport. No real submissions.');
 } finally {await browser.close();}
