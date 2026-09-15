@@ -22,7 +22,7 @@ export const limits = {
   "bot-field": 200,
 };
 export type Inquiry = Record<keyof typeof limits, string>;
-export type ChatInquiry = Omit<Inquiry, "last_name">;
+export type ChatInquiry = Omit<Inquiry, "last_name" | "message">;
 export type InquirySource = "contact_form" | "chat_widget";
 type ValidationResult<T> = { data: T; errors: Partial<Record<keyof T, string>> };
 export async function sendInquiry(data: Inquiry | ChatInquiry, sourcePage: string, inquirySource: InquirySource) {
@@ -64,7 +64,7 @@ export function validateInquiry(input: unknown, inquirySource: InquirySource = "
       ? (input as Record<string, unknown>)
       : {};
   for (const key of Object.keys(limits) as (keyof Inquiry)[]) {
-    if (key === "last_name" && inquirySource === "chat_widget") continue;
+    if ((key === "last_name" || key === "message") && inquirySource === "chat_widget") continue;
     const value = source[key];
     data[key] = typeof value === "string" ? value.trim() : "";
     if (value !== undefined && typeof value !== "string")
@@ -76,6 +76,12 @@ export function validateInquiry(input: unknown, inquirySource: InquirySource = "
   if (inquirySource === "contact_form" && !data.last_name) errors.last_name = "Enter your last name.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     errors.email = "Enter a valid email address.";
+  if (inquirySource === "chat_widget") {
+    const digits = data.phone.replace(/\D/g, "");
+    const national = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+    if (!/^\+?[\d\s().-]+$/.test(data.phone) || !/^[2-9]\d{2}[2-9]\d{6}$/.test(national))
+      errors.phone = "Please enter a valid phone number.";
+  }
   if (!therapists.some(([slug]) => slug === data.preferred_therapist))
     errors.preferred_therapist = "Choose a therapist from the list.";
   return { data, errors };

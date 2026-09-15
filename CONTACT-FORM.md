@@ -34,7 +34,7 @@ References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms),
 
 The widget replaces the old chat-preview launcher inside the shared SiteProvider. Specialty preview dialogs are preserved. This is a deterministic form, with no AI or live staff connection.
 
-Flow: original welcome/name prompt -> first name -> email -> optional phone -> optional message -> review/edit -> submit -> accepted/error. Chat does not collect or submit last_name; source-aware validation continues to require it for Contact. It uses the same shared validator, field limits, honeypot and submission helper as Contact. Answers stay in component memory, including when closed/reopened or retrying; page navigation/reload discards them. After success only the first name remains for the thank-you. There is no saved transcript.
+Flow: original welcome/name prompt -> first name -> email -> required U.S. phone -> Send Inquiry -> accepted/error. Chat omits last_name and message; source-aware validation requires a valid email and phone. Contact still requires last name, with its optional phone/message and therapist dropdown unchanged. Chat has no custom message, review, or edit menu. Answers and transcript stay in component memory only; restart clears them.
 
 A small prompt appears after approximately 1.5 seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
 
@@ -66,4 +66,4 @@ For the next staging investigation (no notification changes):
 
 Reference: https://docs.netlify.com/manage/forms/spam-filters/
 
-Widget presentation: visitor replies appear immediately; subsequent assistant questions pause for 560?740ms with a typing indicator (static under reduced motion). Validation and actual submission responses are not artificially delayed. Restart clears in-memory answers, transcript, errors and queued replies, restores current therapist-page context, and retains session prompt suppression. Restart is disabled during a real in-flight submission. The original headset avatar was not found in preserved assets/source; the existing chat mark remains.
+Widget presentation: visitor replies appear immediately; subsequent assistant questions pause for 900?1,200ms with a typing indicator (static under reduced motion). Validation and actual submission responses are not artificially delayed. Restart clears in-memory answers, transcript, errors and queued replies, restores current therapist-page context, and retains session prompt suppression. Restart is disabled during a real in-flight submission. The original headset avatar was not found in preserved assets/source; the existing chat mark remains.
