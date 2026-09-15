@@ -7,7 +7,7 @@ import styles from "./inquiry-widget.module.css";
 const popupWelcome = "Hi. Welcome to The Bridge Therapeutic Services. Thank you for visiting our website. If you would like to make an appointment, or just have questions, please answer the following questions and we'll get back to you as soon as possible. Thank you.";
 const greeting = popupWelcome;
 const empty: ChatInquiry = { first_name: "", email: "", phone: "", preferred_therapist: "", "bot-field": "" };
-const steps = ["first_name", "email", "phone", "submit", "success"] as const;
+const steps = ["first_name", "email", "phone", "delivery", "success"] as const;
 type Step = typeof steps[number];
 type Message = { role: "assistant" | "visitor"; text: string };
 const sessionKey = "bridge-inquiry-prompt-shown";
@@ -56,7 +56,7 @@ export function InquiryWidget() {
   useEffect(() => {
     if (open && !typing) composer.current?.querySelector<HTMLElement>("input:not([type=hidden]), textarea, button, a")?.focus({ preventScroll: true });
     else if (!open && initialized.current) launcher.current?.focus();
-  }, [open, step, typing]);
+  }, [open, step, typing, pending]);
   useEffect(() => {
     if (open && transcript.current) transcript.current.scrollTop = transcript.current.scrollHeight;
   }, [open, messages, error, pending, typing]);
@@ -92,7 +92,7 @@ export function InquiryWidget() {
       first_name: "Can I get your name?",
       email: "What is your email address?",
       phone: "And your phone number?",
-      submit: "",
+      delivery: "",
       success: "Perfect. Thank you. We'll have someone contact you as soon as possible. If it's currently during business hours, you can call us directly at 903-283-8729",
     };
     return questions[next];
@@ -126,28 +126,31 @@ export function InquiryWidget() {
   function go(next: Step, reply?: string) {
     setError("");
     if (reply) setMessages(previous => [...previous, { role: "visitor", text: reply }]);
-    if (next === "submit") { setStep(next); return; }
     const message: Message = { role: "assistant", text: question(next) };
     if (next === "success") { setStep(next); setMessages(previous => [...previous, message]); }
     else assistantReply(message, next);
   }
   function next(event: FormEvent) {
     event.preventDefault();
+    if (busy.current || typing || !["first_name", "email", "phone"].includes(step)) return;
     const checked = validateInquiry(answers, "chat_widget");
     const fieldError = checked.errors[step as keyof ChatInquiry];
     if (fieldError) { setError(fieldError); return; }
     setAnswers(checked.data);
-    go(steps[steps.indexOf(step) + 1], checked.data[step as keyof ChatInquiry]);
+    if (step === "phone") {
+      setMessages(previous => [...previous, { role: "visitor", text: checked.data.phone }]);
+      void submit(checked.data);
+    } else go(steps[steps.indexOf(step) + 1], checked.data[step as keyof ChatInquiry]);
   }
-  async function submit() {
+  async function submit(data = answers) {
     if (busy.current) return;
-    const checked = validateInquiry(answers, "chat_widget");
+    const checked = validateInquiry(data, "chat_widget");
     const invalid = Object.keys(checked.errors)[0] as keyof ChatInquiry | undefined;
     if (invalid) {
       if (steps.includes(invalid as Step)) setStep(invalid as Step);
       setError(checked.errors[invalid]!); return;
     }
-    busy.current = true; setPending(true); setError("");
+    busy.current = true; setStep("delivery"); setPending(true); setError("");
     try {
       await sendInquiry(checked.data, sourcePage.current, "chat_widget");
       setAnswers({ ...empty, first_name: checked.data.first_name });
@@ -178,12 +181,11 @@ export function InquiryWidget() {
             <span className={styles.srOnly}>{message.role === "visitor" ? "You: " : "The Bridge: "}</span>
             <p>{message.text}</p>
           </div>)}
-          {typing && <div className={styles.assistant} data-typing="true"><AssistantAvatar /><span className={styles.srOnly}>Preparing the next question</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></div>}
-          {pending && <p className={styles.assistant}><AssistantAvatar />Sending your inquiry…</p>}
-          {error && step === "submit" && <div className={styles.assistant}><AssistantAvatar /><p>{error}</p><p><a href="tel:9032838729">(903) 283-8729</a> or <a href="mailto:info@thebridgetherapy.com">info@thebridgetherapy.com</a></p></div>}
+          {(typing || pending) && <div className={styles.assistant} data-typing="true" data-pending={pending}><AssistantAvatar /><span className={styles.srOnly}>{pending ? "Sending your inquiry…" : "Preparing the next question"}</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></div>}
+          {error && step === "delivery" && <div className={styles.assistant}><AssistantAvatar /><p>{error}</p><p><a href="tel:9032838729">(903) 283-8729</a> or <a href="mailto:info@thebridgetherapy.com">info@thebridgetherapy.com</a></p></div>}
         </div>
-        <div ref={composer} className={styles.composer} aria-busy={typing}>
-          {!typing && <>
+        <div ref={composer} className={styles.composer} aria-busy={typing || pending}>
+          {!typing && !pending && <>
           {textStep && <form onSubmit={next} noValidate>
             <label htmlFor="widget-answer" className={styles.srOnly}>{labels[step as keyof typeof labels]}</label>
             <div className={styles.inputRow}>
@@ -195,11 +197,11 @@ export function InquiryWidget() {
               <button className={styles.send} type="submit" aria-label="Send answer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 3-8-3-8Zm3 8h14" /></svg></button>
             </div>
           </form>}
-          {step === "submit" && <div className={styles.actions}>
-            <button className={styles.primary} disabled={pending} onClick={submit}>{error ? "Try Again" : "Send Inquiry"}</button>
+          {step === "delivery" && error && <div className={styles.actions}>
+            <button className={styles.primary} disabled={pending} onClick={() => void submit()}>Try Again</button>
           </div>}
           {step === "success" && <div className={styles.actions}><button className={styles.primary} onClick={close}>Close</button></div>}
-          <div id="widget-error" role="alert" className={styles.error}>{step !== "submit" ? error : ""}</div>
+          <div id="widget-error" role="alert" className={styles.error}>{step !== "delivery" ? error : ""}</div>
           </>}
         </div>
         <div className={styles.honeypot} aria-hidden="true"><label htmlFor="widget-bot">Leave this field empty</label><input id="widget-bot" name="bot-field" tabIndex={-1} autoComplete="off" maxLength={limits["bot-field"]} value={answers["bot-field"]} onChange={e => setAnswers({ ...answers, "bot-field": e.target.value })} /></div>

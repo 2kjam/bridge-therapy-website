@@ -9,11 +9,13 @@ const browser = await chromium.launch({ headless: true, channel: "msedge" });
 try {
  const page = await browser.newPage();
  const errors=[]; page.on('pageerror', e=>errors.push(e.message));
- let mode='http', payload, calls=0;
+ let mode='http', payload, calls=0, release;
+ let hold = new Promise(resolve => { release=resolve; });
  await page.route('**/__forms.html', async route=> {
   assert.equal(route.request().method(),'POST');
   assert.equal(route.request().headers()['content-type'],'application/x-www-form-urlencoded');
   payload=Object.fromEntries(new URLSearchParams(route.request().postData())); calls++;
+  if (calls===1) await hold;
   if(mode==='static') return route.fulfill({status:200,contentType:'text/html',body:fs.readFileSync('public/__forms.html','utf8')});
   if(mode==='network') return route.abort();
   await route.fulfill({status:mode==='success'?200:503,contentType:'text/html',body:mode==='success'?'Mock response':'Unavailable'});
@@ -79,14 +81,21 @@ try {
   assert.equal(calls,0);
  }
  await answer('+1 (903) 283-8729'); await proceed();
- await expect(button('Send Inquiry')).toBeVisible();
- assert.equal(calls,0);
+ await bubble('+1 (903) 283-8729');
+ await expect.poll(()=>calls).toBe(1);
+ await expect(log.locator('[data-pending="true"]')).toBeVisible();
+ await expect(button('Restart conversation')).toBeDisabled();
+ await expect(page.locator('#widget-answer')).toHaveCount(0);
+ await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
+ assert.equal(calls,1);
+ await expect(log).not.toContainText('Perfect. Thank you.');
+ release();
  await expect(panel.locator('textarea, dl, select')).toHaveCount(0);
- await expect(panel).not.toContainText(/Automated inquiry assistant|Here's what I'll send|last name|Make a Change|Add a message|Skip/i);
+ await expect(panel).not.toContainText(/Send Inquiry|Automated inquiry assistant|Here's what I'll send|last name|Make a Change|Add a message|Skip/i);
  await page.keyboard.press('Escape'); await expect(panel).toHaveCount(0); await expect(page.locator('#chat-open')).toBeFocused();
- await page.locator('#chat-open').click(); await expect(button('Send Inquiry')).toBeVisible();
+ await page.locator('#chat-open').click(); await expect(button('Try Again')).toBeEnabled();
  await expect(panel).not.toContainText(/(?:inquiry|submitting)[^.]*confirm[^.]*appointment/i);
- await button('Send Inquiry').click(); await expect(button('Try Again')).toBeEnabled(); await expect(log).toContainText("wasn't sent");
+ await expect(button('Try Again')).toBeEnabled(); await expect(log).toContainText("wasn't sent");
  assert.equal(payload.source_page,'/'); assert.equal(payload.inquiry_source,'chat_widget');
  assert.equal(payload.first_name,'Test'); assert.equal(payload.preferred_therapist,'');
  assert.equal(payload['bot-field'],''); assert.ok(!('message' in payload));
@@ -98,6 +107,11 @@ try {
  for(const failure of ['network','static']) {mode=failure; await button('Try Again').click(); await expect(button('Try Again')).toBeEnabled(); await expect(log).toContainText("wasn't sent");}
  mode='success'; await button('Try Again').click(); await expect(log.locator('[data-speaker="assistant"] p').last()).toHaveText("Perfect. Thank you. We'll have someone contact you as soon as possible. If it's currently during business hours, you can call us directly at 903-283-8729");
  assert.equal(calls,4);
+ await log.focus();
+ await expect(page.locator('#widget-answer')).toHaveCount(0);
+ await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
+ assert.equal(calls,4);
+ await expect(button('Send Inquiry')).toHaveCount(0);
  await expect(panel).not.toContainText(/(?:inquiry|submitting)[^.]*confirm[^.]*appointment/i);
  const storage=await page.evaluate(()=>({session:{...sessionStorage},local:{...localStorage}}));
  assert.deepEqual(storage,{session:{'bridge-inquiry-prompt-shown':'1'},local:{}});
@@ -110,15 +124,15 @@ try {
  const slugs=['jennifer-wood','erin-young','jill-kirkley','alyxandrah-white','misty-shultz','kim-gonzales','kelley-bell','denise-santos','sarah-bell','sarah-critzman'];
  for(const slug of slugs) {
   await page.goto(base+'/therapists/'+slug+'/?ignored=private',{waitUntil:'networkidle'});
-  await page.locator('#chat-open').click(); await details();
+  await page.locator('#chat-open').click(); await details(); await expect(log).toContainText('Perfect. Thank you.');
   await button('Restart conversation').click(); await details();
   await expect(panel).not.toContainText(/therapist in mind|last name|would you like to ask about/i);
-  await button('Send Inquiry').click(); await expect(log).toContainText('Perfect. Thank you.');
+  await expect(log).toContainText('Perfect. Thank you.');
   assert.equal(payload.source_page,'/therapists/'+slug+'/'); assert.equal(payload.preferred_therapist,slug); assert.ok(!('message' in payload));
  }
  for(const width of [375,390,768,1440]) {
   await page.setViewportSize({width,height:844});
-  await page.goto(base+'/therapists/jennifer-wood/',{waitUntil:'networkidle'}); await page.locator('#chat-open').click(); await details();
+  await page.goto(base+'/therapists/jennifer-wood/',{waitUntil:'networkidle'}); await page.locator('#chat-open').click(); await details(); await expect(log).toContainText('Perfect. Thank you.');
 
   await button('Restart conversation').click();
   await answer('Test'); await proceed(); await answer('adam@example.com'); await proceed();

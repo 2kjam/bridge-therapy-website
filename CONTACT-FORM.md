@@ -34,7 +34,7 @@ References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms),
 
 The widget replaces the old chat-preview launcher inside the shared SiteProvider. Specialty preview dialogs are preserved. This is a deterministic form, with no AI or live staff connection.
 
-Flow: original welcome/name prompt -> first name -> email -> required U.S. phone -> Send Inquiry -> accepted/error. Chat omits last_name and message; source-aware validation requires a valid email and phone. Contact still requires last name, with its optional phone/message and therapist dropdown unchanged. Chat has no custom message, review, or edit menu. Answers and transcript stay in component memory only; restart clears them.
+Flow: original welcome/name prompt -> first name -> email -> required U.S. phone -> automatic submission -> accepted/error. Chat omits last_name and message; source-aware validation requires a valid email and phone. Contact still requires last name, with its optional phone/message and therapist dropdown unchanged. Chat has no custom message, review, or edit menu. Answers and transcript stay in component memory only; restart clears them.
 
 A small prompt appears after approximately 1.5 seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
 
