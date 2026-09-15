@@ -81,7 +81,9 @@ export default function JillKirkleyPage() {
               <li>Life transitions</li>
               <li>Trauma and abuse recovery</li>
               <li>Grief and loss</li>
-              <li>Guilt, anger, and shame</li>
+              <li>Guilt and shame</li>
+              <li>Counseling support related to fibromyalgia</li>
+              <li>Mentoring and discipleship</li>
               <li>Depression and anxiety</li>
               <li>Spiritual and ministry-related concerns</li>
             </ul>

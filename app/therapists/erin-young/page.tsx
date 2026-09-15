@@ -89,6 +89,9 @@ export default function ErinYoungPage() {
               <li>Dissociation</li>
               <li>Attention concerns, including ADD/ADHD</li>
               <li>Stress- and pain-related concerns</li>
+              <li>Codependency</li>
+              <li>Counseling support for non-epileptic concerns</li>
+              <li>Counseling support related to fibromyalgia</li>
             </ul>
             <p>
               You don’t need to know which term describes your experience to

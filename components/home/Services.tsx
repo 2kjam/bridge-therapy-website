@@ -140,9 +140,6 @@ export function Services() {
             <a href={"/divorce-blended-family-counseling-tyler/"}>
               {"Divorce & blended families"}
             </a>
-            <PreviewTrigger service={"Military & Deployment Support"}>
-              {"Military deployment"}
-            </PreviewTrigger>
             <a href={"/christian-counseling-tyler/"}>
               {"Christian counseling"}
             </a>

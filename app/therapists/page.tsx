@@ -130,6 +130,14 @@ export default function TherapistsPage() {
                   <a href="/therapists/denise-santos/">{therapist.name}</a>
                 ) : therapist.image === "jill" ? (
                   <a href="/therapists/jill-kirkley/">{therapist.name}</a>
+                ) : therapist.image === "sarah-bell" ? (
+                  <a href="/therapists/sarah-bell/">{therapist.name}</a>
+                ) : therapist.image === "sarah-critzman" ? (
+                  <a href="/therapists/sarah-critzman/">{therapist.name}</a>
+                ) : therapist.image === "kim" ? (
+                  <a href="/therapists/kim-gonzales/">{therapist.name}</a>
+                ) : therapist.image === "misty" ? (
+                  <a href="/therapists/misty-shultz/">{therapist.name}</a>
                 ) : therapist.name}
               </h2>
               <p>{therapist.credential}</p>

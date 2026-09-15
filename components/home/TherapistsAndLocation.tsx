@@ -114,7 +114,7 @@ export function TherapistsAndLocation() {
         </div>
         <a
           className={"button"}
-          href={"https://www.thebridgetherapy.com/meet-the-team"}
+          href={"/therapists/"}
         >
           {"Meet Our Therapists"}
         </a>

@@ -84,7 +84,7 @@ export default function AlyxandrahWhitePage() {
             <h2 id="alyx-focus">Areas of Focus</h2>
             <p>
               Alongside her relationship and family work, Alyx has experience
-              supporting people through life adjustments and post-traumatic
+              supporting people with anger, life adjustments, and post-traumatic
               stress disorder (PTSD).
             </p>
             <p>

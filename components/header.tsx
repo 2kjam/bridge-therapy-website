@@ -1,6 +1,5 @@
 import { HeaderFrame, MobileToggle, Navigation, NavMenu } from "./navigation";
 import { TeamCarousel } from "./team-carousel";
-import { PreviewTrigger } from "./site-interactions";
 export function Header() {
   return (
     <HeaderFrame>
@@ -40,12 +39,6 @@ export function Header() {
                   {"Child & Teen Counseling"}
                 </a>
                 <a href={"/parenting-support-tyler/"}>{"Parents"}</a>
-                <PreviewTrigger
-                  service={"Military & Deployment Support"}
-                  href={"/#services"}
-                >
-                  {"Military families"}
-                </PreviewTrigger>
               </section>
               <section>
                 <h2>{"What we help with"}</h2>
@@ -197,10 +190,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Misty%20Shultz"
+                    "/therapists/misty-shultz/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/misty.jpg"}
@@ -210,16 +201,15 @@ export function Header() {
                   />
                   <strong>{"Misty Shultz, LPC"}</strong>
                   <span>{"Licensed Professional Counselor"}</span>
+                  <span>{"Mentoring and discipleship"}</span>
                 </a>
               </li>
               <li>
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kim%20Gonzales"
+                    "/therapists/kim-gonzales/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/kim.jpg"}
@@ -271,10 +261,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell"
+                    "/therapists/sarah-bell/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/sarah-bell.jpg"}
@@ -294,10 +282,8 @@ export function Header() {
                 <a
                   className={"portrait-card"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Critzman"
+                    "/therapists/sarah-critzman/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
                   <img
                     src={"/assets/sarah-critzman.jpg"}

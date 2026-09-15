@@ -130,6 +130,12 @@ export function SiteProvider({ children }: { children: ReactNode }) {
   );
 }
 
+const specialtyCopy: Record<string, string> = {
+  "Anger Counseling": "For support with anger, ask about Jennifer Wood, Alyxandrah (Alyx) White, or Denise Santos. Contact our office to discuss therapist fit and next steps.",
+  "Codependency Counseling": "For support with codependency, ask about Erin Young. Contact our office to discuss therapist fit and next steps.",
+  "Eating Disorder Counseling": "For support with eating disorders, ask about Jennifer Wood. Contact our office to discuss therapist fit and next steps.",
+};
+
 export function PreviewTrigger({
   service,
   href,
@@ -149,7 +155,7 @@ export function PreviewTrigger({
       event.preventDefault();
       showPreview({
         title: service,
-        copy: "This specialty page is part of the planned website. For this design preview, you can continue to Contact Us. Our office will help with current services, therapist fit, and scheduling.",
+        copy: specialtyCopy[service] ?? "This specialty page is part of the planned website. For this design preview, you can continue to Contact Us. Our office will help with current services, therapist fit, and scheduling.",
       });
     },
   };

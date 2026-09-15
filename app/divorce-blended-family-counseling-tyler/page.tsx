@@ -231,7 +231,7 @@ export default function Page() {
           </div>
           <a
             className={"service-text-link"}
-            href={"https://www.thebridgetherapy.com/meet-the-team"}
+            href={"/therapists/"}
             target={"_blank"}
             rel={"noopener"}
           >

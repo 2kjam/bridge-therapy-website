@@ -230,12 +230,10 @@ export default function Page() {
                 <a
                   className={"service-text-link"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell"
+                    "/therapists/sarah-bell/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
-                  {"Read counselor profile ↗"}
+                  {"Read counselor profile →"}
                 </a>
               </div>
             </article>

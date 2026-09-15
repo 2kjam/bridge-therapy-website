@@ -87,7 +87,43 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       text.value = text.value.replaceAll("↗", "→");
     }
   }
+  // Jennifer's updated offerings remove Military from the active navigation and homepage.
+  for (const removed of all(legacy, (node) => attr(node, "data-service") === "Military & Deployment Support")) {
+    removed.parentNode.childNodes = removed.parentNode.childNodes.filter((node) => node !== removed);
+  }
   const teamPanel = all(legacy, (node) => attr(node, "id") === "team-panel")[0];
+  for (const link of all(legacy, (node) => node.tagName === "a" &&
+    attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Misty%20Shultz")) {
+    link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
+    link.attrs.find(({ name }) => name === "href").value = "/therapists/misty-shultz/";
+    for (const text of all(link, (node) => node.nodeName === "#text")) {
+      text.value = text.value.replaceAll("↗", "→");
+    }
+  }
+  for (const link of all(legacy, (node) => node.tagName === "a" &&
+    attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kim%20Gonzales")) {
+    link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
+    link.attrs.find(({ name }) => name === "href").value = "/therapists/kim-gonzales/";
+    for (const text of all(link, (node) => node.nodeName === "#text")) {
+      text.value = text.value.replaceAll("↗", "→");
+    }
+  }
+  for (const link of all(legacy, (node) => node.tagName === "a" &&
+    attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Critzman")) {
+    link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
+    link.attrs.find(({ name }) => name === "href").value = "/therapists/sarah-critzman/";
+    for (const text of all(link, (node) => node.nodeName === "#text")) {
+      text.value = text.value.replaceAll("↗", "→");
+    }
+  }
+  for (const link of all(legacy, (node) => node.tagName === "a" &&
+    attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell")) {
+    link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
+    link.attrs.find(({ name }) => name === "href").value = "/therapists/sarah-bell/";
+    for (const text of all(link, (node) => node.nodeName === "#text")) {
+      text.value = text.value.replaceAll("↗", "→");
+    }
+  }
   for (const link of all(legacy, (node) => node.tagName === "a" &&
     attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jill%20Kirkley")) {
     link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
@@ -104,12 +140,23 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       text.value = text.value.replaceAll("↗", "→");
     }
   }
+  const mistyLink = all(teamPanel, (node) => attr(node, "href") === "/therapists/misty-shultz/")[0];
+  const mentoringLabel = parseFragment("<span>Mentoring and discipleship</span>").childNodes[0];
+  mentoringLabel.parentNode = mistyLink;
+  mistyLink.childNodes.push(mentoringLabel);
   const directoryLink = all(teamPanel, (node) =>
     node.tagName === "a" && attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team",
   )[0];
   directoryLink.attrs = directoryLink.attrs.filter(({ name }) => !["target", "rel"].includes(name));
   directoryLink.attrs.find(({ name }) => name === "href").value = "/therapists/";
   directoryLink.childNodes = parseFragment("View All Therapists →").childNodes;
+  // These 12 active-page directory links now use the local directory; preserve all other attributes and text.
+  const localDirectoryRoutes = ["/", "/individual-counseling-tyler/", "/anxiety-counseling-tyler/", "/depression-counseling-tyler/", "/christian-counseling-tyler/", "/adoption-counseling-tyler/", "/adhd-counseling-tyler/", "/grief-counseling-tyler/", "/life-transitions-counseling-tyler/", "/marriage-counseling-tyler/", "/premarital-counseling-tyler/", "/divorce-blended-family-counseling-tyler/"];
+  if (localDirectoryRoutes.includes(route)) {
+    const links = all(elements(legacy, "main")[0], (node) => node.tagName === "a" && attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team");
+    assert.equal(links.length, 1, route + ": expected one general directory link");
+    links[0].attrs.find(({ name }) => name === "href").value = "/therapists/";
+  }
   if (route === "/") {
     // The frozen reference predates the homepage's heading hierarchy.
     const heroCopy = all(legacy, (node) => attr(node, "class") === "ivory-hero-copy")[0];
@@ -210,6 +257,18 @@ for (const card of cards) {
   } else if (normalizedText(elements(card, "h2")[0]) === "Jill Kirkley") {
     assert.equal(links.length, 1);
     assert.equal(attr(links[0], "href"), "/therapists/jill-kirkley/");
+  } else if (normalizedText(elements(card, "h2")[0]) === "Sarah Bell") {
+    assert.equal(links.length, 1);
+    assert.equal(attr(links[0], "href"), "/therapists/sarah-bell/");
+  } else if (normalizedText(elements(card, "h2")[0]) === "Sarah Critzman") {
+    assert.equal(links.length, 1);
+    assert.equal(attr(links[0], "href"), "/therapists/sarah-critzman/");
+  } else if (normalizedText(elements(card, "h2")[0]) === "Kim Gonzales") {
+    assert.equal(links.length, 1);
+    assert.equal(attr(links[0], "href"), "/therapists/kim-gonzales/");
+  } else if (normalizedText(elements(card, "h2")[0]) === "Misty Shultz") {
+    assert.equal(links.length, 1);
+    assert.equal(attr(links[0], "href"), "/therapists/misty-shultz/");
   } else {
     assert.equal(links.length, 0, "No premature profile links");
   }
@@ -301,7 +360,80 @@ assert.deepEqual(elements(jillServices, "a").map((node) => attr(node, "href")), 
 ]);
 assert.ok(!elements(jillProfile, "link").some((node) => attr(node, "rel") === "canonical"));
 assert.ok(!elements(jillProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+const sarahBellProfile = parse(fs.readFileSync(".next/server/app/therapists/sarah-bell.html", "utf8"));
+pages.set("/therapists/sarah-bell/", sarahBellProfile);
+assert.equal(elements(sarahBellProfile, "h1").length, 1);
+assert.equal(normalizedText(elements(sarahBellProfile, "h1")[0]), "Sarah Bell, LPC-A");
+assert.equal(normalizedText(elements(sarahBellProfile, "title")[0]), "Sarah Bell, LPC-A | Tyler, TX | The Bridge");
+assert.equal(attr(elements(sarahBellProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
+const sarahBellMain = elements(sarahBellProfile, "main")[0];
+assert.equal(attr(elements(sarahBellMain, "img")[0], "src"), "/assets/sarah-bell.jpg");
+const sarahBellServices = all(sarahBellMain, (node) => attr(node, "class") === "profile-services")[0];
+assert.deepEqual(elements(sarahBellServices, "a").map((node) => attr(node, "href")), [
+  "/trauma-therapy-tyler/", "/emdr-therapy-tyler/", "/adhd-counseling-tyler/",
+]);
+assert.ok(!elements(sarahBellProfile, "link").some((node) => attr(node, "rel") === "canonical"));
+assert.ok(!elements(sarahBellProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.ok(normalizedText(sarahBellMain).includes("Supervised by Whitney Briggs, LPC-S"));
+assert.ok(normalizedText(sarahBellMain).includes("Licensed Professional Counselor Associate"));
+const kimProfile = parse(fs.readFileSync(".next/server/app/therapists/kim-gonzales.html", "utf8"));
+pages.set("/therapists/kim-gonzales/", kimProfile);
+assert.equal(elements(kimProfile, "h1").length, 1);
+assert.equal(normalizedText(elements(kimProfile, "h1")[0]), "Kim Gonzales, LMSW");
+assert.equal(normalizedText(elements(kimProfile, "title")[0]), "Kim Gonzales, LMSW | Tyler, TX | The Bridge");
+assert.equal(attr(elements(kimProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
+const kimMain = elements(kimProfile, "main")[0];
+assert.equal(attr(elements(kimMain, "img")[0], "src"), "/assets/kim.jpg");
+const kimServices = all(kimMain, (node) => attr(node, "class") === "profile-services")[0];
+assert.deepEqual(elements(kimServices, "a").map((node) => attr(node, "href")), [
+  "/adoption-counseling-tyler/",
+]);
+assert.ok(!elements(kimProfile, "link").some((node) => attr(node, "rel") === "canonical"));
+assert.ok(!elements(kimProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.ok(normalizedText(kimMain).includes("Supervised by Erin Young, LCSW-S"));
+assert.ok(normalizedText(kimMain).includes("Licensed Master Social Worker"));
+const mistyProfile = parse(fs.readFileSync(".next/server/app/therapists/misty-shultz.html", "utf8"));
+pages.set("/therapists/misty-shultz/", mistyProfile);
+assert.equal(elements(mistyProfile, "h1").length, 1);
+assert.equal(normalizedText(elements(mistyProfile, "h1")[0]), "Misty Shultz, LPC");
+assert.equal(normalizedText(elements(mistyProfile, "title")[0]), "Misty Shultz, LPC | Tyler, TX | The Bridge");
+assert.equal(attr(elements(mistyProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
+const mistyMain = elements(mistyProfile, "main")[0];
+assert.equal(attr(elements(mistyMain, "img")[0], "src"), "/assets/misty.jpg");
+assert.equal(all(mistyMain, (node) => attr(node, "class") === "profile-services").length, 0);
+assert.ok(!elements(mistyProfile, "link").some((node) => attr(node, "rel") === "canonical"));
+assert.ok(!elements(mistyProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.ok(normalizedText(mistyMain).includes("Licensed Professional Counselor"));
+const sarahCritzmanProfile = parse(fs.readFileSync(".next/server/app/therapists/sarah-critzman.html", "utf8"));
+pages.set("/therapists/sarah-critzman/", sarahCritzmanProfile);
+assert.equal(elements(sarahCritzmanProfile, "h1").length, 1);
+assert.equal(normalizedText(elements(sarahCritzmanProfile, "h1")[0]), "Sarah Critzman, LMSW");
+assert.equal(normalizedText(elements(sarahCritzmanProfile, "title")[0]), "Sarah Critzman, LMSW | Tyler, TX | The Bridge");
+assert.equal(attr(elements(sarahCritzmanProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
+const sarahCritzmanMain = elements(sarahCritzmanProfile, "main")[0];
+assert.equal(attr(elements(sarahCritzmanMain, "img")[0], "src"), "/assets/sarah-critzman.jpg");
+assert.equal(all(sarahCritzmanMain, (node) => attr(node, "class") === "profile-services").length, 0);
+assert.ok(!elements(sarahCritzmanProfile, "link").some((node) => attr(node, "rel") === "canonical"));
+assert.ok(!elements(sarahCritzmanProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.ok(normalizedText(sarahCritzmanMain).includes("Supervised by Christi Lawson, LCSW-S"));
+assert.ok(normalizedText(sarahCritzmanMain).includes("Licensed Master Social Worker"));
+// Authoritative specialty mapping: enforce the exact active-profile associations.
+const focusMappings = [
+  [/\banger\b/i, ["jennifer-wood", "alyxandrah-white", "denise-santos"]],
+  [/co-?dependency/i, ["erin-young"]],
+  [/play therapy/i, ["sarah-critzman"]],
+  [/eating disorders/i, ["jennifer-wood"]],
+  [/non-epileptic/i, ["erin-young"]],
+  [/Brain Gym/i, ["erin-young"]],
+  [/fibromyalgia/i, ["erin-young", "jill-kirkley"]],
+  [/mentoring (?:and|&) discipleship/i, ["jennifer-wood", "jill-kirkley", "misty-shultz"]],
+];
+for (const [term, expected] of focusMappings) {
+  const actual = [...pages].filter(([route, doc]) => route.startsWith("/therapists/") && route !== "/therapists/" && term.test(normalizedText(elements(doc, "main")[0]))).map(([route]) => route.split("/")[2]);
+  assert.deepEqual(actual.sort(), expected.sort(), String(term));
+}
 for (const [route, doc] of pages) {
+  assert.ok(!/Military|Psychological (?:assessment|testing)/i.test(normalizedText(doc)), route + ": removed service");
   for (const node of all(
     doc,
     (entry) =>

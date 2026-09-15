@@ -98,7 +98,8 @@ export default function JenniferWoodPage() {
               <li>Eating disorders</li>
               <li>Depression</li>
               <li>Personality disorders</li>
-              <li>Co-dependency</li>
+              <li>Anger</li>
+              <li>Mentoring and discipleship</li>
               <li>Spiritual issues</li>
             </ul>
           </section>

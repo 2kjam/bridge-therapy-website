@@ -223,19 +223,17 @@ export default function Page() {
                 <a
                   className={"service-text-link"}
                   href={
-                    "https://www.thebridgetherapy.com/meet-the-team#:~:text=Kim%20Gonzales"
+                    "/therapists/kim-gonzales/"
                   }
-                  target={"_blank"}
-                  rel={"noopener"}
                 >
-                  {"Read counselor profile ↗"}
+                  {"Read counselor profile →"}
                 </a>
               </div>
             </article>
           </div>
           <a
             className={"service-text-link"}
-            href={"https://www.thebridgetherapy.com/meet-the-team"}
+            href={"/therapists/"}
             target={"_blank"}
             rel={"noopener"}
           >
