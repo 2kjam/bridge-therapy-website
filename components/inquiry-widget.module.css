@@ -1,16 +1,18 @@
 ﻿.widget { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--chat-lift, 0px)); z-index: 30; color: #174c50; font-size: 15px; line-height: 1.5; }
 .launcher { display: flex; align-items: center; justify-content: center; margin-left: auto; width: 52px; height: 52px; border: 0; border-radius: 50%; background: #41563b; color: white; box-shadow: 0 4px 18px #16353630; }
-.launcher svg { width: 24px; height: 24px; }
+.avatar { display: block; width: var(--avatar-size, 36px); height: var(--avatar-size, 36px); flex-shrink: 0; border-radius: 50%; object-fit: cover; object-position: center; }
+.launcher { padding: 0; --avatar-size: 52px; }
 .panel, .prompt { width: min(390px, calc(100vw - 32px)); background: #fffcf7; border: 1px solid #b9cdca; border-radius: 18px; box-shadow: 0 8px 32px #16353630; margin-bottom: 12px; }
 .panel { display: flex; flex-direction: column; height: 610px; max-height: calc(var(--chat-height, 100dvh) - 100px - env(safe-area-inset-bottom)); overflow: hidden; }
 .header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #eaf1ed; flex-shrink: 0; border-bottom: 1px solid #dbe5df; }
 .header strong { font-size: 19px; }
 .subtitle { display: block; font-size: 12px; }
-.mark { width: 36px; height: 36px; border-radius: 50%; background: #41563b; color: white; display: grid; place-items: center; font-size: 23px; }
 .close { border: 0; background: transparent; font-size: 26px; min-width: 44px; min-height: 44px; margin-left: auto; }
 .transcript { flex: 1; min-height: 70px; padding: 18px 14px; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 12px; }
 .assistant, .visitor { width: fit-content; max-width: 91%; flex-shrink: 0; padding: 11px 14px; overflow-wrap: anywhere; white-space: pre-wrap; }
 .assistant { align-self: flex-start; background: #edf2ed; border-radius: 15px 15px 15px 3px; }
+.assistant { position: relative; margin-left: 36px; max-width: calc(100% - 36px); }
+.assistant > .avatar { --avatar-size: 28px; position: absolute; left: -36px; top: 0; }
 .visitor { align-self: flex-end; background: #41563b; color: white; border-radius: 15px 15px 3px 15px; }
 .assistant p, .visitor p { margin: 0; }
 .assistant a { text-decoration: underline; }
@@ -36,6 +38,15 @@
 .prompt { padding: 16px; font-size: 14px; }
 .prompt .close { float: right; }
 .prompt p { margin: 0 0 12px; }
+.welcomeBubble { display: flex; align-items: flex-start; gap: 10px; border: 0; background: transparent; padding: 0; text-align: left; font: inherit; line-height: inherit; --avatar-size: 44px; }
+.restart { margin-left: auto; border: 0; background: transparent; min-width: 44px; min-height: 44px; display: grid; place-items: center; }
+.header .close { margin-left: 0; }
+.restart:disabled { opacity: .5; cursor: wait; }
+.dots { display: flex; gap: 5px; padding: 5px 0; }
+.dots i { width: 6px; height: 6px; border-radius: 50%; background: #607c69; animation: chatDot 900ms ease-in-out infinite alternate; }
+.dots i:nth-child(2) { animation-delay: 150ms; }
+.dots i:nth-child(3) { animation-delay: 300ms; }
+@keyframes chatDot { from { opacity: .4; } to { opacity: 1; } }
 .widget :is(button, a, input, textarea, [tabindex]):focus-visible { outline: 3px solid #075760; outline-offset: 2px; }
 .srOnly, .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 600px) {
@@ -45,4 +56,4 @@
  .header { padding: 8px 12px; }
  .choices { max-height: 135px; }
 }
-@media (prefers-reduced-motion: reduce) { .transcript, .choices { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .transcript, .choices { scroll-behavior: auto; } .dots i { animation: none; } }

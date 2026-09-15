@@ -36,7 +36,7 @@ The widget replaces the old chat-preview launcher inside the shared SiteProvider
 
 Flow: welcome/privacy warning -> first name -> last name -> email -> optional phone -> preferred therapist -> optional message -> review/edit -> submit -> accepted/error. It uses the same shared validator, field limits, honeypot and submission helper as Contact. Answers stay in component memory, including when closed/reopened or retrying; page navigation/reload discards them. After success only the first name remains for the thank-you. There is no saved transcript.
 
-A small prompt appears after four seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
+A small prompt appears after approximately 1.5 seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
 
 On first opening, a therapist profile pathname preselects the matching allowlisted therapist; all other paths default to help choosing. Selection remains editable. No clinical inference is made. source_page records that opening pathname only.
 
@@ -65,3 +65,5 @@ For the next staging investigation (no notification changes):
 5. Match each unique message and source fields to a stored record and verify office notification receipt. A browser success alone is insufficient. If one still fails, retain only sanitized request/response evidence and the deployment identifier for diagnosis.
 
 Reference: https://docs.netlify.com/manage/forms/spam-filters/
+
+Widget presentation: visitor replies appear immediately; subsequent assistant questions pause for 560?740ms with a typing indicator (static under reduced motion). Validation and actual submission responses are not artificially delayed. Restart clears in-memory answers, transcript, errors and queued replies, restores current therapist-page context, and retains session prompt suppression. Restart is disabled during a real in-flight submission. The original headset avatar was not found in preserved assets/source; the existing chat mark remains.
