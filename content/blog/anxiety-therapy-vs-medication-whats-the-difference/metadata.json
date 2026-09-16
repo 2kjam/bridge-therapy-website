@@ -1,0 +1,54 @@
+{
+  "id": "696e7b7c4ebeee75a412f49b",
+  "legacyPath": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference",
+  "title": "Anxiety Therapy vs Medication: What’s the Difference?",
+  "publishedAt": "2026-01-19T18:50:47.677Z",
+  "publicationDate": "2026-01-19",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Anxiety Therapy vs Medication | Counseling in Tyler, TX — The Bridge Therapeutic Services",
+    "description": "Compare anxiety therapy vs medication and learn which approach may be right for you. Anxiety counseling available in Tyler, TX at The Bridge.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/t/697681a38407e66909b4cbe9/1769374115717/Copy+of+Untitled+Design+%2816%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768848418550-ZHJBACAK3PLXUERKE123/Copy+of+Untitled+Design+%2816%29.png",
+    "src": "/assets/blog/anxiety-therapy-vs-medication-whats-the-difference/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "4aa3a4f25456967b7c2a5bcdbca0275cf312818b407338413819d2554ba0c5b9",
+    "bytes": 309906
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768848418550-ZHJBACAK3PLXUERKE123/Copy+of+Untitled+Design+%2816%29.png",
+      "src": "/assets/blog/anxiety-therapy-vs-medication-whats-the-difference/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "4aa3a4f25456967b7c2a5bcdbca0275cf312818b407338413819d2554ba0c5b9",
+      "bytes": 309906
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:11.213Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference",
+    "sourceUpdatedAt": "2026-01-25T20:48:35.347Z",
+    "displayedDate": "Jan 19",
+    "hashes": {
+      "page.html": "5fb000ba1e07a26aa900a26ca973b8264e8a61fb2c77bf486659811b4fc21dd3",
+      "item.json": "7690879ae01a53bda5cdb327921669d176cf532d6c1eb8d46a889e7e7fd2997a",
+      "body.html": "0caeae6a61898f6e922b139667a7289aeb9f9b2eaacc989562bd8a140289e654",
+      "../body.html": "e1839f8672a7986dc77837ea1745ec196dd68bd480b69b6c86faddf9846a1550"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

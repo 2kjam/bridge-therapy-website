@@ -326,11 +326,9 @@ export function Header() {
                 {"Our story ↗"}
               </a>
               <a
-                href={"https://www.thebridgetherapy.com/blog"}
-                target={"_blank"}
-                rel={"noopener"}
+                href={"/blog/"}
               >
-                {"Articles & resources ↗"}
+                {"Articles & resources →"}
               </a>
             </section>
             <section>

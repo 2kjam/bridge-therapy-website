@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint app components lib scripts tests next.config.ts playwright.config.ts eslint.config.mjs",
+    "lint": "eslint app components lib scripts tests next.config.ts playwright.config.ts playwright.blog.config.ts eslint.config.mjs",
     "check": "tsc --noEmit && node scripts/check-site.mjs",
     "test:e2e": "playwright test",
+    "test:blog": "node --test tests/blog.test.mjs tests/blog-collection.test.mjs && playwright test --config=playwright.blog.config.ts",
     "dev:legacy": "node legacy/preview-server.cjs"
   },
   "dependencies": {

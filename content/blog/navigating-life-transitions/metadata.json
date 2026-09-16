@@ -1,0 +1,38 @@
+{
+  "id": "64f098a62038195ca5bb74c2",
+  "legacyPath": "/news/navigating-life-transitions",
+  "title": "Navigating Life Transitions: How Counseling Can Guide You Through Change",
+  "publishedAt": "2023-08-31T14:00:56.765Z",
+  "publicationDate": "2023-08-31",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "How Counseling Can Guide You Through Change — The Bridge Therapeutic Services",
+    "description": "Life transitions are part of the human experience, offering opportunities for growth and self-discovery. Mental health counseling plays a crucial role in helping individuals navigate these transitions with emotional well-being intact.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/navigating-life-transitions",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/64f098a62038195ca5bb74c2/1769366717710/?format=1500w"
+  },
+  "featuredImage": {
+    "src": "/assets/blog/navigating-life-transitions/image-asset.jpeg",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1693490213078-EERIGYEIR8QGVAHRLVKN/image-asset.jpeg",
+    "width": 2500,
+    "height": 1667,
+    "alt": ""
+  },
+  "source": {
+    "capturedAt": "2026-09-16T20:55:09.502Z",
+    "url": "https://www.thebridgetherapy.com/news/navigating-life-transitions",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.710Z",
+    "hashes": {
+      "page.html": "288effa5a99cb782a294986887036ea20beaaa031e42479a3d42730474910d7f",
+      "item.json": "ef2aa8deb6db545ff260b2a206250bf1b3fa32ef000256664ebc14c9b3e8b197",
+      "body.html": "0f5550e45783963fdb9db1e5004edc2efb4824e007806b0793de60987e459178",
+      "../body.html": "6370766064cb73c9846cfe94a3639201a42eb7ff6c1dc445aa1976588b5c3600",
+      "image": "dc43cf37d97a9e4b9e957dd125c719f7aca0ea7f135d833b11310ff3f0eb8e63"
+    },
+    "transformation": "Exact inner-HTML slice of the single sqs-html-content block. Only outer Squarespace layout wrappers and their style/script metadata are omitted. No body text, elements, attributes, or whitespace changed."
+  }
+}

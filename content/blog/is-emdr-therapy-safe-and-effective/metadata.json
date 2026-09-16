@@ -1,0 +1,56 @@
+{
+  "id": "696d9dbe8d5a8e717f5d1758",
+  "legacyPath": "/news/2026/1/18/is-emdr-therapy-safe-and-effective",
+  "title": "Is EMDR Therapy Safe and Effective?",
+  "publishedAt": "2026-01-19T03:01:48.425Z",
+  "publicationDate": "2026-01-18",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Is EMDR Therapy Safe and Effective? — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/18/is-emdr-therapy-safe-and-effective",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696d9dbe8d5a8e717f5d1758/1769366717808/Copy+of+Untitled+Design+%2811%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768791674747-ZHOPPNX8RQQ3ISH4ZMVR/Copy+of+Untitled+Design+%2811%29.png",
+    "src": "/assets/blog/is-emdr-therapy-safe-and-effective/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "75a2c03c7e1d9e31742fd43a8cceb9d1c142d08a422ac041c64a6f152d85c239",
+    "bytes": 311082,
+    "sourceDeclaredSize": "1366x768"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768791674747-ZHOPPNX8RQQ3ISH4ZMVR/Copy+of+Untitled+Design+%2811%29.png",
+      "src": "/assets/blog/is-emdr-therapy-safe-and-effective/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "75a2c03c7e1d9e31742fd43a8cceb9d1c142d08a422ac041c64a6f152d85c239",
+      "bytes": 311082,
+      "sourceDeclaredSize": "1366x768"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:36.852Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/18/is-emdr-therapy-safe-and-effective",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.808Z",
+    "displayedDate": "Jan 18",
+    "hashes": {
+      "page.html": "25151faa547d59dc6e991443b22a1a966b0d01c9557076911f7629de5855b006",
+      "item.json": "1be860cfb6c594765927de371dd4fc81264dbcf06af4878b27e3184faa61a87e",
+      "body.html": "e9ec6d2ab4d7b3c508a2d82d0eda59381cec700e469beb2cb7fb6e8f3a9736f8",
+      "../body.html": "ffcfc75189b612b2bbc0ba98b7f4bfce3f725beec2fb49decfd6d0ee15bade08"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

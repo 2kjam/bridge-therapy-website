@@ -1,0 +1,83 @@
+{
+  "id": "5b9e86c1b8a0455bce330d3d",
+  "legacyPath": "/news/2019/2/3/traumatic-memories-and-treatment",
+  "title": "Traumatic Memories and Treatment",
+  "publishedAt": "2019-02-03T21:50:43.350Z",
+  "publicationDate": "2019-02-03",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "<p style=\"white-space:pre-wrap;\">CBS 19 recently did a story on identifying trauma details, after a family gave wrong identifying information following a traumatic event when their 7 year old was shot and killed. A reporter came to The Bridge Therapeutic Services to interview me on understanding why it is so hard to identify details during and after a trauma. </p>",
+  "categories": [],
+  "tags": [
+    "Trauma",
+    "Memories",
+    "EDMR"
+  ],
+  "seo": {
+    "title": "Traumatic Memories and Treatment — The Bridge Therapeutic Services",
+    "description": " CBS 19 recently did a story on identifying trauma details, after a family gave wrong identifying information following a traumatic event when their 7 year old was shot and killed. A reporter came to The Bridge Therapeutic Services to interview me on understanding why it is so hard to identify details during and after a trauma.  ",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2019/2/3/traumatic-memories-and-treatment",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/5b9e86c1b8a0455bce330d3d/1769374292901/erinblog1.jpg?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1549229561260-NZRVFLOHXGWUHHH58BB9/erinblog1.jpg",
+    "src": "/assets/blog/traumatic-memories-and-treatment/featured.jpg",
+    "width": 640,
+    "height": 365,
+    "alt": "",
+    "sha256": "41796d5f9ced2678a65a3592764828bc546274ab38ca236bb8b057034d4d3452",
+    "bytes": 86575,
+    "sourceDeclaredSize": "640x365"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1549229561260-NZRVFLOHXGWUHHH58BB9/erinblog1.jpg",
+      "src": "/assets/blog/traumatic-memories-and-treatment/featured.jpg",
+      "width": 640,
+      "height": 365,
+      "alt": "",
+      "sha256": "41796d5f9ced2678a65a3592764828bc546274ab38ca236bb8b057034d4d3452",
+      "bytes": 86575,
+      "sourceDeclaredSize": "640x365"
+    },
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1549230046416-0X6PS0TYJBPIINE22ZP2/Erin+Young+-+The+Bridge+Therapeutic+Services",
+      "src": "/assets/blog/traumatic-memories-and-treatment/featured.jpg",
+      "width": 640,
+      "height": 365,
+      "alt": "Erin Young - The Bridge Therapeutic Services",
+      "sha256": "41796d5f9ced2678a65a3592764828bc546274ab38ca236bb8b057034d4d3452",
+      "bytes": 86575,
+      "sourceDeclaredSize": "640x365"
+    },
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1549235319134-ZXQ96P4IYSWVD7LBQGHO/trauma",
+      "src": "/assets/blog/traumatic-memories-and-treatment/body-2.png",
+      "width": 1492,
+      "height": 832,
+      "alt": "trauma",
+      "sha256": "78b78442cb485db539a0d92803513036802e4c5d63c0e52fc3b7b7d8a7ebfe9d",
+      "bytes": 1468439,
+      "sourceDeclaredSize": "1492x832"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:28.197Z",
+    "url": "https://www.thebridgetherapy.com/news/2019/2/3/traumatic-memories-and-treatment",
+    "sourceUpdatedAt": "2026-01-25T20:51:32.901Z",
+    "displayedDate": "Feb 3",
+    "hashes": {
+      "page.html": "fd0338906a70d9cf624d3082f8544dee6c4e5daacfaae68ee3d8378eff665d9c",
+      "item.json": "8837ce3408a2b9f755030ed1e08cba677638a48bbbf2bc30c28feddfb1076ddc",
+      "body.html": "267a753d81d5493468045c65da715a16db1365d99866752129958ac22b460703",
+      "../body.html": "597446dac348e48dd50c4db87f5def395440e47ab2115fdc04e9b2f4d31a67be"
+    },
+    "blockTypes": [
+      "sqs-block image-block sqs-block-image",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block image-block sqs-block-image",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

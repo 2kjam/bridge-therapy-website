@@ -1,0 +1,54 @@
+{
+  "id": "696d8ea412502c7b5f6af107",
+  "legacyPath": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
+  "title": "EMDR Therapy for Trauma and PTSD in Tyler, TX",
+  "publishedAt": "2026-01-19T02:17:37.854Z",
+  "publicationDate": "2026-01-18",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "EMDR Therapy for Trauma & PTSD in Tyler, TX — The Bridge Therapeutic Services",
+    "description": "Looking for EMDR therapy in Tyler, TX? Learn how EMDR helps heal trauma, PTSD, and anxiety through compassionate, faith-integrated counseling.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696d8ea412502c7b5f6af107/1769366717827/Copy+of+Untitled+Design+%287%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768788533505-6NIVWKDWLZ06TG8AA2MZ/Copy+of+Untitled+Design+%287%29.png",
+    "src": "/assets/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "54598fc61dbff86899c8381529d321e07c980b2083c5bc532a35657a4e908b22",
+    "bytes": 302624
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768788533505-6NIVWKDWLZ06TG8AA2MZ/Copy+of+Untitled+Design+%287%29.png",
+      "src": "/assets/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "54598fc61dbff86899c8381529d321e07c980b2083c5bc532a35657a4e908b22",
+      "bytes": 302624
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:57.437Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.827Z",
+    "displayedDate": "Jan 18",
+    "hashes": {
+      "page.html": "6e02205f52a2d7669b345805da1c1e5a485f3a0763c4b2f70155bd99466b15c9",
+      "item.json": "48b02861b3e407a8e7a5644ad43cade8482f8c1050191b879cd59f0f4f44018e",
+      "body.html": "2a064d564e0f43a30cdd5af5ce4fb7437105b5c7e0f0269ee2eaf00f0286b5c5",
+      "../body.html": "1cde0d65055d75a126867d547698b9005de664f4917efb6fc14e748d072aa658"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

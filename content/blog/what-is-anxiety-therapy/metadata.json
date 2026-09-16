@@ -1,0 +1,56 @@
+{
+  "id": "696e795650c02f30d62ae5d7",
+  "legacyPath": "/news/2026/1/19/what-is-anxiety-therapy",
+  "title": "What Is Anxiety Therapy?",
+  "publishedAt": "2026-01-19T18:42:06.977Z",
+  "publicationDate": "2026-01-19",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "What Is Anxiety Therapy? | Anxiety Counseling in Tyler, TX — The Bridge Therapeutic Services",
+    "description": "Learn what anxiety therapy is, how it works, and who it helps. The Bridge Therapeutic Services offers anxiety counseling in Tyler, TX.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/19/what-is-anxiety-therapy",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696e795650c02f30d62ae5d7/1769366717604/Copy+of+Untitled+Design+%2815%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768848009784-XVXT2WXQGZLIF2I4XNN0/Copy+of+Untitled+Design+%2815%29.png",
+    "src": "/assets/blog/what-is-anxiety-therapy/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "9d5e68712ad33d84ddd36203c7b0f270066aa889880471c61db5f71ac05ce32b",
+    "bytes": 308353,
+    "sourceDeclaredSize": "1366x768"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768848009784-XVXT2WXQGZLIF2I4XNN0/Copy+of+Untitled+Design+%2815%29.png",
+      "src": "/assets/blog/what-is-anxiety-therapy/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "9d5e68712ad33d84ddd36203c7b0f270066aa889880471c61db5f71ac05ce32b",
+      "bytes": 308353,
+      "sourceDeclaredSize": "1366x768"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:16.306Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/19/what-is-anxiety-therapy",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.604Z",
+    "displayedDate": "Jan 19",
+    "hashes": {
+      "page.html": "72dacc114161c9449c98daef9c9a4f2742e55b9f4cb94bd94b8a2aef88be272c",
+      "item.json": "72c9dd698096520efbf9b9c9d6026dd4cfd4083186e565bf01482c82febe5a31",
+      "body.html": "1aadedac9306d74617ea763801d495db691ff8ae547f3a4083b2ab918fbb8521",
+      "../body.html": "33bf23abd15edf865799e9b41c8b49b2ec81a38c25d930cc0ff1e28a6c5e729a"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

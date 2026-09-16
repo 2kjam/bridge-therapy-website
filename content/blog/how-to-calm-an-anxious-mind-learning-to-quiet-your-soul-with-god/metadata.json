@@ -1,0 +1,58 @@
+{
+  "id": "6a8878feefd9007f8293a64b",
+  "legacyPath": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god",
+  "title": "How to Calm an Anxious Mind: Learning to Quiet Your Soul with God",
+  "publishedAt": "2026-08-22T01:29:50.365Z",
+  "publicationDate": "2026-08-21",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "How to Calm an Anxious Mind: Quiet Your Soul with God | The Bridge Therapy — The Bridge Therapeutic Services",
+    "description": "Learn how Psalm 131 offers a powerful picture of calming an anxious mind, quieting your soul, and learning to trust God when life feels uncertain.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/t/6a887ac34b45ae0311df8ef3/1787329219207/IMG_1510.jpeg?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1787329021962-NE5UWMD2QXCAUB8DL3EX/IMG_1510.jpeg",
+    "src": "/assets/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/featured.jpg",
+    "width": 2500,
+    "height": 2879,
+    "alt": "",
+    "sha256": "d377d6a19b0bd35e58c8a1a296b3e2f106418d8e9e7c8e7426b3468d02b9f95c",
+    "bytes": 2695888,
+    "sourceDeclaredSize": "3653x4207",
+    "sourceDeliveryNote": "The unmodified public source response is 2500x2879; source metadata declares 3653x4207. Both the bare URL and format=original return the same 2500px-wide JPEG. No local resizing or conversion."
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1787329021962-NE5UWMD2QXCAUB8DL3EX/IMG_1510.jpeg",
+      "src": "/assets/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/featured.jpg",
+      "width": 2500,
+      "height": 2879,
+      "alt": "",
+      "sha256": "d377d6a19b0bd35e58c8a1a296b3e2f106418d8e9e7c8e7426b3468d02b9f95c",
+      "bytes": 2695888,
+      "sourceDeclaredSize": "3653x4207",
+      "sourceDeliveryNote": "The unmodified public source response is 2500x2879; source metadata declares 3653x4207. Both the bare URL and format=original return the same 2500px-wide JPEG. No local resizing or conversion."
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:06.116Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god",
+    "sourceUpdatedAt": "2026-08-22T01:29:50.697Z",
+    "displayedDate": "Aug 21",
+    "hashes": {
+      "page.html": "e31ef972a4370a73a19fc816febbff62cc9f37b3f7021fbd0179ab9ba5741738",
+      "item.json": "955a7fa0cfb0c2661729035b9bca71280677b335a17f1c2ae6ae21631de5e8b2",
+      "body.html": "4e9b01daf162c3a7e13120df6371b55c601aa820421cf5b789dc421d33b953b5",
+      "../body.html": "55b2e93ffa4a24e9018de42dc8d6f917f321344506cbc27e535d44d1cc7b764d"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

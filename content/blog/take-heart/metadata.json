@@ -1,0 +1,54 @@
+{
+  "id": "5cb15cf0e4966b391d8788d8",
+  "legacyPath": "/news/take-heart",
+  "title": "Take heart, and be courageous, because He has overcome the world.",
+  "publishedAt": "2019-04-13T04:02:51.205Z",
+  "publicationDate": "2019-04-12",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "<p style=\"white-space:pre-wrap;\">Paul had faced enormous suffering in his life, even to the point of  death, he writes. This suffering he experienced had literally taken him  to the end of his rope. He COULD. NOT. GO. ON. ANYMORE.</p>",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Take heart, and be courageous, because He has overcome the world. — The Bridge Therapeutic Services",
+    "description": " Paul had faced enormous suffering in his life, even to the point of  death, he writes. This suffering he experienced had literally taken him  to the end of his rope. He COULD. NOT. GO. ON. ANYMORE. ",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/take-heart",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/t/69765e5384f6c30da4591273/1769364827753/the+bridge+therapeutic+services?format=1500w"
+  },
+  "featuredImage": null,
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1555127816842-YZ3ZLUQB93R91TMIR6HD/the+bridge+therapeutic+services",
+      "src": "/assets/blog/take-heart/body-1.jpg",
+      "width": 741,
+      "height": 741,
+      "alt": "the bridge therapeutic services",
+      "sha256": "ad99600cc746074c1cac0d346945a9eed8199d887bd5b9ad6582cc9ba6183049",
+      "bytes": 54020,
+      "sourceDeclaredSize": "741x741"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:23.079Z",
+    "url": "https://www.thebridgetherapy.com/news/take-heart",
+    "sourceUpdatedAt": "2026-01-25T20:51:01.929Z",
+    "displayedDate": "Apr 12",
+    "hashes": {
+      "page.html": "7f31245e466396ca4ce9ce8d0f1b866d1c1d2eec05758d3ae24bd5b12d740410",
+      "item.json": "fedd58bb0fb372a4b2451c1b20353e796ddcd4f61f16db09cc437b7e3d75e72f",
+      "body.html": "4979f5a0c6f759a975b1275f3807984fd70a353d2281234210e7df40dae73f42",
+      "../body.html": "dc3564c4997a5e0a5aa26b574974302d270dc68746f8e1cac702813a10158c5e"
+    },
+    "blockTypes": [
+      "sqs-block image-block sqs-block-image",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-spacer spacer-block sized vsize-1",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted.",
+    "omittedFeaturedImage": {
+      "sourceUrl": "https://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/5cb15cf0e4966b391d8788d8/1769374261929/",
+      "reason": "Generic Squarespace no-image.png placeholder; actual body/OG image preserved."
+    }
+  }
+}

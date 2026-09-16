@@ -1,0 +1,54 @@
+{
+  "id": "696e731131ebe577a3f7f549",
+  "legacyPath": "/news/2026/1/19/anxiety-therapy-in-tyler-tx",
+  "title": "Anxiety Therapy in Tyler, TX",
+  "publishedAt": "2026-01-19T18:21:35.246Z",
+  "publicationDate": "2026-01-19",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Anxiety Therapy in Tyler, TX | Compassionate Counseling Support — The Bridge Therapeutic Services",
+    "description": "Find relief from anxiety with compassionate therapy in Tyler, TX. The Bridge Therapeutic Services offers personalized anxiety counseling to help you feel calm and in control.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/19/anxiety-therapy-in-tyler-tx",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696e731131ebe577a3f7f549/1769366717934/Copy+of+Untitled+Design+%2814%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768846337802-G0FJFEVQ1LMGPO9M1FEG/Copy+of+Untitled+Design+%2814%29.png",
+    "src": "/assets/blog/anxiety-therapy-in-tyler-tx/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "347febaa5d32f174fc3178cfd485f77c616c3083278548d51d75f7f4faec4a5d",
+    "bytes": 307035
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768846337802-G0FJFEVQ1LMGPO9M1FEG/Copy+of+Untitled+Design+%2814%29.png",
+      "src": "/assets/blog/anxiety-therapy-in-tyler-tx/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "347febaa5d32f174fc3178cfd485f77c616c3083278548d51d75f7f4faec4a5d",
+      "bytes": 307035
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:21.500Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/19/anxiety-therapy-in-tyler-tx",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.934Z",
+    "displayedDate": "Jan 19",
+    "hashes": {
+      "page.html": "388ddfd4e2ccc131cde107c4a1efaba73b02d49d89972a9e10c3bc94e0eb36ab",
+      "item.json": "c35edf7728205670544341ec7eab8834f4339f0e89f0d1aee78906236efa0ebf",
+      "body.html": "61d671a8f761c09f3005154a8df81e6efccf3e2239c379bff5724ff4ab6e248d",
+      "../body.html": "42537cfde86507838d3bbdf619ddd21274bff2dc2fed0cd668b48296f09a944b"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

@@ -30,7 +30,7 @@ export function Footer({ id = "location" }: { id?: string }) {
           <h2>{"Our Practice"}</h2>
           <a href={"/#why-the-bridge"}>{"About"}</a>
           <a href={"/#therapists"}>{"Our Therapists"}</a>
-          <a href={"https://www.thebridgetherapy.com/blog"}>{"Resources"}</a>
+          <a href={"/blog/"}>{"Resources"}</a>
           <a href={"/contact/"}>{"Contact"}</a>
           <a href={"/contact/"}>{"Book an Appointment"}</a>
           <a href={"/#insurance"}>{"Insurance"}</a>

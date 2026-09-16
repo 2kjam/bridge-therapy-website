@@ -1,0 +1,54 @@
+{
+  "id": "696d97fdcf289f456e48b7c5",
+  "legacyPath": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd",
+  "title": "How EMDR Therapy Helps Heal Trauma and PTSD",
+  "publishedAt": "2026-01-19T02:49:54.447Z",
+  "publicationDate": "2026-01-18",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "How EMDR Therapy Helps Heal Trauma and PTSD — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696d97fdcf289f456e48b7c5/1769366717546/Copy+of+Untitled+Design+%289%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768790254069-0CEG46DR4TAQ38HTKK3C/Copy+of+Untitled+Design+%289%29.png",
+    "src": "/assets/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "ca810aade503e2b35e62c626489b3ad8d63c7bb85680575d67bb7c957e99e0d9",
+    "bytes": 316157
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768790254069-0CEG46DR4TAQ38HTKK3C/Copy+of+Untitled+Design+%289%29.png",
+      "src": "/assets/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "ca810aade503e2b35e62c626489b3ad8d63c7bb85680575d67bb7c957e99e0d9",
+      "bytes": 316157
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:47.224Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.546Z",
+    "displayedDate": "Jan 18",
+    "hashes": {
+      "page.html": "5fbd9d2ee3abb6bdfe12af7554a170129946a07f7889f2861bf7c7db1dc585c3",
+      "item.json": "03eb9ce02264ac7263440fba8a8b59c1de5f8face87b0d71fc9d519cf1c40f31",
+      "body.html": "b24be721026f8998af01d9ef2f046d7854d9839b616f48c6a233de45721c913f",
+      "../body.html": "192aa24310b47bd60cff5d3e84434a64815d242512a9a761d010c2976d71907b"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

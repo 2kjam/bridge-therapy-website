@@ -1,0 +1,54 @@
+{
+  "id": "696e6b348822851ff6c58f0d",
+  "legacyPath": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling",
+  "title": "Can EMDR Be Integrated with Christian Counseling?",
+  "publishedAt": "2026-01-19T17:43:15.251Z",
+  "publicationDate": "2026-01-19",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Faith-Based EMDR Therapy | Christian Counseling in Tyler, TX — The Bridge Therapeutic Services",
+    "description": "Discover how EMDR therapy can be integrated with Christian counseling. Faith-based EMDR therapy available at The Bridge in Tyler, TX.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696e6b348822851ff6c58f0d/1769366717853/Copy+of+Untitled+Design+%2813%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768844319904-6OFANU795PQ5UJXEPM6M/Copy+of+Untitled+Design+%2813%29.png",
+    "src": "/assets/blog/can-emdr-be-integrated-with-christian-counseling/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "b9e44533547e9c1504f6fabea56f14307243b77dee77b77adc1b06f655032856",
+    "bytes": 320597
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768844319904-6OFANU795PQ5UJXEPM6M/Copy+of+Untitled+Design+%2813%29.png",
+      "src": "/assets/blog/can-emdr-be-integrated-with-christian-counseling/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "b9e44533547e9c1504f6fabea56f14307243b77dee77b77adc1b06f655032856",
+      "bytes": 320597
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:26.638Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.853Z",
+    "displayedDate": "Jan 19",
+    "hashes": {
+      "page.html": "c2c3362c7d0c79dc55a2a17c4ec62d0dd299c0528972dbde599006a4bb9b5a54",
+      "item.json": "6e659a35e211c102f79b01aede0f982cb433002d25b5ba6fa9bec4b68ec13fba",
+      "body.html": "6f36ce69fee06491b924a027be4a55d0b64309459f5359d9f72a7f0bfcc29c71",
+      "../body.html": "4e63cb6301af23c11f80f955332298b6e4a8510dd2a870dc13068a14f73a9b02"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "696d9c30cfc91f7a3f9fd5a8",
+  "legacyPath": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions",
+  "title": "What to Expect in EMDR Therapy Sessions",
+  "publishedAt": "2026-01-19T02:56:47.807Z",
+  "publicationDate": "2026-01-18",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "What to Expect in EMDR Therapy Sessions — The Bridge Therapeutic Services",
+    "description": "Starting trauma therapy can feel intimidating. Knowing what to expect can help reduce fear and uncertainty.\n",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696d9c30cfc91f7a3f9fd5a8/1769366717586/Copy+of+Untitled+Design+%2810%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768791312835-XE8OHJD585OJMPXLZC2A/Copy+of+Untitled+Design+%2810%29.png",
+    "src": "/assets/blog/what-to-expect-in-emdr-therapy-sessions/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "72e0e5de221b43dd93280a6470bbd198c8cd096006ca9afd76cf8d5a22a0c49b",
+    "bytes": 307145,
+    "sourceDeclaredSize": "1366x768"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768791312835-XE8OHJD585OJMPXLZC2A/Copy+of+Untitled+Design+%2810%29.png",
+      "src": "/assets/blog/what-to-expect-in-emdr-therapy-sessions/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "72e0e5de221b43dd93280a6470bbd198c8cd096006ca9afd76cf8d5a22a0c49b",
+      "bytes": 307145,
+      "sourceDeclaredSize": "1366x768"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:42.137Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.586Z",
+    "displayedDate": "Jan 18",
+    "hashes": {
+      "page.html": "27a1ba2a09e746c2fe86c89e8318eababdf8f9e90a43dcffd0272d2bb3baf95c",
+      "item.json": "000d9fc4d519af8aee532ea5c1ca463e375bff3cebd63e3ae9542fc3792f19fd",
+      "body.html": "54c25c3c3ef53d5f5b761443338dce9156a48bd5015a4bd359ec18f38f17439e",
+      "../body.html": "a2b0ea4659a6032eaf7f025a8770896e01d40ec0063ca0875f7e9ccd137d5536"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

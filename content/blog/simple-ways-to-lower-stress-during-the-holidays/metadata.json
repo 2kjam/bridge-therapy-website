@@ -1,0 +1,56 @@
+{
+  "id": "5de2dbedf26533387a2cbc19",
+  "legacyPath": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays",
+  "title": "Simple Ways to Lower Stress  During the Holidays",
+  "publishedAt": "2019-11-30T21:31:40.969Z",
+  "publicationDate": "2019-11-30",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Simple Ways to Lower Stress During the Holidays<br/> — The Bridge Therapeutic Services",
+    "description": "Hallmark Christmas movies are picture perfect, but may lead to unrealistic expectations. Life is more complicated than a Hallmark Christmas movie, although it’s a great self-care escape. Planning ahead may lead to less stress during the holidays. Below are my simple tips and techniques to minimize stress during the holidays.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/5de2dbedf26533387a2cbc19/1769374522227/the+bridge+therapeutic+services.JPG?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1575149175234-WGASBK2W1ZHYZRLT2W1U/the+bridge+therapeutic+services.JPG",
+    "src": "/assets/blog/simple-ways-to-lower-stress-during-the-holidays/featured.jpg",
+    "width": 2500,
+    "height": 1667,
+    "alt": "",
+    "sha256": "10ab0db10440a411b21f47403cd72b0a8156d630425ae1379c1fa4a41ab5435f",
+    "bytes": 1304309,
+    "sourceDeclaredSize": "2500x1667"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1575149175234-WGASBK2W1ZHYZRLT2W1U/the+bridge+therapeutic+services.JPG",
+      "src": "/assets/blog/simple-ways-to-lower-stress-during-the-holidays/featured.jpg",
+      "width": 2500,
+      "height": 1667,
+      "alt": "",
+      "sha256": "10ab0db10440a411b21f47403cd72b0a8156d630425ae1379c1fa4a41ab5435f",
+      "bytes": 1304309,
+      "sourceDeclaredSize": "2500x1667"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:12.860Z",
+    "url": "https://www.thebridgetherapy.com/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays",
+    "sourceUpdatedAt": "2026-01-25T20:55:22.227Z",
+    "displayedDate": "Nov 30",
+    "hashes": {
+      "page.html": "7269802d8022a46d85f3af2cc3ef38437d2ef09c46f6cce9df67778ab92dad84",
+      "item.json": "cf2fc601b71b466267db2e9c47eac163ffdcd1ee51ab066408f025901f5af640",
+      "body.html": "d66322a2c2ca06775c6a1bb5551ce71997279f73e30ed7e588b7037017ca72b4",
+      "../body.html": "6814a54dac4ca0be4cac10ee77f9f008bd8c6c376a2d767dbd2324adea6c71e7"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

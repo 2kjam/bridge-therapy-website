@@ -1,0 +1,54 @@
+{
+  "id": "696e692a8d927f73d3f744ee",
+  "legacyPath": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses",
+  "title": "EMDR Therapy for Anxiety, Panic, and Trauma Responses",
+  "publishedAt": "2026-01-19T17:33:08.567Z",
+  "publicationDate": "2026-01-19",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "EMDR for Anxiety & Panic Attacks | Trauma Therapy in Tyler, TX — The Bridge Therapeutic Services",
+    "description": "Learn how EMDR therapy helps reduce anxiety and panic by healing underlying trauma. Compassionate EMDR counseling available in Tyler, TX.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696e692a8d927f73d3f744ee/1769366717913/Copy+of+Untitled+Design+%2812%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768843831001-10026PUJARJH5NQMTC1R/Copy+of+Untitled+Design+%2812%29.png",
+    "src": "/assets/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "4f506d95e5bc4ccc490d2e9219c56951d7395a5a185492b5399a9b17dfcc3e30",
+    "bytes": 340670
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768843831001-10026PUJARJH5NQMTC1R/Copy+of+Untitled+Design+%2812%29.png",
+      "src": "/assets/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "4f506d95e5bc4ccc490d2e9219c56951d7395a5a185492b5399a9b17dfcc3e30",
+      "bytes": 340670
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:31.722Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.913Z",
+    "displayedDate": "Jan 19",
+    "hashes": {
+      "page.html": "266870562b7c9f507fe2348baf90fd5e8eeb9a39bf5a8467e4b1a4c5a6efa375",
+      "item.json": "20abc0475f0727d460b828e5e23ef736ce8fd3dfe00379282a78364e70093496",
+      "body.html": "802388c2bc7a03ef1e7e7becccb11c1ed563902e5d73354a7f106a136d945ed6",
+      "../body.html": "d84150c24fe04877b7e175e45cd70a16005f3cd193689310ada627a4dac35d7a"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

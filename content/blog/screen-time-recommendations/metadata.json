@@ -1,0 +1,56 @@
+{
+  "id": "61b11a791a610e5477dacd3b",
+  "legacyPath": "/news/2021/12/8/screen-time-recommendations",
+  "title": "Screen Time Recommendations for Children",
+  "publishedAt": "2021-12-09T14:53:28.212Z",
+  "publicationDate": "2021-12-09",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Screen Time Recommendations for Children — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2021/12/8/screen-time-recommendations",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/61b11a791a610e5477dacd3b/1769366717788/Shutterstock_539157508.jpg?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1639061652978-D74HQF2HZ2TH8PHHQPR8/Shutterstock_539157508.jpg",
+    "src": "/assets/blog/screen-time-recommendations/featured.jpg",
+    "width": 2285,
+    "height": 1523,
+    "alt": "",
+    "sha256": "47365d199ea6780e6591b6ce1a64d7211520848a36ce4503aadeee0d2200231b",
+    "bytes": 300707,
+    "sourceDeclaredSize": "2285x1523"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1639061652978-D74HQF2HZ2TH8PHHQPR8/Shutterstock_539157508.jpg",
+      "src": "/assets/blog/screen-time-recommendations/featured.jpg",
+      "width": 2285,
+      "height": 1523,
+      "alt": "",
+      "sha256": "47365d199ea6780e6591b6ce1a64d7211520848a36ce4503aadeee0d2200231b",
+      "bytes": 300707,
+      "sourceDeclaredSize": "2285x1523"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:02.558Z",
+    "url": "https://www.thebridgetherapy.com/news/2021/12/8/screen-time-recommendations",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.788Z",
+    "displayedDate": "Dec 9",
+    "hashes": {
+      "page.html": "55ee78e2a0edef62a5b5c5347616d58b5e4b6c200b7d147ee53c550c62c019bd",
+      "item.json": "7044ebbcf7924ab2cd7eb415691860cbe2bb78000514a83136925e918f61d9db",
+      "body.html": "8969a26f17d5320d998c67fc3c283a80598f51c919ae10d909ba9e85ad93552a",
+      "../body.html": "911a77f71d80f1e157ad9d643962ea4ee516459778081ffa29e6d47c9c92d951"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

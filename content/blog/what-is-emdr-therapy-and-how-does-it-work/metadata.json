@@ -1,0 +1,56 @@
+{
+  "id": "696d9462d5f9dc089b450368",
+  "legacyPath": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work",
+  "title": "What Is EMDR Therapy and How Does It Work?",
+  "publishedAt": "2026-01-19T02:29:29.878Z",
+  "publicationDate": "2026-01-18",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "What Is EMDR Therapy and How Does It Work? — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/696d9462d5f9dc089b450368/1769366717566/Copy+of+Untitled+Design+%288%29.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768789592067-SGRUVMNC8OZATY0PBZJA/Copy+of+Untitled+Design+%288%29.png",
+    "src": "/assets/blog/what-is-emdr-therapy-and-how-does-it-work/featured.png",
+    "width": 1366,
+    "height": 768,
+    "alt": "",
+    "sha256": "642a0397687bbe802907e0a9506d32189d8e20d16899f6fc450fe0afe896bcf1",
+    "bytes": 320264,
+    "sourceDeclaredSize": "1366x768"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1768789592067-SGRUVMNC8OZATY0PBZJA/Copy+of+Untitled+Design+%288%29.png",
+      "src": "/assets/blog/what-is-emdr-therapy-and-how-does-it-work/featured.png",
+      "width": 1366,
+      "height": 768,
+      "alt": "",
+      "sha256": "642a0397687bbe802907e0a9506d32189d8e20d16899f6fc450fe0afe896bcf1",
+      "bytes": 320264,
+      "sourceDeclaredSize": "1366x768"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:27:52.318Z",
+    "url": "https://www.thebridgetherapy.com/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.566Z",
+    "displayedDate": "Jan 18",
+    "hashes": {
+      "page.html": "28f5659b53f3492de787027acfedee8e1a7e4b82b3d45331b8e3e60d37596d8d",
+      "item.json": "68508120f1393908946e694fd5d688fb5e1b60a1f6d7f268c953e5fae487b10d",
+      "body.html": "b166d83d74d019add29fd8ff95aba1857a0f418f269b23cbd5563736d893e242",
+      "../body.html": "63752a13f86f4e2418bde12485d7b180f0af419952c2caa6d204fb71723f08d8"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

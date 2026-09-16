@@ -1,0 +1,58 @@
+{
+  "id": "5ce3df6c1cc39e00018765ef",
+  "legacyPath": "/news/2019/5/21/storm-anxiety",
+  "title": "Storm Anxiety",
+  "publishedAt": "2019-05-21T12:00:20.778Z",
+  "publicationDate": "2019-05-21",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Storm Anxiety — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2019/5/21/storm-anxiety",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/5ce3df6c1cc39e00018765ef/1769374387827/Screen+Shot+2019-05-21+at+7.06.48+AM.png?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1558440507310-5OARL9KRA152HVQTKKXG/Screen+Shot+2019-05-21+at+7.06.48+AM.png",
+    "src": "/assets/blog/storm-anxiety/featured.png",
+    "width": 1268,
+    "height": 706,
+    "alt": "",
+    "sha256": "322df5d1f548591360c848b13cb831ac34664ba8c2c010b2055bb78e3ad795af",
+    "bytes": 1183999,
+    "sourceDeclaredSize": "1268x706"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1558440507310-5OARL9KRA152HVQTKKXG/Screen+Shot+2019-05-21+at+7.06.48+AM.png",
+      "src": "/assets/blog/storm-anxiety/featured.png",
+      "width": 1268,
+      "height": 706,
+      "alt": "",
+      "sha256": "322df5d1f548591360c848b13cb831ac34664ba8c2c010b2055bb78e3ad795af",
+      "bytes": 1183999,
+      "sourceDeclaredSize": "1268x706"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:17.989Z",
+    "url": "https://www.thebridgetherapy.com/news/2019/5/21/storm-anxiety",
+    "sourceUpdatedAt": "2026-01-25T20:53:07.827Z",
+    "displayedDate": "May 21",
+    "hashes": {
+      "page.html": "2651983ae1450a5448cf33ac1a2f9c23aede813d72cd0d6c6e469824caeeb319",
+      "item.json": "e1e0ab9e0f18425a00210b37681c842a012a216123fe856f6117be58db1ebaeb",
+      "body.html": "07a4dec142955fc7e78808da730216994bee873c42cc12dc2165174abe6e1ad0",
+      "../body.html": "b9d6ba9dd55d2d50ecda4f65c4240e9f26802a133a1930d37c2d4d007e312c1c"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-video video-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

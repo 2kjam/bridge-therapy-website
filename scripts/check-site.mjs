@@ -406,6 +406,19 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   );
   assert.equal(new Set(ids).size, ids.length, `${route}: duplicate IDs`);
   assert.equal(elements(built, "h1").length, 1, `${route}: main heading`);
+  // Approved local Blog navigation; change only the two shared reference links in memory.
+  for (const region of ["header", "footer"]) {
+    const links = elements(elements(legacy, region)[0], "a").filter((node) =>
+      attr(node, "href") === "https://www.thebridgetherapy.com/blog");
+    assert.equal(links.length, 1, `${route}: expected one ${region} blog link`);
+    const link = links[0];
+    link.attrs.find((a) => a.name === "href").value = "/blog/";
+    if (region === "header") {
+      link.attrs = link.attrs.filter((a) => !["target", "rel"].includes(a.name));
+      for (const node of all(link, (n) => n.nodeName === "#text"))
+        node.value = node.value.replace("↗", "→");
+    }
+  }
   for (const tag of ["title", "header", "main", "footer"]) {
     let current = elements(built, tag)[0];
     if (route === "/contact/" && tag === "main") {
@@ -687,6 +700,15 @@ for (const [term, expected] of focusMappings) {
   const actual = [...pages].filter(([route, doc]) => route.startsWith("/therapists/") && route !== "/therapists/" && term.test(normalizedText(elements(doc, "main")[0]))).map(([route]) => route.split("/")[2]);
   assert.deepEqual(actual.sort(), expected.sort(), String(term));
 }
+// Include new blog routes in the same link/asset/widget checks.
+const blogIndex = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
+pages.set("/blog/", blogIndex);
+for (const entry of fs.readdirSync("content/blog", { withFileTypes: true }).filter((entry) => entry.isDirectory())) {
+  const record = JSON.parse(fs.readFileSync(`content/blog/${entry.name}/metadata.json`, "utf8"));
+  const article = parse(fs.readFileSync(`.next/server/app${record.legacyPath}.html`, "utf8"));
+  pages.set(record.legacyPath, article);
+  pages.set(`${record.legacyPath}/`, article);
+}
 for (const [route, doc] of pages) {
   assert.equal(all(doc, (n) => attr(n, "id") === "chat-open").length, 1, `${route}: expected one inquiry launcher`);
   assert.ok(!normalizedText(doc).includes("Chat preview:"), `${route}: obsolete chat placeholder`);
@@ -695,7 +717,10 @@ for (const [route, doc] of pages) {
     assert.equal(contacts.length, 2);
     contacts.forEach((n) => assert.equal(attr(n, "href"), `/contact/?therapist=${route.split("/")[2]}`));
   }
-  assert.ok(!/Military|Psychological (?:assessment|testing)/i.test(normalizedText(doc)), route + ": removed service");
+  // Historical articles are immutable; removed-service rules still cover all new chrome.
+  const currentSiteText = (node) => ["script", "style"].includes(node.tagName) || attr(node, "data-original-article-body") !== undefined
+    ? "" : node.nodeName === "#text" ? node.value : (node.childNodes ?? []).map(currentSiteText).join(" ");
+  assert.ok(!/Military|Psychological (?:assessment|testing)/i.test(route.startsWith("/news/") ? currentSiteText(doc) : normalizedText(doc)), route + ": removed service");
   for (const node of all(
     doc,
     (entry) =>
@@ -705,6 +730,13 @@ for (const [route, doc] of pages) {
     if (/^(?:[a-z]+:|\/\/)/i.test(value)) continue;
     const url = new URL(value, `http://localhost${route}`);
     if (url.pathname.startsWith("/_next/")) continue;
+    // Preserve these exact historical body destinations; launch disposition is deferred.
+    if (route.startsWith("/news/") && ["/schedule-an-apointment", "/what-we-believe", "/our-story"].includes(url.pathname)) {
+      let parent = node.parentNode;
+      while (parent && attr(parent, "data-original-article-body") === undefined) parent = parent.parentNode;
+      assert.ok(parent, `${route}: unresolved legacy link must remain inside original body`);
+      continue;
+    }
     const target = pages.get(url.pathname);
     assert.ok(
       target ||

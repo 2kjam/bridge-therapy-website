@@ -1,0 +1,4 @@
+# Preserve snapshot/content bytes and their checksums across Windows checkouts.
+content/blog/**/source/* -text
+content/blog/**/body.html -text
+public/assets/blog/** -text

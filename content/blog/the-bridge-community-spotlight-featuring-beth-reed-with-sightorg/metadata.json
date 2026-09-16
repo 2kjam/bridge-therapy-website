@@ -1,0 +1,90 @@
+{
+  "id": "6073237023d79b56f845ceb6",
+  "legacyPath": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+  "title": "The Bridge Community Spotlight featuring Beth Reed with Sight.org",
+  "publishedAt": "2021-04-11T16:59:34.657Z",
+  "publicationDate": "2021-04-11",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "The Bridge Community Spotlight featuring Beth Reed with Sight.org — The Bridge Therapeutic Services",
+    "description": "",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/6073237023d79b56f845ceb6/1769366717644/IMG_2051+copy.PNG?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1618159263622-WIFN9GD4AFZY4IC9KN8L/IMG_2051+copy.PNG",
+    "src": "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/featured.png",
+    "width": 2048,
+    "height": 2048,
+    "alt": "",
+    "sha256": "830ab676e8b3c404d91c4eb9a1774e5c4d821e22cdaa7bf1452fa7e99aa3ff67",
+    "bytes": 5679337,
+    "sourceDeclaredSize": "2048x2048"
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1618159263622-WIFN9GD4AFZY4IC9KN8L/IMG_2051+copy.PNG",
+      "src": "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/featured.png",
+      "width": 2048,
+      "height": 2048,
+      "alt": "",
+      "sha256": "830ab676e8b3c404d91c4eb9a1774e5c4d821e22cdaa7bf1452fa7e99aa3ff67",
+      "bytes": 5679337,
+      "sourceDeclaredSize": "2048x2048"
+    },
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1618159472451-1OFP5TDC2DVC5IGMQ3XO/17504401_1307682365987058_4684543869110211591_o.jpg",
+      "src": "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/body-1.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "17504401_1307682365987058_4684543869110211591_o.jpg",
+      "sha256": "f24078decb337e8f78d252f533c4b31bb04fa5a90f4f94cce1930c04ea1f2081",
+      "bytes": 203934,
+      "sourceDeclaredSize": "1280x720"
+    },
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1618159564071-AT425YKQLMQYPKW33RGT/43562272_10100272337885313_3181240065208614912_o+%281%29.jpg",
+      "src": "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/body-2.jpg",
+      "width": 1365,
+      "height": 1365,
+      "alt": "43562272_10100272337885313_3181240065208614912_o (1).jpg",
+      "sha256": "bc68868e5e681ba8355ba25c426d9a4576d7aa51930a4661872b63c016da501f",
+      "bytes": 160414,
+      "sourceDeclaredSize": "1365x1365"
+    },
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1618159708833-CT6HTR6GRPYHL0BTHE31/2J9A5102.jpg",
+      "src": "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/body-3.jpg",
+      "width": 2500,
+      "height": 2000,
+      "alt": "2J9A5102.jpg",
+      "sha256": "418990430247ec82341dd06351e17555f3100a87332d5279c43fcad9f70c3e23",
+      "bytes": 979052,
+      "sourceDeclaredSize": "2500x2000"
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:07.657Z",
+    "url": "https://www.thebridgetherapy.com/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+    "sourceUpdatedAt": "2026-01-25T18:45:17.644Z",
+    "displayedDate": "Apr 11",
+    "hashes": {
+      "page.html": "3bc0ab0f15b7d77794720c982780c730319f07db800b6b4d8d265464187b0f79",
+      "item.json": "adf097c0540c5fb03b0088695016805cda457007ee0c63d01ce5c9272f7f82f1",
+      "body.html": "7e48ae68d8560fd07eac06ac059de09defe881f1082869758fc26ce00c661f95",
+      "../body.html": "1e37d3ec688c4f64b4fcbaf4887958c84e1cf35da93f79da294d023c719cd09f"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block image-block sqs-block-image",
+      "sqs-block image-block sqs-block-image",
+      "sqs-block image-block sqs-block-image",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "5c2cac65f950b760dd722b16",
+  "legacyPath": "/news/2019/1/2/big-news",
+  "title": "Big News!",
+  "publishedAt": "2019-01-01T13:26:00.664Z",
+  "publicationDate": "2019-01-01",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood, LPC-S",
+  "excerptHtml": "<p style=\"white-space: pre-wrap;\">We are excited to announce that as of January 1, 2019 Wood Christian Counseling has changed its name and will now be The Bridge Therapeutic Services, PLLC. We will still provide everything you have loved about Wood Christian Counseling, and we are expanding our services to offer whole health care! Our office location and phone number will remain the same.</p>",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Big News! — The Bridge Therapeutic Services",
+    "description": " We are excited to announce that as of January 1, 2019 Wood Christian Counseling has changed its name and will now be The Bridge Therapeutic Services, PLLC. We will still provide everything you have loved about Wood Christian Counseling, and we are expanding our services to offer whole health care! Our office location and phone number will remain the same. ",
+    "sourceCanonical": "https://www.thebridgetherapy.com/news/2019/1/2/big-news",
+    "sourceOpenGraphImage": "http://static1.squarespace.com/static/5b98eac23e2d0982a39619c2/5b9e86b46d2a73605fb1c5c2/5c2cac65f950b760dd722b16/1769374352883/Erin+and+Jennifer.JPG?format=1500w"
+  },
+  "featuredImage": {
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546431975587-NKUADPQYMYSHSIZNXCFG/Erin+and+Jennifer.JPG",
+    "src": "/assets/blog/big-news/featured.jpg",
+    "width": 1024,
+    "height": 680,
+    "alt": "",
+    "sha256": "1d90045762cbede76e9541ea6a6161d1875e6931fe1e21fc56c79a3120744438",
+    "bytes": 212648
+  },
+  "assets": [
+    {
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5b98eac23e2d0982a39619c2/1546431975587-NKUADPQYMYSHSIZNXCFG/Erin+and+Jennifer.JPG",
+      "src": "/assets/blog/big-news/featured.jpg",
+      "width": 1024,
+      "height": 680,
+      "alt": "",
+      "sha256": "1d90045762cbede76e9541ea6a6161d1875e6931fe1e21fc56c79a3120744438",
+      "bytes": 212648
+    }
+  ],
+  "source": {
+    "capturedAt": "2026-09-16T21:28:33.275Z",
+    "url": "https://www.thebridgetherapy.com/news/2019/1/2/big-news",
+    "sourceUpdatedAt": "2026-01-25T20:52:32.883Z",
+    "displayedDate": "Jan 1",
+    "hashes": {
+      "page.html": "a2de5fd5359ad7f8a8d25b0c2f7b746e90383320e30d3e74942af864c1cb9fbc",
+      "item.json": "2d4b9af883bbe1a705861616cb93b2bfe12320220501ba52c5e2a23949edbc54",
+      "body.html": "d0d033fdea4dc5b181c509ffeefbb50355c3e104eef579a0925254c072402040",
+      "../body.html": "d05d087bac4d47d2bef79677c7f0154c671b08924954837473c5b43328fce1d9"
+    },
+    "blockTypes": [
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-button button-block",
+      "sqs-block website-component-block sqs-block-website-component sqs-block-html html-block"
+    ],
+    "transformation": "Exact inner-HTML slices of text blocks; only same-site migrated article href destinations localized. Image blocks retain order, links and source alt values with original local bytes and proportional wrappers. Vimeo deferred markup becomes a responsive iframe with the exact source URL/title, fullscreen permission and no autoplay permission. Button anchor preserved verbatim. Empty spacer and platform-only layout/style/script wrappers omitted."
+  }
+}
