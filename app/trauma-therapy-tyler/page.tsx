@@ -48,9 +48,10 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our trauma counselors"}</a></p>
             </div>
             <figure>
               <img
@@ -171,7 +172,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"}>{"Experience you can ask about."}</h2>
+            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Experience you can ask about."}</h2>
             <p>
               {
                 "These counselors have experience with trauma and training in EMDR. Contact our office to discuss your needs and current availability."
@@ -284,7 +285,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact our office"}</a>
               {
-                " by phone or email. Ask about your counselor, insurance plan, appointment type, and payment options before your visit."
+                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about trauma and PTSD counseling and scheduling. Ask about your counselor, insurance plan, appointment type, and payment options before your visit."
               }
             </p>
           </details>
@@ -325,7 +326,7 @@ export default function Page() {
             <p>{"Contact our Tyler office about trauma & PTSD counseling."}</p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

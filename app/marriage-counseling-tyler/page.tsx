@@ -52,9 +52,10 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p><a className={"service-text-link"} href={"#couples-team-title"}>{"Meet our marriage counselors"}</a></p>
             </div>
             <figure>
               <img
@@ -117,7 +118,11 @@ export default function Page() {
               <h3>{"Parenting & family roles"}</h3>
               <p>
                 {
-                  "Work through differing expectations about parenting, responsibilities, and relationships with extended family."
+                  "Work through differing expectations about parenting, responsibilities, and relationships with extended family. Marriage counseling centers on the couple relationship; "
+                }
+                <a href={"/family-counseling-tyler/"}>{"family counseling"}</a>
+                {
+                  " may be a useful starting point for concerns involving broader family relationships."
                 }
               </p>
             </article>
@@ -135,7 +140,11 @@ export default function Page() {
               <h3>{"Preparing for marriage"}</h3>
               <p>
                 {
-                  "Ask our office about premarital counseling to explore expectations, communication, and the life you hope to build together."
+                  "Ask our office about "
+                }
+                <a href={"/premarital-counseling-tyler/"}>{"premarital counseling"}</a>
+                {
+                  " to explore expectations, communication, and the life you hope to build together."
                 }
               </p>
             </article>
@@ -161,17 +170,9 @@ export default function Page() {
             </p>
             <a
               className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
-            >
-              {"Read about our beliefs ↗"}
-            </a>
-            <a
-              className={"service-text-link"}
               href={"/christian-counseling-tyler/"}
             >
-              {"Explore Christian Counseling →"}
+              {"Learn about Christian counseling"}
             </a>
           </div>
           <div className={"process-points"}>
@@ -212,7 +213,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"couples-team-title"}>
+            <h2 id={"couples-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
               {"Support for your relationship."}
             </h2>
             <p>
@@ -285,10 +286,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n"}
@@ -336,7 +335,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact The Bridge"}</a>
               {
-                " by phone or email and let us know you’re interested in couples counseling. Our office will help with availability and scheduling at our Tyler office."
+                " through the website inquiry form, the conversational inquiry widget, phone, or email to ask about couples counseling and scheduling at our Tyler office."
               }
             </p>
           </details>
@@ -372,11 +371,11 @@ export default function Page() {
         >
           <div>
             <p className={"eyebrow"}>{"TAKE THE NEXT STEP"}</p>
-            <h2 id={"couples-booking-title"}>{"Start with a conversation."}</h2>
+            <h2 id={"couples-booking-title"}>{"Take the next step together."}</h2>
             <p>{"Contact our office about marriage and couples counseling."}</p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

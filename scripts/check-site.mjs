@@ -203,6 +203,203 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     appendHtml(paragraphs.find((node) => normalizedText(node).startsWith("Explore communication about children")), ' You can also explore <a href="/parenting-support-tyler/">parenting support</a>.');
     appendHtml(paragraphs.find((node) => normalizedText(node).startsWith("Family change can bring different concerns")), ' If a younger family member needs their own space to talk, explore <a href="/child-teen-counseling-tyler/">support for children and teens</a>.');
   }
+  // Approved faith-link consolidation, without changing frozen reference files.
+  for (const link of elements(legacy, "a").filter(n => attr(n, "href") === "https://www.thebridgetherapy.com/what-we-believe")) {
+    const inHeader = elements(elements(legacy, "header")[0], "a").includes(link);
+    if ((inHeader && attr(link, "class") !== "menu-feature wide") || (!inHeader && route === "/christian-counseling-tyler/")) {
+      link.parentNode.childNodes = link.parentNode.childNodes.filter(n => n !== link);
+      continue;
+    }
+    link.attrs = link.attrs.filter(a => !["target", "rel"].includes(a.name));
+    link.attrs.find(a => a.name === "href").value = "/christian-counseling-tyler/";
+    if (inHeader) {
+      elements(link, "strong")[0].childNodes = parseFragment("Christian Counseling").childNodes;
+      elements(link, "b")[0].childNodes = parseFragment("Learn more").childNodes;
+      for (const n of all(link, n => n.nodeName === "#text")) n.value = n.value.replace("Discover the heart behind The Bridge.", "Learn how faith and counseling come together at The Bridge.");
+    } else link.childNodes = parseFragment("Learn about Christian counseling").childNodes;
+  }
+  if (route === "/anxiety-counseling-tyler/") {
+    const main = elements(legacy, "main")[0];
+    const replacements = [
+      ["Book an Appointment", "Ask About an Appointment"],
+      ["Understand your concerns.", "Understand how worry affects you."],
+      ["Find the right starting point.", "Explore related support."],
+      ["Start with a conversation.", "Ask about support for anxiety."],
+      ["Erin works with children, adolescents, individual adults, and families. Her areas of experience include anxiety disorders, trauma, depression, and grief.", "Erin works with children, adolescents, individual adults, and families. Her experience includes anxiety, phobias, and trauma-related concerns, with a background in private practice, foster care and adoption services, and elementary education."],
+      ["Jill works with individual adults experiencing anxiety, life transitions, grief, relationship concerns, and spiritual issues. Her counseling is grounded in her Christian faith.", "Jill works with individual adults facing anxiety, life transitions, relationship concerns, and grief. Her Christian and biblical perspective is an important part of her counseling work."]
+    ];
+    for (const n of all(main, n => n.nodeName === "#text"))
+      for (const [before, after] of replacements) n.value = n.value.replace(before, after);
+    const hero = all(main, n => attr(n, "class") === "service-hero")[0];
+    appendHtml(elements(hero, "div")[1], '<p><a class="service-text-link" href="#anxiety-team-title">Meet our anxiety counselors</a></p>');
+    const heading = all(main, n => attr(n, "id") === "anxiety-team-title")[0];
+    heading.attrs.push({name:"tabindex",value:"-1"}, {name:"style",value:"scroll-margin-top:2rem"});
+    const directory = elements(main, "a").find(n => attr(n,"href") === "/therapists/");
+    directory.attrs = directory.attrs.filter(a => !["target","rel"].includes(a.name));
+    directory.childNodes = parseFragment("View All Therapists").childNodes;
+  }
+  if (route === "/marriage-counseling-tyler/") {
+    const main = elements(legacy, "main")[0];
+    for (const n of all(main, n => n.nodeName === "#text")) {
+      n.value = n.value.replace("Book an Appointment", "Ask About an Appointment")
+        .replace("Start with a conversation.", "Take the next step together.")
+        .replace(" by phone or email and let us know you’re interested in couples counseling. Our office will help with availability and scheduling at our Tyler office.", " through the website inquiry form, the conversational inquiry widget, phone, or email to ask about couples counseling and scheduling at our Tyler office.");
+    }
+    const hero = all(main, n => attr(n, "class") === "service-hero")[0];
+    appendHtml(elements(hero, "div")[1], '<p><a class="service-text-link" href="#couples-team-title">Meet our marriage counselors</a></p>');
+    const heading = all(main, n => attr(n, "id") === "couples-team-title")[0];
+    heading.attrs.push({name:"tabindex",value:"-1"}, {name:"style",value:"scroll-margin-top:2rem"});
+    const duplicate = elements(main, "a").find(n => normalizedText(n).startsWith("Explore Christian Counseling"));
+    duplicate.parentNode.childNodes = duplicate.parentNode.childNodes.filter(n => n !== duplicate);
+    const directory = elements(main, "a").find(n => attr(n,"href") === "/therapists/");
+    directory.attrs = directory.attrs.filter(a => !["target","rel"].includes(a.name));
+    directory.childNodes = parseFragment("View All Therapists").childNodes;
+    const premarital = elements(all(main, n => attr(n,"id") === "premarital")[0], "p")[0];
+    premarital.childNodes = parseFragment('Ask our office about <a href="/premarital-counseling-tyler/">premarital counseling</a> to explore expectations, communication, and the life you hope to build together.').childNodes;
+    const family = elements(main, "p").find(n => normalizedText(n).startsWith("Work through differing expectations about parenting"));
+    appendHtml(family, ' Marriage counseling centers on the couple relationship; <a href="/family-counseling-tyler/">family counseling</a> may be a useful starting point for concerns involving broader family relationships.');
+  }
+  // Approved service-page inquiry and local-directory consistency batch.
+  const serviceInquiryUpdates = {
+  "/individual-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about individual counseling and scheduling."
+  ],
+  "/depression-counseling-tyler/": [
+    " by phone or email.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about depression counseling and scheduling."
+  ],
+  "/trauma-therapy-tyler/": [
+    " by phone or email.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about trauma and PTSD counseling and scheduling."
+  ],
+  "/emdr-therapy-tyler/": [
+    " by phone or email.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about EMDR therapy and scheduling."
+  ],
+  "/grief-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about grief counseling and scheduling."
+  ],
+  "/adhd-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about ADHD counseling and support and scheduling."
+  ],
+  "/life-transitions-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about life transitions counseling and scheduling."
+  ],
+  "/pregnancy-postpartum-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about pregnancy and postpartum counseling and scheduling."
+  ],
+  "/premarital-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about premarital or marital enrichment counseling and scheduling."
+  ],
+  "/family-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about family counseling and scheduling."
+  ],
+  "/parenting-support-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about parenting support and scheduling."
+  ],
+  "/child-teen-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about child and teen counseling and scheduling."
+  ],
+  "/adoption-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about adoption and foster family support and scheduling."
+  ],
+  "/divorce-blended-family-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about divorce and blended family counseling and scheduling."
+  ],
+  "/christian-counseling-tyler/": [
+    " by phone or email to discuss scheduling.",
+    " through the website inquiry form, conversational inquiry widget, phone, or email to ask about Christian counseling and scheduling."
+  ]
+};
+  if (serviceInquiryUpdates[route]) {
+    const main = elements(legacy, "main")[0];
+    const [before, after] = serviceInquiryUpdates[route];
+    for (const n of all(main, n => n.nodeName === "#text")) {
+      n.value = n.value.replace("Book an Appointment", "Ask About an Appointment").replace(before, after);
+    }
+    for (const directory of elements(main, "a").filter(n => attr(n, "href") === "/therapists/")) {
+      directory.attrs = directory.attrs.filter(a => !["target", "rel"].includes(a.name));
+      directory.childNodes = parseFragment("View All Therapists").childNodes;
+    }
+    if (route === "/individual-counseling-tyler/") {
+      const duplicate = elements(main, "a").find(n => normalizedText(n).startsWith("Explore Christian Counseling"));
+      duplicate.parentNode.childNodes = duplicate.parentNode.childNodes.filter(n => n !== duplicate);
+    }
+  }
+  // Approved early links to existing service-page therapist headings.
+  const therapistJumps = {
+  "/individual-counseling-tyler/": [
+    "individual-team-title",
+    "Meet our individual counselors"
+  ],
+  "/depression-counseling-tyler/": [
+    "depression-team-title",
+    "Meet our depression counselors"
+  ],
+  "/trauma-therapy-tyler/": [
+    "team-title",
+    "Meet our trauma counselors"
+  ],
+  "/emdr-therapy-tyler/": [
+    "team-title",
+    "Meet our EMDR-trained counselors"
+  ],
+  "/grief-counseling-tyler/": [
+    "team-title",
+    "Meet our grief counselors"
+  ],
+  "/adhd-counseling-tyler/": [
+    "team-title",
+    "Meet our ADHD counselors"
+  ],
+  "/life-transitions-counseling-tyler/": [
+    "team-title",
+    "Meet our life transitions counselors"
+  ],
+  "/premarital-counseling-tyler/": [
+    "team-title",
+    "Meet our premarital counselors"
+  ],
+  "/family-counseling-tyler/": [
+    "team-title",
+    "Meet our family counselors"
+  ],
+  "/parenting-support-tyler/": [
+    "team-title",
+    "Meet our parenting counselors"
+  ],
+  "/child-teen-counseling-tyler/": [
+    "team-title",
+    "Meet our child & teen counselors"
+  ],
+  "/divorce-blended-family-counseling-tyler/": [
+    "team-title",
+    "Meet our divorce & blended family counselors"
+  ],
+  "/christian-counseling-tyler/": [
+    "team-title",
+    "Meet our Christian counselors"
+  ]
+};
+  if (therapistJumps[route]) {
+    const [id, wording] = therapistJumps[route];
+    const main = elements(legacy, "main")[0];
+    const hero = all(main, n => attr(n, "class") === "service-hero")[0];
+    appendHtml(elements(hero, "div")[1], '<p><a class="service-text-link" href="#' + id + '">' + wording.replaceAll("&", "&amp;") + '</a></p>');
+    const heading = all(main, n => attr(n, "id") === id)[0];
+    heading.attrs.push({name: "tabindex", value: "-1"}, {name: "style", value: "scroll-margin-top:2rem"});
+  }
   pages.set(route, built);
   const ids = all(built, (node) => attr(node, "id") !== undefined).map((node) =>
     attr(node, "id"),

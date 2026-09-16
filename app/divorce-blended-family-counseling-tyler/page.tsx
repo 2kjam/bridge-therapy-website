@@ -46,9 +46,10 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our divorce & blended family counselors"}</a></p>
             </div>
             <figure>
               <img
@@ -125,11 +126,9 @@ export default function Page() {
             </p>
             <a
               className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
+              href={"/christian-counseling-tyler/"}
             >
-              {"Read about our beliefs ↗"}
+              {"Learn about Christian counseling"}
             </a>
           </div>
           <div className={"process-points"}>
@@ -166,7 +165,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"}>{"Find a counselor who fits."}</h2>
+            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Find a counselor who fits."}</h2>
             <p>
               {
                 "These counselors have relevant experience. Contact our office about your needs, age group, and current appointment availability."
@@ -234,10 +233,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n "}
@@ -289,7 +286,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact our office"}</a>
               {
-                " by phone or email to discuss scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
+                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about divorce and blended family counseling and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
               }
             </p>
           </details>
@@ -337,7 +334,7 @@ export default function Page() {
             </p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

@@ -54,9 +54,10 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p><a className={"service-text-link"} href={"#individual-team-title"}>{"Meet our individual counselors"}</a></p>
             </div>
             <figure>
               <img
@@ -180,17 +181,9 @@ export default function Page() {
             </p>
             <a
               className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
-            >
-              {"Read about our beliefs ↗"}
-            </a>
-            <a
-              className={"service-text-link"}
               href={"/christian-counseling-tyler/"}
             >
-              {"Explore Christian Counseling →"}
+              {"Learn about Christian counseling"}
             </a>
           </div>
           <div className={"process-points"}>
@@ -227,7 +220,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"PEOPLE YOU CAN GET TO KNOW"}</p>
-            <h2 id={"individual-team-title"}>
+            <h2 id={"individual-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
               {"Meet a few of our counselors."}
             </h2>
             <p>
@@ -300,10 +293,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n"}
@@ -345,7 +336,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact The Bridge"}</a>
               {
-                " by phone or email to discuss scheduling. Our office is at 3800 Paluxy Drive, Suite 240, Building 2, Tyler, Texas."
+                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about individual counseling and scheduling. Our office is at 3800 Paluxy Drive, Suite 240, Building 2, Tyler, Texas."
               }
             </p>
           </details>
@@ -388,7 +379,7 @@ export default function Page() {
             </p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

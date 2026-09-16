@@ -326,13 +326,6 @@ export function Header() {
                 {"Our story ↗"}
               </a>
               <a
-                href={"https://www.thebridgetherapy.com/what-we-believe"}
-                target={"_blank"}
-                rel={"noopener"}
-              >
-                {"What we believe ↗"}
-              </a>
-              <a
                 href={"https://www.thebridgetherapy.com/blog"}
                 target={"_blank"}
                 rel={"noopener"}
@@ -351,18 +344,16 @@ export function Header() {
             </section>
             <a
               className={"menu-feature wide"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
+              href={"/christian-counseling-tyler/"}
             >
               <img
                 src={"/assets/team.jpg"}
                 alt={"A stone bridge surrounded by greenery"}
               />
               <span>
-                <strong>{"Connecting faith and care."}</strong>
-                {"Discover the heart behind The Bridge."}
-                <b>{"Our approach ↗"}</b>
+                <strong>{"Christian Counseling"}</strong>
+                {"Learn how faith and counseling come together at The Bridge."}
+                <b>{"Learn more"}</b>
               </span>
             </a>
           </NavMenu>

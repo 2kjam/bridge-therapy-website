@@ -52,9 +52,14 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p>
+                <a className={"service-text-link"} href={"#anxiety-team-title"}>
+                  {"Meet our anxiety counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -124,7 +129,7 @@ export default function Page() {
               {"PERSONAL CARE · A CHRISTIAN PERSPECTIVE"}
             </p>
             <h2 id={"process-title"}>
-              {"Understand your concerns."}
+              {"Understand how worry affects you."}
               <br />
               {"Consider your next steps."}
             </h2>
@@ -135,11 +140,9 @@ export default function Page() {
             </p>
             <a
               className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
+              href={"/christian-counseling-tyler/"}
             >
-              {"Read about our beliefs ↗"}
+              {"Learn about Christian counseling"}
             </a>
           </div>
           <div className={"process-points"}>
@@ -176,7 +179,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"anxiety-team-title"}>
+            <h2 id={"anxiety-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
               {"Experience working with anxiety."}
             </h2>
             <p>
@@ -202,7 +205,7 @@ export default function Page() {
                 </p>
                 <p>
                   {
-                    "Erin works with children, adolescents, individual adults, and families. Her areas of experience include anxiety disorders, trauma, depression, and grief."
+                    "Erin works with children, adolescents, individual adults, and families. Her experience includes anxiety, phobias, and trauma-related concerns, with a background in private practice, foster care and adoption services, and elementary education."
                   }
                 </p>
                 <a
@@ -231,7 +234,7 @@ export default function Page() {
                 </p>
                 <p>
                   {
-                    "Jill works with individual adults experiencing anxiety, life transitions, grief, relationship concerns, and spiritual issues. Her counseling is grounded in her Christian faith."
+                    "Jill works with individual adults facing anxiety, life transitions, relationship concerns, and grief. Her Christian and biblical perspective is an important part of her counseling work."
                   }
                 </p>
                 <a
@@ -249,10 +252,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n"}
@@ -319,7 +320,7 @@ export default function Page() {
         >
           <p className={"eyebrow"}>{"EXPLORE YOUR OPTIONS"}</p>
           <h2 id={"anxiety-related-title"}>
-            {"Find the right starting point."}
+            {"Explore related support."}
           </h2>
           <div className={"related-care"}>
             <a
@@ -349,7 +350,7 @@ export default function Page() {
         >
           <div>
             <p className={"eyebrow"}>{"REACH OUT WHEN YOU’RE READY"}</p>
-            <h2 id={"anxiety-booking-title"}>{"Start with a conversation."}</h2>
+            <h2 id={"anxiety-booking-title"}>{"Ask about support for anxiety."}</h2>
             <p>
               {
                 "Contact our Tyler office to ask about anxiety counseling and scheduling."
@@ -357,7 +358,7 @@ export default function Page() {
             </p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

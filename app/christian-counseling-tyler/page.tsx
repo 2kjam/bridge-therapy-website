@@ -44,9 +44,10 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
+              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our Christian counselors"}</a></p>
             </div>
             <figure>
               <img
@@ -119,14 +120,6 @@ export default function Page() {
                 "The Bridge describes its approach as Heart-Focused Christian Counseling: biblically grounded care that emphasizes hope, purpose, and connection with God, yourself, and others. The practice places this work within a trusting relationship between counselor and client."
               }
             </p>
-            <a
-              className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
-            >
-              {"Read about our beliefs ↗"}
-            </a>
           </div>
           <div className={"process-points"}>
             <article>
@@ -162,7 +155,7 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"}>{"Find a counselor who fits."}</h2>
+            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Find a counselor who fits."}</h2>
             <p>
               {
                 "These counselors have relevant experience. Contact our office about your needs, age group, and current appointment availability."
@@ -230,10 +223,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n "}
@@ -250,13 +241,6 @@ export default function Page() {
               {
                 "The practice’s stated approach draws on the Bible and emphasizes relationships with God, yourself, and others. Ask your counselor how this perspective shapes sessions and the work you do together. "
               }
-              <a
-                href={"https://www.thebridgetherapy.com/what-we-believe"}
-                target={"_blank"}
-                rel={"noopener"}
-              >
-                {"Read The Bridge’s beliefs ↗"}
-              </a>
             </p>
           </details>
           <details>
@@ -302,7 +286,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact our office"}</a>
               {
-                " by phone or email to discuss scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
+                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about Christian counseling and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
               }
             </p>
           </details>
@@ -346,7 +330,7 @@ export default function Page() {
             <p>{"Contact our Tyler office about christian counseling."}</p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

@@ -46,7 +46,7 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Book an Appointment "}
+                {"Ask About an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
             </div>
@@ -123,11 +123,9 @@ export default function Page() {
             </p>
             <a
               className={"service-text-link"}
-              href={"https://www.thebridgetherapy.com/what-we-believe"}
-              target={"_blank"}
-              rel={"noopener"}
+              href={"/christian-counseling-tyler/"}
             >
-              {"Read about our beliefs ↗"}
+              {"Learn about Christian counseling"}
             </a>
           </div>
           <div className={"process-points"}>
@@ -234,10 +232,8 @@ export default function Page() {
           <a
             className={"service-text-link"}
             href={"/therapists/"}
-            target={"_blank"}
-            rel={"noopener"}
           >
-            {"View All Therapists ↗"}
+            {"View All Therapists"}
           </a>
         </section>
         {"\n "}
@@ -295,7 +291,7 @@ export default function Page() {
             <p>
               <a href={"/contact/"}>{"Contact our office"}</a>
               {
-                " by phone or email to discuss scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
+                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about adoption and foster family support and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
               }
             </p>
           </details>
@@ -343,7 +339,7 @@ export default function Page() {
             </p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Book an Appointment "}
+            {"Ask About an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

@@ -162,3 +162,7 @@ The original root server.cjs, check-site.cjs, build-*.cjs, apply-ivory-design.cj
 netlify.toml contains the build command, publish directory, and Node version. Retain the automatic Next.js integration; do not publish public or add a static SPA fallback.
 
 Settings verified against [Netlify's framework build settings](https://docs.netlify.com/build/frameworks/overview/#nextjs) and [Next.js adapter documentation](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/).
+
+## Pending production SEO redirect
+
+Before production launch, include /what-we-believe/ -> **301** -> /christian-counseling-tyler/ in the final SEO migration/redirect map (including requests without the trailing slash). The new site consolidates its faith destination into Christian Counseling; no separate beliefs page is planned. This is documentation only: do not activate the redirect during staging or while the existing production site remains live.
