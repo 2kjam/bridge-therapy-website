@@ -22,8 +22,10 @@ export function HeaderFrame({ children }: { children: ReactNode }) {
       if (
         event.target instanceof Node &&
         !header.current?.contains(event.target)
-      )
+      ) {
         setOpenPanel(null);
+        setMobileOpen(false);
+      }
     }
     function keyboard(event: KeyboardEvent) {
       if (event.key !== "Escape") return;

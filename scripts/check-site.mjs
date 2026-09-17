@@ -419,12 +419,39 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
         node.value = node.value.replace("↗", "→");
     }
   }
+  // Intentional CTA/navigation cleanup, applied only to the in-memory reference.
+  const referenceHeader = elements(legacy, "header")[0];
+  const helpCards = all(referenceHeader, n => attr(n, "class") === "menu-feature");
+  assert.equal(helpCards.length, 1);
+  const helpCard = helpCards[0];
+  const officeCard = parseFragment('<a class="menu-feature office-help" href="/contact/"><img src="/assets/kalynne.jpg" width="2500" height="3750" alt=""><span><strong>Not sure where to start?</strong><span class="office-help-name">Kalynne Arrick · Office Manager</span>Contact our office with questions about getting started.<b>Contact us →</b></span></a>').childNodes[0];
+  helpCard.attrs = officeCard.attrs;
+  helpCard.childNodes = officeCard.childNodes;
+  const referenceFooter = elements(legacy, "footer")[0];
+  const storyLinks = elements(referenceHeader, "a").filter(n => attr(n, "href") === "https://www.thebridgetherapy.com/our-story");
+  assert.equal(storyLinks.length, 1);
+  storyLinks[0].parentNode.childNodes = storyLinks[0].parentNode.childNodes.filter(n => n !== storyLinks[0]);
+  const footerDirectory = elements(referenceFooter, "a").filter(n => attr(n, "href") === "/#therapists");
+  assert.equal(footerDirectory.length, 1);
+  footerDirectory[0].attrs.find(a => a.name === "href").value = "/therapists/";
+  for (const link of elements(legacy, "a").filter(n => attr(n, "href") === "/contact/")) {
+    for (const node of all(link, n => n.nodeName === "#text")) {
+      node.value = node.value.replace("Ask About an Appointment", "Book an Appointment").replace("Book an appointment", "Book an Appointment");
+    }
+  }
   for (const tag of ["title", "header", "main", "footer"]) {
     let current = elements(built, tag)[0];
     if (route === "/contact/" && tag === "main") {
       // Validate the new form separately, while preserving every pre-existing contact element.
       current = parse(fs.readFileSync(builtFile, "utf8"));
       current = elements(current, "main")[0];
+      const staffFeatures = all(current, n => attr(n, "class") === "contact-staff");
+      assert.equal(staffFeatures.length, 1);
+      const staffFeature = staffFeatures[0];
+      assert.equal(normalizedText(staffFeature), "Kalynne Arrick Office Manager Kalynne’s background as a photography business owner has shaped her appreciation for listening, building trust, and helping people feel valued. Meet Kalynne →");
+      assert.equal(attr(elements(staffFeature, "a")[0], "href"), "/staff/kalynne-arrick/");
+      assert.equal(attr(elements(staffFeature, "img")[0], "src"), "/assets/kalynne.jpg");
+      staffFeature.parentNode.childNodes = staffFeature.parentNode.childNodes.filter(n => n !== staffFeature);
       const inquiry = all(current, (node) => attr(node, "id") === "inquiry")[0];
       assert.ok(inquiry);
       const visibleForm = elements(inquiry, "form")[0];
@@ -709,7 +736,16 @@ for (const entry of fs.readdirSync("content/blog", { withFileTypes: true }).filt
   pages.set(record.legacyPath, article);
   pages.set(`${record.legacyPath}/`, article);
 }
+const staffProfile = parse(fs.readFileSync(".next/server/app/staff/kalynne-arrick.html", "utf8"));
+assert.equal(normalizedText(elements(staffProfile, "h1")[0]), "Kalynne Arrick");
+assert.equal(normalizedText(elements(staffProfile, "title")[0]), "Kalynne Arrick, Office Manager | The Bridge");
+pages.set("/staff/kalynne-arrick/", staffProfile);
+
 for (const [route, doc] of pages) {
+  assert.ok(!normalizedText(all(doc, n => attr(n, "id") === "team-panel")[0]).includes("Kalynne"), `${route}: staff excluded from therapist carousel`);
+  if (route !== "/contact/" && !route.startsWith("/staff/")) {
+    assert.ok(!normalizedText(elements(doc, "main")[0]).includes("Kalynne"), `${route}: staff excluded from clinical content`);
+  }
   assert.equal(all(doc, (n) => attr(n, "id") === "chat-open").length, 1, `${route}: expected one inquiry launcher`);
   assert.ok(!normalizedText(doc).includes("Chat preview:"), `${route}: obsolete chat placeholder`);
   if (route.startsWith("/therapists/") && route !== "/therapists/") {

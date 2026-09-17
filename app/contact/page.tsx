@@ -94,6 +94,15 @@ export default function Page() {
           {"\n  "}
         </section>
         {"\n  "}
+        <section className="contact-staff" aria-labelledby="contact-staff-title">
+          <img src="/assets/kalynne.jpg" width="2500" height="3750" alt="" loading="lazy" />
+          <div>
+            <h2 id="contact-staff-title">Kalynne Arrick</h2>
+            <p className="contact-staff-role">Office Manager</p>
+            <p>Kalynne’s background as a photography business owner has shaped her appreciation for listening, building trust, and helping people feel valued.</p>
+            <a href="/staff/kalynne-arrick/">Meet Kalynne →</a>
+          </div>
+        </section>
         <ContactInquiry />
         <section
           className={"contact-visit"}

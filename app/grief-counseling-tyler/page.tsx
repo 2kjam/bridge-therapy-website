@@ -48,7 +48,7 @@ export default function Page() {
                 }
               </p>
               <a className={"button"} href={"/contact/"}>
-                {"Ask About an Appointment "}
+                {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
               <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our grief counselors"}</a></p>
@@ -332,7 +332,7 @@ export default function Page() {
             </p>
           </div>
           <a className={"button"} href={"/contact/"}>
-            {"Ask About an Appointment "}
+            {"Book an Appointment "}
             <span aria-hidden={"true"}>{"→"}</span>
           </a>
         </section>

@@ -52,6 +52,7 @@ body p{line-height:1.5}html{scroll-padding-top:100px}
 @media(prefers-reduced-motion:reduce){.ivory-service,.ivory-service img,.ivory-person{transition:none}.ivory-service:hover,.ivory-service:focus-visible,.ivory-person:hover,.ivory-person:focus-within{translate:none}.ivory-service:hover img{scale:none}}
 
 /* Explicit foregrounds override the former dark footer palette. */
+.site-footer.ivory-footer section>a{min-height:26px;padding-block:4px}
 .site-footer.ivory-footer :is(h2,a,a:visited){color:#21302c}
 .site-footer.ivory-footer a:hover{color:#41543c;text-decoration:underline;text-underline-offset:4px}
 .site-footer.ivory-footer a:focus-visible{outline:2px solid #41543c;outline-offset:4px;border-radius:2px}
@@ -73,3 +74,7 @@ body p{line-height:1.5}html{scroll-padding-top:100px}
 .mega-bottom{grid-column:1/-1;margin-inline:-30px;padding-inline:30px;border-radius:0 0 4px 4px}
 @media(max-width:1050px){.mega-bottom{margin-inline:0;padding-inline:16px;border-radius:0}}
 
+
+.menu-feature.office-help>img{display:block;width:100px;height:auto;margin:16px auto 0;border-radius:4px}
+.menu-feature.office-help .office-help-name{display:block;padding:0;margin:8px 0;font-weight:600}
+@media(max-width:1050px){.menu-feature.office-help>img{width:100%;height:auto;margin:0}}

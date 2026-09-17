@@ -71,14 +71,17 @@ export function Header() {
                 </a>
               </section>
             </div>
-            <a className={"menu-feature"} href={"/contact/"}>
+            <a className={"menu-feature office-help"} href={"/contact/"}>
               <img
-                src={"/assets/erin.jpg"}
-                alt={"Erin Young, co-owner of The Bridge"}
+                src={"/assets/kalynne.jpg"}
+                width="2500"
+                height="3750"
+                alt=""
               />
               <span>
                 <strong>{"Not sure where to start?"}</strong>
-                {"Our office can help you find the right fit."}
+                <span className="office-help-name">Kalynne Arrick · Office Manager</span>
+                {"Contact our office with questions about getting started."}
                 <b>{"Contact us →"}</b>
               </span>
             </a>
@@ -319,13 +322,6 @@ export function Header() {
             <section>
               <h2>{"About The Bridge"}</h2>
               <a
-                href={"https://www.thebridgetherapy.com/our-story"}
-                target={"_blank"}
-                rel={"noopener"}
-              >
-                {"Our story ↗"}
-              </a>
-              <a
                 href={"/blog/"}
               >
                 {"Articles & resources →"}
@@ -333,7 +329,7 @@ export function Header() {
             </section>
             <section>
               <h2>{"Your first step"}</h2>
-              <a href={"/contact/"}>{"Book an appointment"}</a>
+              <a href={"/contact/"}>{"Book an Appointment"}</a>
               <a href={"/contact/#questions"}>
                 {"Questions about getting started"}
               </a>
