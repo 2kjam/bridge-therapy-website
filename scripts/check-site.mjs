@@ -5,6 +5,7 @@ import { parse, parseFragment } from "parse5";
 
 const routes = JSON.parse(fs.readFileSync("legacy/routes.json", "utf8"));
 const pages = new Map();
+const serviceImages = JSON.parse(fs.readFileSync("content/service-images.json", "utf8")).images;
 const attr = (node, name) =>
   node.attrs?.find((entry) => entry.name === name)?.value;
 function all(node, predicate) {
@@ -399,6 +400,20 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     appendHtml(elements(hero, "div")[1], '<p><a class="service-text-link" href="#' + id + '">' + wording.replaceAll("&", "&amp;") + '</a></p>');
     const heading = all(main, n => attr(n, "id") === id)[0];
     heading.attrs.push({name: "tabindex", value: "-1"}, {name: "style", value: "scroll-margin-top:2rem"});
+  }
+  // Approved stock-image batch: amend only the illustrative image attributes.
+  // The remaining frozen content, portraits, mappings and structure still compare exactly.
+  const imageReplacement = serviceImages.find(record => record.route === route && record.status === "imported");
+  if (imageReplacement) {
+    const hero = all(legacy, n => attr(n, "class") === "service-hero")[0];
+    const images = elements(hero, "img");
+    assert.equal(images.length, 1);
+    const illustrative = images[0];
+    assert.match(attr(illustrative, "src"), /^\/assets\/(individual|couples|family)-care\.jpg$/);
+    for (const [name, value] of Object.entries({src: imageReplacement.production.path, alt: imageReplacement.alt, width: "1440", height: "1080"})) {
+      illustrative.attrs.find(a => a.name === name).value = value;
+    }
+    illustrative.attrs.push({name: "style", value: `object-position:${imageReplacement.objectPosition}`});
   }
   pages.set(route, built);
   const ids = all(built, (node) => attr(node, "id") !== undefined).map((node) =>

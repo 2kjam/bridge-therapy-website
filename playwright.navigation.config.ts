@@ -2,8 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
-  testMatch: ["navigation.spec.ts", "migration.spec.ts", "staff.spec.ts"],
-  grep: /shared cleanup|navigation, keyboard|desktop hover|staff profile/,
+  testMatch: ["navigation.spec.ts", "migration.spec.ts", "staff.spec.ts", "service-images.spec.ts"],
+  grep: /shared cleanup|navigation, keyboard|desktop hover|staff profile|service images/,
   workers: 1,
   reporter: "list",
   outputDir: "test-results/navigation",

@@ -1,0 +1,317 @@
+{
+  "accessed": "2026-09-16",
+  "license": "https://www.pexels.com/license/",
+  "sourceArchive": "design-backups/service-image-batch-1/",
+  "images": [
+    {
+      "service": "Marriage",
+      "slug": "marriage",
+      "route": "/marriage-counseling-tyler/",
+      "id": 6248800,
+      "photographer": "Gary Barnes",
+      "source": "https://www.pexels.com/photo/focused-diverse-spouses-cooking-in-kitchen-at-home-6248800/",
+      "status": "rejected",
+      "reason": "Wide tablet crop loses the food-preparation hand/counter interaction; retaining it would cut into the faces. Existing image left unchanged.",
+      "original": {
+        "width": 6000,
+        "height": 4000,
+        "bytes": 4639517,
+        "sha256": "3ae9af92567355c0386fda0a3a1b22694b752685ee1f28a4f78a52a2573a9b05"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/6248800/pexels-photo-6248800.jpeg?cs=srgb&dl=pexels-gary-barnes-6248800.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Premarital",
+      "slug": "premarital",
+      "route": "/premarital-counseling-tyler/",
+      "id": 36812124,
+      "photographer": "Vitaly Gariev",
+      "source": "https://www.pexels.com/photo/couple-enjoying-gardening-together-in-greenhouse-36812124/",
+      "status": "imported",
+      "alt": "Two adults working with plants together",
+      "objectPosition": "50% 50%",
+      "original": {
+        "width": 3840,
+        "height": 2160,
+        "bytes": 923124,
+        "sha256": "bbde7e4e53de75794a444f4f384186b4a76ddc8dfd03fe6a80e53b3c3c33fe18"
+      },
+      "crop": {
+        "left": 480,
+        "top": 0,
+        "width": 2880,
+        "height": 2160
+      },
+      "production": {
+        "path": "/assets/services/service-premarital.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 214932,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "e473b09b714282ea5ee4150aa693bb115e9ac38e0cdaa404f2a5acff653ee384"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/36812124/pexels-photo-36812124.jpeg?cs=srgb&dl=pexels-silverkblack-36812124.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Family",
+      "slug": "family",
+      "route": "/family-counseling-tyler/",
+      "id": 6951906,
+      "photographer": "Artem Podrez",
+      "source": "https://www.pexels.com/photo/two-children-and-their-mother-playing-together-at-home-6951906/",
+      "status": "rejected",
+      "reason": "The three participants span too much of the portrait source width; the 901px crop cuts a child's face. Repositioning trades one cropped participant for another. Existing image left unchanged.",
+      "original": {
+        "width": 2126,
+        "height": 3780,
+        "bytes": 683971,
+        "sha256": "45ad2491cb9ee8f2e65969645ca171476dbb9266e65395513a5ae0359b977a57"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/6951906/pexels-photo-6951906.jpeg?cs=srgb&dl=pexels-artempodrez-6951906.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Parenting",
+      "slug": "parenting",
+      "route": "/parenting-support-tyler/",
+      "id": 23224897,
+      "photographer": "Vitaly Gariev",
+      "source": "https://www.pexels.com/photo/mother-and-son-playing-at-table-23224897/",
+      "status": "imported",
+      "alt": "An adult and child working on an activity together",
+      "objectPosition": "50% 60%",
+      "original": {
+        "width": 3840,
+        "height": 2160,
+        "bytes": 503014,
+        "sha256": "05a4ef24f5b3bf0cef397297785827c66b27680b559596ec0c519d3ebc80168e"
+      },
+      "crop": {
+        "left": 150,
+        "top": 0,
+        "width": 2880,
+        "height": 2160
+      },
+      "production": {
+        "path": "/assets/services/service-parenting.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 89206,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "7464e9278e15011129f02f7e9d7173f946fdd52215be5bf5952924032c2dd8f2"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/23224897/pexels-photo-23224897.jpeg?cs=srgb&dl=pexels-silverkblack-23224897.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Child & Teen",
+      "slug": "child-teen",
+      "route": "/child-teen-counseling-tyler/",
+      "id": 36277511,
+      "photographer": "Sóc Năng Động",
+      "source": "https://www.pexels.com/photo/focused-teen-working-on-creative-project-indoors-36277511/",
+      "status": "imported",
+      "alt": "A teenager working on a creative project",
+      "objectPosition": "50% 60%",
+      "original": {
+        "width": 5520,
+        "height": 3680,
+        "bytes": 1356049,
+        "sha256": "8d48c110c7594d17cf4f996d46661cfca4dbfda353e0a04284769755ddb98cfc"
+      },
+      "crop": {
+        "left": 308,
+        "top": 1,
+        "width": 4904,
+        "height": 3678
+      },
+      "production": {
+        "path": "/assets/services/service-child-teen.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 98294,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "be726409be014abc26caf228f6e5d76ff6eb30a47340fd6449dbd9382a45f5c2"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/36277511/pexels-photo-36277511.jpeg?cs=srgb&dl=pexels-soc-nang-d-ng-2150345854-36277511.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Pregnancy/Postpartum",
+      "slug": "pregnancy-postpartum",
+      "route": "/pregnancy-postpartum-counseling-tyler/",
+      "id": 27175810,
+      "photographer": "Helena Lopes",
+      "source": "https://www.pexels.com/photo/mother-and-baby-at-home-in-cozy-setting-27175810/",
+      "status": "imported",
+      "alt": "A parent holding a baby at home",
+      "objectPosition": "50% 60%",
+      "original": {
+        "width": 5472,
+        "height": 3648,
+        "bytes": 1413378,
+        "sha256": "33fb5f9595af596dbcf5422845bd0eac7998ec47745af93081c80244c2e9659a"
+      },
+      "crop": {
+        "left": 304,
+        "top": 0,
+        "width": 4864,
+        "height": 3648
+      },
+      "production": {
+        "path": "/assets/services/service-pregnancy-postpartum.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 72372,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "a09f4b4f13ebd9290706352697eb27d302a11e1cf0dc6cee9683bf6761f9fc44"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/27175810/pexels-photo-27175810.jpeg?cs=srgb&dl=pexels-helenalopes-27175810.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Adoption",
+      "slug": "adoption",
+      "route": "/adoption-counseling-tyler/",
+      "id": 7299819,
+      "photographer": "Ksenia Chernaya",
+      "source": "https://www.pexels.com/photo/a-mother-reading-a-book-with-her-child-in-bed-7299819/",
+      "status": "imported",
+      "alt": "An adult and child reading together",
+      "objectPosition": "50% 50%",
+      "original": {
+        "width": 4000,
+        "height": 2670,
+        "bytes": 583995,
+        "sha256": "53f30de9b7cfeaef1265a60b446cfa07b5eae0726545bb9edfa5a2f73765c243"
+      },
+      "crop": {
+        "left": 220,
+        "top": 0,
+        "width": 3560,
+        "height": 2670
+      },
+      "production": {
+        "path": "/assets/services/service-adoption.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 65428,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "a577a139f25d4fb3f383e34672e2fd1ab480d1fcdf10243d65cf84496ec13aca"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/7299819/pexels-photo-7299819.jpeg?cs=srgb&dl=pexels-kseniachernaya-7299819.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "Divorce & Blended Family",
+      "slug": "divorce-blended-family",
+      "route": "/divorce-blended-family-counseling-tyler/",
+      "id": 7669175,
+      "photographer": "Kampus Production",
+      "source": "https://www.pexels.com/photo/family-doing-picnic-together-7669175/",
+      "status": "imported",
+      "alt": "Two adults and a child spending time together outdoors",
+      "objectPosition": "50% 60%",
+      "original": {
+        "width": 6016,
+        "height": 4016,
+        "bytes": 1771287,
+        "sha256": "d5563a0d9627c0dcc4e2b4023d040d13a488d14612106888fd5b7c3ed1ceee17"
+      },
+      "crop": {
+        "left": 332,
+        "top": 1,
+        "width": 5352,
+        "height": 4014
+      },
+      "production": {
+        "path": "/assets/services/service-divorce-blended-family.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 139736,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "101addbeb5d3724fcaefacc730143648544ae61b075dddb5f5fdcf8df2102210"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/7669175/pexels-photo-7669175.jpeg?cs=srgb&dl=pexels-kampus-7669175.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    },
+    {
+      "service": "ADHD",
+      "slug": "adhd",
+      "route": "/adhd-counseling-tyler/",
+      "id": 36738895,
+      "photographer": "3B",
+      "source": "https://www.pexels.com/photo/hands-crafting-pottery-on-a-potter-s-wheel-36738895/",
+      "status": "imported",
+      "alt": "Hands shaping clay on a pottery wheel",
+      "objectPosition": "50% 65%",
+      "original": {
+        "width": 6597,
+        "height": 4398,
+        "bytes": 1560919,
+        "sha256": "041fb6ad2e655a266445147d957ec63a6afc645c83e0524347950247a886aaa7"
+      },
+      "crop": {
+        "left": 366,
+        "top": 0,
+        "width": 5864,
+        "height": 4398
+      },
+      "production": {
+        "path": "/assets/services/service-adhd.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 105908,
+        "format": "webp",
+        "quality": 85,
+        "sha256": "347007b042bc39a1231abeb77a23c9039d7f95e70e6aaeb8e8b038bbec547080"
+      },
+      "downloadUrl": "https://images.pexels.com/photos/36738895/pexels-photo-36738895.jpeg?cs=srgb&dl=pexels-3b-2152161509-36738895.jpg&fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "photographerVerifiedOnPage": true,
+        "freeToUseLinkVerified": true
+      }
+    }
+  ]
+}

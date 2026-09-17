@@ -51,10 +51,11 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/individual-care.jpg"}
-                alt={"A woman taking a quiet moment by a window"}
-                width={"900"}
-                height={"600"}
+                src={"/assets/services/service-parenting.webp"}
+                alt={"An adult and child working on an activity together"}
+                width={"1440"}
+                height={"1080"}
+                style={{ objectPosition: "50% 60%" }}
               />
               <figcaption>{"Support for you as a parent."}</figcaption>
             </figure>

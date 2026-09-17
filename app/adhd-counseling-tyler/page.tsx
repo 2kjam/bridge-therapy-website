@@ -55,10 +55,11 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/individual-care.jpg"}
-                alt={"A woman taking a quiet moment beside a window"}
-                width={"900"}
-                height={"600"}
+                src={"/assets/services/service-adhd.webp"}
+                alt={"Hands shaping clay on a pottery wheel"}
+                width={"1440"}
+                height={"1080"}
+                style={{ objectPosition: "50% 65%" }}
               />
               <figcaption>
                 {"Time to reflect. Support for your next step."}

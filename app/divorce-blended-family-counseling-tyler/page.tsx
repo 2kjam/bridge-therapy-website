@@ -53,10 +53,11 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/family-care.jpg"}
-                alt={"A family walking together outdoors"}
-                width={"900"}
-                height={"600"}
+                src={"/assets/services/service-divorce-blended-family.webp"}
+                alt={"Two adults and a child spending time together outdoors"}
+                width={"1440"}
+                height={"1080"}
+                style={{ objectPosition: "50% 60%" }}
               />
               <figcaption>
                 {"Support through changing family relationships."}

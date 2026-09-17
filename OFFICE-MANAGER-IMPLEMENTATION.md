@@ -1,5 +1,29 @@
 # Office Manager implementation
 
+## Staff layout refinement — September 16, 2026
+
+This refinement changes only Kalynne's page presentation. A page-only stylesheet (`public/staff-profile.css`) replaces the sparse introduction with a compact 240 × 360 desktop portrait beside her name, Office Manager role, introductory heading, short administrative copy and a single Contact CTA. Previously the portrait measured 320 × 480 with only name, role and button beside it. The redundant bottom CTA section is removed.
+
+Intro heading: **Helping you get started at The Bridge**.
+
+Exact intro: “Kalynne is The Bridge’s Office Manager. If you have questions about getting started, our office is here to help you take the next step.” This directs workflow questions to the office without assigning unverified individual responsibilities.
+
+Mobile order: name, role, introductory heading/copy, Contact CTA, proportional 180 × 270 portrait, About Kalynne. Biography reading width is capped at 740px. All six approved paragraphs remain verbatim and in order. Scripture uses a restrained ivory block with a thin green rule, retaining its exact wording and reference without a translation label. Breadcrumb is now **Home → Kalynne Arrick**.
+
+Files for this refinement: `app/staff/kalynne-arrick/page.tsx`, new `public/staff-profile.css`, `tests/staff.spec.ts`, and this report. Shared CSS, all other pages, Contact/menu content, photograph, metadata and therapist mappings are unchanged. Earlier sections below record prior designs.
+
+Refinement validation: build, check, lint and diff check passed. All eight staff browser regressions passed across desktop/mobile projects and widths 375, 390, 768 and 1440px. Screenshots reviewed at each width. Tests verify exact biography/scripture/introduction, proportional smaller portraits, mobile ordering, simplified breadcrumb, one Contact CTA, working links, no overflow and exclusion from therapist listings. Existing site checks confirm unchanged clinical mappings and staging behavior. No push or deployment.
+
+## Approved biography update — September 16, 2026
+
+The newly supplied user biography supersedes the original shortened profile and the original omission decisions recorded below. All six approved paragraphs, including the education in progress, counseling interests and scripture, now appear verbatim under **About Kalynne**. The exact approved text is preserved in `tests/fixtures/kalynne-approved-biography.txt` and checked against the rendered page at all four requested widths.
+
+Current structure: breadcrumb; unchanged portrait, H1 **Kalynne Arrick**, role **Office Manager**, and Contact CTA; readable full-width biography using the existing profile-details design; unchanged getting-started Contact section. No Bible translation label added. Metadata, photo, route, Contact feature, administrative menu card, therapist mappings and all other site content remain unchanged by this update. The historical implementation record below describes the initial version rather than the current biography.
+
+Files changed for this update: `app/staff/kalynne-arrick/page.tsx`, `tests/staff.spec.ts`, this report. Created: `tests/fixtures/kalynne-approved-biography.txt`.
+
+Update validation: build, check (including exact therapist specialty mappings), lint and diff check passed. Staff/navigation suite: 21 passed, one desktop-hover test skipped on mobile. Existing Contact browser regressions passed with mocked submissions. All six rendered paragraphs match the approved fixture at 375, 390, 768 and 1440 pixels; screenshots visually reviewed at each width. Sarah Critzman's Play Therapy mapping remains unchanged. Nothing pushed or deployed.
+
 Verified September 16, 2026: **Kalynne Arrick — Office Manager**.
 
 ## Sources and photograph

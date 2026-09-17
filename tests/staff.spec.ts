@@ -1,4 +1,7 @@
 import { test, expect } from "@playwright/test";
+import fs from "node:fs";
+
+const approvedBiography = fs.readFileSync("tests/fixtures/kalynne-approved-biography.txt", "utf8").trim().split(/\r?\n\r?\n/);
 
 for (const width of [375, 390, 768, 1440]) {
   test(`staff profile: portrait, contact links and administrative placement at ${width}px`, async ({ page }, testInfo) => {
@@ -8,11 +11,21 @@ for (const width of [375, 390, 768, 1440]) {
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex, nofollow/);
     await expect(page.locator("h1")).toHaveText("Kalynne Arrick");
     await expect(page.locator("main .profile-credential")).toHaveText("Office Manager");
+    await expect(page.locator(".profile-details p")).toHaveText(approvedBiography);
+    await expect(page.locator(".staff-scripture p")).toHaveText(approvedBiography[5]);
+    await expect(page.locator(".profile-breadcrumb li")).toHaveText(["Home", "Kalynne Arrick"]);
+    await expect(page.locator("main .button")).toHaveCount(1);
+    await expect(page.locator(".profile-intro h2")).toHaveText("Helping you get started at The Bridge");
+    await expect(page.locator(".profile-intro h2 + p")).toHaveText("Kalynne is The Bridge’s Office Manager. If you have questions about getting started, our office is here to help you take the next step.");
     const portrait = page.locator("main img");
     const bounds = await portrait.boundingBox();
     expect(bounds).not.toBeNull();
     expect(bounds!.height / bounds!.width).toBeCloseTo(1.5, 1);
-    expect(bounds!.width).toBeLessThanOrEqual(320);
+    expect(bounds!.width).toBeLessThanOrEqual(width <= 600 ? 180 : 240);
+    if (width <= 600) {
+      const intro = await page.locator(".profile-intro > div").boundingBox();
+      expect(intro!.y + intro!.height).toBeLessThan(bounds!.y);
+    }
     await expect(portrait).toHaveJSProperty("naturalWidth", 2500);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.screenshot({ path: testInfo.outputPath(`staff-${width}.png`), fullPage: true });

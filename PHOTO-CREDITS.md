@@ -31,3 +31,38 @@ Hero revision — original portraits: The homepage now displays all eleven exist
 Active homepage hero: hero-connection.jpg, SHVETS production, Pexels: https://www.pexels.com/photo/a-woman-listening-to-a-person-talking-7176185/ . Source labels it free to use; license: https://www.pexels.com/license/ . Illustrative stock counseling scene; does not depict The Bridge staff, clients, or office. Original photograph displayed with CSS cropping and a cream readability gradient. Replaces both the generated group scene and portrait gallery.
 
 Active hero concept: Jennifer Wood and Erin Young displayed side by side using the existing original practice portraits (jennifer.jpg and erin.jpg). CSS display cropping aligns their visual scale; no generated faces or scene. The stock counseling image is now unused in the hero.
+
+
+## Service-image batch 1 - September 16, 2026
+
+All nine user-selected Pexels pages were verified before downloading their linked original JPEGs. Each page displayed the credited photographer and Free to use license link. License: https://www.pexels.com/license/ (accessed 2026-09-16). Illustrative stock only: these people are not identified as Bridge clients, patients or staff; no diagnosis, adoptive/blended relationship or endorsement is implied.
+
+Original acquisitions and trial crops are retained locally in ignored `design-backups/service-image-batch-1/`, outside public production. `content/service-images.json` records source checksums, dimensions, restrained crop coordinates, production checksums, alt text and focal positions. Only crop, downscale and WebP compression were applied; no retouching, filters, object removal or generation.
+
+| Service/page | Production file | Photographer / source | Original | Production | Bytes |
+|---|---|---|---|---|---|
+| /premarital-counseling-tyler/ | `/assets/services/service-premarital.webp` | [Vitaly Gariev - Pexels](https://www.pexels.com/photo/couple-enjoying-gardening-together-in-greenhouse-36812124/) | 3840 x 2160 | 1440 x 1080 WebP | 214932 |
+| /parenting-support-tyler/ | `/assets/services/service-parenting.webp` | [Vitaly Gariev - Pexels](https://www.pexels.com/photo/mother-and-son-playing-at-table-23224897/) | 3840 x 2160 | 1440 x 1080 WebP | 89206 |
+| /child-teen-counseling-tyler/ | `/assets/services/service-child-teen.webp` | [Sóc Năng Động - Pexels](https://www.pexels.com/photo/focused-teen-working-on-creative-project-indoors-36277511/) | 5520 x 3680 | 1440 x 1080 WebP | 98294 |
+| /pregnancy-postpartum-counseling-tyler/ | `/assets/services/service-pregnancy-postpartum.webp` | [Helena Lopes - Pexels](https://www.pexels.com/photo/mother-and-baby-at-home-in-cozy-setting-27175810/) | 5472 x 3648 | 1440 x 1080 WebP | 72372 |
+| /adoption-counseling-tyler/ | `/assets/services/service-adoption.webp` | [Ksenia Chernaya - Pexels](https://www.pexels.com/photo/a-mother-reading-a-book-with-her-child-in-bed-7299819/) | 4000 x 2670 | 1440 x 1080 WebP | 65428 |
+| /divorce-blended-family-counseling-tyler/ | `/assets/services/service-divorce-blended-family.webp` | [Kampus Production - Pexels](https://www.pexels.com/photo/family-doing-picnic-together-7669175/) | 6016 x 4016 | 1440 x 1080 WebP | 139736 |
+| /adhd-counseling-tyler/ | `/assets/services/service-adhd.webp` | [3B - Pexels](https://www.pexels.com/photo/hands-crafting-pottery-on-a-potter-s-wheel-36738895/) | 6597 x 4398 | 1440 x 1080 WebP | 105908 |
+
+Verified but not imported into production:
+
+- Marriage: [Gary Barnes - Pexels](https://www.pexels.com/photo/focused-diverse-spouses-cooking-in-kitchen-at-home-6248800/), 6000 x 4000. Wide tablet crop loses the food-preparation hand/counter interaction; retaining it would cut into the faces. Existing image left unchanged.
+- Family: [Artem Podrez - Pexels](https://www.pexels.com/photo/two-children-and-their-mother-playing-together-at-home-6951906/), 2126 x 3780. The three participants span too much of the portrait source width; the 901px crop cuts a child's face. Repositioning trades one cropped participant for another. Existing image left unchanged.
+
+## Service image batch 2 review (2026-09-16; no new production assets)
+
+The following source pages and photographer credits were verified, and their linked original JPEGs downloaded for temporary crop review under the [Pexels license](https://www.pexels.com/license/). Neither candidate passed all required responsive widths, so neither is used on the website:
+
+- Marriage: [Vitaly Gariev - Pexels](https://www.pexels.com/photo/couple-cooking-together-in-modern-kitchen-36812175/), original 3840 x 2160. Rejected for face/activity cropping at 768/900/901px. No production filename or new alt text assigned.
+- Family: [Artem Podrez - Pexels](https://www.pexels.com/photo/a-woman-and-children-sitting-at-a-table-6951916/), original 2152 x 3826. Rejected because the 901px crop cuts a child's face. No production filename or new alt text assigned.
+
+The prior Gary Barnes Marriage candidate was retested and remains rejected. Authorized Family fallbacks 7982826 and 8120333 could not have their source pages/attribution verified because Pexels returned a verification screen; they were not downloaded or used.
+
+### Approved generated EMDR imagery: source pending
+
+The user identifies `/mnt/data/a_serene_close_up_nature_focused_scene_of_a_calm.png` as approved non-human decorative imagery generated specifically for the new Bridge website. That file is unavailable in the current Windows workspace, so `service-emdr.webp` has not been created or used. This is a pending provenance note, not a production asset credit. It has no photographer or stock-provider attribution. See [the batch 2 report](SERVICE-IMAGE-BATCH-2.md) for crop evidence and outstanding inputs.

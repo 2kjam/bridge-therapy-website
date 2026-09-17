@@ -55,10 +55,11 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/couples-care.jpg"}
-                alt={"Two people sitting together on a sofa"}
-                width={"900"}
-                height={"600"}
+                src={"/assets/services/service-premarital.webp"}
+                alt={"Two adults working with plants together"}
+                width={"1440"}
+                height={"1080"}
+                style={{ objectPosition: "50% 50%" }}
               />
               <figcaption>{"Make time for your relationship."}</figcaption>
             </figure>
