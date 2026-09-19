@@ -8,10 +8,10 @@ const logos = [
   ["allied-transparent.png", "Allied Healthcare"],
   ["blue-cross-transparent.png", "Blue Cross Blue Shield"],
   ["christus-transparent.png", "CHRISTUS Health"],
-  ["cigna-transparent.png", "Cigna"],
+  ["", "TRICARE"],
   ["healthfirst-transparent.png", "HealthFirst"],
   ["humana.png", "Humana"],
-  ["meritain-transparent.png", "Meritain Health"],
+  ["", "UnitedHealthcare"],
   ["multiplan.png", "MultiPlan"],
   ["umr-transparent.png", "UMR"],
   ["webtpa.png", "WebTPA"],
@@ -31,9 +31,9 @@ export function InsuranceCarousel() {
     const element = viewport.current;
     const track = list.current;
     if (!element || !track) return;
-    element.scrollLeft = 0;
+    if (reducedMotion) element.scrollLeft = 0;
     if (reducedMotion) return;
-    let position = 0;
+    let position = element.scrollLeft;
     let last = 0;
     let frame = 0;
     function advance(time: number) {
@@ -58,11 +58,8 @@ export function InsuranceCarousel() {
     <section
       className="insurance-strip"
       id="insurance"
-      aria-labelledby="insurance-title"
+      aria-label="Insurance"
     >
-      <div className="insurance-heading">
-        <h2 id="insurance-title">Let’s talk insurance.</h2>
-      </div>
       <div
         className="insurance-window"
         id="insurance-logos"
@@ -90,25 +87,29 @@ export function InsuranceCarousel() {
           {[false, true].map((duplicate) =>
             logos.map(([file, name]) => (
               <li
-                key={`${file}-${duplicate}`}
+                key={`${name}-${duplicate}`}
                 aria-hidden={duplicate ? true : undefined}
                 data-duplicate={duplicate ? "" : undefined}
                 hidden={duplicate && reducedMotion}
               >
-                <img
-                  src={`/assets/insurance/${file}`}
-                  alt={duplicate ? "" : name}
-                  width="180"
-                  height="72"
-                  decoding="async"
-                  // These originals have no surrounding transparent padding.
-                  // Balance their painted width with the other wordmarks.
-                  style={
-                    file === "humana.png" || file === "webtpa.png"
-                      ? { width: "92%" }
-                      : undefined
-                  }
-                />
+                {file ? (
+                  <img
+                    src={`/assets/insurance/${file}`}
+                    alt={duplicate ? "" : name}
+                    width="180"
+                    height="72"
+                    decoding="async"
+                    // These originals have no surrounding transparent padding.
+                    // Balance their painted width with the other wordmarks.
+                    style={
+                      file === "humana.png" || file === "webtpa.png"
+                        ? { width: "92%" }
+                        : undefined
+                    }
+                  />
+                ) : (
+                  <span className="insurance-name">{name}</span>
+                )}
               </li>
             )),
           )}

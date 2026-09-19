@@ -249,10 +249,12 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check insurance?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about pregnancy and postpartum counseling and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about pregnancy and postpartum counseling and scheduling. You
+              can use self-pay or ask about insurance. Coverage depends on your
+              plan, counselor, and appointment type; contact the office to
+              confirm participation.
             </p>
           </details>
         </section>

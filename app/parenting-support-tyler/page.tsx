@@ -47,7 +47,11 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our parenting counselors"}</a></p>
+              <p>
+                <a className={"service-text-link"} href={"#team-title"}>
+                  {"Meet our parenting counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -155,7 +159,13 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Find a counselor who fits."}</h2>
+            <h2
+              id={"team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
+              {"Find a counselor who fits."}
+            </h2>
             <p>
               {
                 "Explore these counselors’ areas of experience, then contact our office about your needs and appointment availability."
@@ -183,9 +193,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/kelley-bell/"
-                  }
+                  href={"/therapists/kelley-bell/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -211,9 +219,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/alyxandrah-white/"
-                  }
+                  href={"/therapists/alyxandrah-white/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -230,9 +236,10 @@ export default function Page() {
           <details>
             <summary>{"Does my child need to be in counseling too?"}</summary>
             <p>
-              {
-                "Parenting support focuses on you. Tell our office whether you are seeking help for yourself, your child, or both so we can discuss appropriate options."
-              }
+              Parenting support focuses on you. Tell our office whether you are
+              seeking help for yourself, your child, or both. When counseling
+              involves a minor, The Bridge generally begins by meeting with the
+              parent or parents during the first session.
             </p>
           </details>
           <details>
@@ -254,10 +261,11 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check insurance?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about parenting support and scheduling. Ask about coverage for your specific plan, counselor, and appointment type before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about parenting support and scheduling. Self-pay is available
+              alongside insurance. Check with our office about participation for
+              your counselor, plan, and appointment type.
             </p>
           </details>
         </section>

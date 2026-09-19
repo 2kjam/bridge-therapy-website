@@ -1,4 +1,7 @@
+import { expectBatchTwo } from "./expect-batch2.mjs";
+import { expectPerformance } from "./expect-performance.mjs";
 import fs from "node:fs";
+import { expectBatchOne } from "./expect-homepage-batch1.mjs";
 import path from "node:path";
 import assert from "node:assert/strict";
 import { parse, parseFragment } from "parse5";
@@ -454,6 +457,9 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       node.value = node.value.replace("Ask About an Appointment", "Book an Appointment").replace("Book an appointment", "Book an Appointment");
     }
   }
+  expectBatchOne(legacy, route);
+  expectBatchTwo(legacy, route);
+  expectPerformance(legacy, route);
   for (const tag of ["title", "header", "main", "footer"]) {
     let current = elements(built, tag)[0];
     if (route === "/contact/" && tag === "main") {
@@ -463,7 +469,7 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       const staffFeatures = all(current, n => attr(n, "class") === "contact-staff");
       assert.equal(staffFeatures.length, 1);
       const staffFeature = staffFeatures[0];
-      assert.equal(normalizedText(staffFeature), "Kalynne Arrick Office Manager Kalynne’s background as a photography business owner has shaped her appreciation for listening, building trust, and helping people feel valued. Meet Kalynne →");
+      assert.equal(normalizedText(staffFeature), "Kalynne Arrick Office Manager If you are not sure which counselor to contact, Kalynne, our Office Manager, can talk with you about what you are looking for and help connect you with a counselor who may be a good fit. Meet Kalynne →");
       assert.equal(attr(elements(staffFeature, "a")[0], "href"), "/staff/kalynne-arrick/");
       assert.equal(attr(elements(staffFeature, "img")[0], "src"), "/assets/kalynne.jpg");
       staffFeature.parentNode.childNodes = staffFeature.parentNode.childNodes.filter(n => n !== staffFeature);
@@ -609,7 +615,7 @@ assert.equal(attr(elements(erinMain, "img")[0], "src"), "/assets/erin.jpg");
 const erinServices = all(erinMain, (node) => attr(node, "class") === "profile-services")[0];
 assert.deepEqual(elements(erinServices, "a").map((node) => attr(node, "href")), [
   "/anxiety-counseling-tyler/", "/grief-counseling-tyler/", "/trauma-therapy-tyler/",
-  "/emdr-therapy-tyler/", "/adhd-counseling-tyler/", "/adoption-counseling-tyler/",
+  "/emdr-therapy-tyler/", "/adhd-counseling-tyler/", "/adoption-counseling-tyler/", "/non-epileptic-seizures-counseling-tyler/",
 ]);
 assert.ok(!elements(erinProfile, "link").some((node) => attr(node, "rel") === "canonical"));
 assert.ok(!elements(erinProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
@@ -694,6 +700,7 @@ assert.equal(normalizedText(elements(kimProfile, "title")[0]), "Kim Gonzales, LM
 assert.equal(attr(elements(kimProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
 const kimMain = elements(kimProfile, "main")[0];
 assert.equal(attr(elements(kimMain, "img")[0], "src"), "/assets/kim.jpg");
+// Batch 2: owners explicitly confirmed Kim for Adoption/Foster; personal experience is not a credential.
 const kimServices = all(kimMain, (node) => attr(node, "class") === "profile-services")[0];
 assert.deepEqual(elements(kimServices, "a").map((node) => attr(node, "href")), [
   "/adoption-counseling-tyler/",
@@ -742,6 +749,20 @@ for (const [term, expected] of focusMappings) {
   const actual = [...pages].filter(([route, doc]) => route.startsWith("/therapists/") && route !== "/therapists/" && term.test(normalizedText(elements(doc, "main")[0]))).map(([route]) => route.split("/")[2]);
   assert.deepEqual(actual.sort(), expected.sort(), String(term));
 }
+// Owner-approved full service; Erin is the only featured provider.
+const nesRoute = "/non-epileptic-seizures-counseling-tyler/";
+const nesPage = parse(fs.readFileSync(".next/server/app/non-epileptic-seizures-counseling-tyler.html", "utf8"));
+pages.set(nesRoute, nesPage);
+const nesMain = elements(nesPage, "main")[0];
+assert.equal(elements(nesMain, "h1").length, 1);
+assert.equal(normalizedText(elements(nesMain, "h1")[0]), "Non-Epileptic Seizures Counseling in Tyler, TX");
+assert.equal(normalizedText(elements(nesPage, "title")[0]), "Non-Epileptic Seizures Counseling | Tyler, TX | The Bridge");
+assert.equal(attr(elements(nesPage, "meta").find(n => attr(n, "name") === "robots"), "content"), "noindex, nofollow");
+assert.deepEqual(elements(nesMain, "a").map(n => attr(n, "href")).filter(href => href.startsWith("/therapists/")), ["/therapists/erin-young/"]);
+assert.equal(elements(nesMain, "details").length, 4);
+assert.ok(normalizedText(nesMain).includes("Counseling is not a substitute for appropriate medical evaluation or emergency care."));
+assert.equal(all(nesMain, n => attr(n, "class") === "individual-team-grid")[0].childNodes.filter(n => n.tagName === "article").length, 1);
+assert.equal(all(nesPage, n => attr(n, "data-service") === "Non-Epileptic Seizures").length, 0);
 // Include new blog routes in the same link/asset/widget checks.
 const blogIndex = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
 pages.set("/blog/", blogIndex);
@@ -756,9 +777,26 @@ assert.equal(normalizedText(elements(staffProfile, "h1")[0]), "Kalynne Arrick");
 assert.equal(normalizedText(elements(staffProfile, "title")[0]), "Kalynne Arrick, Office Manager | The Bridge");
 pages.set("/staff/kalynne-arrick/", staffProfile);
 
+// The practice-level About page participates in the shared route/asset checks.
+const about = parse(fs.readFileSync(".next/server/app/about.html", "utf8"));
+pages.set("/about/", about);
+const aboutMain = elements(about, "main")[0];
+assert.equal(elements(about, "h1").length, 1);
+assert.equal(normalizedText(elements(about, "h1")[0]), "About The Bridge");
+assert.equal(normalizedText(elements(about, "title")[0]), "About The Bridge | The Bridge Therapeutic Services");
+assert.equal(attr(elements(about, "meta").find(n => attr(n, "name") === "robots"), "content"), "noindex, nofollow");
+assert.deepEqual(elements(aboutMain, "img").map(n => attr(n, "src")), ["/assets/our-story.jpg"]);
+assert.deepEqual(elements(aboutMain, "h3").map(normalizedText), ["Jennifer Wood, LPC-S", "Erin Young, LCSW-S"]);
+assert.deepEqual(elements(aboutMain, "a").map(n => attr(n, "href")), [
+  "/therapists/jennifer-wood/", "/therapists/erin-young/", "/christian-counseling-tyler/",
+  "/staff/kalynne-arrick/", "/therapists/", "/contact/",
+]);
+assert.equal(normalizedText(elements(aboutMain, "a").find(n => attr(n, "href") === "/staff/kalynne-arrick/")), "Kalynne Arrick, Office Manager");
+assert.ok(!elements(elements(pages.get("/"), "main")[0], "img").some(n => attr(n, "src") === "/assets/our-story.jpg"));
+
 for (const [route, doc] of pages) {
   assert.ok(!normalizedText(all(doc, n => attr(n, "id") === "team-panel")[0]).includes("Kalynne"), `${route}: staff excluded from therapist carousel`);
-  if (route !== "/contact/" && !route.startsWith("/staff/")) {
+  if (route !== "/contact/" && route !== "/about/" && !route.startsWith("/staff/")) {
     assert.ok(!normalizedText(elements(doc, "main")[0]).includes("Kalynne"), `${route}: staff excluded from clinical content`);
   }
   assert.equal(all(doc, (n) => attr(n, "id") === "chat-open").length, 1, `${route}: expected one inquiry launcher`);

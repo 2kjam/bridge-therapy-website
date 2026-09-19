@@ -13,13 +13,11 @@ import {
 
 import { InquiryWidget } from "./inquiry-widget";
 
-type Preview = { title: string; copy: string };
 type SiteUI = {
   openPanel: string | null;
   mobileOpen: boolean;
   setOpenPanel: (panel: string | null) => void;
   setMobileOpen: (open: boolean) => void;
-  showPreview: (preview: Preview) => void;
   schedulePanel: (panel: string | null, delay: number) => void;
 };
 const SiteContext = createContext<SiteUI | null>(null);
@@ -33,8 +31,6 @@ export function useSiteUI() {
 export function SiteProvider({ children }: { children: ReactNode }) {
   const [openPanel, updatePanel] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [preview, setPreview] = useState<Preview | null>(null);
-  const dialog = useRef<HTMLDialogElement>(null);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const setOpenPanel = useCallback((panel: string | null) => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
@@ -51,16 +47,6 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     [],
   );
 
-  useEffect(() => {
-    if (preview && !dialog.current?.open) dialog.current?.showModal();
-  }, [preview]);
-
-  function showPreview(value: Preview) {
-    setOpenPanel(null);
-    setMobileOpen(false);
-    setPreview(value);
-  }
-
   return (
     <SiteContext.Provider
       value={{
@@ -68,82 +54,12 @@ export function SiteProvider({ children }: { children: ReactNode }) {
         mobileOpen,
         setOpenPanel,
         setMobileOpen,
-        showPreview,
         schedulePanel,
       }}
     >
       {children}
       <InquiryWidget />
-      <dialog
-        ref={dialog}
-        id="detail-dialog"
-        aria-labelledby="detail-title"
-        onClose={() => setPreview(null)}
-        onClick={(event) => {
-          if (event.target !== event.currentTarget) return;
-          const bounds = event.currentTarget.getBoundingClientRect();
-          if (
-            event.clientX < bounds.left ||
-            event.clientX > bounds.right ||
-            event.clientY < bounds.top ||
-            event.clientY > bounds.bottom
-          )
-            event.currentTarget.close();
-        }}
-      >
-        <button
-          className="close"
-          aria-label="Close preview"
-          onClick={() => dialog.current?.close()}
-        >
-          ×
-        </button>
-        <p className="eyebrow">THE BRIDGE</p>
-        <h2 id="detail-title">{preview?.title}</h2>
-        <p id="detail-copy">{preview?.copy}</p>
-        <a className="button" href="/contact/">
-          Contact Us →
-        </a>
-      </dialog>
     </SiteContext.Provider>
-  );
-}
-
-const specialtyCopy: Record<string, string> = {
-  "Anger Counseling": "For support with anger, ask about Jennifer Wood, Alyxandrah (Alyx) White, or Denise Santos. Contact our office to discuss therapist fit and next steps.",
-  "Codependency Counseling": "For support with codependency, ask about Erin Young. Contact our office to discuss therapist fit and next steps.",
-  "Eating Disorder Counseling": "For support with eating disorders, ask about Jennifer Wood. Contact our office to discuss therapist fit and next steps.",
-};
-
-export function PreviewTrigger({
-  service,
-  href,
-  className,
-  children,
-}: {
-  service: string;
-  href?: string;
-  className?: string;
-  children: ReactNode;
-}) {
-  const { showPreview } = useSiteUI();
-  const props = {
-    className,
-    "data-service": service,
-    onClick: (event: React.MouseEvent) => {
-      event.preventDefault();
-      showPreview({
-        title: service,
-        copy: specialtyCopy[service] ?? "This specialty page is part of the planned website. For this design preview, you can continue to Contact Us. Our office will help with current services, therapist fit, and scheduling.",
-      });
-    },
-  };
-  return href ? (
-    <a {...props} href={href}>
-      {children}
-    </a>
-  ) : (
-    <button {...props}>{children}</button>
   );
 }
 

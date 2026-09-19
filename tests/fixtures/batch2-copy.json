@@ -1,0 +1,166 @@
+{
+  "paragraphs": {
+    "/adhd-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about ADHD counseling and support and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about ADHD counseling and support and scheduling. Insurance and self-pay are available. Participation varies by counselor, plan, and appointment type; our office can confirm current coverage.</p>"
+      }
+    ],
+    "/adoption-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about adoption and foster family support and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about adoption and foster family support and scheduling. Self-pay is available alongside insurance. Check with our office about participation for your counselor, plan, and appointment type.</p>"
+      }
+    ],
+    "/child-teen-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about child and teen counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about child and teen counseling and scheduling. You can use self-pay or ask about insurance. Coverage depends on your plan, counselor, and appointment type; contact the office to confirm participation.</p>"
+      },
+      {
+        "contains": "Ask the counselor how caregiver involvement will work",
+        "html": "<p>When counseling involves a minor, The Bridge generally begins by meeting with the parent or parents during the first session.</p>"
+      }
+    ],
+    "/christian-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about Christian counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about Christian counseling and scheduling. Insurance and self-pay are available. Participation varies by counselor, plan, and appointment type; our office can confirm current coverage.</p>"
+      }
+    ],
+    "/depression-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about depression counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about depression counseling and scheduling. Self-pay is available alongside insurance. Check with our office about participation for your counselor, plan, and appointment type.</p>"
+      }
+    ],
+    "/divorce-blended-family-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about divorce and blended family counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about divorce and blended family counseling and scheduling. You can use self-pay or ask about insurance. Coverage depends on your plan, counselor, and appointment type; contact the office to confirm participation.</p>"
+      }
+    ],
+    "/emdr-therapy-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about EMDR therapy and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about EMDR therapy and scheduling. Insurance and self-pay are available. Participation varies by counselor, plan, and appointment type; our office can confirm current coverage.</p>"
+      }
+    ],
+    "/family-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about family counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about family counseling and scheduling. Self-pay is available alongside insurance. Check with our office about participation for your counselor, plan, and appointment type.</p>"
+      },
+      {
+        "contains": "The participants depend on your concerns",
+        "html": "<p>The participants depend on your concerns and the counselor’s approach. When counseling involves a minor, The Bridge generally begins by meeting with the parent or parents during the first session.</p>"
+      }
+    ],
+    "/grief-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about grief counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about grief counseling and scheduling. You can use self-pay or ask about insurance. Coverage depends on your plan, counselor, and appointment type; contact the office to confirm participation.</p>"
+      }
+    ],
+    "/life-transitions-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about life transitions counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about life transitions counseling and scheduling. Insurance and self-pay are available. Participation varies by counselor, plan, and appointment type; our office can confirm current coverage.</p>"
+      }
+    ],
+    "/parenting-support-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about parenting support and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about parenting support and scheduling. Self-pay is available alongside insurance. Check with our office about participation for your counselor, plan, and appointment type.</p>"
+      },
+      {
+        "contains": "Parenting support focuses on you.",
+        "html": "<p>Parenting support focuses on you. Tell our office whether you are seeking help for yourself, your child, or both. When counseling involves a minor, The Bridge generally begins by meeting with the parent or parents during the first session.</p>"
+      }
+    ],
+    "/pregnancy-postpartum-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about pregnancy and postpartum counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about pregnancy and postpartum counseling and scheduling. You can use self-pay or ask about insurance. Coverage depends on your plan, counselor, and appointment type; contact the office to confirm participation.</p>"
+      }
+    ],
+    "/premarital-counseling-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about premarital or marital enrichment counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about premarital or marital enrichment counseling and scheduling. Insurance and self-pay are available. Participation varies by counselor, plan, and appointment type; our office can confirm current coverage.</p>"
+      }
+    ],
+    "/trauma-therapy-tyler/": [
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about trauma and PTSD counseling and scheduling.",
+        "html": "<p><a href=\"/contact/\">Contact our office</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about trauma and PTSD counseling and scheduling. Self-pay is available alongside insurance. Check with our office about participation for your counselor, plan, and appointment type.</p>"
+      }
+    ],
+    "/individual-counseling-tyler/": [
+      {
+        "contains": "Contact our office to confirm your specific plan",
+        "html": "<p>Insurance and self-pay options are available. Insurance participation can vary by counselor, plan, and appointment type. Contact our office to confirm current coverage and discuss payment options.</p>"
+      },
+      {
+        "contains": "through the website inquiry form, conversational inquiry widget, phone, or email to ask about individual",
+        "html": "<p> <a href=\"/contact/\">Contact The Bridge</a> through the website inquiry form, conversational inquiry widget, phone, or email to ask about individual counseling and scheduling. Our office is at 3800 Paluxy Drive, Suite 240, Building 2, Tyler, Texas.  Once you begin scheduling, the office will email intake paperwork for you to complete before your appointment.</p>"
+      }
+    ],
+    "/anxiety-counseling-tyler/": [
+      {
+        "contains": "Contact our office to confirm your specific plan",
+        "html": "<p>Self-pay is available, and you can also ask about insurance. Our office can confirm participation for your specific counselor, plan, and appointment type before you schedule.</p>"
+      },
+      {
+        "contains": "Your first conversations are a chance",
+        "html": "<p>Your first conversations are a chance to explain your concerns, ask questions, and discuss your goals. Once scheduling begins, the office will email intake paperwork to complete before your appointment.</p>"
+      }
+    ],
+    "/marriage-counseling-tyler/": [
+      {
+        "contains": "Ask our office about payment options for couples sessions",
+        "html": "<p>Self-pay is available for couples counseling. Insurance participation varies by counselor, plan, and appointment type. A listed insurer does not establish coverage for couples sessions; contact our office to confirm your options.</p>"
+      },
+      {
+        "contains": "through the website inquiry form, the conversational inquiry widget, phone, or email to ask about couples",
+        "html": "<p> <a href=\"/contact/\">Contact The Bridge</a> through the website inquiry form, the conversational inquiry widget, phone, or email to ask about couples counseling and scheduling at our Tyler office.  Once you begin scheduling, the office will email intake paperwork for you to complete before your appointment.</p>"
+      }
+    ],
+    "/non-epileptic-seizures-counseling-tyler/": [
+      {
+        "contains": "are interested in Non-Epileptic Seizures",
+        "html": "<p> <a href=\"/contact/\">Contact our office</a> and mention that you are interested in Non-Epileptic Seizures counseling with Erin Young. An inquiry starts a conversation about next steps; it does not confirm an appointment.  Once you begin scheduling, the office will email intake paperwork for you to complete before your appointment.</p>"
+      }
+    ],
+    "/contact/": [
+      {
+        "contains": "Call or email our office to ask about therapist availability",
+        "html": "<p>Call or email our office to ask about counselor availability. We typically respond to new inquiries within 24 hours.</p>"
+      },
+      {
+        "contains": "Kalynne’s background as a photography business owner",
+        "html": "<p>If you are not sure which counselor to contact, Kalynne, our Office Manager, can talk with you about what you are looking for and help connect you with a counselor who may be a good fit.</p>"
+      },
+      {
+        "contains": "Contact our office to arrange your appointment and ask",
+        "html": "<p>Once you begin the scheduling process, the office will email intake paperwork for you to complete before your appointment. We can also help with questions about finding the office.</p>"
+      },
+      {
+        "contains": "first, or contact our office for help finding a fit.",
+        "html": "<p>No. You can <a href=\"/therapists/\">get to know our counselors</a> first, or talk with Kalynne, our Office Manager, about what you are looking for. She can help connect you with a counselor who may be a good fit. If you already have someone in mind, mention their name when you reach out.</p>"
+      },
+      {
+        "contains": "Contact our office about your specific plan before your appointment.",
+        "html": "<p>Insurance and self-pay options are available. Insurance participation can vary by counselor, plan, and appointment type. Contact our office to confirm current coverage. You can also <a href=\"/#insurance\">view our insurance logos on the homepage</a>.</p>"
+      }
+    ],
+    "/staff/kalynne-arrick/": [
+      {
+        "contains": "Kalynne is The Bridge’s Office Manager.",
+        "html": "<p>Kalynne is The Bridge’s Office Manager. If you are not sure which counselor to contact, she can talk with you about what you are looking for and help connect you with a counselor who may be a good fit.</p>"
+      }
+    ]
+  },
+  "contactFaqs": "<details><summary>Do you offer in-person or telehealth appointments?</summary><p>The Bridge offers both in-person and telehealth counseling. Contact our office about scheduling.</p></details><details><summary>How long is a session?</summary><p>Sessions are typically 50–60 minutes.</p></details><details><summary>What payment methods do you accept?</summary><p>The Bridge accepts check, cash, and credit card payments. The practice’s system requires a card to be kept on file. Contact our office about current fees and payment options.</p></details><details><summary>What if my counselor is not in network?</summary><p>The Bridge can provide a superbill that you may submit to your insurance company. Ask the office about a superbill if your counselor is not in network with your plan. Your insurance company determines any reimbursement; payment is not guaranteed.</p></details><details><summary>What is the cancellation policy?</summary><p>The Bridge requires at least 24 hours’ notice for cancellations. If less notice is provided, you are responsible for the full session fee.</p></details>",
+  "officeHours": "<h3>Office hours</h3><p>Monday–Friday<br />8:00 AM–7:00 PM</p><p>Weekends<br />Based on availability</p>"
+}

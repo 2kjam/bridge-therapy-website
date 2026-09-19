@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { blogStyles } from "@/components/blog/article-template";
 import { blogDate, getBlogPosts } from "@/lib/blog";
+import { blogThumbnail } from "@/lib/presentation-images";
 
 export const metadata: Metadata = {
   title: "Blog | The Bridge Therapeutic Services",
@@ -24,14 +25,13 @@ export default function BlogPage() {
           <h1>Blog</h1>
         </header>
         <div className="blog-grid">
-          {getBlogPosts().map((post) => (
+          {getBlogPosts().map((post, index) => (
             <article className="blog-card" key={post.id}>
               <a className="blog-card-link" href={post.legacyPath}>
                 {post.featuredImage && (
                   <img
-                    src={post.featuredImage.src}
-                    width={post.featuredImage.width}
-                    height={post.featuredImage.height}
+                    {...blogThumbnail(post.featuredImage.src)}
+                    loading={index === 0 ? "eager" : "lazy"}
                     alt={post.featuredImage.alt}
                   />
                 )}

@@ -15,7 +15,7 @@ export function Header() {
         <MobileToggle />
         {"\n"}
         <Navigation>
-          <a className={"nav-direct"} href={"/#why-the-bridge"}>
+          <a className={"nav-direct"} href={"/about/"}>
             {"About"}
           </a>
           {"\n"}
@@ -36,7 +36,7 @@ export function Header() {
                 <a href={"/marriage-counseling-tyler/"}>{"Couples"}</a>
                 <a href={"/family-counseling-tyler/"}>{"Families"}</a>
                 <a href={"/child-teen-counseling-tyler/"}>
-                  {"Child & Teen Counseling"}
+                  {"Children and Teens"}
                 </a>
                 <a href={"/parenting-support-tyler/"}>{"Parents"}</a>
               </section>
@@ -46,13 +46,20 @@ export function Header() {
                 <a href={"/depression-counseling-tyler/"}>{"Depression"}</a>
                 <a href={"/trauma-therapy-tyler/"}>{"Trauma & PTSD"}</a>
                 <a href={"/grief-counseling-tyler/"}>{"Grief & loss"}</a>
-                <a href={"/marriage-counseling-tyler/"}>
-                  {"Relationship concerns"}
-                </a>
+                <a href={"/marriage-counseling-tyler/"}>{"Relationships"}</a>
                 <a href={"/life-transitions-counseling-tyler/"}>
                   {"Life transitions"}
                 </a>
                 <a href={"/adhd-counseling-tyler/"}>{"ADHD"}</a>
+                <a href={"/premarital-counseling-tyler/"}>
+                  {"Premarital counseling"}
+                </a>
+                <a href={"/pregnancy-postpartum-counseling-tyler/"}>
+                  {"Pregnancy & postpartum"}
+                </a>
+                <a href="/non-epileptic-seizures-counseling-tyler/">
+                  Non-Epileptic Seizures
+                </a>
               </section>
               <section>
                 <h2>{"Our approach"}</h2>
@@ -60,28 +67,26 @@ export function Header() {
                   {"Christian counseling"}
                 </a>
                 <a href={"/emdr-therapy-tyler/"}>{"EMDR therapy"}</a>
-                <a href={"/premarital-counseling-tyler/"}>
-                  {"Premarital counseling"}
-                </a>
-                <a href={"/pregnancy-postpartum-counseling-tyler/"}>
-                  {"Pregnancy & postpartum"}
-                </a>
                 <a className={"view-all"} href={"/#services"}>
                   {"View all specialties →"}
                 </a>
               </section>
             </div>
             <a className={"menu-feature office-help"} href={"/contact/"}>
-              <img
-                src={"/assets/kalynne.jpg"}
-                width="2500"
-                height="3750"
-                alt=""
-              />
+              <div className="office-help-portrait">
+                <img loading="lazy"
+                  src={"/assets/presentation/menu/kalynne-480.webp"}
+                  width="480"
+                  height="720"
+                  alt=""
+                />
+              </div>
               <span>
                 <strong>{"Not sure where to start?"}</strong>
-                <span className="office-help-name">Kalynne Arrick · Office Manager</span>
-                {"Contact our office with questions about getting started."}
+                <span className="office-help-name">
+                  Kalynne Arrick · Office Manager
+                </span>
+                {"Kalynne can help you find a counselor who may be a good fit."}
                 <b>{"Contact us →"}</b>
               </span>
             </a>
@@ -113,10 +118,7 @@ export function Header() {
                   "Get to know our counselors and find a connection that feels right."
                 }
               </p>
-              <a
-                className={"view-all"}
-                href={"/therapists/"}
-              >
+              <a className={"view-all"} href={"/therapists/"}>
                 {"View All Therapists →"}
               </a>
             </div>
@@ -124,12 +126,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/jennifer-wood/"
-                  }
+                  href={"/therapists/jennifer-wood/"}
                 >
-                  <img
-                    src={"/assets/jennifer.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/jennifer-500.webp"}
                     alt={"Jennifer Wood, LPC-S"}
                     width={"240"}
                     height={"280"}
@@ -139,14 +139,9 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a
-                  className={"portrait-card"}
-                  href={
-                    "/therapists/erin-young/"
-                  }
-                >
-                  <img
-                    src={"/assets/erin.jpg"}
+                <a className={"portrait-card"} href={"/therapists/erin-young/"}>
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/erin-500.webp"}
                     alt={"Erin Young, LCSW-S"}
                     width={"240"}
                     height={"280"}
@@ -158,12 +153,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/jill-kirkley/"
-                  }
+                  href={"/therapists/jill-kirkley/"}
                 >
-                  <img
-                    src={"/assets/jill.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/jill-500.webp"}
                     alt={"Jill Kirkley, LPC"}
                     width={"240"}
                     height={"280"}
@@ -175,12 +168,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/alyxandrah-white/"
-                  }
+                  href={"/therapists/alyxandrah-white/"}
                 >
-                  <img
-                    src={"/assets/alyx.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/alyx-500.webp"}
                     alt={"Alyxandrah “Alyx” White"}
                     width={"240"}
                     height={"280"}
@@ -192,12 +183,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/misty-shultz/"
-                  }
+                  href={"/therapists/misty-shultz/"}
                 >
-                  <img
-                    src={"/assets/misty.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/misty-500.webp"}
                     alt={"Misty Shultz, LPC"}
                     width={"240"}
                     height={"280"}
@@ -210,12 +199,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/kim-gonzales/"
-                  }
+                  href={"/therapists/kim-gonzales/"}
                 >
-                  <img
-                    src={"/assets/kim.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/kim-500.webp"}
                     alt={"Kim Gonzales, LMSW"}
                     width={"240"}
                     height={"280"}
@@ -229,12 +216,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/kelley-bell/"
-                  }
+                  href={"/therapists/kelley-bell/"}
                 >
-                  <img
-                    src={"/assets/kelley.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/kelley-500.webp"}
                     alt={"Kelley Bell, LPC"}
                     width={"240"}
                     height={"280"}
@@ -246,12 +231,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/denise-santos/"
-                  }
+                  href={"/therapists/denise-santos/"}
                 >
-                  <img
-                    src={"/assets/denise.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/denise-500.webp"}
                     alt={"Denise Santos, LPC"}
                     width={"240"}
                     height={"280"}
@@ -261,14 +244,9 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a
-                  className={"portrait-card"}
-                  href={
-                    "/therapists/sarah-bell/"
-                  }
-                >
-                  <img
-                    src={"/assets/sarah-bell.jpg"}
+                <a className={"portrait-card"} href={"/therapists/sarah-bell/"}>
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/sarah-bell-500.webp"}
                     alt={"Sarah Bell, LPC-A"}
                     width={"240"}
                     height={"280"}
@@ -284,12 +262,10 @@ export function Header() {
               <li>
                 <a
                   className={"portrait-card"}
-                  href={
-                    "/therapists/sarah-critzman/"
-                  }
+                  href={"/therapists/sarah-critzman/"}
                 >
-                  <img
-                    src={"/assets/sarah-critzman.jpg"}
+                  <img loading="lazy"
+                    src={"/assets/presentation/menu/sarah-critzman-500.webp"}
                     alt={"Sarah Critzman, LMSW"}
                     width={"240"}
                     height={"280"}
@@ -321,11 +297,7 @@ export function Header() {
           >
             <section>
               <h2>{"About The Bridge"}</h2>
-              <a
-                href={"/blog/"}
-              >
-                {"Articles & resources →"}
-              </a>
+              <a href={"/blog/"}>{"Articles & resources →"}</a>
             </section>
             <section>
               <h2>{"Your first step"}</h2>
@@ -340,8 +312,8 @@ export function Header() {
               className={"menu-feature wide"}
               href={"/christian-counseling-tyler/"}
             >
-              <img
-                src={"/assets/team.jpg"}
+              <img width="1200" height="800" loading="lazy"
+                src={"/assets/presentation/menu/team-1200.webp"}
                 alt={"A stone bridge surrounded by greenery"}
               />
               <span>

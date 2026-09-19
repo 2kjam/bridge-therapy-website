@@ -55,7 +55,11 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#couples-team-title"}>{"Meet our marriage counselors"}</a></p>
+              <p>
+                <a className={"service-text-link"} href={"#couples-team-title"}>
+                  {"Meet our marriage counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -139,10 +143,10 @@ export default function Page() {
             <article id={"premarital"}>
               <h3>{"Preparing for marriage"}</h3>
               <p>
-                {
-                  "Ask our office about "
-                }
-                <a href={"/premarital-counseling-tyler/"}>{"premarital counseling"}</a>
+                {"Ask our office about "}
+                <a href={"/premarital-counseling-tyler/"}>
+                  {"premarital counseling"}
+                </a>
                 {
                   " to explore expectations, communication, and the life you hope to build together."
                 }
@@ -213,7 +217,11 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"couples-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
+            <h2
+              id={"couples-team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
               {"Support for your relationship."}
             </h2>
             <p>
@@ -244,9 +252,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/alyxandrah-white/"
-                  }
+                  href={"/therapists/alyxandrah-white/"}
                 >
                   {"More about Alyx →"}
                 </a>
@@ -273,9 +279,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/kelley-bell/"
-                  }
+                  href={"/therapists/kelley-bell/"}
                 >
                   {"More about Kelley →"}
                 </a>
@@ -283,10 +287,7 @@ export default function Page() {
             </article>
             {"\n"}
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -324,19 +325,22 @@ export default function Page() {
           <details>
             <summary>{"Can we use insurance for couples counseling?"}</summary>
             <p>
-              {
-                "Ask our office about payment options for couples sessions and check your specific plan’s benefits. A logo on our insurance list does not establish coverage for couples counseling."
-              }
+              Self-pay is available for couples counseling. Insurance
+              participation varies by counselor, plan, and appointment type. A
+              listed insurer does not establish coverage for couples sessions;
+              contact our office to confirm your options.
             </p>
           </details>
           {"\n"}
           <details>
             <summary>{"How do we book our first appointment?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact The Bridge"}</a>
-              {
-                " through the website inquiry form, the conversational inquiry widget, phone, or email to ask about couples counseling and scheduling at our Tyler office."
-              }
+              {" "}
+              <a href="/contact/">Contact The Bridge</a> through the website
+              inquiry form, the conversational inquiry widget, phone, or email
+              to ask about couples counseling and scheduling at our Tyler
+              office. Once you begin scheduling, the office will email intake
+              paperwork for you to complete before your appointment.
             </p>
           </details>
           {"\n"}
@@ -371,7 +375,9 @@ export default function Page() {
         >
           <div>
             <p className={"eyebrow"}>{"TAKE THE NEXT STEP"}</p>
-            <h2 id={"couples-booking-title"}>{"Take the next step together."}</h2>
+            <h2 id={"couples-booking-title"}>
+              {"Take the next step together."}
+            </h2>
             <p>{"Contact our office about marriage and couples counseling."}</p>
           </div>
           <a className={"button"} href={"/contact/"}>

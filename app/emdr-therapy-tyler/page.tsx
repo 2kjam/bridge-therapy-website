@@ -51,7 +51,11 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our EMDR-trained counselors"}</a></p>
+              <p>
+                <a className={"service-text-link"} href={"#team-title"}>
+                  {"Meet our EMDR-trained counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -170,7 +174,13 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Experience you can ask about."}</h2>
+            <h2
+              id={"team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
+              {"Experience you can ask about."}
+            </h2>
             <p>
               {
                 "These counselors have experience with trauma and training in EMDR. Contact our office to discuss your needs and current availability."
@@ -198,9 +208,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/erin-young/"
-                  }
+                  href={"/therapists/erin-young/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -228,9 +236,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/sarah-bell/"
-                  }
+                  href={"/therapists/sarah-bell/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -281,10 +287,11 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check coverage?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about EMDR therapy and scheduling. Ask about your counselor, insurance plan, appointment type, and payment options before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about EMDR therapy and scheduling. Insurance and self-pay are
+              available. Participation varies by counselor, plan, and
+              appointment type; our office can confirm current coverage.
             </p>
           </details>
         </section>

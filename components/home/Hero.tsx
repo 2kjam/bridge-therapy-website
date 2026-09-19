@@ -11,13 +11,11 @@ export function Hero() {
         fetchPriority={"high"}
       />
       <div className={"ivory-hero-copy"}>
-        <h1 id={"hero-title"}>
-          Counseling &amp; Therapy in Tyler, Texas
-        </h1>
+        <h1 id={"hero-title"}>Counseling and Therapy in Tyler, TX</h1>
         <p className="hero-brand">Real Help for Real Life</p>
         <p>
           {
-            "Compassionate, professional counseling for individuals, couples, and families—grounded in hope and a Christian perspective."
+            "Compassionate, professional counseling for individuals, couples, families, and children—grounded in hope and a Christian perspective."
           }
         </p>
         <div className={"ivory-actions"}>
@@ -30,16 +28,16 @@ export function Hero() {
         </div>
       </div>
       <p className={"hero-script"} aria-hidden={"true"}>
-        {"Healing"}
+        {"Heart."}
         <br />
-        <span>{"Hope"}</span>
+        <span>{"Hope."}</span>
         <br />
-        {"What’s Next"}
+        {"Here."}
       </p>
       <div className={"hero-side-note"} aria-hidden={"true"}>
-        {"PEOPLE CHANGE"}
+        {"People grow"}
         <br />
-        {"HERE."}
+        {"here"}
         <i></i>
         {"TYLER, TEXAS"}
       </div>

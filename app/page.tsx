@@ -6,6 +6,7 @@ import { InsuranceCarousel } from "@/components/insurance-carousel";
 import { Services } from "@/components/home/Services";
 import { Faith } from "@/components/home/Faith";
 import { TherapistsAndLocation } from "@/components/home/TherapistsAndLocation";
+import { Location } from "@/components/home/Location";
 import { NextSteps } from "@/components/home/NextSteps";
 export const metadata: Metadata = {
   title: "Counseling & Therapy in Tyler, TX | The Bridge",
@@ -33,10 +34,14 @@ export default function Page() {
     >
       <HomepageMain>
         <Hero />
-        <InsuranceCarousel />
+        <div className="bridge-positioning">
+          <p>Bridging Christian Counseling with Whole Health Together</p>
+        </div>
         <Services />
         <Faith />
         <TherapistsAndLocation />
+        <InsuranceCarousel />
+        <Location />
         <NextSteps />
       </HomepageMain>
     </SiteShell>

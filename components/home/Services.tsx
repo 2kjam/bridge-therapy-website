@@ -1,4 +1,3 @@
-import { PreviewTrigger } from "../site-interactions";
 export function Services() {
   return (
     <section
@@ -9,9 +8,14 @@ export function Services() {
       <h2 id={"services-title"}>{"You Don’t Have to Face This Alone"}</h2>
       <p>
         {
-          "We help individuals, couples, and families find hope, healing, and a healthier path forward."
-        }
-        {" Explore "}<a href="/individual-counseling-tyler/">Individual counseling</a>{"."}
+          "We help individuals, couples, families, and children find hope, healing, and a healthier path forward."
+        }{" "}
+        <a
+          className="individual-counseling-link"
+          href="/individual-counseling-tyler/"
+        >
+          Explore individual counseling <span aria-hidden="true">→</span>
+        </a>
       </p>
       <div className={"ivory-service-grid"}>
         <a
@@ -19,7 +23,7 @@ export function Services() {
           href={"/anxiety-counseling-tyler/"}
         >
           <img
-            src={"/assets/ivory-anxiety.jpg"}
+            src={"/assets/presentation/home/anxiety-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -35,7 +39,7 @@ export function Services() {
           href={"/marriage-counseling-tyler/"}
         >
           <img
-            src={"/assets/ivory-relationships.jpg"}
+            src={"/assets/presentation/home/relationships-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -48,7 +52,7 @@ export function Services() {
         </a>
         <a className={"ivory-service tile-2"} href={"/trauma-therapy-tyler/"}>
           <img
-            src={"/assets/ivory-trauma.jpg"}
+            src={"/assets/presentation/home/trauma-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -65,7 +69,7 @@ export function Services() {
           id={"family-services"}
         >
           <img
-            src={"/assets/ivory-parenting.jpg"}
+            src={"/assets/presentation/home/parenting-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -78,7 +82,7 @@ export function Services() {
         </a>
         <a className={"ivory-service tile-4"} href={"/grief-counseling-tyler/"}>
           <img
-            src={"/assets/ivory-grief.jpg"}
+            src={"/assets/presentation/home/grief-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -94,7 +98,7 @@ export function Services() {
           href={"/child-teen-counseling-tyler/"}
         >
           <img
-            src={"/assets/ivory-teen.jpg"}
+            src={"/assets/presentation/home/teen-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -144,24 +148,10 @@ export function Services() {
             <a href={"/christian-counseling-tyler/"}>
               {"Christian counseling"}
             </a>
-            <PreviewTrigger service={"Counseling After Abuse"}>
-              {"Support after abuse"}
-            </PreviewTrigger>
-            <PreviewTrigger service={"Anger Counseling"}>
-              {"Anger counseling"}
-            </PreviewTrigger>
-            <PreviewTrigger service={"Codependency Counseling"}>
-              {"Codependency"}
-            </PreviewTrigger>
-            <PreviewTrigger service={"Eating Disorder Counseling"}>
-              {"Eating disorders"}
-            </PreviewTrigger>
+            <a href="/non-epileptic-seizures-counseling-tyler/">
+              Non-Epileptic Seizures
+            </a>
           </div>
-          <p className={"preview-label"}>
-            {
-              "Some specialties are still in development. Contact our office for current services and therapist fit."
-            }
-          </p>
         </div>
       </details>
     </section>

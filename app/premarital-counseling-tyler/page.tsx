@@ -51,7 +51,11 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#team-title"}>{"Meet our premarital counselors"}</a></p>
+              <p>
+                <a className={"service-text-link"} href={"#team-title"}>
+                  {"Meet our premarital counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -164,7 +168,13 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>{"Find a counselor who fits."}</h2>
+            <h2
+              id={"team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
+              {"Find a counselor who fits."}
+            </h2>
             <p>
               {
                 "These counselors have relevant experience. Contact our office about your needs, age group, and current appointment availability."
@@ -192,9 +202,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/alyxandrah-white/"
-                  }
+                  href={"/therapists/alyxandrah-white/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -220,19 +228,14 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/kelley-bell/"
-                  }
+                  href={"/therapists/kelley-bell/"}
                 >
                   {"Read counselor profile →"}
                 </a>
               </div>
             </article>
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -279,10 +282,12 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check insurance?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about premarital or marital enrichment counseling and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about premarital or marital enrichment counseling and
+              scheduling. Insurance and self-pay are available. Participation
+              varies by counselor, plan, and appointment type; our office can
+              confirm current coverage.
             </p>
           </details>
         </section>

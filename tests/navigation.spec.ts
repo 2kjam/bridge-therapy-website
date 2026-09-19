@@ -42,7 +42,7 @@ test("shared cleanup: sitewide CTA labels, preserved therapist inquiries and wor
   const services = fs
     .readdirSync("app")
     .filter((name) => name.endsWith("-tyler"));
-  expect(services).toHaveLength(17);
+  expect(services).toHaveLength(18);
   for (const slug of services) {
     const response = await request.get(`/${slug}/`);
     expect(response.status()).toBe(200);

@@ -16,7 +16,7 @@ for (const width of [375, 390, 768, 1440]) {
     await expect(page.locator(".profile-breadcrumb li")).toHaveText(["Home", "Kalynne Arrick"]);
     await expect(page.locator("main .button")).toHaveCount(1);
     await expect(page.locator(".profile-intro h2")).toHaveText("Helping you get started at The Bridge");
-    await expect(page.locator(".profile-intro h2 + p")).toHaveText("Kalynne is The Bridge’s Office Manager. If you have questions about getting started, our office is here to help you take the next step.");
+    await expect(page.locator(".profile-intro h2 + p")).toHaveText("Kalynne is The Bridge’s Office Manager. If you are not sure which counselor to contact, she can talk with you about what you are looking for and help connect you with a counselor who may be a good fit.");
     const portrait = page.locator("main img");
     const bounds = await portrait.boundingBox();
     expect(bounds).not.toBeNull();

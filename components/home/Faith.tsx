@@ -13,13 +13,13 @@ export function Faith() {
         />
         <p className={"eyebrow"}>{"MORE THAN COUNSELING"}</p>
         <h2 id={"why-title"}>
-          {"A Faith-Informed"}
+          {"Faith-informed"}
           <br />
-          {"Approach to Healing"}
+          {" approach to therapy"}
         </h2>
         <p>
           {
-            "Our counselors bring together a Christian perspective and practical, personal support, with attention to your needs and experiences."
+            "Our counselors meet you with a Christian perspective and professional and compassionate care for your unique needs."
           }
         </p>
         <a className={"button"} href={"/christian-counseling-tyler/"}>

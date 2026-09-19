@@ -1,3 +1,4 @@
+import { TeamCarousel } from "../team-carousel";
 export function TherapistsAndLocation() {
   return (
     <section className={"ivory-community"}>
@@ -6,195 +7,154 @@ export function TherapistsAndLocation() {
         <p className={"team-intro"}>
           {"Experienced. Compassionate. Here for You."}
         </p>
-        <div className={"ivory-people"}>
-          <article className={"ivory-person"}>
-            <a
-              href={
-                "/therapists/jennifer-wood/"
-              }
-            >
+        <TeamCarousel
+          id="homepage-team-track"
+          className="homepage-team-carousel"
+        >
+          <li>
+            <a className={"portrait-card"} href={"/therapists/jennifer-wood/"}>
               <img
                 src={"/assets/jennifer.jpg"}
-                alt={"Jennifer Wood"}
-                width={"500"}
-                height={"750"}
-                loading={"lazy"}
+                alt={"Jennifer Wood, LPC-S"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
               />
+              <strong>{"Jennifer Wood, LPC-S"}</strong>
+              <span>{"Co-owner · Counselor–Supervisor"}</span>
             </a>
-            <h3>{"Jennifer Wood, LPC-S"}</h3>
-            <p>{"Practice co-owner"}</p>
-            <a
-              className={"person-link"}
-              href={
-                "/therapists/jennifer-wood/"
-              }
-            >
-              {"Meet Jennifer "}
-              <span aria-hidden={"true"}>{"→"}</span>
-            </a>
-          </article>
-          <article className={"ivory-person"}>
-            <a
-              href={
-                "/therapists/erin-young/"
-              }
-            >
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/erin-young/"}>
               <img
                 src={"/assets/erin.jpg"}
-                alt={"Erin Young"}
-                width={"500"}
-                height={"750"}
-                loading={"lazy"}
+                alt={"Erin Young, LCSW-S"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
               />
+              <strong>{"Erin Young, LCSW-S"}</strong>
+              <span>{"Co-owner · Social Worker–Supervisor"}</span>
             </a>
-            <h3>{"Erin Young, LCSW-S"}</h3>
-            <p>{"Practice co-owner"}</p>
-            <a
-              className={"person-link"}
-              href={
-                "/therapists/erin-young/"
-              }
-            >
-              {"Meet Erin "}
-              <span aria-hidden={"true"}>{"→"}</span>
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/jill-kirkley/"}>
+              <img
+                src={"/assets/jill.jpg"}
+                alt={"Jill Kirkley, LPC"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Jill Kirkley, LPC"}</strong>
+              <span>{"Licensed Professional Counselor"}</span>
             </a>
-          </article>
-          <article className={"ivory-person"}>
+          </li>
+          <li>
             <a
-              href={
-                "/therapists/alyxandrah-white/"
-              }
+              className={"portrait-card"}
+              href={"/therapists/alyxandrah-white/"}
             >
               <img
                 src={"/assets/alyx.jpg"}
-                alt={"Alyxandrah White"}
-                width={"500"}
-                height={"750"}
-                loading={"lazy"}
+                alt={"Alyxandrah “Alyx” White"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
               />
+              <strong>{"Alyxandrah “Alyx” White"}</strong>
+              <span>{"LMFT, C-DBT · Marriage & Family Therapist"}</span>
             </a>
-            <h3>{"Alyxandrah White, LMFT, C-DBT"}</h3>
-            <p>{"Marriage & family therapist"}</p>
-            <a
-              className={"person-link"}
-              href={
-                "/therapists/alyxandrah-white/"
-              }
-            >
-              {"Meet Alyx "}
-              <span aria-hidden={"true"}>{"→"}</span>
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/misty-shultz/"}>
+              <img
+                src={"/assets/misty.jpg"}
+                alt={"Misty Shultz, LPC"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Misty Shultz, LPC"}</strong>
+              <span>{"Licensed Professional Counselor"}</span>
+              <span>{"Mentoring and discipleship"}</span>
             </a>
-          </article>
-          <article className={"ivory-person"}>
-            <a
-              href={
-                "/therapists/kelley-bell/"
-              }
-            >
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/kim-gonzales/"}>
+              <img
+                src={"/assets/kim.jpg"}
+                alt={"Kim Gonzales, LMSW"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Kim Gonzales, LMSW"}</strong>
+              <span>
+                {"Master Social Worker · Supervised by Erin Young, LCSW-S"}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/kelley-bell/"}>
               <img
                 src={"/assets/kelley.jpg"}
-                alt={"Kelley Bell"}
-                width={"500"}
-                height={"750"}
-                loading={"lazy"}
+                alt={"Kelley Bell, LPC"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
               />
+              <strong>{"Kelley Bell, LPC"}</strong>
+              <span>{"Licensed Professional Counselor"}</span>
             </a>
-            <h3>{"Kelley Bell, LPC"}</h3>
-            <p>{"Professional counselor"}</p>
-            <a
-              className={"person-link"}
-              href={
-                "/therapists/kelley-bell/"
-              }
-            >
-              {"Meet Kelley "}
-              <span aria-hidden={"true"}>{"→"}</span>
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/denise-santos/"}>
+              <img
+                src={"/assets/denise.jpg"}
+                alt={"Denise Santos, LPC"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Denise Santos, LPC"}</strong>
+              <span>{"Licensed Professional Counselor"}</span>
             </a>
-          </article>
-        </div>
-        <a
-          className={"button"}
-          href={"/therapists/"}
-        >
-          {"Meet Our Therapists"}
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/sarah-bell/"}>
+              <img
+                src={"/assets/sarah-bell.jpg"}
+                alt={"Sarah Bell, LPC-A"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Sarah Bell, LPC-A"}</strong>
+              <span>
+                {"Counselor Associate · Supervised by Whitney Briggs, LPC-S"}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a className={"portrait-card"} href={"/therapists/sarah-critzman/"}>
+              <img
+                src={"/assets/sarah-critzman.jpg"}
+                alt={"Sarah Critzman, LMSW"}
+                loading="lazy"
+                width={"240"}
+                height={"280"}
+              />
+              <strong>{"Sarah Critzman, LMSW"}</strong>
+              <span>
+                {"Master Social Worker · Supervised by Christi Lawson, LCSW-S"}
+              </span>
+            </a>
+          </li>
+        </TeamCarousel>
+        <a className={"button"} href={"/therapists/"}>
+          {"View All Therapists"}
         </a>
-      </div>
-      <div className={"ivory-local"}>
-        <figure>
-          <img
-            src={"/assets/our-story.jpg"}
-            alt={"Erin Young and Jennifer Wood, co-owners of The Bridge"}
-            width={"1000"}
-            height={"664"}
-            loading={"lazy"}
-          />
-          <figcaption>{"Jennifer & Erin · Co-owners"}</figcaption>
-        </figure>
-        <div>
-          <p className={"eyebrow"}>{"ROOTED IN TYLER"}</p>
-          <h2>
-            {"Here for"}
-            <br />
-            {"East Texas."}
-          </h2>
-          <p>
-            {
-              "We’re honored to serve individuals, couples, and families in Tyler and throughout the East Texas community."
-            }
-          </p>
-          <address>
-            <svg
-              className={"line-icon"}
-              viewBox={"0 0 40 40"}
-              fill={"none"}
-              stroke={"currentColor"}
-              strokeWidth={"1.6"}
-              strokeLinecap={"round"}
-              strokeLinejoin={"round"}
-              aria-hidden={"true"}
-            >
-              <path
-                d={"M32 15c0 10-12 22-12 22S8 25 8 15a12 12 0 0 1 24 0Z"}
-              ></path>
-              <circle cx={"20"} cy={"15"} r={"4"}></circle>
-            </svg>
-            <span>
-              {"3800 Paluxy Drive, Suite 240"}
-              <br />
-              {"Building 2"}
-              <br />
-              {"Tyler, TX 75703"}
-            </span>
-          </address>
-          <a className={"local-phone"} href={"tel:9032838729"}>
-            <svg
-              className={"line-icon"}
-              viewBox={"0 0 40 40"}
-              fill={"none"}
-              stroke={"currentColor"}
-              strokeWidth={"1.6"}
-              strokeLinecap={"round"}
-              strokeLinejoin={"round"}
-              aria-hidden={"true"}
-            >
-              <path
-                d={
-                  "m10 5 6 8-5 5c3 6 6 9 12 12l5-5 8 6c-2 6-7 7-12 5C12 32 4 22 3 12c0-4 3-7 7-7Z"
-                }
-              ></path>
-            </svg>
-            {"(903) 283-8729"}
-          </a>
-          <a
-            className={"local-directions"}
-            href={
-              "https://www.google.com/maps/search/?api=1&query=The+Bridge+Therapeutic+Services+3800+Paluxy+Drive+Suite+240+Tyler+TX"
-            }
-          >
-            {"Get Directions "}
-            <span aria-hidden={"true"}>{"→"}</span>
-          </a>
-        </div>
       </div>
     </section>
   );

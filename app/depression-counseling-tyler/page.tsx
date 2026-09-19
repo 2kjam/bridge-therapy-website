@@ -53,7 +53,14 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#depression-team-title"}>{"Meet our depression counselors"}</a></p>
+              <p>
+                <a
+                  className={"service-text-link"}
+                  href={"#depression-team-title"}
+                >
+                  {"Meet our depression counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -163,7 +170,11 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"depression-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
+            <h2
+              id={"depression-team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
               {"Experience working with depression."}
             </h2>
             <p>
@@ -193,9 +204,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/jennifer-wood/"
-                  }
+                  href={"/therapists/jennifer-wood/"}
                 >
                   {"More about Jennifer →"}
                 </a>
@@ -221,19 +230,14 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/denise-santos/"
-                  }
+                  href={"/therapists/denise-santos/"}
                 >
                   {"More about Denise →"}
                 </a>
               </div>
             </article>
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -296,10 +300,11 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check insurance?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about depression counseling and scheduling. Ask about counselor availability, your specific insurance plan, and payment options before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about depression counseling and scheduling. Self-pay is
+              available alongside insurance. Check with our office about
+              participation for your counselor, plan, and appointment type.
             </p>
           </details>
         </section>
@@ -312,7 +317,14 @@ export default function Page() {
           <h2 id={"depression-related-title"}>
             {"Related counseling services."}
           </h2>
-          <p>If you are experiencing depression during pregnancy or after childbirth, explore <a href="/pregnancy-postpartum-counseling-tyler/">Pregnancy and postpartum counseling</a>.</p>
+          <p>
+            If you are experiencing depression during pregnancy or after
+            childbirth, explore{" "}
+            <a href="/pregnancy-postpartum-counseling-tyler/">
+              Pregnancy and postpartum counseling
+            </a>
+            .
+          </p>
           <div className={"related-care"}>
             <a
               className={"service-text-link"}

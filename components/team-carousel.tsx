@@ -2,7 +2,15 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export function TeamCarousel({ children }: { children: ReactNode }) {
+export function TeamCarousel({
+  children,
+  id = "team-track",
+  className = "",
+}: {
+  children: ReactNode;
+  id?: string;
+  className?: string;
+}) {
   const track = useRef<HTMLUListElement>(null);
   const [edges, setEdges] = useState({ start: true, end: false });
   function updateArrows() {
@@ -36,7 +44,7 @@ export function TeamCarousel({ children }: { children: ReactNode }) {
     });
   }
   return (
-    <div className="team-carousel">
+    <div className={["team-carousel", className].filter(Boolean).join(" ")}>
       <div className="team-carousel-controls">
         <span>Explore our counselors</span>
         <div>
@@ -45,7 +53,7 @@ export function TeamCarousel({ children }: { children: ReactNode }) {
             type="button"
             data-team-direction="-1"
             aria-label="Previous therapists"
-            aria-controls="team-track"
+            aria-controls={id}
             aria-disabled={edges.start}
             onClick={() => {
               if (!edges.start) scroll(-1);
@@ -58,7 +66,7 @@ export function TeamCarousel({ children }: { children: ReactNode }) {
             type="button"
             data-team-direction="1"
             aria-label="Next therapists"
-            aria-controls="team-track"
+            aria-controls={id}
             aria-disabled={edges.end}
             onClick={() => {
               if (!edges.end) scroll(1);
@@ -70,7 +78,7 @@ export function TeamCarousel({ children }: { children: ReactNode }) {
       </div>
       <ul
         className="team-track"
-        id="team-track"
+        id={id}
         ref={track}
         tabIndex={0}
         aria-label="Therapists. Scroll sideways to explore."

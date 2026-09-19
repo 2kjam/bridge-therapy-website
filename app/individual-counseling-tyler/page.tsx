@@ -57,7 +57,14 @@ export default function Page() {
                 {"Book an Appointment "}
                 <span aria-hidden={"true"}>{"→"}</span>
               </a>
-              <p><a className={"service-text-link"} href={"#individual-team-title"}>{"Meet our individual counselors"}</a></p>
+              <p>
+                <a
+                  className={"service-text-link"}
+                  href={"#individual-team-title"}
+                >
+                  {"Meet our individual counselors"}
+                </a>
+              </p>
             </div>
             <figure>
               <img
@@ -220,7 +227,11 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"PEOPLE YOU CAN GET TO KNOW"}</p>
-            <h2 id={"individual-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
+            <h2
+              id={"individual-team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
               {"Meet a few of our counselors."}
             </h2>
             <p>
@@ -251,9 +262,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/jennifer-wood/"
-                  }
+                  href={"/therapists/jennifer-wood/"}
                 >
                   {"More about Jennifer →"}
                 </a>
@@ -280,9 +289,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/denise-santos/"
-                  }
+                  href={"/therapists/denise-santos/"}
                 >
                   {"More about Denise →"}
                 </a>
@@ -290,10 +297,7 @@ export default function Page() {
             </article>
             {"\n"}
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -326,18 +330,22 @@ export default function Page() {
           <details>
             <summary>{"Can I use insurance?"}</summary>
             <p>
-              {
-                "Contact our office to confirm your specific plan and your counselor’s participation before your appointment. You can ask about payment options at the same time."
-              }
+              Insurance and self-pay options are available. Insurance
+              participation can vary by counselor, plan, and appointment type.
+              Contact our office to confirm current coverage and discuss payment
+              options.
             </p>
           </details>
           <details>
             <summary>{"How do I get started?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact The Bridge"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about individual counseling and scheduling. Our office is at 3800 Paluxy Drive, Suite 240, Building 2, Tyler, Texas."
-              }
+              {" "}
+              <a href="/contact/">Contact The Bridge</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about individual counseling and scheduling. Our office is at
+              3800 Paluxy Drive, Suite 240, Building 2, Tyler, Texas. Once you
+              begin scheduling, the office will email intake paperwork for you
+              to complete before your appointment.
             </p>
           </details>
         </section>
@@ -351,7 +359,9 @@ export default function Page() {
             {"More ways to find support."}
           </h2>
           <div className={"related-care"}>
-            <a className="service-text-link" href="/trauma-therapy-tyler/">Trauma counseling</a>
+            <a className="service-text-link" href="/trauma-therapy-tyler/">
+              Trauma counseling
+            </a>
             <a
               className={"service-text-link"}
               href={"/pregnancy-postpartum-counseling-tyler/"}

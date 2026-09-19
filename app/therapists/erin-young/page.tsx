@@ -14,6 +14,7 @@ const services = [
   ["EMDR Therapy", "/emdr-therapy-tyler/"],
   ["ADHD Counseling", "/adhd-counseling-tyler/"],
   ["Adoption & Foster Family Support", "/adoption-counseling-tyler/"],
+  ["Non-Epileptic Seizures", "/non-epileptic-seizures-counseling-tyler/"],
 ];
 
 export default function ErinYoungPage() {
@@ -90,7 +91,11 @@ export default function ErinYoungPage() {
               <li>Attention concerns, including ADD/ADHD</li>
               <li>Stress- and pain-related concerns</li>
               <li>Codependency</li>
-              <li>Counseling support for non-epileptic concerns</li>
+              <li>
+                <a href="/non-epileptic-seizures-counseling-tyler/">
+                  Counseling support for non-epileptic concerns
+                </a>
+              </li>
               <li>Counseling support related to fibromyalgia</li>
             </ul>
             <p>

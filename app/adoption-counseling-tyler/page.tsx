@@ -191,9 +191,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/erin-young/"
-                  }
+                  href={"/therapists/erin-young/"}
                 >
                   {"Read counselor profile →"}
                 </a>
@@ -221,19 +219,14 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/kim-gonzales/"
-                  }
+                  href={"/therapists/kim-gonzales/"}
                 >
                   {"Read counselor profile →"}
                 </a>
               </div>
             </article>
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -290,10 +283,12 @@ export default function Page() {
           <details>
             <summary>{"How do I book and check insurance?"}</summary>
             <p>
-              <a href={"/contact/"}>{"Contact our office"}</a>
-              {
-                " through the website inquiry form, conversational inquiry widget, phone, or email to ask about adoption and foster family support and scheduling. Ask about your counselor, specific insurance plan, and payment options before your visit."
-              }
+              <a href="/contact/">Contact our office</a> through the website
+              inquiry form, conversational inquiry widget, phone, or email to
+              ask about adoption and foster family support and scheduling.
+              Self-pay is available alongside insurance. Check with our office
+              about participation for your counselor, plan, and appointment
+              type.
             </p>
           </details>
         </section>

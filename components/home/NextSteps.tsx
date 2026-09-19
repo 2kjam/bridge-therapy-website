@@ -1,6 +1,7 @@
 export function NextSteps() {
   return (
     <section className={"ivory-next"} id={"getting-started"}>
+      <img className="ivory-next-background" src="/assets/ivory-lake.jpg" width="2172" height="724" alt="" loading="lazy" />
       <div>
         <h2>{"Take the Next Step"}</h2>
         <p>
@@ -19,11 +20,6 @@ export function NextSteps() {
           </a>
         </div>
       </div>
-      <p className={"next-script"} aria-hidden={"true"}>
-        {"A Stronger You"}
-        <br />
-        {"Brighter Tomorrows"}
-      </p>
     </section>
   );
 }

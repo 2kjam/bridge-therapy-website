@@ -179,7 +179,11 @@ export default function Page() {
         >
           <div className={"service-section-heading"}>
             <p className={"eyebrow"}>{"GET TO KNOW OUR COUNSELORS"}</p>
-            <h2 id={"anxiety-team-title"} tabIndex={-1} style={{ scrollMarginTop: "2rem" }}>
+            <h2
+              id={"anxiety-team-title"}
+              tabIndex={-1}
+              style={{ scrollMarginTop: "2rem" }}
+            >
               {"Experience working with anxiety."}
             </h2>
             <p>
@@ -210,9 +214,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/erin-young/"
-                  }
+                  href={"/therapists/erin-young/"}
                 >
                   {"More about Erin →"}
                 </a>
@@ -239,9 +241,7 @@ export default function Page() {
                 </p>
                 <a
                   className={"service-text-link"}
-                  href={
-                    "/therapists/jill-kirkley/"
-                  }
+                  href={"/therapists/jill-kirkley/"}
                 >
                   {"More about Jill →"}
                 </a>
@@ -249,10 +249,7 @@ export default function Page() {
             </article>
             {"\n"}
           </div>
-          <a
-            className={"service-text-link"}
-            href={"/therapists/"}
-          >
+          <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
           </a>
         </section>
@@ -291,9 +288,10 @@ export default function Page() {
           <details>
             <summary>{"What happens in the first appointment?"}</summary>
             <p>
-              {
-                "Your first conversations are a chance to explain your concerns, ask questions, and discuss your goals. Ask your counselor what to expect and our office what paperwork to bring."
-              }
+              Your first conversations are a chance to explain your concerns,
+              ask questions, and discuss your goals. Once scheduling begins, the
+              office will email intake paperwork to complete before your
+              appointment.
             </p>
           </details>
           <details>
@@ -307,9 +305,9 @@ export default function Page() {
           <details>
             <summary>{"Can I use my insurance?"}</summary>
             <p>
-              {
-                "Contact our office to confirm your specific plan, counselor, and appointment type. Ask about payment options before your visit."
-              }
+              Self-pay is available, and you can also ask about insurance. Our
+              office can confirm participation for your specific counselor,
+              plan, and appointment type before you schedule.
             </p>
           </details>
         </section>
@@ -319,9 +317,7 @@ export default function Page() {
           aria-labelledby={"anxiety-related-title"}
         >
           <p className={"eyebrow"}>{"EXPLORE YOUR OPTIONS"}</p>
-          <h2 id={"anxiety-related-title"}>
-            {"Explore related support."}
-          </h2>
+          <h2 id={"anxiety-related-title"}>{"Explore related support."}</h2>
           <div className={"related-care"}>
             <a
               className={"service-text-link"}
@@ -350,7 +346,9 @@ export default function Page() {
         >
           <div>
             <p className={"eyebrow"}>{"REACH OUT WHEN YOU’RE READY"}</p>
-            <h2 id={"anxiety-booking-title"}>{"Ask about support for anxiety."}</h2>
+            <h2 id={"anxiety-booking-title"}>
+              {"Ask about support for anxiety."}
+            </h2>
             <p>
               {
                 "Contact our Tyler office to ask about anxiety counseling and scheduling."

@@ -28,7 +28,7 @@ export function Footer({ id = "location" }: { id?: string }) {
         </section>
         <section>
           <h2>{"Our Practice"}</h2>
-          <a href={"/#why-the-bridge"}>{"About"}</a>
+          <a href={"/about/"}>{"About"}</a>
           <a href={"/therapists/"}>{"Our Therapists"}</a>
           <a href={"/blog/"}>{"Resources"}</a>
           <a href={"/contact/"}>{"Contact"}</a>
@@ -50,7 +50,6 @@ export function Footer({ id = "location" }: { id?: string }) {
       </div>
       <div className={"footer-fine-print"}>
         <p>{"© 2026 The Bridge Therapeutic Services. All rights reserved."}</p>
-        <span>{"Local design preview"}</span>
       </div>
     </footer>
   );

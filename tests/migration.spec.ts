@@ -14,14 +14,13 @@ async function ready(page: Page, url: string) {
   });
 }
 
-test("homepage matches legacy pixels and responsive geometry", async ({
+test("homepage matches approved Batch 1 pixels and responsive geometry", async ({
   page,
-  context,
 }, testInfo) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  const original = await context.newPage();
-  await original.emulateMedia({ reducedMotion: "reduce" });
-  await ready(original, "http://127.0.0.1:4322/");
+
+  // Keep the timed welcome prompt out of layout snapshots; widget tests cover it separately.
+  await page.addInitScript(() => sessionStorage.setItem("bridge-inquiry-prompt-shown", "1"));
   await ready(page, "/");
   await expect(page.locator("[data-duplicate]:visible")).toHaveCount(0);
   const geometry = (target: Page) =>
@@ -31,18 +30,15 @@ test("homepage matches legacy pixels and responsive geometry", async ({
         return { width: rect.width, height: rect.height, x: rect.x, y: rect.y };
       }),
     );
-  expect(await geometry(page)).toEqual(await geometry(original));
-  const before = await original.screenshot({
-    fullPage: true,
-    animations: "disabled",
-    scale: "css",
-  });
+  const baseline = `tests/fixtures/homepage-batch1-${testInfo.project.name}`;
+  expect(await geometry(page)).toEqual(JSON.parse(fs.readFileSync(`${baseline}.json`, "utf8")));
+  const before = fs.readFileSync(`${baseline}.png`);
   const after = await page.screenshot({
     fullPage: true,
     animations: "disabled",
     scale: "css",
   });
-  fs.writeFileSync(testInfo.outputPath("legacy-home.png"), before);
+  fs.writeFileSync(testInfo.outputPath("approved-home.png"), before);
   fs.writeFileSync(testInfo.outputPath("next-home.png"), after);
   const a = PNG.sync.read(before),
     b = PNG.sync.read(after);
@@ -69,7 +65,6 @@ test("homepage matches legacy pixels and responsive geometry", async ({
       () => document.documentElement.scrollWidth <= innerWidth,
     ),
   ).toBe(true);
-  await original.close();
 });
 
 test("navigation, keyboard focus, therapist arrows, and dismissal", async ({
@@ -90,7 +85,7 @@ test("navigation, keyboard focus, therapist arrows, and dismissal", async ({
     .poll(() => track.evaluate((node) => node.scrollLeft))
     .toBeGreaterThan(0);
   await expect(
-    page.getByRole("button", { name: "Previous therapists" }),
+    page.locator("#team-panel").getByRole("button", { name: "Previous therapists" }),
   ).toHaveAttribute("aria-disabled", "false");
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
@@ -126,21 +121,14 @@ test("desktop hover moves between menus without a stale close timer", async ({
   await expect(page.locator("#team-panel")).toBeHidden();
 });
 
-test("specialty preview and inquiry launcher open independently", async ({
+test("shared cleanup: service discovery excludes out-of-scope specialties and inquiry launcher remains usable", async ({
   page,
 }) => {
   await page.goto("/");
   await page.locator(".specialty-directory summary").click();
-  await page
-    .getByRole("button", { name: /^Anger/ })
-    .click();
-  const dialog = page.locator("#detail-dialog");
-  await expect(dialog).toBeVisible();
-  await expect(page.locator("#detail-title")).toHaveText(
-    "Anger Counseling",
-  );
-  await page.keyboard.press("Escape");
-  await expect(dialog).toBeHidden();
+  await expect(page.locator(".service-list button, [data-service], #detail-dialog")).toHaveCount(0);
+  await expect(page.locator(".service-list")).not.toContainText(/Support after abuse|Anger counseling|Codependency|Eating disorders/i);
+  await expect(page.locator("footer")).not.toContainText("Local design preview");
   await page.locator("#chat-open").click();
   await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
   await page.locator("#inquiry-widget-panel").getByRole("button", { name: "Close inquiry assistant", exact: true }).click();
@@ -155,6 +143,8 @@ test("insurance animation pauses, resumes, and respects reduced motion", async (
   isMobile,
 }) => {
   await page.goto("/");
+  await expect(page.locator("#insurance button")).toHaveCount(0);
+  await expect(page.locator("#insurance h2, .insurance-options")).toHaveCount(0);
   const carousel = page.locator(".insurance-window");
   await carousel.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
@@ -259,8 +249,8 @@ test("legacy URLs redirect and static content works without JavaScript", async (
     viewport: page.viewportSize() ?? undefined,
   });
   const plain = await context.newPage();
-  await plain.goto("http://127.0.0.1:3000/");
-  await expect(plain.locator("h1")).toHaveText("Real Help forReal Life");
+  await plain.goto(new URL("/", page.url()).href);
+  await expect(plain.locator("h1")).toHaveText("Counseling and Therapy in Tyler, TX");
   await expect(plain.locator(".ivory-next h2")).toBeVisible();
   await context.close();
 });
