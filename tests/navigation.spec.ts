@@ -2,6 +2,61 @@ import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 import { parse, type DefaultTreeAdapterTypes } from "parse5";
 
+for (const width of [375, 390, 768, 900, 1024, 1100, 1280, 1440]) {
+  test(`shared cleanup: Home link, header fit and mobile dismissal at ${width}px`, async ({ page }, info) => {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/contact/");
+    if (width <= 1050) await page.locator(".mobile-toggle").click();
+    const home = page.locator('#navigation > a[href="/"]');
+    await expect(home).toHaveText("Home");
+    await expect(home).toBeVisible();
+    await expect(page.locator('.brand')).toHaveAttribute("href", "/");
+    expect(await page.locator('#navigation > a, #navigation > .nav-item > button').evaluateAll(nodes => nodes.map(n => n.textContent?.replace(/[⌄]/g, "").trim()))).toEqual(["Home", "About", "Counseling Services", "Our Therapists", "Resources", "Contact", "Book an Appointment"]);
+    if (width <= 1050) await page.keyboard.press("Tab");
+    else await home.focus();
+    await expect(home).toBeFocused();
+    expect(await home.evaluate(n => getComputedStyle(n).outlineStyle)).not.toBe("none");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    if (width <= 1050) {
+      await expect(page.locator('#chat-open')).toBeHidden();
+      await page.keyboard.press('Escape');
+      await expect(page.locator('.mobile-toggle')).toBeFocused();
+      await page.locator('.mobile-toggle').click();
+    } else {
+      const bounds = await page.locator('.brand, #navigation > a, #navigation > .nav-item > button').evaluateAll(nodes => nodes.map(n => {
+        const r = n.getBoundingClientRect();
+        return {left:r.left,right:r.right,center:r.top+r.height/2};
+      }));
+      for (let i=1;i<bounds.length;i++) {
+        expect(bounds[i].left).toBeGreaterThan(bounds[i-1].right);
+        expect(Math.abs(bounds[i].center-bounds[0].center)).toBeLessThan(1);
+      }
+      expect(bounds.at(-1)!.right).toBeLessThan(width);
+    }
+    await page.screenshot({path:info.outputPath(`home-navigation-${width}.png`)});
+    await home.click();
+    await expect(page).toHaveURL(/:\d+\/$/);
+    if (width <= 1050) await expect(page.locator('.mobile-toggle')).toHaveAttribute('aria-expanded','false');
+  });
+}
+
+test('shared cleanup: crawlable Home link and unchanged homepage URL', async ({browser, request}) => {
+  const response = await request.get('/', {maxRedirects:0});
+  expect(response.status()).toBe(200);
+  expect(response.headers().location).toBeUndefined();
+  for (const route of ['/', '/contact/', '/blog/', '/anxiety-counseling-tyler/', '/staff/kalynne-arrick/']) {
+    const html = await (await request.get(route)).text();
+    expect(html).toMatch(/<a class="nav-direct" href="\/">Home<\/a>/);
+    expect(html).not.toMatch(/href="(?:\/home\/?|\/index(?:\.html)?|\/#home)"/);
+  }
+  const context = await browser.newContext({javaScriptEnabled:false,viewport:{width:1440,height:900}});
+  const page = await context.newPage();
+  await page.goto('/contact/');
+  await page.locator('#navigation > a[href="/"]').click();
+  await expect(page).toHaveURL(/:\d+\/$/);
+  await context.close();
+});
+
 test("shared cleanup: sitewide CTA labels, preserved therapist inquiries and working routes", async ({
   page,
   request,
@@ -18,7 +73,7 @@ test("shared cleanup: sitewide CTA labels, preserved therapist inquiries and wor
     "Our Therapists",
   );
   await expect(page.locator('#about-panel a[href="/blog/"]')).toHaveText(
-    "Articles & resources →",
+    ["Articles & resources›", "Visit the Blog→"],
   );
   await expect(page.locator('footer a[href="/blog/"]')).toHaveText("Resources");
   await expect(

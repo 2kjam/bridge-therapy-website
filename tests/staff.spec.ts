@@ -32,6 +32,16 @@ for (const width of [375, 390, 768, 1440]) {
     await page.locator("main .button").first().click();
     await expect(page).toHaveURL(/\/contact\/$/);
     await expect(page.locator(".contact-staff")).toContainText("Office Manager");
+    const contactPortrait = page.locator(".contact-portrait > img");
+    await expect(contactPortrait).toHaveAttribute("alt", "Kalynne Arrick, Office Manager at The Bridge Therapeutic Services");
+    await expect(contactPortrait).toHaveAttribute("src", "/assets/presentation/contact/kalynne-720.webp");
+    const contactBounds = await contactPortrait.boundingBox();
+    expect(contactBounds!.width).toBe(width <= 600 ? 260 : width <= 800 ? 300 : 360);
+    expect(contactBounds!.height).toBe(width <= 600 ? 338 : width <= 800 ? 390 : 468);
+    await expect(page.locator(".contact-intro .contact-staff")).toHaveCount(1);
+    await expect(page.locator(".contact-details-layout > #inquiry")).toHaveCount(1);
+    await page.getByRole("link", { name: "Meet Kalynne" }).focus();
+    expect(await page.getByRole("link", { name: "Meet Kalynne" }).evaluate(n => getComputedStyle(n).outlineStyle)).not.toBe("none");
     await expect(page.locator("#inquiry option")).toHaveCount(11);
     await expect(page.locator("#inquiry")).not.toContainText("Kalynne");
     await page.locator(".contact-staff").scrollIntoViewIfNeeded();
@@ -46,6 +56,11 @@ for (const width of [375, 390, 768, 1440]) {
     await expect(help).toHaveAttribute("href", "/contact/");
     const menuPhoto = await help.locator("img").boundingBox();
     expect(menuPhoto!.height / menuPhoto!.width).toBeCloseTo(1.5, 1);
+    const menuFrame = await help.locator(".office-help-portrait").boundingBox();
+    expect(menuFrame!.width).toBe(width <= 1050 ? 120 : 130);
+    expect(menuFrame!.height).toBe(width <= 1050 ? 180 : 195);
+    await expect(help.locator("img")).toHaveAttribute("src", "/assets/presentation/menu/kalynne-480.webp");
+    await expect(help.locator("img")).toHaveAttribute("loading", "lazy");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await help.scrollIntoViewIfNeeded();
     await page.screenshot({ path: testInfo.outputPath(`menu-${width}.png`) });

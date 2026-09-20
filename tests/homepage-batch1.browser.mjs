@@ -21,7 +21,7 @@ try {
       "Faith-informed approach to therapy",
     );
     await expect(page.locator(".bridge-positioning")).toHaveText(
-      "Bridging Christian Counseling with Whole Health Together",
+      "Bridging Christian Counseling and Whole Health",
     );
     await expect(page.locator(".next-script")).toHaveCount(0);
     const track = page.locator("#homepage-team-track");

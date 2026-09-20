@@ -6,7 +6,7 @@ const base = process.env.INQUIRY_TEST_URL || 'http://127.0.0.1:3032';
 const browser = await chromium.launch({ channel: 'msedge' });
 const results = [];
 try {
-  for (const route of ['/', '/anxiety-counseling-tyler/', '/blog/']) {
+  for (const route of ['/', '/anxiety-counseling-tyler/', '/blog/', '/contact/']) {
     const context = await browser.newContext({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 1 });
     const page = await context.newPage();
     const session = await context.newCDPSession(page);
@@ -28,6 +28,7 @@ try {
     results.push({ route, ...metrics, requests });
     if (phase === 'after') {
       assert.equal(requests.filter(r => r.url.includes('/presentation/menu/')).length, 0, 'Closed menus must not download portraits');
+      assert.equal(requests.some(r => r.url.endsWith('/assets/kalynne.jpg')), false, 'Closed menus must not download the original Kalynne portrait');
       assert.equal(metrics.preloads.some(src => src?.includes('/presentation/menu/')), false);
       if (route === '/') assert.equal(requests.some(r => r.url.includes('/ivory-lake.jpg')), false, 'Below-fold lake stays deferred');
       if (route === '/blog/') {

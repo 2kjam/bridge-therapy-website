@@ -1,5 +1,6 @@
 import { expectBatchTwo } from "./expect-batch2.mjs";
 import { expectPerformance } from "./expect-performance.mjs";
+import { expectResourcesMenu } from "./expect-resources-menu.mjs";
 import fs from "node:fs";
 import { expectBatchOne } from "./expect-homepage-batch1.mjs";
 import path from "node:path";
@@ -439,6 +440,10 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   }
   // Intentional CTA/navigation cleanup, applied only to the in-memory reference.
   const referenceHeader = elements(legacy, "header")[0];
+  const primaryNavigation = all(referenceHeader, n => attr(n, "id") === "navigation")[0];
+  const homeLink = parseFragment('<a class="nav-direct" href="/">Home</a>').childNodes[0];
+  homeLink.parentNode = primaryNavigation;
+  primaryNavigation.childNodes.unshift(homeLink);
   const helpCards = all(referenceHeader, n => attr(n, "class") === "menu-feature");
   assert.equal(helpCards.length, 1);
   const helpCard = helpCards[0];
@@ -460,19 +465,33 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   expectBatchOne(legacy, route);
   expectBatchTwo(legacy, route);
   expectPerformance(legacy, route);
+  expectResourcesMenu(legacy);
+  if (route === "/contact/") {
+    // Only the approved composition changes. Keep the independently transformed
+    // legacy FAQ intact, so every existing answer and link remains checked.
+    const main = elements(legacy, "main")[0];
+    const faq = all(main, n => attr(n, "id") === "questions")[0];
+    main.childNodes = [...parseFragment(fs.readFileSync("tests/fixtures/contact-redesign.html", "utf8")).childNodes, faq];
+    main.childNodes.forEach(n => { n.parentNode = main; });
+  }
   for (const tag of ["title", "header", "main", "footer"]) {
     let current = elements(built, tag)[0];
     if (route === "/contact/" && tag === "main") {
-      // Validate the new form separately, while preserving every pre-existing contact element.
+      // Validate form semantics independently of the approved Contact layout.
       current = parse(fs.readFileSync(builtFile, "utf8"));
       current = elements(current, "main")[0];
       const staffFeatures = all(current, n => attr(n, "class") === "contact-staff");
       assert.equal(staffFeatures.length, 1);
       const staffFeature = staffFeatures[0];
-      assert.equal(normalizedText(staffFeature), "Kalynne Arrick Office Manager If you are not sure which counselor to contact, Kalynne, our Office Manager, can talk with you about what you are looking for and help connect you with a counselor who may be a good fit. Meet Kalynne →");
+      assert.equal(normalizedText(staffFeature), "Kalynne Arrick Office Manager Kalynne, our Office Manager, can talk with you about what you're looking for and help connect you with a counselor who may be a good fit. Meet Kalynne →");
       assert.equal(attr(elements(staffFeature, "a")[0], "href"), "/staff/kalynne-arrick/");
-      assert.equal(attr(elements(staffFeature, "img")[0], "src"), "/assets/kalynne.jpg");
-      staffFeature.parentNode.childNodes = staffFeature.parentNode.childNodes.filter(n => n !== staffFeature);
+      const contactPortrait = elements(current, "img")[0];
+      assert.equal(attr(contactPortrait, "src"), "/assets/presentation/contact/kalynne-720.webp");
+      assert.equal(attr(contactPortrait, "alt"), "Kalynne Arrick, Office Manager at The Bridge Therapeutic Services");
+      assert.equal(attr(contactPortrait, "width"), "720");
+      assert.equal(attr(contactPortrait, "height"), "1080");
+      assert.equal(attr(contactPortrait, "fetchpriority"), "high");
+      assert.equal(elements(current, "img").length, 1);
       const inquiry = all(current, (node) => attr(node, "id") === "inquiry")[0];
       assert.ok(inquiry);
       const visibleForm = elements(inquiry, "form")[0];

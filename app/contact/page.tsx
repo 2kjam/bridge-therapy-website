@@ -23,152 +23,47 @@ export default function Page() {
       footerId="contact-footer"
     >
       <main id={"main"} className={"contact-page"}>
-        {"\n  "}
-        <section className={"contact-intro"} aria-labelledby={"contact-title"}>
-          {"\n    "}
-          <p className={"contact-breadcrumb"}>
-            <a href={"/"}>{"Home"}</a>
-            <span aria-hidden={"true"}>{"/"}</span>
-            {"Contact Us"}
-          </p>
-          {"\n    "}
-          <div className={"contact-layout"}>
-            {"\n      "}
-            <div className={"contact-copy"}>
-              {"\n        "}
-              <p className={"eyebrow"}>{"CONTACT THE BRIDGE · TYLER, TEXAS"}</p>
-              {"\n        "}
-              <h1 id={"contact-title"}>
-                {"Your next chapter "}
-                <br />
-                {"can start with "}
-                <br />
-                <span>{"a conversation."}</span>
-              </h1>
-              {"\n        "}
-              <p>
-                {
-                  "Ready to book an appointment? Reach out to our office to talk about counseling and find the right next step for you."
-                }
-              </p>
-              {"\n        "}
-              <p className={"contact-reassurance"}>
-                {
-                  "You don’t need to have everything figured out—or choose a counselor before you contact us."
-                }
-              </p>
-              {"\n      "}
+
+        <section className="contact-intro" aria-labelledby="contact-title">
+          <p className="contact-breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>Contact Us</p>
+          <div className="contact-layout">
+            <div className="contact-copy">
+              <p className="eyebrow">CONTACT THE BRIDGE · TYLER, TEXAS</p>
+              <h1 id="contact-title">Your next chapter can start with a conversation.</h1>
+              <p>Ready to book an appointment? Reach out to our office to talk about counseling and find the right next step for you.</p>
+              <p className="contact-reassurance">You don’t need to have everything figured out—or choose a counselor before you contact us.</p>
+              <div className="contact-support"><span aria-hidden="true" /><p>Kalynne, our Office Manager, can help you get started.</p></div>
             </div>
-            {"\n      "}
-            <div className={"contact-options"}>
-              {"\n        "}
-              <h2>{"Let’s get you connected."}</h2>
-              {"\n        "}
-              <p>
-                Call or email our office to ask about counselor availability. We
-                typically respond to new inquiries within 24 hours.
-              </p>
-              {"\n        "}
-              <a className={"button"} href={"tel:9032838729"}>
-                {"Call (903) 283-8729 "}
-                <span aria-hidden={"true"}>{"→"}</span>
-              </a>
-              {"\n        "}
-              <a
-                className={"contact-email"}
-                href={"mailto:info@thebridgetherapy.com"}
-              >
-                {"Email info@thebridgetherapy.com"}
-              </a>
-              {"\n        "}
-              <p className={"contact-note"}>
-                {
-                  "When emailing, a brief note that you’d like to get started is enough. You can discuss personal details with your counselor."
-                }
-              </p>
-              {"\n      "}
+            <div className="contact-portrait">
+              <img src="/assets/presentation/contact/kalynne-720.webp" width="720" height="1080" alt="Kalynne Arrick, Office Manager at The Bridge Therapeutic Services" fetchPriority="high" decoding="async" />
             </div>
-            {"\n    "}
-          </div>
-          {"\n  "}
-        </section>
-        {"\n  "}
-        <section
-          className="contact-staff"
-          aria-labelledby="contact-staff-title"
-        >
-          <img
-            src="/assets/kalynne.jpg"
-            width="2500"
-            height="3750"
-            alt=""
-            loading="lazy"
-          />
-          <div>
-            <h2 id="contact-staff-title">Kalynne Arrick</h2>
-            <p className="contact-staff-role">Office Manager</p>
-            <p>
-              If you are not sure which counselor to contact, Kalynne, our
-              Office Manager, can talk with you about what you are looking for
-              and help connect you with a counselor who may be a good fit.
-            </p>
-            <a href="/staff/kalynne-arrick/">Meet Kalynne →</a>
+            <section className="contact-staff" aria-labelledby="contact-staff-title">
+              <h2 id="contact-staff-title">Kalynne Arrick</h2>
+              <p className="contact-staff-role">Office Manager</p>
+              <p className="contact-staff-help">{"Kalynne, our Office Manager, can talk with you about what you're looking for and help connect you with a counselor who may be a good fit."}</p>
+              <a href="/staff/kalynne-arrick/">Meet Kalynne <span aria-hidden="true">→</span></a>
+            </section>
           </div>
         </section>
-        <ContactInquiry />
-        <section
-          className={"contact-visit"}
-          id={"location"}
-          aria-labelledby={"visit-title"}
-        >
-          {"\n    "}
-          <div>
-            <p className={"eyebrow"}>{"HERE IN EAST TEXAS"}</p>
-            <h2 id={"visit-title"}>{"Visit The Bridge."}</h2>
-            <address>
-              {"The Bridge Therapeutic Services"}
-              <br />
-              {"3800 Paluxy Drive, Suite 240"}
-              <br />
-              {"Building 2"}
-              <br />
-              {"Tyler, TX 75703"}
-            </address>
-            <a
-              className={"contact-directions"}
-              href={
-                "https://www.google.com/maps/search/?api=1&query=The+Bridge+Therapeutic+Services+3800+Paluxy+Drive+Suite+240+Tyler+TX"
-              }
-              target={"_blank"}
-              rel={"noopener"}
-            >
-              {"Get Directions "}
-              <span aria-hidden={"true"}>{"↗"}</span>
-            </a>
-          </div>
-          {"\n    "}
-          <div className={"visit-note"}>
-            <h3>{"Before your first visit"}</h3>
-            <p>
-              Once you begin the scheduling process, the office will email
-              intake paperwork for you to complete before your appointment. We
-              can also help with questions about finding the office.
-            </p>
-            <h3>Office hours</h3>
-            <p>
-              Monday–Friday
-              <br />
-              8:00 AM–7:00 PM
-            </p>
-            <p>
-              Weekends
-              <br />
-              Based on availability
-            </p>
-          </div>
-          {"\n  "}
-        </section>
-        {"\n  "}
+        <div className="contact-details-layout">
+          <section className="contact-information" aria-labelledby="contact-information-title">
+            <h2 id="contact-information-title">Contact Information</h2>
+            <dl className="contact-information-rows">
+              <div><dt>Phone</dt><dd><a href="tel:9032838729">(903) 283-8729</a></dd></div>
+              <div><dt>Email</dt><dd><a href="mailto:info@thebridgetherapy.com">info@thebridgetherapy.com</a></dd></div>
+              <div><dt>Office hours</dt><dd>Monday–Friday<br />8:00 AM–7:00 PM</dd><dd>Weekends<br />Based on availability</dd></div>
+              <div id="location"><dt>Location</dt><dd><address>The Bridge Therapeutic Services<br />3800 Paluxy Drive, Suite 240<br />Building 2<br />Tyler, TX 75703</address><a className="contact-directions" href="https://www.google.com/maps/search/?api=1&query=The+Bridge+Therapeutic+Services+3800+Paluxy+Drive+Suite+240+Tyler+TX" target="_blank" rel="noopener">Get Directions <span aria-hidden="true">↗</span></a></dd></div>
+            </dl>
+            <div className="contact-office-notes">
+              <h3>Let’s get you connected.</h3>
+              <p>Call or email our office to ask about counselor availability. We typically respond to new inquiries within 24 hours.</p>
+              <p>When emailing, a brief note that you’d like to get started is enough. You can discuss personal details with your counselor.</p>
+              <h3>Before your first visit</h3>
+              <p>Once you begin the scheduling process, the office will email intake paperwork for you to complete before your appointment. We can also help with questions about finding the office.</p>
+            </div>
+          </section>
+          <ContactInquiry />
+        </div>
         <section
           className={"contact-faq"}
           id={"questions"}

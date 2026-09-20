@@ -1,5 +1,6 @@
 import { HeaderFrame, MobileToggle, Navigation, NavMenu } from "./navigation";
 import { TeamCarousel } from "./team-carousel";
+import { ResourcesMenu } from "./resources-menu";
 export function Header() {
   return (
     <HeaderFrame>
@@ -15,6 +16,7 @@ export function Header() {
         <MobileToggle />
         {"\n"}
         <Navigation>
+          <a className="nav-direct" href="/">Home</a>
           <a className={"nav-direct"} href={"/about/"}>
             {"About"}
           </a>
@@ -295,33 +297,7 @@ export function Header() {
               </>
             }
           >
-            <section>
-              <h2>{"About The Bridge"}</h2>
-              <a href={"/blog/"}>{"Articles & resources →"}</a>
-            </section>
-            <section>
-              <h2>{"Your first step"}</h2>
-              <a href={"/contact/"}>{"Book an Appointment"}</a>
-              <a href={"/contact/#questions"}>
-                {"Questions about getting started"}
-              </a>
-              <a href={"/contact/#location"}>{"Location & contact details"}</a>
-              <a href={"tel:9032838729"}>{"Call (903) 283-8729"}</a>
-            </section>
-            <a
-              className={"menu-feature wide"}
-              href={"/christian-counseling-tyler/"}
-            >
-              <img width="1200" height="800" loading="lazy"
-                src={"/assets/presentation/menu/team-1200.webp"}
-                alt={"A stone bridge surrounded by greenery"}
-              />
-              <span>
-                <strong>{"Christian Counseling"}</strong>
-                {"Learn how faith and counseling come together at The Bridge."}
-                <b>{"Learn more"}</b>
-              </span>
-            </a>
+            <ResourcesMenu />
           </NavMenu>
           {"\n"}
           <a className={"nav-direct"} href={"/contact/"}>

@@ -26,3 +26,16 @@ test("presentation derivatives preserve originals, full aspect ratios and declar
     }
   }
 });
+
+test("Contact portrait preserves the source composition at sufficient high-density resolution", async () => {
+  const output = fs.readFileSync("public/assets/presentation/contact/kalynne-720.webp");
+  const metadata = await sharp(output).metadata();
+  assert.equal(metadata.width, 720);
+  assert.equal(metadata.height, 1080);
+  assert.equal(metadata.format, "webp");
+  assert.ok(output.length < 200_000);
+  const expected = await sharp("public/assets/kalynne.jpg")
+    .resize({ width: 720, withoutEnlargement: true })
+    .webp({ quality: 85, effort: 6 }).toBuffer();
+  assert.deepEqual(output, expected, "The derivative must only resize and encode the original photograph");
+});

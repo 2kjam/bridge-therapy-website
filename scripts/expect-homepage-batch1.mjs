@@ -110,7 +110,7 @@ export function expectBatchOne(doc, route) {
   replace(
     insurance,
     html(
-      '<div class="bridge-positioning"><p>Bridging Christian Counseling with Whole Health Together</p></div>',
+      '<div class="bridge-positioning"><p>Bridging Christian Counseling and Whole Health</p></div>',
     ),
   );
   const next = find("id", "getting-started");
