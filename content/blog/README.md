@@ -1,5 +1,40 @@
 # Legacy blog content
 
+## Verified author profile links
+
+All 19 article-page bylines now link to verified current therapist profiles:
+15 retain Jennifer Wood, LPC-S from their captured item and page bylines; four
+use Erin's owner-approved attribution below. See [the per-article audit](AUTHOR-LINK-AUDIT.md).
+Each reviewed metadata record opts in with `authorProfilePath`; there is no
+automatic topic/name matching or generic-directory fallback. The reusable
+article template leaves records without that property as plain text.
+An optional `bylinePrefix` preserves the exact owner-approved `Written by` for
+Erin while other articles retain their historical `Written By` wording.
+Dates stay separate. Index cards retain plain author text inside their existing
+article link, with no nested anchors. All body/source preservation checks remain.
+
+## Traumatic Memories presentation exception
+
+For `/news/2019/2/3/traumatic-memories-and-treatment`, the article template omits
+its added featured image because the preserved body already starts with that
+same Erin image. The featured asset and metadata remain available to the blog
+index. An article-specific CSS class resets the CBS19 image wrapper's inline
+`padding-bottom:55.76407241821289%` to zero: the normal-flow image already provides
+that height, so the inherited reservation otherwise doubles the wrapper height.
+No body HTML, text, order, image, link, source snapshot or checksum is changed.
+Other articles retain their existing template and CSS presentation.
+
+## Owner-approved author corrections
+
+Erin Young confirmed authorship of Traumatic Memories and Treatment, Storm Anxiety,
+Simple Ways to Lower Stress During the Holidays, and The Bridge Community Spotlight
+Featuring Beth Reed. Their `displayedByline` is now `Erin Young, LCSW-S`, with an
+optional `authorProfilePath` linking to `/therapists/erin-young/` in the template.
+The displayed byline is `Written by Erin Young, LCSW-S`. This overrides historical
+display metadata only: all `source/` snapshots, source hashes, article bodies,
+dates, titles, media and URLs remain unchanged. Preservation tests explicitly
+allow these four corrections while continuing to verify the original evidence.
+
 **All 19 published legacy articles are now imported.** See [the completed migration report](MIGRATION-REPORT.md) for the 18 new titles, every route/preservation result, image mappings, source discrepancies, Vimeo playback, validation and launch follow-up. The original Navigating Life Transitions content files and image remain unchanged.
 
 The sections below document the established architecture and historical batch-one implementation; the completed migration report supersedes their one-article status and deferred-import notes.

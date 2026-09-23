@@ -63,10 +63,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/individual-care.jpg"}
-                alt={"A woman taking a quiet moment beside a window"}
-                width={"900"}
-                height={"600"}
+                src="/assets/services/service-anxiety.webp"
+                srcSet="/assets/services/service-anxiety-480.webp 480w, /assets/services/service-anxiety-800.webp 800w, /assets/services/service-anxiety.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A woman sitting on a sofa with her hands clasped near her mouth, looking toward a sunlit window"
+                width="1440"
+                height="960"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"A place to pause, talk, and feel heard."}

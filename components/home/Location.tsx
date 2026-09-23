@@ -3,16 +3,13 @@ export function Location() {
     <section className={"ivory-local"}>
       <div>
         <p className={"eyebrow"}>{"ROOTED IN TYLER"}</p>
-        <h2>
-          {"Here for"}
-          <br />
-          {"East Texas."}
-        </h2>
+        <h2>Here for East Texas. Available across Texas.</h2>
         <p>
           {
-            "We’re honored to serve individuals, couples, and families in Tyler and throughout the East Texas community."
+            "We’re honored to serve individuals, couples, families, and children in Tyler and throughout East Texas, with telehealth counseling available across Texas."
           }
         </p>
+        <a className="button button-outline" href="/online-therapy-texas/">Explore online counseling across Texas →</a>
       </div>
       <div className="local-details">
         <address>

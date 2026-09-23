@@ -57,11 +57,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/services/service-child-teen.webp"}
-                alt={"A teenager working on a creative project"}
-                width={"1440"}
-                height={"1080"}
-                style={{ objectPosition: "50% 60%" }}
+                src="/assets/services/service-child-teen.webp"
+                srcSet="/assets/services/service-child-teen-480.webp 480w, /assets/services/service-child-teen-800.webp 800w, /assets/services/service-child-teen.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A young person wearing glasses reading a book beside library shelves"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>{"A place for your child to be heard."}</figcaption>
             </figure>

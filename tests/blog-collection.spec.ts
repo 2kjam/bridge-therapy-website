@@ -13,9 +13,56 @@ const representative = new Set([
   "simple-ways-to-lower-stress-during-the-holidays",
   "the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
   "storm-anxiety",
+  "traumatic-memories-and-treatment",
   "emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
   "take-heart",
 ]);
+for (const width of [375, 390, 768, 1440]) {
+  test(`Traumatic Memories presentation: one portrait and no CBS19 spacer at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto("/news/2019/2/3/traumatic-memories-and-treatment/");
+    await expect(page.locator(".blog-featured-image")).toHaveCount(0);
+    const body = page.locator("[data-original-article-body]");
+    await expect(body.locator('img[src$="/featured.jpg"]')).toHaveCount(1);
+    await expect(body.locator("figure")).toHaveCount(2);
+    await expect(page.locator(".blog-meta span")).toHaveText("Written by Erin Young, LCSW-S");
+    await expect(page.locator(".blog-meta a")).toHaveAttribute("href", "/therapists/erin-young/");
+    const destination = "https://www.cbs19.tv/video/news/local/tyler-news/mistaken-identity/501-8386488?jwsource=cl";
+    const link = body.locator("figure a");
+    await expect(link).toHaveAttribute("href", destination);
+    const image = link.locator("img");
+    await image.scrollIntoViewIfNeeded();
+    await image.evaluate((node: HTMLImageElement) => node.decode());
+    const layout = await image.evaluate((node: HTMLImageElement) => {
+      const image = node.getBoundingClientRect();
+      const wrapper = node.parentElement!.getBoundingClientRect();
+      const figure = node.closest("figure")!;
+      const before = figure.previousElementSibling!.getBoundingClientRect();
+      const after = figure.nextElementSibling!.getBoundingClientRect();
+      return {
+        imageHeight: image.height,
+        wrapperHeight: wrapper.height,
+        ratio: image.width / image.height,
+        naturalRatio: node.naturalWidth / node.naturalHeight,
+        gapBefore: image.top - before.bottom,
+        gapAfter: after.top - image.bottom,
+        overflow: document.documentElement.scrollWidth > innerWidth,
+      };
+    });
+    expect(layout.wrapperHeight).toBeCloseTo(layout.imageHeight, 1);
+    expect(layout.ratio).toBeCloseTo(layout.naturalRatio, 2);
+    expect(layout.gapBefore).toBeGreaterThanOrEqual(0);
+    expect(layout.gapBefore).toBeLessThanOrEqual(29);
+    expect(layout.gapAfter).toBeGreaterThanOrEqual(0);
+    expect(layout.gapAfter).toBeLessThanOrEqual(29);
+    expect(layout.overflow).toBe(false);
+    // Confirm activation without depending on the external site's availability.
+    await page.route(destination, (route) => route.fulfill({ status: 200, body: "CBS19 link destination verified" }));
+    await image.click();
+    await expect(page).toHaveURL(destination);
+  });
+}
+
 test("all 19 legacy routes and article links resolve; unknown paths return 404", async ({
   request,
 }) => {
@@ -55,8 +102,12 @@ for (const width of [375, 390, 768, 1440]) {
         post.publicationDate,
       );
       await expect(page.locator(".blog-meta span")).toHaveText(
-        `Written By ${post.displayedByline}`,
+        `${post.bylinePrefix ?? "Written By"} ${post.displayedByline}`,
       );
+      if (post.authorProfilePath) {
+        await expect(page.locator(".blog-meta a")).toHaveText(post.displayedByline);
+        await expect(page.locator(".blog-meta a")).toHaveAttribute("href", post.authorProfilePath);
+      }
       const layout = await page
         .locator(".blog-article")
         .evaluate(async (article) => {
@@ -126,6 +177,43 @@ for (const width of [375, 390, 768, 1440]) {
     ).toBe(false);
   });
 }
+test("verified therapist bylines: all 19 links, direct profile routes, keyboard access and valid index cards", async ({ page, request }) => {
+  test.setTimeout(90_000);
+  const profiles = new Map([
+    ["Jennifer Wood, LPC-S", "/therapists/jennifer-wood/"],
+    ["Erin Young, LCSW-S", "/therapists/erin-young/"],
+  ]);
+  for (const [name, path] of profiles) {
+    const response = await request.get(path, { maxRedirects: 0 });
+    expect(response.status()).toBe(200);
+    expect(response.headers().location).toBeUndefined();
+    await page.goto(path);
+    await expect(page.locator("h1")).toHaveText(name);
+  }
+  for (const post of posts) {
+    await page.goto(`${post.legacyPath}/`);
+    const link = page.locator(".blog-meta a");
+    await expect(link).toHaveCount(1);
+    await expect(link).toHaveText(post.displayedByline);
+    const destination = profiles.get(post.displayedByline)!;
+    expect(destination).toBeTruthy();
+    await expect(link).toHaveAttribute("href", destination);
+    await expect(link).not.toHaveAttribute("rel", /nofollow/);
+    await expect(link.locator("time, a")).toHaveCount(0);
+    await link.hover();
+    await expect(link).toHaveCSS("text-decoration-thickness", "2px");
+    await link.focus();
+    expect(await link.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
+    await page.keyboard.press("Enter");
+    await expect(page).toHaveURL(new RegExp(`${destination}$`));
+  }
+  await page.goto("/blog/");
+  const cardLinks = page.locator(".blog-card-link");
+  await expect(cardLinks).toHaveCount(19);
+  await expect(cardLinks.locator("a")).toHaveCount(0);
+  await expect(page.locator(".blog-card-copy > p")).toHaveText(posts.map((post) => post.displayedByline));
+});
+
 test("Vimeo reference and browser availability evidence", async ({
   page,
 }, testInfo) => {

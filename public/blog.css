@@ -55,6 +55,13 @@
   font-size: 14px;
   color: var(--muted);
 }
+.blog-meta a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.blog-meta a:hover {
+  text-decoration-thickness: 2px;
+}
 .blog-featured-image {
   display: block;
   width: 100%;
@@ -135,6 +142,11 @@
 .legacy-article-body figure img {
   display: block;
   width: 100%;
+}
+/* The CBS19 image already supplies its own proportional height. Override only
+   this article's inline Squarespace padding reservation, preserving its HTML. */
+.blog-article--traumatic-memories .sqs-image-shape-container-element {
+  padding-bottom: 0 !important;
 }
 .legacy-video {
   margin: 28px 0;

@@ -69,6 +69,7 @@ export function Header() {
                   {"Christian counseling"}
                 </a>
                 <a href={"/emdr-therapy-tyler/"}>{"EMDR therapy"}</a>
+                <a href="/online-therapy-texas/">Online Therapy in Texas</a>
                 <a className={"view-all"} href={"/#services"}>
                   {"View all specialties →"}
                 </a>

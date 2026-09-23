@@ -57,10 +57,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/family-care.jpg"}
-                alt={"A family walking together outdoors"}
-                width={"900"}
-                height={"600"}
+                src="/assets/services/service-family.webp"
+                srcSet="/assets/services/service-family-480.webp 480w, /assets/services/service-family-800.webp 800w, /assets/services/service-family.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="Adults and children playing a board game together at home"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"Make room for each other’s perspective."}

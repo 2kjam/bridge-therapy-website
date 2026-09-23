@@ -110,7 +110,7 @@ export function expectBatchOne(doc, route) {
   replace(
     insurance,
     html(
-      '<div class="bridge-positioning"><p>Bridging Christian Counseling and Whole Health</p></div>',
+      '<div class="bridge-positioning"><p>Bridging Heart-Focused Christian Counseling and Whole Health Together</p></div>',
     ),
   );
   const next = find("id", "getting-started");
@@ -124,9 +124,13 @@ export function expectBatchOne(doc, route) {
   detach(local);
   local.tagName = local.nodeName = "section";
   const copy = all(local, (n) => n.tagName === "div")[0];
+  // Erin-approved service-area copy; the frozen source stays unchanged.
+  text(all(copy, (n) => n.tagName === "h2")[0], "Here for East Texas. Available across Texas.");
+  text(all(copy, (n) => n.tagName === "p" && attr(n, "class") !== "eyebrow")[0], "We’re honored to serve individuals, couples, families, and children in Tyler and throughout East Texas, with telehealth counseling available across Texas.");
   const details = html('<div class="local-details"></div>');
   const detailNodes = copy.childNodes.slice(copy.childNodes.findIndex(n => n.tagName === "address"));
   for (const node of detailNodes) { detach(node); append(details, node); }
+  append(copy, html('<a class="button button-outline" href="/online-therapy-texas/">Explore online counseling across Texas →</a>'));
   append(local, details);
   append(local, html('<span class="local-watermark" aria-hidden="true">EAST TEXAS</span>'));
   local.parentNode = next.parentNode;

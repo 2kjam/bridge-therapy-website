@@ -81,9 +81,25 @@ body p{line-height:1.5}html{scroll-padding-top:100px}
 #care-panel .office-help>span{padding:12px 16px 16px}
 @media(max-width:1050px){#care-panel .office-help{grid-template-columns:120px minmax(0,1fr);align-items:center}#care-panel .office-help-portrait{width:120px;margin:0}#care-panel .office-help>span{padding:12px}}
 /* Approved homepage and shared navigation refinements. */
-.brand img{width:260px}
+/* Fluid header sizing; the height follows the existing 600 × 154 logo asset. */
+:root{--header-logo-width:clamp(300px,calc(32.75vw - 44.2px),375px);--header-padding:6px;--header-height:calc(var(--header-logo-width) * 154 / 600 + var(--header-padding) * 2 + 1px)}
+.header-inner{min-height:0;padding:var(--header-padding) clamp(24px,3vw,48px);gap:20px}
+.brand img{width:var(--header-logo-width)}
+@media(min-width:1051px){
+ #navigation{gap:clamp(10px,calc(3.125vw - 26px),24px)}
+ .nav-direct,.nav-trigger{font-size:clamp(12px,calc(1vw + 1.5px),14.3px)}
+ .header-cta{font-size:clamp(15px,calc(.65vw + 8.18px),16.5px);padding:13px clamp(18px,calc(3.125vw - 16px),26px);min-width:0;margin-left:10px;white-space:nowrap}
+ .mega{max-height:calc(100dvh - var(--header-height) - 16px)}
+}
+@media(max-width:1050px){
+ :root{--header-logo-width:300px;--header-padding:8px}
+ .header-inner{padding-inline:4%;gap:12px}
+ .mobile-toggle{flex-shrink:0}
+ .header #navigation{max-height:calc(100dvh - var(--header-height))}
+}
+@media(max-width:560px){:root{--header-logo-width:clamp(190px,calc(100vw - 128px),300px)}}
 .bridge-positioning{padding:24px var(--gutter);text-align:center;background:#f0ece3;border-bottom:1px solid var(--line)}
-.bridge-positioning p{max-width:850px;margin:0 auto;font-family:Georgia,serif;font-size:clamp(23px,2.2vw,32px);line-height:1.3;color:#31462e}
+.bridge-positioning p{max-width:1200px;margin:0 auto;font-family:Georgia,serif;font-size:clamp(23px,2.2vw,32px);line-height:1.3;color:#31462e}
 .hero-side-note{text-transform:uppercase}
 .individual-counseling-link{display:inline-flex;align-items:center;gap:8px;color:#31462e;font-weight:600;text-decoration:underline;text-underline-offset:4px}
 .individual-counseling-link:hover{color:#17272d;text-decoration-thickness:2px}
@@ -101,10 +117,7 @@ body p{line-height:1.5}html{scroll-padding-top:100px}
 .homepage-team-carousel .portrait-card:hover strong{text-decoration:underline;text-underline-offset:4px}
 #care-panel .mega-columns button{display:block;width:100%;text-align:left;border:0;background:transparent;font:inherit;font-size:15px;color:inherit;padding:8px 0;cursor:pointer}
 #care-panel .mega-columns button:hover{text-decoration:underline}
-@media(max-width:1200px){.brand img{width:228px}}
-@media(max-width:1050px){.brand img{width:239px}}
-@media(max-width:560px){.brand img{width:207px}.homepage-team-carousel .team-track>li{flex-basis:calc((100% - 20px)/2)}}
-@media(max-width:360px){.brand img{width:186px}}
+@media(max-width:560px){.homepage-team-carousel .team-track>li{flex-basis:calc((100% - 20px)/2)}}
 
 /* Dedicated location section, between insurance and the next-step CTA. */
 .ivory-home > .ivory-local{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:60px;padding:40px 5%;width:100%;max-width:none;margin:0;background:#f0eee6;border-top:1px solid #dedfd5}

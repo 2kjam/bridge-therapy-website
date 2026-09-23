@@ -59,11 +59,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/services/service-premarital.webp"}
-                alt={"Two adults working with plants together"}
-                width={"1440"}
-                height={"1080"}
-                style={{ objectPosition: "50% 50%" }}
+                src="/assets/services/service-premarital.webp"
+                srcSet="/assets/services/service-premarital-480.webp 480w, /assets/services/service-premarital-800.webp 800w, /assets/services/service-premarital.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A couple talking together in a kitchen"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>{"Make time for your relationship."}</figcaption>
             </figure>

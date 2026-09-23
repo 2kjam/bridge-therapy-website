@@ -55,10 +55,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/individual-care.jpg"}
-                alt={"A woman taking a quiet moment beside a window"}
-                width={"900"}
-                height={"600"}
+                src="/assets/services/service-christian.webp"
+                srcSet="/assets/services/service-christian-480.webp 480w, /assets/services/service-christian-800.webp 800w, /assets/services/service-christian.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A woman holding her hands together in quiet prayer outdoors"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"Time to reflect. Support for your next step."}
@@ -321,6 +324,7 @@ export default function Page() {
             >
               {"Child & Teen Counseling →"}
             </a>
+            <a className="service-text-link" href="/online-therapy-texas/">Explore Christian online counseling across Texas →</a>
           </div>
         </section>
         {"\n "}

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-const destinations = ["/blog/", "/christian-counseling-tyler/", "/contact/", "/contact/#questions", "/contact/#location", "tel:9032838729"];
-for (const width of [375, 390, 768, 1024, 1280, 1440]) {
+const destinations = ["/blog/", "/christian-counseling-tyler/", "/contact/", "/contact/#questions", "/contact/#location", "tel:9032838729", "/online-therapy-texas/"];
+for (const width of [375, 390, 768, 1024, 1100, 1280, 1440]) {
   test(`resources menu: retained destinations, deferred image and accessible layout at ${width}px`, async ({ page }, info) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.emulateMedia({ reducedMotion: "reduce" });

@@ -63,10 +63,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/couples-care.jpg"}
-                alt={"Two people talking together on a sofa"}
-                width={"900"}
-                height={"600"}
+                src="/assets/services/service-marriage.webp"
+                srcSet="/assets/services/service-marriage-480.webp 480w, /assets/services/service-marriage-800.webp 800w, /assets/services/service-marriage.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="Two adults having a serious conversation across a table"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"Time for honest conversations and understanding."}

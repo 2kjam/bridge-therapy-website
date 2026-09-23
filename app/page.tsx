@@ -35,7 +35,7 @@ export default function Page() {
       <HomepageMain>
         <Hero />
         <div className="bridge-positioning">
-          <p>Bridging Christian Counseling and Whole Health</p>
+          <p>Bridging Heart-Focused Christian Counseling and Whole Health Together</p>
         </div>
         <Services />
         <Faith />

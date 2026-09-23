@@ -21,7 +21,7 @@ try {
       "Faith-informed approach to therapy",
     );
     await expect(page.locator(".bridge-positioning")).toHaveText(
-      "Bridging Christian Counseling and Whole Health",
+      "Bridging Heart-Focused Christian Counseling and Whole Health Together",
     );
     await expect(page.locator(".next-script")).toHaveCount(0);
     const track = page.locator("#homepage-team-track");
@@ -117,8 +117,8 @@ try {
       await local.locator(selector).focus();
       expect(await local.locator(selector).evaluate(n => getComputedStyle(n).outlineStyle)).not.toBe("none");
     }
-    await expect(local.locator("h2")).toHaveText("Here forEast Texas.");
-    await expect(local.locator("p:not(.eyebrow)")).toHaveText("We\u2019re honored to serve individuals, couples, and families in Tyler and throughout the East Texas community.");
+    await expect(local.locator("h2")).toHaveText("Here for East Texas. Available across Texas.");
+    await expect(local.locator("p:not(.eyebrow)")).toHaveText("We’re honored to serve individuals, couples, families, and children in Tyler and throughout East Texas, with telehealth counseling available across Texas.");
     await expect(local.locator("address span")).toHaveText("3800 Paluxy Drive, Suite 240Building 2Tyler, TX 75703");
     await expect(local.locator(".local-phone")).toHaveAttribute("href", "tel:9032838729");
     await expect(local.locator(".local-phone")).toHaveText("(903) 283-8729");

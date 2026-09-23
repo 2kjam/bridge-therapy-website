@@ -9,6 +9,8 @@ export interface BlogPost {
   publicationDate: string;
   publicationTimezone: string;
   displayedByline: string;
+  authorProfilePath?: string;
+  bylinePrefix?: "Written By" | "Written by";
   excerptHtml: string;
   categories: string[];
   tags: string[];

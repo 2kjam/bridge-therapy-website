@@ -55,10 +55,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src="/assets/individual-care.jpg"
-                alt="A woman taking a quiet moment beside a window"
-                width={900}
-                height={600}
+                src="/assets/services/service-non-epileptic-seizures.webp"
+                srcSet="/assets/services/service-non-epileptic-seizures-480.webp 480w, /assets/services/service-non-epileptic-seizures-800.webp 800w, /assets/services/service-non-epileptic-seizures.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A man in a plaid shirt sitting with his chin resting on his hand"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 Room to reflect. Support for your next step.

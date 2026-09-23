@@ -17,6 +17,9 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
   const index = posts.findIndex((entry) => entry.id === post.id);
   const newer = posts[index - 1];
   const older = posts[index + 1];
+  // This article already opens with the same Erin image in its preserved body.
+  const isTraumaticMemories =
+    post.legacyPath === "/news/2019/2/3/traumatic-memories-and-treatment";
   return (
     <SiteShell styles={blogStyles}>
       <main id="main" className="blog-page">
@@ -31,15 +34,25 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
             <li aria-current="page">{post.title}</li>
           </ol>
         </nav>
-        <article className="blog-article" aria-labelledby="article-title">
+        <article
+          className={isTraumaticMemories ? "blog-article blog-article--traumatic-memories" : "blog-article"}
+          aria-labelledby="article-title"
+        >
           <header className="blog-article-header">
             <h1 id="article-title">{post.title}</h1>
             <div className="blog-meta">
               <time dateTime={post.publicationDate}>{blogDate(post)}</time>
-              <span>Written By {post.displayedByline}</span>
+              <span>
+                {post.bylinePrefix ?? "Written By"}{" "}
+                {post.authorProfilePath ? (
+                  <a href={post.authorProfilePath}>{post.displayedByline}</a>
+                ) : (
+                  post.displayedByline
+                )}
+              </span>
             </div>
           </header>
-          {post.featuredImage && (
+          {post.featuredImage && !isTraumaticMemories && (
             <img
               className="blog-featured-image"
               src={post.featuredImage.src}

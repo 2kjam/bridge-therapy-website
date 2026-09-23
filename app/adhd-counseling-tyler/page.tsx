@@ -60,10 +60,10 @@ export default function Page() {
             <figure>
               <img
                 src={"/assets/services/service-adhd.webp"}
-                alt={"Hands shaping clay on a pottery wheel"}
-                width={"1440"}
-                height={"1080"}
-                style={{ objectPosition: "50% 65%" }}
+                alt={"A hand placing a wooden letter D beside blocks spelling ADHD"}
+                width={"612"}
+                height={"408"}
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"Time to reflect. Support for your next step."}

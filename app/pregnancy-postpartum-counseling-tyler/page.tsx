@@ -54,11 +54,13 @@ export default function Page() {
             </div>
             <figure>
               <img
-                src={"/assets/services/service-pregnancy-postpartum.webp"}
-                alt={"A parent holding a baby at home"}
-                width={"1440"}
-                height={"1080"}
-                style={{ objectPosition: "50% 60%" }}
+                src="/assets/services/service-pregnancy-postpartum.webp"
+                srcSet="/assets/services/service-pregnancy-postpartum-480.webp 480w, /assets/services/service-pregnancy-postpartum-800.webp 800w, /assets/services/service-pregnancy-postpartum.webp 1440w"
+                sizes="(max-width: 900px) 90vw, 45vw"
+                alt="A woman holding a newborn against her shoulder at home"
+                width="1440"
+                height="1080"
+                style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
                 {"Time to reflect. Support for your next step."}

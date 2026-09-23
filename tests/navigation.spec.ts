@@ -40,6 +40,31 @@ for (const width of [375, 390, 768, 900, 1024, 1100, 1280, 1440]) {
   });
 }
 
+test('shared cleanup: telehealth links in both shared menus navigate correctly', async ({ page, request }, info) => {
+  const response = await request.get('/online-therapy-texas/', { maxRedirects: 0 });
+  expect(response.status()).toBe(200);
+  expect(response.headers().location).toBeUndefined();
+  for (const panelId of ['care-panel', 'about-panel']) {
+    await page.goto('/contact/');
+    if (info.project.name === 'mobile') await page.locator('.mobile-toggle').click();
+    const trigger = page.locator(`[aria-controls="${panelId}"]`);
+    await trigger.focus();
+    await page.keyboard.press('ArrowDown');
+    const link = page.locator(`#${panelId}`).getByRole('link', { name: 'Online Therapy in Texas', exact: true });
+    await expect(link).toHaveCount(1);
+    await expect(link).toHaveAttribute('href', '/online-therapy-texas/');
+    await link.scrollIntoViewIfNeeded();
+    await expect(link).toBeInViewport();
+    await link.focus();
+    expect(await link.evaluate(node => getComputedStyle(node).outlineStyle)).not.toBe('none');
+    await page.screenshot({ path: info.outputPath(`telehealth-${panelId}.png`) });
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL(/\/online-therapy-texas\/$/);
+    await expect(page.locator('h1')).toHaveText('Online Therapy & Telehealth Counseling Across Texas');
+    await expect(page.locator(`#${panelId}`)).toBeHidden();
+  }
+});
+
 test('shared cleanup: crawlable Home link and unchanged homepage URL', async ({browser, request}) => {
   const response = await request.get('/', {maxRedirects:0});
   expect(response.status()).toBe(200);

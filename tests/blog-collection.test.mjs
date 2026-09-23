@@ -18,6 +18,13 @@ import {
 } from "../scripts/legacy-blog-content.mjs";
 const posts = getBlogPosts();
 const paths = new Set(posts.map((p) => p.legacyPath));
+// Erin confirmed authorship; only displayed metadata changes, never source evidence.
+const erinAuthored = new Set([
+  "traumatic-memories-and-treatment",
+  "storm-anxiety",
+  "simple-ways-to-lower-stress-during-the-holidays",
+  "the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+]);
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const signature = (n) => ({
   name: n.nodeName,
@@ -109,11 +116,23 @@ for (const directory of directories) {
     const body = parseFragment(post.bodyHtml);
     assert.equal(record.legacyPath, source.fullUrl);
     assert.equal(record.title, source.title);
-    assert.equal(record.displayedByline, source.author.displayName);
+    const correctedAuthor = erinAuthored.has(directory.name);
+    assert.equal(record.displayedByline, correctedAuthor ? "Erin Young, LCSW-S" : source.author.displayName);
+    const profilePath = correctedAuthor ? "/therapists/erin-young/" : "/therapists/jennifer-wood/";
+    assert.equal(record.authorProfilePath, profilePath);
+    assert.equal(record.bylinePrefix, correctedAuthor ? "Written by" : undefined);
     assert.equal(
-      record.displayedByline,
+      source.author.displayName,
       text(all(page, (n) => hasClass(n, "blog-author-name"))[0]),
     );
+    const byline = all(built, (n) => hasClass(n, "blog-meta"))[0];
+    assert.equal(text(all(byline, (n) => n.tagName === "span")[0]), `${correctedAuthor ? "Written by" : "Written By"} ${record.displayedByline}`);
+    const authorLinks = all(byline, (n) => n.tagName === "a");
+    assert.equal(authorLinks.length, 1);
+    assert.equal(attr(authorLinks[0], "href"), profilePath);
+    assert.equal(text(authorLinks[0]), record.displayedByline);
+    assert.equal(attr(authorLinks[0], "rel"), undefined);
+    assert.equal(all(authorLinks[0], (n) => n.tagName === "time").length, 0);
     assert.equal(record.publishedAt, new Date(source.publishOn).toISOString());
     assert.equal(
       record.publicationDate,
@@ -131,7 +150,16 @@ for (const directory of directories) {
     } else {
       assert.equal(record.featuredImage.sourceUrl, source.assetUrl);
       const featured = all(built, (n) => hasClass(n, "blog-featured-image"))[0];
-      assert.equal(attr(featured, "src"), record.featuredImage.src);
+      if (directory.name === "traumatic-memories-and-treatment") {
+        assert.equal(featured, undefined, "Suppress only the new-template duplicate");
+        const article = all(built, (n) => n.tagName === "article")[0];
+        assert.ok(hasClass(article, "blog-article--traumatic-memories"));
+        const portraits = all(article, (n) => n.tagName === "img" && attr(n, "src") === record.featuredImage.src);
+        assert.equal(portraits.length, 1, "Keep the original body portrait");
+      } else {
+        assert.equal(attr(featured, "src"), record.featuredImage.src);
+        assert.equal(all(built, (n) => hasClass(n, "blog-article--traumatic-memories")).length, 0);
+      }
     }
     assert.deepEqual(record.tags, source.tags);
     assert.deepEqual(record.categories, source.categories);

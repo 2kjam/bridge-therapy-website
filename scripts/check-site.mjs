@@ -414,10 +414,14 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     assert.equal(images.length, 1);
     const illustrative = images[0];
     assert.match(attr(illustrative, "src"), /^\/assets\/(individual|couples|family)-care\.jpg$/);
-    for (const [name, value] of Object.entries({src: imageReplacement.production.path, alt: imageReplacement.alt, width: "1440", height: "1080"})) {
+    for (const [name, value] of Object.entries({src: imageReplacement.production.path, alt: imageReplacement.alt, width: String(imageReplacement.production.width), height: String(imageReplacement.production.height)})) {
       illustrative.attrs.find(a => a.name === name).value = value;
     }
-    illustrative.attrs.push({name: "style", value: `object-position:${imageReplacement.objectPosition}`});
+    illustrative.attrs.push({name: "style", value: `object-position:${imageReplacement.objectPosition}${imageReplacement.displayHeight ? `;height:${imageReplacement.displayHeight}` : ""}`});
+    if (imageReplacement.responsive) {
+      illustrative.attrs.push({name: "srcset", value: imageReplacement.responsive.map(v => `${v.path} ${v.width}w`).join(", ")});
+      illustrative.attrs.push({name: "sizes", value: imageReplacement.sizes});
+    }
   }
   pages.set(route, built);
   const ids = all(built, (node) => attr(node, "id") !== undefined).map((node) =>
@@ -466,6 +470,17 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
   expectBatchTwo(legacy, route);
   expectPerformance(legacy, route);
   expectResourcesMenu(legacy);
+  const carePanel = all(legacy, node => attr(node, "id") === "care-panel")[0];
+  const emdrLink = elements(carePanel, "a").find(node => attr(node, "href") === "/emdr-therapy-tyler/");
+  const telehealthMenuLink = parseFragment('<a href="/online-therapy-texas/">Online Therapy in Texas</a>').childNodes[0];
+  telehealthMenuLink.parentNode = emdrLink.parentNode;
+  emdrLink.parentNode.childNodes.splice(emdrLink.parentNode.childNodes.indexOf(emdrLink) + 1, 0, telehealthMenuLink);
+  if (route === "/christian-counseling-tyler/") {
+    const related = all(legacy, (node) => attr(node, "class") === "related-care")[0];
+    const link = parseFragment('<a class="service-text-link" href="/online-therapy-texas/">Explore Christian online counseling across Texas →</a>').childNodes[0];
+    link.parentNode = related;
+    related.childNodes.push(link);
+  }
   if (route === "/contact/") {
     // Only the approved composition changes. Keep the independently transformed
     // legacy FAQ intact, so every existing answer and link remains checked.
@@ -782,6 +797,13 @@ assert.equal(elements(nesMain, "details").length, 4);
 assert.ok(normalizedText(nesMain).includes("Counseling is not a substitute for appropriate medical evaluation or emergency care."));
 assert.equal(all(nesMain, n => attr(n, "class") === "individual-team-grid")[0].childNodes.filter(n => n.tagName === "article").length, 1);
 assert.equal(all(nesPage, n => attr(n, "data-service") === "Non-Epileptic Seizures").length, 0);
+// Include statewide telehealth in the shared link/asset/anchor/widget checks.
+const telehealth = parse(fs.readFileSync(".next/server/app/online-therapy-texas.html", "utf8"));
+pages.set("/online-therapy-texas/", telehealth);
+assert.equal(elements(telehealth, "h1").length, 1);
+assert.equal(normalizedText(elements(telehealth, "h1")[0]), "Online Therapy & Telehealth Counseling Across Texas");
+assert.equal(elements(elements(telehealth, "main")[0], "details").length, 6);
+assert.equal(attr(elements(telehealth, "meta").find(n => attr(n, "name") === "robots"), "content"), "noindex, nofollow");
 // Include new blog routes in the same link/asset/widget checks.
 const blogIndex = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
 pages.set("/blog/", blogIndex);

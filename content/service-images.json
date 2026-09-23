@@ -1,45 +1,869 @@
 {
-  "accessed": "2026-09-16",
-  "license": "https://www.pexels.com/license/",
-  "sourceArchive": "design-backups/service-image-batch-1/",
+  "accessed": "2026-09-22",
+  "license": "Per-image source: free Unsplash replacements and owner-supplied ADHD, Anxiety, Depression, Parenting and Online Therapy images.",
+  "sourceArchive": "design-backups/unsplash-people/",
   "images": [
     {
       "service": "Marriage",
       "slug": "marriage",
       "route": "/marriage-counseling-tyler/",
-      "id": 6248800,
-      "photographer": "Gary Barnes",
-      "source": "https://www.pexels.com/photo/focused-diverse-spouses-cooking-in-kitchen-at-home-6248800/",
-      "status": "rejected",
-      "reason": "Wide tablet crop loses the food-preparation hand/counter interaction; retaining it would cut into the faces. Existing image left unchanged.",
+      "id": "yrSta3T5GDs",
+      "photographer": "Vitaly Gariev",
+      "source": "https://unsplash.com/photos/a-man-sitting-at-a-table-talking-to-a-woman-yrSta3T5GDs",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "Two adults having a serious conversation across a table",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
       "original": {
         "width": 6000,
         "height": 4000,
-        "bytes": 4639517,
-        "sha256": "3ae9af92567355c0386fda0a3a1b22694b752685ee1f28a4f78a52a2573a9b05"
+        "bytes": 2703756,
+        "sha256": "2b43d1d015f84f697fefc7ff48706e519f924a634016c37d05c702dac8fed4af"
       },
-      "downloadUrl": "https://images.pexels.com/photos/6248800/pexels-photo-6248800.jpeg?cs=srgb&dl=pexels-gary-barnes-6248800.jpg&fm=jpg",
+      "crop": {
+        "left": 333,
+        "top": 0,
+        "width": 5333,
+        "height": 3999
+      },
+      "production": {
+        "path": "/assets/services/service-marriage.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 47626,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "c9d6b00d02080e625b0f5da471a413377bb2ffd4735c71c1b865213ae8d417d9"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-marriage-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 11622,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "6c13d30d4e4363daa950de1a9403a5ba4e7ab4d72098c048ac6d3668f9725dc1"
+        },
+        {
+          "path": "/assets/services/service-marriage-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 21828,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "c721cb64bddef415a6fea4fe389412b45c68c397248b7a0beedb6817668af04f"
+        },
+        {
+          "path": "/assets/services/service-marriage.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 47626,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "c9d6b00d02080e625b0f5da471a413377bb2ffd4735c71c1b865213ae8d417d9"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1713942590288-1468a2d88ee4?fm=jpg",
       "sourceVerification": {
         "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "Quiet conversation with serious expressions and no hostile or romantic staging.",
+      "candidates": [
+        {
+          "id": "yrSta3T5GDs",
+          "source": "https://unsplash.com/photos/a-man-sitting-at-a-table-talking-to-a-woman-yrSta3T5GDs",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "conversation",
+          "selected": true
+        },
+        {
+          "id": "rjzW_IIjBJc",
+          "source": "https://unsplash.com/photos/a-man-and-a-woman-standing-next-to-each-other-rjzW_IIjBJc",
+          "photographer": "Matheus Câmara da Silva",
+          "searchGroup": "conversation",
+          "selected": false
+        },
+        {
+          "id": "U7zb_4mTVPQ",
+          "source": "https://unsplash.com/photos/a-man-and-a-woman-sitting-on-a-couch-U7zb_4mTVPQ",
+          "photographer": "Iwaria Inc.",
+          "searchGroup": "conversation",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Marriage",
+        "slug": "marriage",
+        "route": "/marriage-counseling-tyler/",
+        "id": 6248800,
+        "photographer": "Gary Barnes",
+        "source": "https://www.pexels.com/photo/focused-diverse-spouses-cooking-in-kitchen-at-home-6248800/",
+        "status": "rejected",
+        "reason": "Wide tablet crop loses the food-preparation hand/counter interaction; retaining it would cut into the faces. Existing image left unchanged.",
+        "original": {
+          "width": 6000,
+          "height": 4000,
+          "bytes": 4639517,
+          "sha256": "3ae9af92567355c0386fda0a3a1b22694b752685ee1f28a4f78a52a2573a9b05"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/6248800/pexels-photo-6248800.jpeg?cs=srgb&dl=pexels-gary-barnes-6248800.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
       }
     },
     {
       "service": "Premarital",
       "slug": "premarital",
       "route": "/premarital-counseling-tyler/",
-      "id": 36812124,
-      "photographer": "Vitaly Gariev",
-      "source": "https://www.pexels.com/photo/couple-enjoying-gardening-together-in-greenhouse-36812124/",
+      "id": "NVBL6aulKBY",
+      "photographer": "Wright Brand Bacon",
+      "source": "https://unsplash.com/photos/woman-in-gray-crew-neck-t-shirt-and-blue-denim-jeans-sitting-on-black-chair-NVBL6aulKBY",
       "status": "imported",
-      "alt": "Two adults working with plants together",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A couple talking together in a kitchen",
       "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 3890,
+        "height": 5835,
+        "bytes": 3862122,
+        "sha256": "b64b57ee7294becb4e5302216ac5628097236ab682edf238a30589002627da33"
+      },
+      "crop": {
+        "left": 0,
+        "top": 700,
+        "width": 3890,
+        "height": 2917
+      },
+      "production": {
+        "path": "/assets/services/service-premarital.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 66738,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "50df4a274111482e7476fa5137b233fe2255a10d9f6d784c189b8a3df330fa77"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-premarital-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 13528,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "9b5c795e45e24eaf766d7b4ef38ad6901274ca7244d92de605575d1bd504c175"
+        },
+        {
+          "path": "/assets/services/service-premarital-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 27416,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "8c144dbd3cdd6a7e9e9d0e97b1a5b25704de90f53edffb9078ae07f3fb059824"
+        },
+        {
+          "path": "/assets/services/service-premarital.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 66738,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "50df4a274111482e7476fa5137b233fe2255a10d9f6d784c189b8a3df330fa77"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1606851447920-549ba0b02246?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "More optimistic interaction in a normal home, without wedding props.",
+      "candidates": [
+        {
+          "id": "NVBL6aulKBY",
+          "source": "https://unsplash.com/photos/woman-in-gray-crew-neck-t-shirt-and-blue-denim-jeans-sitting-on-black-chair-NVBL6aulKBY",
+          "photographer": "Wright Brand Bacon",
+          "searchGroup": "conversation",
+          "selected": true
+        },
+        {
+          "id": "21H2_zcDEhc",
+          "source": "https://unsplash.com/photos/man-in-white-dress-shirt-and-woman-in-orange-long-sleeve-shirt-standing-on-green-grass-21H2_zcDEhc",
+          "photographer": "Allen Taylor",
+          "searchGroup": "couples",
+          "selected": false
+        },
+        {
+          "id": "eJ4ZAswgHiU",
+          "source": "https://unsplash.com/photos/man-and-woman-walking-on-road-during-daytime-eJ4ZAswgHiU",
+          "photographer": "Tim Mossholder",
+          "searchGroup": "couples",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Premarital",
+        "slug": "premarital",
+        "route": "/premarital-counseling-tyler/",
+        "id": 36812124,
+        "photographer": "Vitaly Gariev",
+        "source": "https://www.pexels.com/photo/couple-enjoying-gardening-together-in-greenhouse-36812124/",
+        "status": "imported",
+        "alt": "Two adults working with plants together",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 3840,
+          "height": 2160,
+          "bytes": 923124,
+          "sha256": "bbde7e4e53de75794a444f4f384186b4a76ddc8dfd03fe6a80e53b3c3c33fe18"
+        },
+        "crop": {
+          "left": 480,
+          "top": 0,
+          "width": 2880,
+          "height": 2160
+        },
+        "production": {
+          "path": "/assets/services/service-premarital.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 214932,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "e473b09b714282ea5ee4150aa693bb115e9ac38e0cdaa404f2a5acff653ee384"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/36812124/pexels-photo-36812124.jpeg?cs=srgb&dl=pexels-silverkblack-36812124.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
+      }
+    },
+    {
+      "service": "Family",
+      "slug": "family",
+      "route": "/family-counseling-tyler/",
+      "id": "xDSD3Vmzh70",
+      "photographer": "National Cancer Institute",
+      "source": "https://unsplash.com/photos/group-of-people-beside-coffee-table-xDSD3Vmzh70",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "Adults and children playing a board game together at home",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 12000,
+        "height": 8820,
+        "bytes": 9822423,
+        "sha256": "6938ac9ef89f0c229494e0900ddb0036bcff122bc01be4edb3868d124ffc4923"
+      },
+      "crop": {
+        "left": 120,
+        "top": 0,
+        "width": 11760,
+        "height": 8820
+      },
+      "production": {
+        "path": "/assets/services/service-family.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 66112,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "14d80b9741802ee3351e1dc099f175936b909ccf82b8457ca2b089037d702302"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-family-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 17040,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "621e0cd631b4c0e419d718e245097923fd9154ebbd9b14044c6ea92c0fdb89f2"
+        },
+        {
+          "path": "/assets/services/service-family-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 32002,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "2f49bd0efeeeb8ed750031ba7d3a32588c56e6f92a483237a48237a386c0bea0"
+        },
+        {
+          "path": "/assets/services/service-family.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 66112,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "14d80b9741802ee3351e1dc099f175936b909ccf82b8457ca2b089037d702302"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1577897113292-3b95936e5206?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "Shared activity and natural interaction rather than a posed portrait.",
+      "candidates": [
+        {
+          "id": "xDSD3Vmzh70",
+          "source": "https://unsplash.com/photos/group-of-people-beside-coffee-table-xDSD3Vmzh70",
+          "photographer": "National Cancer Institute",
+          "searchGroup": "family",
+          "selected": true
+        },
+        {
+          "id": "DUrU_bZV8So",
+          "source": "https://unsplash.com/photos/family-on-bed-holding-baby-and-phone-DUrU_bZV8So",
+          "photographer": "Jonathan Borba",
+          "searchGroup": "family",
+          "selected": false
+        },
+        {
+          "id": "BQPi8F_UON0",
+          "source": "https://unsplash.com/photos/family-eating-at-the-table-BQPi8F_UON0",
+          "photographer": "National Cancer Institute",
+          "searchGroup": "family",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Family",
+        "slug": "family",
+        "route": "/family-counseling-tyler/",
+        "id": 6951906,
+        "photographer": "Artem Podrez",
+        "source": "https://www.pexels.com/photo/two-children-and-their-mother-playing-together-at-home-6951906/",
+        "status": "rejected",
+        "reason": "The three participants span too much of the portrait source width; the 901px crop cuts a child's face. Repositioning trades one cropped participant for another. Existing image left unchanged.",
+        "original": {
+          "width": 2126,
+          "height": 3780,
+          "bytes": 683971,
+          "sha256": "45ad2491cb9ee8f2e65969645ca171476dbb9266e65395513a5ae0359b977a57"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/6951906/pexels-photo-6951906.jpeg?cs=srgb&dl=pexels-artempodrez-6951906.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
+      }
+    },
+    {
+      "service": "Parenting",
+      "slug": "parenting",
+      "route": "/parenting-support-tyler/",
+      "id": "owner-parenting",
+      "photographer": "Not provided; owner-supplied image",
+      "source": "Owner-supplied ChatGPT Image Sep 22, 2026, 08_22_39 PM.png",
+      "status": "imported",
+      "alt": "A woman sitting beside a child working in a notebook at a table, with her arm around him",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2088381,
+        "sha256": "c2979dbd2e12bb8a0afdb94411c1ac94a4c284bade9dec5fe48cb7e2c41dc067"
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "production": {
+        "path": "/assets/services/service-parenting.webp",
+        "width": 1440,
+        "height": 960,
+        "bytes": 72604,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "0cf6776b43aeb48b8f7979095c3ac1ff047a39cd849a74a8eb331fa3c5e975a8"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-parenting-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 17592,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "e0080057371e4cb9691b6c90e29a44d1fc0b3d9141aecc2e7bbd430b576b2229"
+        },
+        {
+          "path": "/assets/services/service-parenting-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 34840,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "2c91cc82ae6a542aba5a58e9c7da9f9df3d72b6084fa7331c51c3d63c1276845"
+        },
+        {
+          "path": "/assets/services/service-parenting.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 72604,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "0cf6776b43aeb48b8f7979095c3ac1ff047a39cd849a74a8eb331fa3c5e975a8"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/owner-parenting/",
+      "sourceFile": "owner-parenting.png",
+      "previousImage": {
+        "service": "Parenting",
+        "slug": "parenting",
+        "route": "/parenting-support-tyler/",
+        "id": "Z-7Yz6_f1ZQ",
+        "photographer": "Vitaly Gariev",
+        "source": "https://unsplash.com/photos/father-and-son-reading-a-book-together-on-couch-Z-7Yz6_f1ZQ",
+        "status": "imported",
+        "license": "https://unsplash.com/license",
+        "accessed": "2026-09-22",
+        "alt": "A man and a child reading a book together on a sofa",
+        "objectPosition": "50% 50%",
+        "displayHeight": "auto",
+        "original": {
+          "width": 3840,
+          "height": 2160,
+          "bytes": 991193,
+          "sha256": "2570ba0af984cffe387a3083082bc3a8acc984d78aaa4fa27743cd1c2d92b219"
+        },
+        "crop": {
+          "left": 480,
+          "top": 0,
+          "width": 2880,
+          "height": 2160
+        },
+        "production": {
+          "path": "/assets/services/service-parenting.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 84984,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "3179adbaafac4ecc408d9d32f6942b7f3e75c26530c6cd11ac793f6c7a6a9e72"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-parenting-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 18382,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "d09c568209e566d1e5986e841144c356c8eb5e46cc3a84603932eef7c812e273"
+          },
+          {
+            "path": "/assets/services/service-parenting-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 36604,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "0f559707d054cfd532d3580fb81e9eac28fab6aae73766da015a1f45e6e88f76"
+          },
+          {
+            "path": "/assets/services/service-parenting.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 84984,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "3179adbaafac4ecc408d9d32f6942b7f3e75c26530c6cd11ac793f6c7a6a9e72"
+          }
+        ],
+        "sizes": "(max-width: 900px) 90vw, 45vw",
+        "sourceArchive": "design-backups/unsplash-people/",
+        "downloadUrl": "https://images.unsplash.com/photo-1758687126981-417a59c589a9?fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "freeLicenseVerifiedInSearchResult": true,
+          "licenseLinkVerifiedOnSourcePage": true,
+          "photographerVerifiedInSearchResult": true
+        },
+        "selectionReason": "A close shared activity centers the parent-child relationship.",
+        "candidates": [
+          {
+            "id": "Z-7Yz6_f1ZQ",
+            "source": "https://unsplash.com/photos/father-and-son-reading-a-book-together-on-couch-Z-7Yz6_f1ZQ",
+            "photographer": "Vitaly Gariev",
+            "searchGroup": "parent",
+            "selected": true
+          },
+          {
+            "id": "mFqAeaZgWO8",
+            "source": "https://unsplash.com/photos/womens-white-long-sleeve-dress-mFqAeaZgWO8",
+            "photographer": "Mark Zamora",
+            "searchGroup": "parent",
+            "selected": false
+          },
+          {
+            "id": "7fF0iei80AQ",
+            "source": "https://unsplash.com/photos/woman-and-child-reading-in-library-7fF0iei80AQ",
+            "photographer": "Adam Winger",
+            "searchGroup": "parent",
+            "selected": false
+          }
+        ],
+        "previousImage": {
+          "service": "Parenting",
+          "slug": "parenting",
+          "route": "/parenting-support-tyler/",
+          "id": 23224897,
+          "photographer": "Vitaly Gariev",
+          "source": "https://www.pexels.com/photo/mother-and-son-playing-at-table-23224897/",
+          "status": "imported",
+          "alt": "An adult and child working on an activity together",
+          "objectPosition": "50% 60%",
+          "original": {
+            "width": 3840,
+            "height": 2160,
+            "bytes": 503014,
+            "sha256": "05a4ef24f5b3bf0cef397297785827c66b27680b559596ec0c519d3ebc80168e"
+          },
+          "crop": {
+            "left": 150,
+            "top": 0,
+            "width": 2880,
+            "height": 2160
+          },
+          "production": {
+            "path": "/assets/services/service-parenting.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 89206,
+            "format": "webp",
+            "quality": 85,
+            "sha256": "7464e9278e15011129f02f7e9d7173f946fdd52215be5bf5952924032c2dd8f2"
+          },
+          "downloadUrl": "https://images.pexels.com/photos/23224897/pexels-photo-23224897.jpeg?cs=srgb&dl=pexels-silverkblack-23224897.jpg&fm=jpg",
+          "sourceVerification": {
+            "pageResolved": true,
+            "photographerVerifiedOnPage": true,
+            "freeToUseLinkVerified": true
+          }
+        }
+      }
+    },
+    {
+      "service": "Child & Teen",
+      "slug": "child-teen",
+      "route": "/child-teen-counseling-tyler/",
+      "id": "akocAO9QCHM",
+      "photographer": "Samantha Hentosh",
+      "source": "https://unsplash.com/photos/man-reading-book-akocAO9QCHM",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A young person wearing glasses reading a book beside library shelves",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 3840,
+        "height": 5010,
+        "bytes": 4605429,
+        "sha256": "371f04735e64e8979ded786b1cb25769c482a1d0917480192771bcb77056f38c"
+      },
+      "crop": {
+        "left": 0,
+        "top": 1065,
+        "width": 3840,
+        "height": 2880
+      },
+      "production": {
+        "path": "/assets/services/service-child-teen.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 115578,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "204673f79bb680af175358d582ecb5ae08f589d4249e4f77ce494c53b9722926"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-child-teen-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 23986,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "d10b9476b2003e476e7b1409de69d30567771824d3ab935c383114d382292778"
+        },
+        {
+          "path": "/assets/services/service-child-teen-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 45590,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "4f0f98931890d417704d94760c82f2de024ffa0dce7e8e5ef409b3a4cd20ba09"
+        },
+        {
+          "path": "/assets/services/service-child-teen.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 115578,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "204673f79bb680af175358d582ecb5ae08f589d4249e4f77ce494c53b9722926"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1571193161738-deaba9b6cc26?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "An ordinary reading moment with a visible face and quiet concentration.",
+      "candidates": [
+        {
+          "id": "akocAO9QCHM",
+          "source": "https://unsplash.com/photos/man-reading-book-akocAO9QCHM",
+          "photographer": "Samantha Hentosh",
+          "searchGroup": "teen",
+          "selected": true
+        },
+        {
+          "id": "tp_AlXyMPdE",
+          "source": "https://unsplash.com/photos/woman-in-red-and-black-striped-long-sleeve-shirt-and-blue-denim-jeans-sitting-on-brown-tp_AlXyMPdE",
+          "photographer": "Kelly Sikkema",
+          "searchGroup": "teen",
+          "selected": false
+        },
+        {
+          "id": "cwGk-u9PHOo",
+          "source": "https://unsplash.com/photos/girl-reading-book-sitting-on-sofa-cwGk-u9PHOo",
+          "photographer": "Josh Applegate",
+          "searchGroup": "parent",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Child & Teen",
+        "slug": "child-teen",
+        "route": "/child-teen-counseling-tyler/",
+        "id": 36277511,
+        "photographer": "Sóc Năng Động",
+        "source": "https://www.pexels.com/photo/focused-teen-working-on-creative-project-indoors-36277511/",
+        "status": "imported",
+        "alt": "A teenager working on a creative project",
+        "objectPosition": "50% 60%",
+        "original": {
+          "width": 5520,
+          "height": 3680,
+          "bytes": 1356049,
+          "sha256": "8d48c110c7594d17cf4f996d46661cfca4dbfda353e0a04284769755ddb98cfc"
+        },
+        "crop": {
+          "left": 308,
+          "top": 1,
+          "width": 4904,
+          "height": 3678
+        },
+        "production": {
+          "path": "/assets/services/service-child-teen.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 98294,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "be726409be014abc26caf228f6e5d76ff6eb30a47340fd6449dbd9382a45f5c2"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/36277511/pexels-photo-36277511.jpeg?cs=srgb&dl=pexels-soc-nang-d-ng-2150345854-36277511.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
+      }
+    },
+    {
+      "service": "Pregnancy/Postpartum",
+      "slug": "pregnancy-postpartum",
+      "route": "/pregnancy-postpartum-counseling-tyler/",
+      "id": "Z4GKcFAGck4",
+      "photographer": "Kelly Sikkema",
+      "source": "https://unsplash.com/photos/mother-carrying-baby-Z4GKcFAGck4",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A woman holding a newborn against her shoulder at home",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 3391,
+        "height": 5068,
+        "bytes": 2698751,
+        "sha256": "83d0cd9cc1e373069bfe62cedc9186307909641af854a5fd56dcbd3faa279460"
+      },
+      "crop": {
+        "left": 0,
+        "top": 650,
+        "width": 3391,
+        "height": 2543
+      },
+      "production": {
+        "path": "/assets/services/service-pregnancy-postpartum.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 46628,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "9fbb12baac1092ab9a27ca9868299862a3d5de023ec5c8669ab92d1ed252e4f8"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-pregnancy-postpartum-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 8352,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "53056e31e6a10e8f74926b2dacafe00ba092c0b90b364e33c2147f925d2a3f9d"
+        },
+        {
+          "path": "/assets/services/service-pregnancy-postpartum-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 17940,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "a7322c9c8736b0d84577e33a18d5bfced7f7a9761fa32390175291da5befbf6a"
+        },
+        {
+          "path": "/assets/services/service-pregnancy-postpartum.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 46628,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "9fbb12baac1092ab9a27ca9868299862a3d5de023ec5c8669ab92d1ed252e4f8"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1542385151-efd9000785a0?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "A quiet caregiving moment in a residential setting, not a polished celebration or hospital scene.",
+      "candidates": [
+        {
+          "id": "Z4GKcFAGck4",
+          "source": "https://unsplash.com/photos/mother-carrying-baby-Z4GKcFAGck4",
+          "photographer": "Kelly Sikkema",
+          "searchGroup": "mother",
+          "selected": true
+        },
+        {
+          "id": "DMcNqigMn1c",
+          "source": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-carrying-baby-DMcNqigMn1c",
+          "photographer": "Isaac Quesada",
+          "searchGroup": "mother",
+          "selected": false
+        },
+        {
+          "id": "I3hjsBeZa6Y",
+          "source": "https://unsplash.com/photos/a-woman-breastfeeding-her-baby-in-a-cozy-room-I3hjsBeZa6Y",
+          "photographer": "Ana Curcan",
+          "searchGroup": "baby",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Pregnancy/Postpartum",
+        "slug": "pregnancy-postpartum",
+        "route": "/pregnancy-postpartum-counseling-tyler/",
+        "id": 27175810,
+        "photographer": "Helena Lopes",
+        "source": "https://www.pexels.com/photo/mother-and-baby-at-home-in-cozy-setting-27175810/",
+        "status": "imported",
+        "alt": "A parent holding a baby at home",
+        "objectPosition": "50% 60%",
+        "original": {
+          "width": 5472,
+          "height": 3648,
+          "bytes": 1413378,
+          "sha256": "33fb5f9595af596dbcf5422845bd0eac7998ec47745af93081c80244c2e9659a"
+        },
+        "crop": {
+          "left": 304,
+          "top": 0,
+          "width": 4864,
+          "height": 3648
+        },
+        "production": {
+          "path": "/assets/services/service-pregnancy-postpartum.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 72372,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "a09f4b4f13ebd9290706352697eb27d302a11e1cf0dc6cee9683bf6761f9fc44"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/27175810/pexels-photo-27175810.jpeg?cs=srgb&dl=pexels-helenalopes-27175810.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
+      }
+    },
+    {
+      "service": "Adoption",
+      "slug": "adoption",
+      "route": "/adoption-counseling-tyler/",
+      "id": "44Nf2vzIhQ8",
+      "photographer": "Vitaly Gariev",
+      "source": "https://unsplash.com/photos/a-man-reading-a-book-to-a-little-girl-44Nf2vzIhQ8",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A woman and a girl reading together on the floor",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
       "original": {
         "width": 3840,
         "height": 2160,
-        "bytes": 923124,
-        "sha256": "bbde7e4e53de75794a444f4f384186b4a76ddc8dfd03fe6a80e53b3c3c33fe18"
+        "bytes": 1093921,
+        "sha256": "0b734d571c870f6e48c59edaed34f2072882d198b27da0c1a7636997081e129a"
       },
       "crop": {
         "left": 480,
@@ -48,269 +872,2152 @@
         "height": 2160
       },
       "production": {
-        "path": "/assets/services/service-premarital.webp",
-        "width": 1440,
-        "height": 1080,
-        "bytes": 214932,
-        "format": "webp",
-        "quality": 85,
-        "sha256": "e473b09b714282ea5ee4150aa693bb115e9ac38e0cdaa404f2a5acff653ee384"
-      },
-      "downloadUrl": "https://images.pexels.com/photos/36812124/pexels-photo-36812124.jpeg?cs=srgb&dl=pexels-silverkblack-36812124.jpg&fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
-      }
-    },
-    {
-      "service": "Family",
-      "slug": "family",
-      "route": "/family-counseling-tyler/",
-      "id": 6951906,
-      "photographer": "Artem Podrez",
-      "source": "https://www.pexels.com/photo/two-children-and-their-mother-playing-together-at-home-6951906/",
-      "status": "rejected",
-      "reason": "The three participants span too much of the portrait source width; the 901px crop cuts a child's face. Repositioning trades one cropped participant for another. Existing image left unchanged.",
-      "original": {
-        "width": 2126,
-        "height": 3780,
-        "bytes": 683971,
-        "sha256": "45ad2491cb9ee8f2e65969645ca171476dbb9266e65395513a5ae0359b977a57"
-      },
-      "downloadUrl": "https://images.pexels.com/photos/6951906/pexels-photo-6951906.jpeg?cs=srgb&dl=pexels-artempodrez-6951906.jpg&fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
-      }
-    },
-    {
-      "service": "Parenting",
-      "slug": "parenting",
-      "route": "/parenting-support-tyler/",
-      "id": 23224897,
-      "photographer": "Vitaly Gariev",
-      "source": "https://www.pexels.com/photo/mother-and-son-playing-at-table-23224897/",
-      "status": "imported",
-      "alt": "An adult and child working on an activity together",
-      "objectPosition": "50% 60%",
-      "original": {
-        "width": 3840,
-        "height": 2160,
-        "bytes": 503014,
-        "sha256": "05a4ef24f5b3bf0cef397297785827c66b27680b559596ec0c519d3ebc80168e"
-      },
-      "crop": {
-        "left": 150,
-        "top": 0,
-        "width": 2880,
-        "height": 2160
-      },
-      "production": {
-        "path": "/assets/services/service-parenting.webp",
-        "width": 1440,
-        "height": 1080,
-        "bytes": 89206,
-        "format": "webp",
-        "quality": 85,
-        "sha256": "7464e9278e15011129f02f7e9d7173f946fdd52215be5bf5952924032c2dd8f2"
-      },
-      "downloadUrl": "https://images.pexels.com/photos/23224897/pexels-photo-23224897.jpeg?cs=srgb&dl=pexels-silverkblack-23224897.jpg&fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
-      }
-    },
-    {
-      "service": "Child & Teen",
-      "slug": "child-teen",
-      "route": "/child-teen-counseling-tyler/",
-      "id": 36277511,
-      "photographer": "Sóc Năng Động",
-      "source": "https://www.pexels.com/photo/focused-teen-working-on-creative-project-indoors-36277511/",
-      "status": "imported",
-      "alt": "A teenager working on a creative project",
-      "objectPosition": "50% 60%",
-      "original": {
-        "width": 5520,
-        "height": 3680,
-        "bytes": 1356049,
-        "sha256": "8d48c110c7594d17cf4f996d46661cfca4dbfda353e0a04284769755ddb98cfc"
-      },
-      "crop": {
-        "left": 308,
-        "top": 1,
-        "width": 4904,
-        "height": 3678
-      },
-      "production": {
-        "path": "/assets/services/service-child-teen.webp",
-        "width": 1440,
-        "height": 1080,
-        "bytes": 98294,
-        "format": "webp",
-        "quality": 85,
-        "sha256": "be726409be014abc26caf228f6e5d76ff6eb30a47340fd6449dbd9382a45f5c2"
-      },
-      "downloadUrl": "https://images.pexels.com/photos/36277511/pexels-photo-36277511.jpeg?cs=srgb&dl=pexels-soc-nang-d-ng-2150345854-36277511.jpg&fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
-      }
-    },
-    {
-      "service": "Pregnancy/Postpartum",
-      "slug": "pregnancy-postpartum",
-      "route": "/pregnancy-postpartum-counseling-tyler/",
-      "id": 27175810,
-      "photographer": "Helena Lopes",
-      "source": "https://www.pexels.com/photo/mother-and-baby-at-home-in-cozy-setting-27175810/",
-      "status": "imported",
-      "alt": "A parent holding a baby at home",
-      "objectPosition": "50% 60%",
-      "original": {
-        "width": 5472,
-        "height": 3648,
-        "bytes": 1413378,
-        "sha256": "33fb5f9595af596dbcf5422845bd0eac7998ec47745af93081c80244c2e9659a"
-      },
-      "crop": {
-        "left": 304,
-        "top": 0,
-        "width": 4864,
-        "height": 3648
-      },
-      "production": {
-        "path": "/assets/services/service-pregnancy-postpartum.webp",
-        "width": 1440,
-        "height": 1080,
-        "bytes": 72372,
-        "format": "webp",
-        "quality": 85,
-        "sha256": "a09f4b4f13ebd9290706352697eb27d302a11e1cf0dc6cee9683bf6761f9fc44"
-      },
-      "downloadUrl": "https://images.pexels.com/photos/27175810/pexels-photo-27175810.jpeg?cs=srgb&dl=pexels-helenalopes-27175810.jpg&fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
-      }
-    },
-    {
-      "service": "Adoption",
-      "slug": "adoption",
-      "route": "/adoption-counseling-tyler/",
-      "id": 7299819,
-      "photographer": "Ksenia Chernaya",
-      "source": "https://www.pexels.com/photo/a-mother-reading-a-book-with-her-child-in-bed-7299819/",
-      "status": "imported",
-      "alt": "An adult and child reading together",
-      "objectPosition": "50% 50%",
-      "original": {
-        "width": 4000,
-        "height": 2670,
-        "bytes": 583995,
-        "sha256": "53f30de9b7cfeaef1265a60b446cfa07b5eae0726545bb9edfa5a2f73765c243"
-      },
-      "crop": {
-        "left": 220,
-        "top": 0,
-        "width": 3560,
-        "height": 2670
-      },
-      "production": {
         "path": "/assets/services/service-adoption.webp",
         "width": 1440,
         "height": 1080,
-        "bytes": 65428,
+        "bytes": 92330,
         "format": "webp",
-        "quality": 85,
-        "sha256": "a577a139f25d4fb3f383e34672e2fd1ab480d1fcdf10243d65cf84496ec13aca"
+        "quality": 76,
+        "sha256": "06b187cdd179669835671c5827acf6cace861c99c525f23cd45c29bec8b9f695"
       },
-      "downloadUrl": "https://images.pexels.com/photos/7299819/pexels-photo-7299819.jpeg?cs=srgb&dl=pexels-kseniachernaya-7299819.jpg&fm=jpg",
+      "responsive": [
+        {
+          "path": "/assets/services/service-adoption-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 21206,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "434c673eca7543398e08fcdcbfb0f8bf6717eb8268cd1f573c34a440ed47e2ae"
+        },
+        {
+          "path": "/assets/services/service-adoption-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 43710,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "248baeae04ce3b5fdffc3df8509ad1df744e7c66aec187e302403a98e47c1fa5"
+        },
+        {
+          "path": "/assets/services/service-adoption.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 92330,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "06b187cdd179669835671c5827acf6cace861c99c525f23cd45c29bec8b9f695"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1714646793149-189cc073b387?fm=jpg",
       "sourceVerification": {
         "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "Connection and belonging represented by a shared activity; no claim about adoption or foster status.",
+      "candidates": [
+        {
+          "id": "44Nf2vzIhQ8",
+          "source": "https://unsplash.com/photos/a-man-reading-a-book-to-a-little-girl-44Nf2vzIhQ8",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "parent",
+          "selected": true
+        },
+        {
+          "id": "7fF0iei80AQ",
+          "source": "https://unsplash.com/photos/woman-and-child-reading-in-library-7fF0iei80AQ",
+          "photographer": "Adam Winger",
+          "searchGroup": "parent",
+          "selected": false
+        },
+        {
+          "id": "xKRrjOORL6E",
+          "source": "https://unsplash.com/photos/mother-and-daughter-reading-a-book-in-bed-xKRrjOORL6E",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "parent",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Adoption",
+        "slug": "adoption",
+        "route": "/adoption-counseling-tyler/",
+        "id": 7299819,
+        "photographer": "Ksenia Chernaya",
+        "source": "https://www.pexels.com/photo/a-mother-reading-a-book-with-her-child-in-bed-7299819/",
+        "status": "imported",
+        "alt": "An adult and child reading together",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 4000,
+          "height": 2670,
+          "bytes": 583995,
+          "sha256": "53f30de9b7cfeaef1265a60b446cfa07b5eae0726545bb9edfa5a2f73765c243"
+        },
+        "crop": {
+          "left": 220,
+          "top": 0,
+          "width": 3560,
+          "height": 2670
+        },
+        "production": {
+          "path": "/assets/services/service-adoption.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 65428,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "a577a139f25d4fb3f383e34672e2fd1ab480d1fcdf10243d65cf84496ec13aca"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/7299819/pexels-photo-7299819.jpeg?cs=srgb&dl=pexels-kseniachernaya-7299819.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
       }
     },
     {
       "service": "Divorce & Blended Family",
       "slug": "divorce-blended-family",
       "route": "/divorce-blended-family-counseling-tyler/",
-      "id": 7669175,
-      "photographer": "Kampus Production",
-      "source": "https://www.pexels.com/photo/family-doing-picnic-together-7669175/",
+      "id": "e5Kv2YZywUY",
+      "photographer": "Jimmy Dean",
+      "source": "https://unsplash.com/photos/man-in-yellow-crew-neck-t-shirt-sitting-on-white-couch-e5Kv2YZywUY",
       "status": "imported",
-      "alt": "Two adults and a child spending time together outdoors",
-      "objectPosition": "50% 60%",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A family sharing a snack in a bright living room",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
       "original": {
-        "width": 6016,
-        "height": 4016,
-        "bytes": 1771287,
-        "sha256": "d5563a0d9627c0dcc4e2b4023d040d13a488d14612106888fd5b7c3ed1ceee17"
+        "width": 6720,
+        "height": 4480,
+        "bytes": 6778899,
+        "sha256": "de1afd3e13b4e09dad6ee5c5bffaedcefd6c4a9f970759d99bfd0392bb7a7324"
       },
       "crop": {
-        "left": 332,
-        "top": 1,
-        "width": 5352,
-        "height": 4014
+        "left": 0,
+        "top": 0,
+        "width": 6720,
+        "height": 4480
       },
       "production": {
         "path": "/assets/services/service-divorce-blended-family.webp",
         "width": 1440,
-        "height": 1080,
-        "bytes": 139736,
+        "height": 960,
+        "bytes": 80538,
         "format": "webp",
-        "quality": 85,
-        "sha256": "101addbeb5d3724fcaefacc730143648544ae61b075dddb5f5fdcf8df2102210"
+        "quality": 76,
+        "sha256": "eeb17c0df8f9b2c2d3d790d811d8d93dc37dd12d80caff185d23811d11e5cfe2"
       },
-      "downloadUrl": "https://images.pexels.com/photos/7669175/pexels-photo-7669175.jpeg?cs=srgb&dl=pexels-kampus-7669175.jpg&fm=jpg",
+      "responsive": [
+        {
+          "path": "/assets/services/service-divorce-blended-family-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 19664,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "fa6f5fef46eb0268c1bb979b7c8051615e5dbc5d7b638a154d29bed3417ce832"
+        },
+        {
+          "path": "/assets/services/service-divorce-blended-family-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 38872,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "cd44fb71298471611c5ea24903c219587c46d3de4b90cef0b95e19da630104db"
+        },
+        {
+          "path": "/assets/services/service-divorce-blended-family.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 80538,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "eeb17c0df8f9b2c2d3d790d811d8d93dc37dd12d80caff185d23811d11e5cfe2"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1606787503924-7ef7753ad0aa?fm=jpg",
       "sourceVerification": {
         "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "Everyday parent-child connection without implying the photographed family is divorced or blended.",
+      "candidates": [
+        {
+          "id": "e5Kv2YZywUY",
+          "source": "https://unsplash.com/photos/man-in-yellow-crew-neck-t-shirt-sitting-on-white-couch-e5Kv2YZywUY",
+          "photographer": "Jimmy Dean",
+          "searchGroup": "family",
+          "selected": true
+        },
+        {
+          "id": "VJVsEnR_vNE",
+          "source": "https://unsplash.com/photos/family-playing-board-games-VJVsEnR_vNE",
+          "photographer": "National Cancer Institute",
+          "searchGroup": "family",
+          "selected": false
+        },
+        {
+          "id": "gorbBYbo6KM",
+          "source": "https://unsplash.com/photos/family-eating-dinner-at-home-gorbBYbo6KM",
+          "photographer": "Tyson",
+          "searchGroup": "family",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "Divorce & Blended Family",
+        "slug": "divorce-blended-family",
+        "route": "/divorce-blended-family-counseling-tyler/",
+        "id": 7669175,
+        "photographer": "Kampus Production",
+        "source": "https://www.pexels.com/photo/family-doing-picnic-together-7669175/",
+        "status": "imported",
+        "alt": "Two adults and a child spending time together outdoors",
+        "objectPosition": "50% 60%",
+        "original": {
+          "width": 6016,
+          "height": 4016,
+          "bytes": 1771287,
+          "sha256": "d5563a0d9627c0dcc4e2b4023d040d13a488d14612106888fd5b7c3ed1ceee17"
+        },
+        "crop": {
+          "left": 332,
+          "top": 1,
+          "width": 5352,
+          "height": 4014
+        },
+        "production": {
+          "path": "/assets/services/service-divorce-blended-family.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 139736,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "101addbeb5d3724fcaefacc730143648544ae61b075dddb5f5fdcf8df2102210"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/7669175/pexels-photo-7669175.jpeg?cs=srgb&dl=pexels-kampus-7669175.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
       }
     },
     {
       "service": "ADHD",
       "slug": "adhd",
       "route": "/adhd-counseling-tyler/",
-      "id": 36738895,
-      "photographer": "3B",
-      "source": "https://www.pexels.com/photo/hands-crafting-pottery-on-a-potter-s-wheel-36738895/",
+      "photographer": "Not documented (user-supplied image)",
+      "source": "User-provided adhd.webp, September 22, 2026",
       "status": "imported",
-      "alt": "Hands shaping clay on a pottery wheel",
-      "objectPosition": "50% 65%",
+      "alt": "A hand placing a wooden letter D beside blocks spelling ADHD",
+      "objectPosition": "50% 50%",
       "original": {
-        "width": 6597,
-        "height": 4398,
-        "bytes": 1560919,
-        "sha256": "041fb6ad2e655a266445147d957ec63a6afc645c83e0524347950247a886aaa7"
-      },
-      "crop": {
-        "left": 366,
-        "top": 0,
-        "width": 5864,
-        "height": 4398
+        "width": 612,
+        "height": 408,
+        "bytes": 12704,
+        "sha256": "27f1c69307f96807cb3b50af4547d2264956c54259b88ac10e7f3fe060b0f399"
       },
       "production": {
         "path": "/assets/services/service-adhd.webp",
+        "width": 612,
+        "height": 408,
+        "bytes": 12704,
+        "format": "webp",
+        "sha256": "27f1c69307f96807cb3b50af4547d2264956c54259b88ac10e7f3fe060b0f399"
+      },
+      "previousImage": {
+        "service": "ADHD",
+        "slug": "adhd",
+        "route": "/adhd-counseling-tyler/",
+        "id": 36738895,
+        "photographer": "3B",
+        "source": "https://www.pexels.com/photo/hands-crafting-pottery-on-a-potter-s-wheel-36738895/",
+        "status": "imported",
+        "alt": "Hands shaping clay on a pottery wheel",
+        "objectPosition": "50% 65%",
+        "original": {
+          "width": 6597,
+          "height": 4398,
+          "bytes": 1560919,
+          "sha256": "041fb6ad2e655a266445147d957ec63a6afc645c83e0524347950247a886aaa7"
+        },
+        "crop": {
+          "left": 366,
+          "top": 0,
+          "width": 5864,
+          "height": 4398
+        },
+        "production": {
+          "path": "/assets/services/service-adhd.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 105908,
+          "format": "webp",
+          "quality": 85,
+          "sha256": "347007b042bc39a1231abeb77a23c9039d7f95e70e6aaeb8e8b038bbec547080"
+        },
+        "downloadUrl": "https://images.pexels.com/photos/36738895/pexels-photo-36738895.jpeg?cs=srgb&dl=pexels-3b-2152161509-36738895.jpg&fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        }
+      },
+      "displayHeight": "auto"
+    },
+    {
+      "service": "individual",
+      "slug": "individual",
+      "route": "/individual-counseling-tyler/",
+      "id": "c4KRQ7po_zg",
+      "photographer": "Austin Schultz",
+      "source": "https://unsplash.com/photos/woman-in-black-and-red-plaid-long-sleeve-shirt-and-white-pants-sitting-on-brown-wooden-c4KRQ7po_zg",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A woman sitting thoughtfully on a wooden dock beside a lake",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 5184,
+        "height": 3456,
+        "bytes": 3428075,
+        "sha256": "51bc6059ce23fdb150aa7091ac6b160daa99b7f6ed38c12d1e724d3356b0435a"
+      },
+      "crop": {
+        "left": 288,
+        "top": 0,
+        "width": 4608,
+        "height": 3456
+      },
+      "production": {
+        "path": "/assets/services/service-individual.webp",
         "width": 1440,
         "height": 1080,
-        "bytes": 105908,
+        "bytes": 56552,
         "format": "webp",
-        "quality": 85,
-        "sha256": "347007b042bc39a1231abeb77a23c9039d7f95e70e6aaeb8e8b038bbec547080"
+        "quality": 76,
+        "sha256": "ab092373d06bf9885368f83c0dc6061594f91788b8421d9096c0d9c3321fbdc8"
       },
-      "downloadUrl": "https://images.pexels.com/photos/36738895/pexels-photo-36738895.jpeg?cs=srgb&dl=pexels-3b-2152161509-36738895.jpg&fm=jpg",
+      "responsive": [
+        {
+          "path": "/assets/services/service-individual-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 11144,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "5cb1357507303a2b6e59da722f1288c43d723dd0e57437a9d671dc98b30da1c9"
+        },
+        {
+          "path": "/assets/services/service-individual-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 23028,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "0a13532e889b4a422fdcef17be6344fa1a4d37f7869bca42c6bf05750ac4dfb4"
+        },
+        {
+          "path": "/assets/services/service-individual.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 56552,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "ab092373d06bf9885368f83c0dc6061594f91788b8421d9096c0d9c3321fbdc8"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1591127354453-a43d705f2673?fm=jpg",
       "sourceVerification": {
         "pageResolved": true,
-        "photographerVerifiedOnPage": true,
-        "freeToUseLinkVerified": true
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "Casual clothing, warm daylight and a quiet lakeside setting; no urban architecture.",
+      "candidates": [
+        {
+          "id": "c4KRQ7po_zg",
+          "source": "https://unsplash.com/photos/woman-in-black-and-red-plaid-long-sleeve-shirt-and-white-pants-sitting-on-brown-wooden-c4KRQ7po_zg",
+          "photographer": "Austin Schultz",
+          "searchGroup": "reflective",
+          "selected": true
+        },
+        {
+          "id": "D6Hkl-wot_E",
+          "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",
+          "photographer": "@invadingkingdom",
+          "searchGroup": "reflective",
+          "selected": false
+        },
+        {
+          "id": "M_ajTtNalSA",
+          "source": "https://unsplash.com/photos/man-sitting-on-bench-M_ajTtNalSA",
+          "photographer": "DESIGNECOLOGIST",
+          "searchGroup": "reflective",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "individual",
+        "slug": "individual",
+        "route": "/individual-counseling-tyler/",
+        "id": 6231767,
+        "photographer": "Gary Barnes",
+        "source": "https://www.pexels.com/photo/woman-sitting-on-bench-in-green-garden-6231767/",
+        "status": "imported",
+        "alt": "A person in neutral-colored overalls resting on a bench beside a leafy garden path",
+        "objectPosition": "50% 0%",
+        "original": {
+          "width": 3360,
+          "height": 5040,
+          "bytes": 1935891,
+          "sha256": "9f916a0da81396e08bf819a10d07386e42ce2dcedb16f876a0f590ac3b912ebb"
+        },
+        "crop": {
+          "left": 0,
+          "top": 650,
+          "width": 3360,
+          "height": 2520
+        },
+        "production": {
+          "path": "/assets/services/service-individual.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 103706,
+          "format": "webp",
+          "quality": 78,
+          "sha256": "6992aca3a1e73cc45bd9a099c46a6cfa8430980f5c149abae6e6074a902173de"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-individual-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 24304,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "e43bd965550e7bc30180cbdcd70c7611475018097cd952b28381278854b25680"
+          },
+          {
+            "path": "/assets/services/service-individual-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 47560,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "e7dc66a634b4ca2473afa72ad458859ab65b2cd50853559b6caa022021e9e2b0"
+          },
+          {
+            "path": "/assets/services/service-individual.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 103706,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "6992aca3a1e73cc45bd9a099c46a6cfa8430980f5c149abae6e6074a902173de"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/6231767/pexels-photo-6231767.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "online",
+      "slug": "online",
+      "route": "/online-therapy-texas/",
+      "id": "owner-online-2026-09-22",
+      "photographer": "Not documented; owner-supplied image",
+      "source": "Owner-supplied online therapy.avif",
+      "status": "imported",
+      "alt": "A man talking with a woman on a laptop video call at a table beside houseplants",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 500,
+        "height": 333,
+        "bytes": 21507,
+        "sha256": "2cd193c4a74d923f895948838252f19900d9010c1386afd75441b3bd242c631b"
+      },
+      "production": {
+        "path": "/assets/services/service-online.avif",
+        "width": 500,
+        "height": 333,
+        "bytes": 21507,
+        "format": "avif",
+        "sha256": "2cd193c4a74d923f895948838252f19900d9010c1386afd75441b3bd242c631b"
+      },
+      "previousImage": {
+        "service": "online",
+        "slug": "online",
+        "route": "/online-therapy-texas/",
+        "id": "8HPLpr3hebU",
+        "photographer": "Surface",
+        "source": "https://unsplash.com/photos/person-sitting-on-couch-holding-a-surface-device-8HPLpr3hebU",
+        "status": "imported",
+        "license": "https://unsplash.com/license",
+        "accessed": "2026-09-22",
+        "alt": "A woman using a laptop while sitting on a sofa at home",
+        "objectPosition": "50% 50%",
+        "displayHeight": "auto",
+        "original": {
+          "width": 6000,
+          "height": 4000,
+          "bytes": 5149242,
+          "sha256": "ee82126f524a43be0521b1a8c636f5b9345408da0950b27551124a6341b4a6b6"
+        },
+        "crop": {
+          "left": 333,
+          "top": 0,
+          "width": 5333,
+          "height": 3999
+        },
+        "production": {
+          "path": "/assets/services/service-online.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 77730,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "c4e1015cfa0df233758b966f948d63d76c1f5116870b48c78e7f6f62072abcfa"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-online-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 14512,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "8d28b0da6219f39de4259e25e8eda16f1daac19ed5ebbd237ba02675c9c77a3a"
+          },
+          {
+            "path": "/assets/services/service-online-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 30496,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "6be8baa8105cdcafb8bb3438d280545e5378a03f96b34250037352699956c2b5"
+          },
+          {
+            "path": "/assets/services/service-online.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 77730,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "c4e1015cfa0df233758b966f948d63d76c1f5116870b48c78e7f6f62072abcfa"
+          }
+        ],
+        "sizes": "(max-width: 900px) 90vw, 45vw",
+        "sourceArchive": "design-backups/unsplash-people/",
+        "downloadUrl": "https://images.unsplash.com/photo-1612832164313-ac0d7e07b5ce?fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "freeLicenseVerifiedInSearchResult": true,
+          "licenseLinkVerifiedOnSourcePage": true,
+          "photographerVerifiedInSearchResult": true
+        },
+        "selectionReason": "A person-first view of a relaxed home laptop interaction, with warm wood textures.",
+        "candidates": [
+          {
+            "id": "8HPLpr3hebU",
+            "source": "https://unsplash.com/photos/person-sitting-on-couch-holding-a-surface-device-8HPLpr3hebU",
+            "photographer": "Surface",
+            "searchGroup": "online",
+            "selected": true
+          },
+          {
+            "id": "Nv-vx3kUR2A",
+            "source": "https://unsplash.com/photos/woman-sitting-on-floor-and-leaning-on-couch-using-laptop-Nv-vx3kUR2A",
+            "photographer": "Thought Catalog",
+            "searchGroup": "online",
+            "selected": false
+          },
+          {
+            "id": "sR24zAyFgJE",
+            "source": "https://unsplash.com/photos/a-woman-sitting-on-a-couch-using-a-laptop-computer-sR24zAyFgJE",
+            "photographer": "Surface",
+            "searchGroup": "online",
+            "selected": false
+          }
+        ],
+        "previousImage": {
+          "service": "online",
+          "slug": "online",
+          "route": "/online-therapy-texas/",
+          "id": 6912829,
+          "photographer": "Teona Swift",
+          "source": "https://www.pexels.com/photo/woman-working-on-laptop-at-home-6912829/",
+          "status": "imported",
+          "alt": "A person using a laptop at a wooden table beside houseplants",
+          "objectPosition": "50% 50%",
+          "original": {
+            "width": 6000,
+            "height": 4000,
+            "bytes": 4067102,
+            "sha256": "2e7d65e006ef5d5b87940b3b4d881b76f022667796c72a90f878abf6d4b5aff1"
+          },
+          "crop": {
+            "left": 333,
+            "top": 0,
+            "width": 5333,
+            "height": 4000
+          },
+          "production": {
+            "path": "/assets/services/service-online.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 60588,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "b40ecd231e9601fb209f3f216155c1c88ee00d8dd87e6598d1fa0723637256d9"
+          },
+          "responsive": [
+            {
+              "path": "/assets/services/service-online-480.webp",
+              "width": 480,
+              "height": 360,
+              "bytes": 13438,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "0b2b4b989306793e59da060a0626945d45d9092800d128b8ce43aabfcf2c24da"
+            },
+            {
+              "path": "/assets/services/service-online-800.webp",
+              "width": 800,
+              "height": 600,
+              "bytes": 25614,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "e8da562adecb9b86e3e57a7078bd334de31951c9d9bbfc7e236ccd7ae5fa542d"
+            },
+            {
+              "path": "/assets/services/service-online.webp",
+              "width": 1440,
+              "height": 1080,
+              "bytes": 60588,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "b40ecd231e9601fb209f3f216155c1c88ee00d8dd87e6598d1fa0723637256d9"
+            }
+          ],
+          "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+          "downloadUrl": "https://images.pexels.com/photos/6912829/pexels-photo-6912829.jpeg",
+          "sourceVerification": {
+            "pageResolved": true,
+            "photographerVerifiedOnPage": true,
+            "freeToUseLinkVerified": true
+          },
+          "sourceArchive": "design-backups/red-shirt-retirement/"
+        }
+      }
+    },
+    {
+      "service": "christian",
+      "slug": "christian",
+      "route": "/christian-counseling-tyler/",
+      "id": "x4_TKde1_gs",
+      "photographer": "Declan Sun",
+      "source": "https://unsplash.com/photos/a-woman-in-a-white-dress-standing-in-the-street-x4_TKde1_gs",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A woman holding her hands together in quiet prayer outdoors",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 8190,
+        "height": 5257,
+        "bytes": 2606456,
+        "sha256": "e1a91b076aae9630ed7f6324c9cc41802b6c6a0c5204fb68779841b43accc371"
+      },
+      "crop": {
+        "left": 590,
+        "top": 0,
+        "width": 7009,
+        "height": 5256
+      },
+      "production": {
+        "path": "/assets/services/service-christian.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 42000,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "48aba65a4257e45b4ab00d25e70c5bad14ad273b7efe986ead42383d9510470c"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-christian-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 8810,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "755b8f37480ccffc6244ad9942d36eb8bb748b6f83f8a0e47070006002228f5e"
+        },
+        {
+          "path": "/assets/services/service-christian-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 17950,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "d37c87b0459964fd432933b4d0525d01945e4b91972f653b7eed03b62c0a1669"
+        },
+        {
+          "path": "/assets/services/service-christian.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 42000,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "48aba65a4257e45b4ab00d25e70c5bad14ad273b7efe986ead42383d9510470c"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1725545597890-981ee805f1e0?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "A full visible profile keeps the person central; faith is conveyed without giant religious props.",
+      "candidates": [
+        {
+          "id": "x4_TKde1_gs",
+          "source": "https://unsplash.com/photos/a-woman-in-a-white-dress-standing-in-the-street-x4_TKde1_gs",
+          "photographer": "Declan Sun",
+          "searchGroup": "devotion",
+          "selected": true
+        },
+        {
+          "id": "XcUvZFaqV3Q",
+          "source": "https://unsplash.com/photos/a-woman-sitting-in-a-field-of-grass-XcUvZFaqV3Q",
+          "photographer": "Declan Sun",
+          "searchGroup": "devotion",
+          "selected": false
+        },
+        {
+          "id": "Nizkb3kT4cs",
+          "source": "https://unsplash.com/photos/woman-sitting-on-grass-beside-concrete-road-at-daytime-Nizkb3kT4cs",
+          "photographer": "Priscilla Du Preez 🇨🇦",
+          "searchGroup": "devotion",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "christian",
+        "slug": "christian",
+        "route": "/christian-counseling-tyler/",
+        "id": 11696719,
+        "photographer": "Nicole Finkel",
+        "source": "https://www.pexels.com/photo/close-up-of-open-bible-on-table-11696719/",
+        "status": "imported",
+        "alt": "An open Bible on a wooden table in warm light",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 6000,
+          "height": 4000,
+          "bytes": 1841985,
+          "sha256": "efeebfbe8a50d22ed60f5e27ca6583485caf1cf897858aded8b988e3eff39436"
+        },
+        "crop": {
+          "left": 333,
+          "top": 0,
+          "width": 5333,
+          "height": 4000
+        },
+        "production": {
+          "path": "/assets/services/service-christian.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 64384,
+          "format": "webp",
+          "quality": 78,
+          "sha256": "edf01552486b8470af6c457f57c6b5409fd15ee0f4aa8708c483fffe50bf7fc7"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-christian-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 12940,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "81a06ff73cc985c01910673e62e86d2a98dcc55a65bfdfdec7f4ed43f1b0cd42"
+          },
+          {
+            "path": "/assets/services/service-christian-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 26846,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "af1cc56f2876298e6cef194fd8137d235d102c999c6e383d28dacaacbd111735"
+          },
+          {
+            "path": "/assets/services/service-christian.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 64384,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "edf01552486b8470af6c457f57c6b5409fd15ee0f4aa8708c483fffe50bf7fc7"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/11696719/pexels-photo-11696719.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "emdr",
+      "slug": "emdr",
+      "route": "/emdr-therapy-tyler/",
+      "id": "W3Jl3jREpDY",
+      "photographer": "LinkedIn Sales Solutions",
+      "source": "https://unsplash.com/photos/two-men-talking-W3Jl3jREpDY",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "Two men seated across a table in conversation near a sunlit window",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 5184,
+        "height": 3456,
+        "bytes": 1672999,
+        "sha256": "b6df94a036d0952e639dbf372276f88f110a9c8efa0cae6a05f8a03b8043d663"
+      },
+      "crop": {
+        "left": 288,
+        "top": 0,
+        "width": 4608,
+        "height": 3456
+      },
+      "production": {
+        "path": "/assets/services/service-emdr.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 34354,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "7b0f9e4a8d47f81d66a3588ea36fe2159b79f3635131284edd8a8619c9570d52"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-emdr-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 7414,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "78f6e35fb5539f99bf81b14df615411c9c519660f5cc452e920bef45b89d4650"
+        },
+        {
+          "path": "/assets/services/service-emdr-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 13892,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "71e6210778ded496a2f2f999129d459a31fd7787dbb64f7578c0a797b449f96c"
+        },
+        {
+          "path": "/assets/services/service-emdr.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 34354,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "7b0f9e4a8d47f81d66a3588ea36fe2159b79f3635131284edd8a8619c9570d52"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1507537362848-9c7e70b7b5c1?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "An understated conversation with greenery outside, no clipboard or treatment gimmicks.",
+      "candidates": [
+        {
+          "id": "W3Jl3jREpDY",
+          "source": "https://unsplash.com/photos/two-men-talking-W3Jl3jREpDY",
+          "photographer": "LinkedIn Sales Solutions",
+          "searchGroup": "therapy",
+          "selected": true
+        },
+        {
+          "id": "m-82PNzgFq4",
+          "source": "https://unsplash.com/photos/a-woman-sitting-on-a-couch-talking-to-another-woman-m-82PNzgFq4",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "therapy",
+          "selected": false
+        },
+        {
+          "id": "irqy6S6IFak",
+          "source": "https://unsplash.com/photos/man-relaxing-at-desk-with-laptop-and-bicycle-irqy6S6IFak",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "men",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "emdr",
+        "slug": "emdr",
+        "route": "/emdr-therapy-tyler/",
+        "id": 12623891,
+        "photographer": "Cosmin ChiWu",
+        "source": "https://www.pexels.com/photo/sunlight-through-green-leaves-12623891/",
+        "status": "imported",
+        "alt": "Sunlight filtering through green leaves against a softly blurred background",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 3511,
+          "height": 2349,
+          "bytes": 1258342,
+          "sha256": "3cbdb684328b42836299247adf4d9d02020b756c7f847127913c814e50d83214"
+        },
+        "crop": {
+          "left": 189,
+          "top": 0,
+          "width": 3132,
+          "height": 2349
+        },
+        "production": {
+          "path": "/assets/services/service-emdr.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 115724,
+          "format": "webp",
+          "quality": 78,
+          "sha256": "fccb4340e6d25f84bd84ddc57cf8b3e3ed84fba9ba2fc4bcb44e29fc6a4dd8e4"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-emdr-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 17960,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "15382f484c96e00c7a71ca1f5652b429a948d216562636aa78f8c86d8c4f3562"
+          },
+          {
+            "path": "/assets/services/service-emdr-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 37646,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "9a8882297250d7603e030becb93574609e856e65e5a8e2532ac16615988fd6e0"
+          },
+          {
+            "path": "/assets/services/service-emdr.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 115724,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "fccb4340e6d25f84bd84ddc57cf8b3e3ed84fba9ba2fc4bcb44e29fc6a4dd8e4"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/12623891/pexels-photo-12623891.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "life-transitions",
+      "slug": "life-transitions",
+      "route": "/life-transitions-counseling-tyler/",
+      "id": "edChB35Hj04",
+      "photographer": "Frank Myrland",
+      "source": "https://unsplash.com/photos/man-walking-under-forest-edChB35Hj04",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A man walking along a wooded path",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 5685,
+        "height": 3790,
+        "bytes": 4884550,
+        "sha256": "2d42fdc8badd9ad4e68e0b1c2e99d0511f7a546597514880f81cf1b7dcfd7859"
+      },
+      "crop": {
+        "left": 316,
+        "top": 0,
+        "width": 5053,
+        "height": 3789
+      },
+      "production": {
+        "path": "/assets/services/service-life-transitions.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 136106,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "e3384725405b57c3cfeedd548bbae9fe700fe6ea78161df2ba63ee851ba5ba32"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-life-transitions-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 22606,
+          "format": "webp",
+          "quality": 73,
+          "sha256": "ce81b67b6766d5be361c4f2b86223f40fb5c247401627dbc8e51e4da572aafaf"
+        },
+        {
+          "path": "/assets/services/service-life-transitions-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 55058,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "9c96a12ab15e6cc5092a3b96a1720d484d47af38bc5d5b97982a19f6cc944987"
+        },
+        {
+          "path": "/assets/services/service-life-transitions.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 136106,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "e3384725405b57c3cfeedd548bbae9fe700fe6ea78161df2ba63ee851ba5ba32"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1546112687-3ccc5ee689a9?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "The person is prominent, with forward movement and an everyday wooded setting.",
+      "candidates": [
+        {
+          "id": "edChB35Hj04",
+          "source": "https://unsplash.com/photos/man-walking-under-forest-edChB35Hj04",
+          "photographer": "Frank Myrland",
+          "searchGroup": "walking",
+          "selected": true
+        },
+        {
+          "id": "S-AM2mYIqtU",
+          "source": "https://unsplash.com/photos/a-person-with-a-backpack-walking-through-a-forest-S-AM2mYIqtU",
+          "photographer": "Chaewool Kim",
+          "searchGroup": "walking",
+          "selected": false
+        },
+        {
+          "id": "Cj_WTYpoVso",
+          "source": "https://unsplash.com/photos/gray-t-shirt-Cj_WTYpoVso",
+          "photographer": "Zoë Gayah Jonker",
+          "searchGroup": "walking",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "life-transitions",
+        "slug": "life-transitions",
+        "route": "/life-transitions-counseling-tyler/",
+        "id": 24706137,
+        "photographer": "Arnauld van Wambeke",
+        "source": "https://www.pexels.com/photo/path-in-forest-in-sunlight-24706137/",
+        "status": "imported",
+        "alt": "A sunlit path winding between green woodland trees",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 3547,
+          "height": 2365,
+          "bytes": 2957123,
+          "sha256": "bc4c8ca7dc0eeb28013651845d7d139da0f1adfdc667c252fd03fda32a24240b"
+        },
+        "crop": {
+          "left": 197,
+          "top": 0,
+          "width": 3153,
+          "height": 2365
+        },
+        "production": {
+          "path": "/assets/services/service-life-transitions.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 234902,
+          "format": "webp",
+          "quality": 21,
+          "sha256": "0041a2dde341b9eb5390318c4649e7b640448c1c967464c4d4513d8d4907b76b"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-life-transitions-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 47800,
+            "format": "webp",
+            "quality": 63,
+            "sha256": "322a192e08897e302658f9d6505eda323509e88215a293e34231befc88db370a"
+          },
+          {
+            "path": "/assets/services/service-life-transitions-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 83392,
+            "format": "webp",
+            "quality": 28,
+            "sha256": "f69b32f77c9308e5521b02c1cbb535be838a299d9017c67e798cdba68bb2013c"
+          },
+          {
+            "path": "/assets/services/service-life-transitions.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 234902,
+            "format": "webp",
+            "quality": 21,
+            "sha256": "0041a2dde341b9eb5390318c4649e7b640448c1c967464c4d4513d8d4907b76b"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/24706137/pexels-photo-24706137.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "grief",
+      "slug": "grief",
+      "route": "/grief-counseling-tyler/",
+      "id": "YrE_uZnTPQU",
+      "photographer": "Sergiu Vălenaș",
+      "source": "https://unsplash.com/photos/man-in-brown-coat-YrE_uZnTPQU",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "An older man sitting quietly outdoors beneath trees",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 4093,
+        "height": 2729,
+        "bytes": 1529626,
+        "sha256": "ed24eb0bcbceedbcc2c835e4be0d6555fad33e5ccd3a3a9f7d8e598c576caeec"
+      },
+      "crop": {
+        "left": 227,
+        "top": 0,
+        "width": 3638,
+        "height": 2728
+      },
+      "production": {
+        "path": "/assets/services/service-grief.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 121126,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "94c412a917dd94bd4f0d1b37141b959f54958b41fdc4e27eace2fef045320b51"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-grief-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 23506,
+          "format": "webp",
+          "quality": 67,
+          "sha256": "c8039c56419a8d48cf0d4e39263031e54ef2e1bf99051be02c7c7c5d4a25c059"
+        },
+        {
+          "path": "/assets/services/service-grief-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 53676,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "9df9aaef5e3826b64a5f7c37705db00fa90186d1c82b33c707e9ae548c47f30f"
+        },
+        {
+          "path": "/assets/services/service-grief.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 121126,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "94c412a917dd94bd4f0d1b37141b959f54958b41fdc4e27eace2fef045320b51"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1569583145233-b27cdc09ae80?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "A reflective older adult in a quiet outdoor setting; allows seriousness without funeral imagery.",
+      "candidates": [
+        {
+          "id": "YrE_uZnTPQU",
+          "source": "https://unsplash.com/photos/man-in-brown-coat-YrE_uZnTPQU",
+          "photographer": "Sergiu Vălenaș",
+          "searchGroup": "older",
+          "selected": true
+        },
+        {
+          "id": "xyrnwzVBuAI",
+          "source": "https://unsplash.com/photos/woman-in-black-shirt-sitting-on-bench-xyrnwzVBuAI",
+          "photographer": "Jacki Drexler",
+          "searchGroup": "reflective",
+          "selected": false
+        },
+        {
+          "id": "eJ73iS86XNQ",
+          "source": "https://unsplash.com/photos/elderly-man-with-hand-on-chin-deep-in-thought-eJ73iS86XNQ",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "men",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "grief",
+        "slug": "grief",
+        "route": "/grief-counseling-tyler/",
+        "id": 14310629,
+        "photographer": "Nikolett Emmert",
+        "source": "https://www.pexels.com/photo/calm-lake-surrounded-by-trees-14310629/",
+        "status": "imported",
+        "alt": "Autumn trees reflected in the still surface of a lake",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 3200,
+          "height": 4000,
+          "bytes": 1822241,
+          "sha256": "65c843c1420fba8ed96edef0ad1bf9c6fae075d08cc5daeb1ddea0fee8ba6a92"
+        },
+        "crop": {
+          "left": 0,
+          "top": 800,
+          "width": 3200,
+          "height": 2400
+        },
+        "production": {
+          "path": "/assets/services/service-grief.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 236738,
+          "format": "webp",
+          "quality": 53,
+          "sha256": "cc96ddd516c3cbf0e092eaca3c567695a87033b02b30eabca390666e8bf87578"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-grief-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 48814,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "1bca86ee6503b2a7da421c0eb8c32610a5842188bb6ad1822769a2677bd959c5"
+          },
+          {
+            "path": "/assets/services/service-grief-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 61960,
+            "format": "webp",
+            "quality": 33,
+            "sha256": "712964d6f7d4f71ad88ae52c5b0effd8ddf456e776ac5f56dd2227cc5eb5373a"
+          },
+          {
+            "path": "/assets/services/service-grief.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 236738,
+            "format": "webp",
+            "quality": 53,
+            "sha256": "cc96ddd516c3cbf0e092eaca3c567695a87033b02b30eabca390666e8bf87578"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/14310629/pexels-photo-14310629.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "non-epileptic-seizures",
+      "slug": "non-epileptic-seizures",
+      "route": "/non-epileptic-seizures-counseling-tyler/",
+      "id": "D6Hkl-wot_E",
+      "photographer": "@invadingkingdom",
+      "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A man in a plaid shirt sitting with his chin resting on his hand",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 3644,
+        "height": 2918,
+        "bytes": 2247413,
+        "sha256": "5985d5503fa898945408243a28611a1c72526d799935cf84c3325acafb1f5f4e"
+      },
+      "crop": {
+        "left": 0,
+        "top": 92,
+        "width": 3644,
+        "height": 2733
+      },
+      "production": {
+        "path": "/assets/services/service-non-epileptic-seizures.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 120676,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "4ffc8f0ad5bae73d5e30663ffa00eb82ecc5f59d2642ad33509aea74b1ec1cbc"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-non-epileptic-seizures-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16952,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "512ecfb478721c240819bd74037ef02e7c9f171a38b5adb29e31d0391ad1a531"
+        },
+        {
+          "path": "/assets/services/service-non-epileptic-seizures-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 32634,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "718a508a2955aa84d6ea099f1dbeae7a03af130e9deaa334d84a17407ac87b76"
+        },
+        {
+          "path": "/assets/services/service-non-epileptic-seizures.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 120676,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "4ffc8f0ad5bae73d5e30663ffa00eb82ecc5f59d2642ad33509aea74b1ec1cbc"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1604780403125-e1cefdc0089a?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "A calm, reflective adult with no medical equipment or suggestion of an active seizure.",
+      "candidates": [
+        {
+          "id": "D6Hkl-wot_E",
+          "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",
+          "photographer": "@invadingkingdom",
+          "searchGroup": "reflective",
+          "selected": true
+        },
+        {
+          "id": "irqy6S6IFak",
+          "source": "https://unsplash.com/photos/man-relaxing-at-desk-with-laptop-and-bicycle-irqy6S6IFak",
+          "photographer": "Vitaly Gariev",
+          "searchGroup": "men",
+          "selected": false
+        },
+        {
+          "id": "YrE_uZnTPQU",
+          "source": "https://unsplash.com/photos/man-in-brown-coat-YrE_uZnTPQU",
+          "photographer": "Sergiu Vălenaș",
+          "searchGroup": "older",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "non-epileptic-seizures",
+        "slug": "non-epileptic-seizures",
+        "route": "/non-epileptic-seizures-counseling-tyler/",
+        "id": 37254012,
+        "photographer": "Geoffrey Zhao",
+        "source": "https://www.pexels.com/photo/serene-lakefront-view-with-reflections-and-trees-37254012/",
+        "status": "imported",
+        "alt": "A quiet lake framed by hanging branches and reflected trees",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 8256,
+          "height": 5504,
+          "bytes": 5566725,
+          "sha256": "456d201a855646ac80374e4f762bbd9e9307a8ec32c86d374d6ab644ddd9bafd"
+        },
+        "crop": {
+          "left": 459,
+          "top": 0,
+          "width": 7338,
+          "height": 5504
+        },
+        "production": {
+          "path": "/assets/services/service-non-epileptic-seizures.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 230320,
+          "format": "webp",
+          "quality": 78,
+          "sha256": "9b8dfdc38154ac5be59b87c8f0630f8c144f1bbcbe7b945eb74f0e1d032bb174"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-non-epileptic-seizures-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 32852,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "dc9d92b83cda957e69f76eb8cd46493df9484c45d55c38290603b250a2472050"
+          },
+          {
+            "path": "/assets/services/service-non-epileptic-seizures-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 46226,
+            "format": "webp",
+            "quality": 38,
+            "sha256": "2be4984f9f8810a2b804fde89a4dccfd76db0b976b537230795232fe0b9df72d"
+          },
+          {
+            "path": "/assets/services/service-non-epileptic-seizures.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 230320,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "9b8dfdc38154ac5be59b87c8f0630f8c144f1bbcbe7b945eb74f0e1d032bb174"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/37254012/pexels-photo-37254012.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "trauma",
+      "slug": "trauma",
+      "route": "/trauma-therapy-tyler/",
+      "id": "4j1ZPD7ZAmc",
+      "photographer": "Andrei Pana",
+      "source": "https://unsplash.com/photos/man-in-black-hoodie-and-black-pants-sitting-on-concrete-bench-4j1ZPD7ZAmc",
+      "status": "imported",
+      "license": "https://unsplash.com/license",
+      "accessed": "2026-09-22",
+      "alt": "A young man in a dark hoodie sitting quietly outdoors",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 4000,
+        "height": 6000,
+        "bytes": 2543412,
+        "sha256": "cb09d03efd7f45ef6fbd36a77e6dc2ed5c1e004bc9217b67edd99ee2d1e7ef08"
+      },
+      "crop": {
+        "left": 0,
+        "top": 1500,
+        "width": 4000,
+        "height": 3000
+      },
+      "production": {
+        "path": "/assets/services/service-trauma.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 45220,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "61e9b6be4c02a91eb88a62947f78f66439a48ffd3dfdd56de06d69ce44b3de25"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-trauma-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 8946,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "bb19a289c466a5532b49e7181c39caee119a3657ea58b490b7c9fd18923bc960"
+        },
+        {
+          "path": "/assets/services/service-trauma-800.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 18490,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "1bb288b85fe88e0671d04ced9ffc47a76a9276f723bb0d6d133efe75da4ef570"
+        },
+        {
+          "path": "/assets/services/service-trauma.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 45220,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "61e9b6be4c02a91eb88a62947f78f66439a48ffd3dfdd56de06d69ce44b3de25"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/unsplash-people/",
+      "downloadUrl": "https://images.unsplash.com/photo-1611518296156-a7ffe218692a?fm=jpg",
+      "sourceVerification": {
+        "pageResolved": true,
+        "freeLicenseVerifiedInSearchResult": true,
+        "licenseLinkVerifiedOnSourcePage": true,
+        "photographerVerifiedInSearchResult": true
+      },
+      "selectionReason": "An everyday outdoor pause with a visible face and a grounded, serious mood.",
+      "candidates": [
+        {
+          "id": "4j1ZPD7ZAmc",
+          "source": "https://unsplash.com/photos/man-in-black-hoodie-and-black-pants-sitting-on-concrete-bench-4j1ZPD7ZAmc",
+          "photographer": "Andrei Pana",
+          "searchGroup": "reflective",
+          "selected": true
+        },
+        {
+          "id": "id7bBpJWfmY",
+          "source": "https://unsplash.com/photos/a-man-sitting-on-a-rock-next-to-a-body-of-water-id7bBpJWfmY",
+          "photographer": "Clay Banks",
+          "searchGroup": "reflective",
+          "selected": false
+        },
+        {
+          "id": "M_ajTtNalSA",
+          "source": "https://unsplash.com/photos/man-sitting-on-bench-M_ajTtNalSA",
+          "photographer": "DESIGNECOLOGIST",
+          "searchGroup": "reflective",
+          "selected": false
+        }
+      ],
+      "previousImage": {
+        "service": "trauma",
+        "slug": "trauma",
+        "route": "/trauma-therapy-tyler/",
+        "id": 28575452,
+        "photographer": "Vladimir Srajber",
+        "source": "https://www.pexels.com/photo/serene-forest-pathway-with-sunlight-filtering-through-trees-28575452/",
+        "status": "imported",
+        "alt": "A woodland trail surrounded by trees in dappled sunlight",
+        "objectPosition": "50% 50%",
+        "original": {
+          "width": 5304,
+          "height": 7952,
+          "bytes": 6899964,
+          "sha256": "c90d97863c2ec749b3f36ca0ac7beb9d4c143f95d6a20d12121a2c494f726282"
+        },
+        "crop": {
+          "left": 0,
+          "top": 1987,
+          "width": 5304,
+          "height": 3978
+        },
+        "production": {
+          "path": "/assets/services/service-trauma.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 215896,
+          "format": "webp",
+          "quality": 24,
+          "sha256": "d1737ef7cf593ede681bd0fbb20af4e687f2aed8df9d882de50f1201112965c7"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-trauma-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 47938,
+            "format": "webp",
+            "quality": 68,
+            "sha256": "6dcd73d2c6da25a2ebac02975ffb488c3ee2b62ab444f4bca545e289f40df3d1"
+          },
+          {
+            "path": "/assets/services/service-trauma-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 83000,
+            "format": "webp",
+            "quality": 33,
+            "sha256": "d1df480221037e1adaa4c4398bb7505b715781787381739f21a179ff9ae64ae7"
+          },
+          {
+            "path": "/assets/services/service-trauma.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 215896,
+            "format": "webp",
+            "quality": 24,
+            "sha256": "d1737ef7cf593ede681bd0fbb20af4e687f2aed8df9d882de50f1201112965c7"
+          }
+        ],
+        "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+        "downloadUrl": "https://images.pexels.com/photos/28575452/pexels-photo-28575452.jpeg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "photographerVerifiedOnPage": true,
+          "freeToUseLinkVerified": true
+        },
+        "sourceArchive": "design-backups/red-shirt-retirement/"
+      }
+    },
+    {
+      "service": "depression",
+      "slug": "depression",
+      "route": "/depression-counseling-tyler/",
+      "id": "owner-depression",
+      "photographer": "Not provided; owner-supplied image",
+      "source": "Owner-supplied ChatGPT Image Sep 22, 2026, 08_18_25 PM.png",
+      "status": "imported",
+      "alt": "A woman sitting on the edge of a bed, looking down with her head resting against one hand",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2170788,
+        "sha256": "dfc61cbaa8cdc4ff765e211741b20f3eac9d84b3ad6400ffe496800a7460aa62"
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "production": {
+        "path": "/assets/services/service-depression.webp",
+        "width": 1440,
+        "height": 960,
+        "bytes": 75326,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "ed0c96a040217a4fc4a108e5dd14717717294d1a01543ebcb130235dd0cc92f6"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-depression-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 16744,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "a39a9dac6366c7bf10449b54d4802e86134f753fa18149ebd0bee9b5e319ee9e"
+        },
+        {
+          "path": "/assets/services/service-depression-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 34986,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "52c79d244287feef3bf1ac083a88f95ec83104ab947651d96216ebccb30d9345"
+        },
+        {
+          "path": "/assets/services/service-depression.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 75326,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "ed0c96a040217a4fc4a108e5dd14717717294d1a01543ebcb130235dd0cc92f6"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/owner-depression/",
+      "sourceFile": "owner-depression.png",
+      "previousImage": {
+        "service": "depression",
+        "slug": "depression",
+        "route": "/depression-counseling-tyler/",
+        "id": "rXrMy7mXUEs",
+        "photographer": "Joice Kelly",
+        "source": "https://unsplash.com/photos/woman-in-orange-sweater-and-skirt-rXrMy7mXUEs",
+        "status": "imported",
+        "license": "https://unsplash.com/license",
+        "accessed": "2026-09-22",
+        "alt": "A woman sitting beside a sofa with her head lowered",
+        "objectPosition": "50% 50%",
+        "displayHeight": "auto",
+        "original": {
+          "width": 3000,
+          "height": 2000,
+          "bytes": 394078,
+          "sha256": "70c7699af6158c215464c3dff83ea31dffac871028ccc9ab1f1d5aae92e4cad3"
+        },
+        "crop": {
+          "left": 167,
+          "top": 0,
+          "width": 2666,
+          "height": 1999
+        },
+        "production": {
+          "path": "/assets/services/service-depression.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 35520,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "08925f1622289dcfaf07dce4955833a94358c1e52c4800029828074f8bbeaa42"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-depression-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 7692,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "f33a81fd55ad4cd6f7dc018829160146b39ba0fef24c847358a8f395f2e21338"
+          },
+          {
+            "path": "/assets/services/service-depression-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 15342,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "42d97a81b8a8d8c99c433acb0c2f0b71fa90ba9c11e559bb5643d706397cf568"
+          },
+          {
+            "path": "/assets/services/service-depression.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 35520,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "08925f1622289dcfaf07dce4955833a94358c1e52c4800029828074f8bbeaa42"
+          }
+        ],
+        "sizes": "(max-width: 900px) 90vw, 45vw",
+        "sourceArchive": "design-backups/unsplash-people/",
+        "downloadUrl": "https://images.unsplash.com/photo-1613312328068-c9b6b76c9e8a?fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "freeLicenseVerifiedInSearchResult": true,
+          "licenseLinkVerifiedOnSourcePage": true,
+          "photographerVerifiedInSearchResult": true
+        },
+        "selectionReason": "Subdued body language and warm household surroundings without sensational despair.",
+        "candidates": [
+          {
+            "id": "rXrMy7mXUEs",
+            "source": "https://unsplash.com/photos/woman-in-orange-sweater-and-skirt-rXrMy7mXUEs",
+            "photographer": "Joice Kelly",
+            "searchGroup": "subdued",
+            "selected": true
+          },
+          {
+            "id": "9nJ6Y-ZHC0Y",
+            "source": "https://unsplash.com/photos/woman-in-white-long-sleeve-shirt-sitting-on-black-couch-9nJ6Y-ZHC0Y",
+            "photographer": "Ivonne Lecou",
+            "searchGroup": "subdued",
+            "selected": false
+          },
+          {
+            "id": "eJ73iS86XNQ",
+            "source": "https://unsplash.com/photos/elderly-man-with-hand-on-chin-deep-in-thought-eJ73iS86XNQ",
+            "photographer": "Vitaly Gariev",
+            "searchGroup": "men",
+            "selected": false
+          }
+        ],
+        "previousImage": {
+          "service": "depression",
+          "slug": "depression",
+          "route": "/depression-counseling-tyler/",
+          "id": 29061283,
+          "photographer": "Chris John",
+          "source": "https://www.pexels.com/photo/vibrant-green-leaves-in-sunlight-29061283/",
+          "status": "imported",
+          "alt": "Green leaves lit by sunlight against a soft woodland background",
+          "objectPosition": "50% 50%",
+          "original": {
+            "width": 3024,
+            "height": 4032,
+            "bytes": 766112,
+            "sha256": "c02de2fb1acd90c34eb57c054145cd249cef32740995bafe2f66e7030c1d558e"
+          },
+          "crop": {
+            "left": 0,
+            "top": 882,
+            "width": 3024,
+            "height": 2268
+          },
+          "production": {
+            "path": "/assets/services/service-depression.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 68570,
+            "format": "webp",
+            "quality": 78,
+            "sha256": "4c6f035701f2ec39969ca03ced03b16983530fd4284576032bbeeeeab9b6a9c4"
+          },
+          "responsive": [
+            {
+              "path": "/assets/services/service-depression-480.webp",
+              "width": 480,
+              "height": 360,
+              "bytes": 14670,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "7a3983318bcba2253c8b7ad228b749e85dc2ec4d99660b53db85eb5f9bd2f120"
+            },
+            {
+              "path": "/assets/services/service-depression-800.webp",
+              "width": 800,
+              "height": 600,
+              "bytes": 30578,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "b845ac19bb26c23e9a69df13b3864ec6a5eb54e38c5ce723b631e8c2afa7356a"
+            },
+            {
+              "path": "/assets/services/service-depression.webp",
+              "width": 1440,
+              "height": 1080,
+              "bytes": 68570,
+              "format": "webp",
+              "quality": 78,
+              "sha256": "4c6f035701f2ec39969ca03ced03b16983530fd4284576032bbeeeeab9b6a9c4"
+            }
+          ],
+          "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+          "downloadUrl": "https://images.pexels.com/photos/29061283/pexels-photo-29061283.jpeg",
+          "sourceVerification": {
+            "pageResolved": true,
+            "photographerVerifiedOnPage": true,
+            "freeToUseLinkVerified": true
+          },
+          "sourceArchive": "design-backups/red-shirt-retirement/"
+        }
+      }
+    },
+    {
+      "service": "anxiety",
+      "slug": "anxiety",
+      "route": "/anxiety-counseling-tyler/",
+      "id": "owner-anxiety",
+      "photographer": "Not provided; owner-supplied image",
+      "source": "Owner-supplied ChatGPT Image Sep 22, 2026, 08_15_44 PM.png",
+      "status": "imported",
+      "alt": "A woman sitting on a sofa with her hands clasped near her mouth, looking toward a sunlit window",
+      "objectPosition": "50% 50%",
+      "displayHeight": "auto",
+      "original": {
+        "width": 1536,
+        "height": 1024,
+        "bytes": 2297326,
+        "sha256": "83f3ddd9fb8761781e41d8bd2a2477f9fd3ba13b1adbdd00cc044189e67121c7"
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1536,
+        "height": 1024
+      },
+      "production": {
+        "path": "/assets/services/service-anxiety.webp",
+        "width": 1440,
+        "height": 960,
+        "bytes": 84466,
+        "format": "webp",
+        "quality": 76,
+        "sha256": "e0f6aba14f93915c261442adfddee24a7987b862696de69e6fb3c8b3cc30fc6d"
+      },
+      "responsive": [
+        {
+          "path": "/assets/services/service-anxiety-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 19488,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "ef92d8c927c9930427351f29d1d50d4d53dd4fab2692075dcbc6f396510ee803"
+        },
+        {
+          "path": "/assets/services/service-anxiety-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 39456,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "821b6faeed3887686ec21b091af079581adbdd3e899f2eab3abfc01ae718f1d8"
+        },
+        {
+          "path": "/assets/services/service-anxiety.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 84466,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "e0f6aba14f93915c261442adfddee24a7987b862696de69e6fb3c8b3cc30fc6d"
+        }
+      ],
+      "sizes": "(max-width: 900px) 90vw, 45vw",
+      "sourceArchive": "design-backups/owner-anxiety/",
+      "sourceFile": "owner-anxiety.png",
+      "previousImage": {
+        "service": "anxiety",
+        "slug": "anxiety",
+        "route": "/anxiety-counseling-tyler/",
+        "id": "9nJ6Y-ZHC0Y",
+        "photographer": "Ivonne Lecou",
+        "source": "https://unsplash.com/photos/woman-in-white-long-sleeve-shirt-sitting-on-black-couch-9nJ6Y-ZHC0Y",
+        "status": "imported",
+        "license": "https://unsplash.com/license",
+        "accessed": "2026-09-22",
+        "alt": "A woman sitting in an armchair beside a window with her knees drawn up",
+        "objectPosition": "50% 50%",
+        "displayHeight": "auto",
+        "original": {
+          "width": 2624,
+          "height": 3936,
+          "bytes": 1794449,
+          "sha256": "35e6ead1372f4d64b88a6cea420b4e5d554482ec2527f1c02cafbcb7ff0d3031"
+        },
+        "crop": {
+          "left": 0,
+          "top": 984,
+          "width": 2624,
+          "height": 1968
+        },
+        "production": {
+          "path": "/assets/services/service-anxiety.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 54828,
+          "format": "webp",
+          "quality": 76,
+          "sha256": "a1f594f790abeea7e2e36d443f5b8e5d53ea5383abfc9a3b93a04bf06843657f"
+        },
+        "responsive": [
+          {
+            "path": "/assets/services/service-anxiety-480.webp",
+            "width": 480,
+            "height": 360,
+            "bytes": 8984,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "b81ef994084f341937c2dc2562916e85e187efabd3f961af8b4de3d15ebcb49a"
+          },
+          {
+            "path": "/assets/services/service-anxiety-800.webp",
+            "width": 800,
+            "height": 600,
+            "bytes": 19076,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "0835ce70a54021e0376af681550afe282d9dc883b489d71ba8335b551b9f4ca0"
+          },
+          {
+            "path": "/assets/services/service-anxiety.webp",
+            "width": 1440,
+            "height": 1080,
+            "bytes": 54828,
+            "format": "webp",
+            "quality": 76,
+            "sha256": "a1f594f790abeea7e2e36d443f5b8e5d53ea5383abfc9a3b93a04bf06843657f"
+          }
+        ],
+        "sizes": "(max-width: 900px) 90vw, 45vw",
+        "sourceArchive": "design-backups/unsplash-people/",
+        "downloadUrl": "https://images.unsplash.com/photo-1629994890281-e391230b2dfb?fm=jpg",
+        "sourceVerification": {
+          "pageResolved": true,
+          "freeLicenseVerifiedInSearchResult": true,
+          "licenseLinkVerifiedOnSourcePage": true,
+          "photographerVerifiedInSearchResult": true
+        },
+        "selectionReason": "A quiet, concerned posture in an ordinary home, without exaggerated distress.",
+        "candidates": [
+          {
+            "id": "9nJ6Y-ZHC0Y",
+            "source": "https://unsplash.com/photos/woman-in-white-long-sleeve-shirt-sitting-on-black-couch-9nJ6Y-ZHC0Y",
+            "photographer": "Ivonne Lecou",
+            "searchGroup": "subdued",
+            "selected": true
+          },
+          {
+            "id": "2IeMNmr3mc8",
+            "source": "https://unsplash.com/photos/woman-in-gray-long-sleeve-shirt-sitting-on-window-2IeMNmr3mc8",
+            "photographer": "Anthony Tran",
+            "searchGroup": "subdued",
+            "selected": false
+          },
+          {
+            "id": "WEuQ5UvLmyU",
+            "source": "https://unsplash.com/photos/man-in-red-crew-neck-shirt-standing-beside-white-curtain-WEuQ5UvLmyU",
+            "photographer": "Dylan Ferreira",
+            "searchGroup": "men",
+            "selected": false
+          }
+        ],
+        "previousImage": {
+          "service": "anxiety",
+          "slug": "anxiety",
+          "route": "/anxiety-counseling-tyler/",
+          "photographer": "Not documented (user-supplied image)",
+          "source": "User-provided anxiety.webp, September 22, 2026",
+          "status": "imported",
+          "alt": "A person sitting on a sofa with their knees drawn up, looking toward a window",
+          "objectPosition": "50% 50%",
+          "original": {
+            "width": 612,
+            "height": 408,
+            "bytes": 28854,
+            "sha256": "bf8a595772844b82bfe814e239b594233bd5ca044c1c3033cfa61a850dd19e5f"
+          },
+          "production": {
+            "path": "/assets/services/service-anxiety.webp",
+            "width": 612,
+            "height": 408,
+            "bytes": 28854,
+            "format": "webp",
+            "sha256": "bf8a595772844b82bfe814e239b594233bd5ca044c1c3033cfa61a850dd19e5f"
+          },
+          "previousImage": {
+            "service": "anxiety",
+            "slug": "anxiety",
+            "route": "/anxiety-counseling-tyler/",
+            "id": 38072124,
+            "photographer": "MAG Photography",
+            "source": "https://www.pexels.com/photo/serene-garden-bench-amidst-lush-greenery-38072124/",
+            "status": "imported",
+            "alt": "An empty wooden bench beneath a garden arbor surrounded by greenery",
+            "objectPosition": "50% 100%",
+            "original": {
+              "width": 4105,
+              "height": 6158,
+              "bytes": 3252582,
+              "sha256": "26e507ac72fd0319a5b3595b0e159c37c791a416b6cee28bb3911fdce2947b9f"
+            },
+            "crop": {
+              "left": 0,
+              "top": 3079,
+              "width": 4105,
+              "height": 3079
+            },
+            "production": {
+              "path": "/assets/services/service-anxiety.webp",
+              "width": 1440,
+              "height": 1080,
+              "bytes": 168608,
+              "format": "webp",
+              "quality": 73,
+              "sha256": "74247b49161dcbf5f41915300522d3fac5e3811b103ac4abc9f9d5d9bfdc4647"
+            },
+            "responsive": [
+              {
+                "path": "/assets/services/service-anxiety-480.webp",
+                "width": 480,
+                "height": 360,
+                "bytes": 28400,
+                "format": "webp",
+                "quality": 78,
+                "sha256": "1a4fc0d65b72f98d4994cfff0573ba7a36f9b87e80959ddcfa2e4c25d9934dd5"
+              },
+              {
+                "path": "/assets/services/service-anxiety-800.webp",
+                "width": 800,
+                "height": 600,
+                "bytes": 33866,
+                "format": "webp",
+                "quality": 33,
+                "sha256": "35694f9834565ac610b0ee30cd3a05ac77222e26f3b5f81f2f53fa819798d97d"
+              },
+              {
+                "path": "/assets/services/service-anxiety.webp",
+                "width": 1440,
+                "height": 1080,
+                "bytes": 168608,
+                "format": "webp",
+                "quality": 73,
+                "sha256": "74247b49161dcbf5f41915300522d3fac5e3811b103ac4abc9f9d5d9bfdc4647"
+              }
+            ],
+            "sizes": "(max-width: 650px) 90vw, (max-width: 900px) 90vw, 45vw",
+            "downloadUrl": "https://images.pexels.com/photos/38072124/pexels-photo-38072124.jpeg",
+            "sourceVerification": {
+              "pageResolved": true,
+              "photographerVerifiedOnPage": true,
+              "freeToUseLinkVerified": true
+            },
+            "sourceArchive": "design-backups/red-shirt-retirement/"
+          },
+          "displayHeight": "auto"
+        }
       }
     }
   ]
