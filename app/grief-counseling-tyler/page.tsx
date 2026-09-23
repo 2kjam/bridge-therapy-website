@@ -62,9 +62,9 @@ export default function Page() {
                 src="/assets/services/service-grief.webp"
                 srcSet="/assets/services/service-grief-480.webp 480w, /assets/services/service-grief-800.webp 800w, /assets/services/service-grief.webp 1440w"
                 sizes="(max-width: 900px) 90vw, 45vw"
-                alt="An older man sitting quietly outdoors beneath trees"
+                alt="A wooden heart puzzle with one piece missing and resting beside it"
                 width="1440"
-                height="1080"
+                height="960"
                 style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>

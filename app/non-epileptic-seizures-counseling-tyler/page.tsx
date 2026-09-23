@@ -58,9 +58,9 @@ export default function Page() {
                 src="/assets/services/service-non-epileptic-seizures.webp"
                 srcSet="/assets/services/service-non-epileptic-seizures-480.webp 480w, /assets/services/service-non-epileptic-seizures-800.webp 800w, /assets/services/service-non-epileptic-seizures.webp 1440w"
                 sizes="(max-width: 900px) 90vw, 45vw"
-                alt="A man in a plaid shirt sitting with his chin resting on his hand"
+                alt="A woman with her eyes closed holding both sides of her head"
                 width="1440"
-                height="1080"
+                height="958"
                 style={{ objectPosition: "50% 50%", height: "auto" }}
               />
               <figcaption>
