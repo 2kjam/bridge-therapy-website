@@ -107,7 +107,9 @@ for (const width of [375, 390, 768, 1440]) {
     await page.goto("/therapists/erin-young/");
     await expect(
       page.locator('.profile-focus a[href="' + route + '"]'),
-    ).toHaveText("Counseling support for non-epileptic concerns");
+    ).toHaveText(
+      "Counseling support for Non-Epileptic Seizures and Functional Neurological Disorder",
+    );
     await page.locator('.profile-services a[href="' + route + '"]').click();
     await expect(page).toHaveURL(route);
   });

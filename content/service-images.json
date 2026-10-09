@@ -2045,7 +2045,7 @@
       "status": "imported",
       "license": "https://unsplash.com/license",
       "accessed": "2026-09-22",
-      "alt": "An older man sitting quietly outdoors beneath trees",
+      "alt": "A wooden heart puzzle with one piece missing and resting beside it",
       "objectPosition": "50% 50%",
       "displayHeight": "auto",
       "original": {
@@ -2063,39 +2063,41 @@
       "production": {
         "path": "/assets/services/service-grief.webp",
         "width": 1440,
-        "height": 1080,
-        "bytes": 121126,
+        "height": 960,
+        "bytes": 246086,
         "format": "webp",
-        "quality": 76,
-        "sha256": "94c412a917dd94bd4f0d1b37141b959f54958b41fdc4e27eace2fef045320b51"
+        "quality": 75,
+        "sha256": "873043bc01f529d0ef810402e9cc11dd6392524435f9881db599f257dec169d6",
+        "effort": 6
       },
       "responsive": [
         {
           "path": "/assets/services/service-grief-480.webp",
           "width": 480,
-          "height": 360,
-          "bytes": 23506,
+          "height": 320,
+          "bytes": 55640,
           "format": "webp",
           "quality": 67,
-          "sha256": "c8039c56419a8d48cf0d4e39263031e54ef2e1bf99051be02c7c7c5d4a25c059"
+          "sha256": "2b53057aaa8fce484a55ce5982e03261b4fbae5a10015c05951673eac9dbf998"
         },
         {
           "path": "/assets/services/service-grief-800.webp",
           "width": 800,
-          "height": 600,
-          "bytes": 53676,
+          "height": 533,
+          "bytes": 144036,
           "format": "webp",
           "quality": 76,
-          "sha256": "9df9aaef5e3826b64a5f7c37705db00fa90186d1c82b33c707e9ae548c47f30f"
+          "sha256": "fd6a2ddfbfb1b92255b63152f63e7d111f019732e5b8ac9f9ad551782a90c363"
         },
         {
           "path": "/assets/services/service-grief.webp",
           "width": 1440,
-          "height": 1080,
-          "bytes": 121126,
+          "height": 960,
+          "bytes": 246086,
           "format": "webp",
-          "quality": 76,
-          "sha256": "94c412a917dd94bd4f0d1b37141b959f54958b41fdc4e27eace2fef045320b51"
+          "quality": 75,
+          "sha256": "873043bc01f529d0ef810402e9cc11dd6392524435f9881db599f257dec169d6",
+          "effort": 6
         }
       ],
       "sizes": "(max-width: 900px) 90vw, 45vw",
@@ -2199,6 +2201,10 @@
           "freeToUseLinkVerified": true
         },
         "sourceArchive": "design-backups/red-shirt-retirement/"
+      },
+      "implementationUpdate": {
+        "commit": "c876e6aab70807c09a0ba421fbb28a1f27b28ac4",
+        "description": "Owner-feedback replacement: wooden heart puzzle. Current alt text and production/responsive file metadata verified against the assets. Main image re-encoded from the approved WebP at quality 75, effort 6, without resizing or cropping. Source attribution, original, crop, responsive quality, and candidate records above document the earlier photograph, not this replacement."
       }
     },
     {
@@ -2211,7 +2217,7 @@
       "status": "imported",
       "license": "https://unsplash.com/license",
       "accessed": "2026-09-22",
-      "alt": "A man in a plaid shirt sitting with his chin resting on his hand",
+      "alt": "A woman with her eyes closed holding both sides of her head",
       "objectPosition": "50% 50%",
       "displayHeight": "auto",
       "original": {
@@ -2229,39 +2235,39 @@
       "production": {
         "path": "/assets/services/service-non-epileptic-seizures.webp",
         "width": 1440,
-        "height": 1080,
-        "bytes": 120676,
+        "height": 958,
+        "bytes": 80428,
         "format": "webp",
         "quality": 76,
-        "sha256": "4ffc8f0ad5bae73d5e30663ffa00eb82ecc5f59d2642ad33509aea74b1ec1cbc"
+        "sha256": "c210dc444511664632f30367e20ee1448b541e1724a9ab0719f6b301e533e62f"
       },
       "responsive": [
         {
           "path": "/assets/services/service-non-epileptic-seizures-480.webp",
           "width": 480,
-          "height": 360,
-          "bytes": 16952,
+          "height": 319,
+          "bytes": 12642,
           "format": "webp",
           "quality": 76,
-          "sha256": "512ecfb478721c240819bd74037ef02e7c9f171a38b5adb29e31d0391ad1a531"
+          "sha256": "0847d6a275594cc1038319a9b4be9bc8f7a53e13ef55129de496832a0f50ec10"
         },
         {
           "path": "/assets/services/service-non-epileptic-seizures-800.webp",
           "width": 800,
-          "height": 600,
-          "bytes": 32634,
+          "height": 532,
+          "bytes": 27840,
           "format": "webp",
           "quality": 76,
-          "sha256": "718a508a2955aa84d6ea099f1dbeae7a03af130e9deaa334d84a17407ac87b76"
+          "sha256": "e7c6b1e99c48ab69fee22c15b372e6b82d05c908c81932617dad8a23938d8578"
         },
         {
           "path": "/assets/services/service-non-epileptic-seizures.webp",
           "width": 1440,
-          "height": 1080,
-          "bytes": 120676,
+          "height": 958,
+          "bytes": 80428,
           "format": "webp",
           "quality": 76,
-          "sha256": "4ffc8f0ad5bae73d5e30663ffa00eb82ecc5f59d2642ad33509aea74b1ec1cbc"
+          "sha256": "c210dc444511664632f30367e20ee1448b541e1724a9ab0719f6b301e533e62f"
         }
       ],
       "sizes": "(max-width: 900px) 90vw, 45vw",

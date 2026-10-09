@@ -60,15 +60,18 @@ export default function ErinYoungPage() {
             <p className="profile-role">Co-owner</p>
             <h2>About Erin</h2>
             <p>
-              Erin works with children, adolescents, individual adults, and
-              families. Her background spans private counseling practice, foster
-              care and adoption services, elementary education, and children’s
-              healthcare.
+              Erin specializes in counseling children, adolescents, adults, and
+              families. Her work is rooted in helping individuals build a deeper
+              connection with themselves and others, cultivate a sense of safety
+              and belonging, process their experiences, and find the confidence
+              and freedom to use their voice.
             </p>
             <p>
-              Whether you’re seeking support for yourself or your family, you
-              can tell our office what brings you to counseling and ask about
-              working with Erin.
+              Whether you’re seeking support for stress, anxiety, trauma, health
+              concerns, or other life challenges, we invite you to share what
+              brings you to counseling and inquire about working with Erin. We
+              are here to help you take the next step toward healing and
+              connection.
             </p>
             <a className="button" href="/contact/?therapist=erin-young">
               Ask About Working With Erin
@@ -83,20 +86,23 @@ export default function ErinYoungPage() {
             <h2 id="erin-focus">Areas of Focus</h2>
             <p>Erin’s counseling experience includes support for:</p>
             <ul className="profile-focus">
-              <li>Post-traumatic stress disorder (PTSD) and complex trauma</li>
-              <li>Anxiety and phobias</li>
+              <li>Post-traumatic Stress Disorder (PTSD) and Complex Trauma</li>
+              <li>Anxiety and Phobias</li>
               <li>Depression</li>
-              <li>Grief, including complicated grief</li>
-              <li>Dissociation</li>
-              <li>Attention concerns, including ADD/ADHD</li>
-              <li>Stress- and pain-related concerns</li>
+              <li>Grief</li>
+              <li>ADD/ADHD</li>
+              <li>Parenting</li>
+              <li>Children and Adolescents</li>
+              <li>Attachment wounds</li>
               <li>Codependency</li>
+              <li>Dissociation</li>
               <li>
                 <a href="/non-epileptic-seizures-counseling-tyler/">
-                  Counseling support for non-epileptic concerns
+                  Counseling support for Non-Epileptic Seizures and Functional
+                  Neurological Disorder
                 </a>
               </li>
-              <li>Counseling support related to fibromyalgia</li>
+              <li>Counseling support related to fibromyalgia and pain</li>
             </ul>
             <p>
               You don’t need to know which term describes your experience to
@@ -108,27 +114,36 @@ export default function ErinYoungPage() {
             <h2 id="erin-background">Training &amp; Professional Background</h2>
             <p>
               Erin is trained in Eye Movement Desensitization and Reprocessing
-              (EMDR), Brain Gym, trauma, and family therapy. Her professional
-              background also includes leading a cognitive behavioral therapy
-              (CBT) program associated with The Epilepsy Center at Northeast
-              Texas Neurological Associates.
+              (EMDR), Brain Gym, Treating Trauma, and Somatic Therapy. Her
+              professional background also includes leading a cognitive
+              behavioral therapy (CBT) program associated with The Epilepsy
+              Center at Northeast Texas Neurological Associates.
+            </p>
+            <p>
+              Her counseling background includes private practice, foster care
+              and adoption, elementary education, and healthcare.
             </p>
             <ul>
               <li>
                 Bachelor’s degree in Social Work, University of North Texas
               </li>
-              <li>
-                Master’s degree in Clinical Social Work, Temple University
-              </li>
+              <li>Master’s degree in Social Work, Temple University</li>
               <li>Licensed Clinical Social Worker–Supervisor (LCSW-S)</li>
+              <li>
+                Advisory Committee Member, The University of Texas at Tyler’s
+                Social Work Department
+              </li>
             </ul>
           </section>
           <section aria-labelledby="erin-faith">
             <h2 id="erin-faith">Faith &amp; Counseling</h2>
             <p>
-              Erin’s training includes Heart-Focused Biblical Counseling. Her
-              personal faith statement draws on Jeremiah 29:11 and its message
-              of hope and a future.
+              Erin believes that God&apos;s unconditional love meets us exactly
+              where we are, offering a foundation of safety, connection, and
+              healing as we grow closer to Him. She recognizes that our
+              attachment wounds can shape the way we experience and connect with
+              God, and that healing these wounds can open the door to a deeper
+              sense of trust, security, and connection with Him.
             </p>
           </section>
           <section aria-labelledby="erin-services">
