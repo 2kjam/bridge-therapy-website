@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 import { productionIndexingAllowed } from "./lib/seo/policy";
+import {
+  securityHeaderRule,
+} from "./lib/security-headers.mjs";
 
 export default function nextConfig(phase: string): NextConfig {
   const indexingEnabled = productionIndexingAllowed(process.env, phase);
@@ -10,6 +13,7 @@ export default function nextConfig(phase: string): NextConfig {
     env: { BRIDGE_BUILD_INDEXING: String(indexingEnabled) },
     async headers() {
       return [
+        securityHeaderRule("Content-Security-Policy"),
         {
           source: indexingEnabled
             ? "/:file(robots\\.txt|sitemap\\.xml)"
