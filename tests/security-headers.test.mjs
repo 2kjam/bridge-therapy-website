@@ -24,6 +24,14 @@ test("Netlify excludes only the Forms endpoint from the sitewide guard", () => {
   assert.match(declaration, /path\s*=\s*"\/\*"/);
   assert.match(declaration, /excludedPath\s*=\s*"\/__forms\.html"/);
   assert.equal((declaration.match(/excludedPath\s*=/g) ?? []).length, 1);
+  const formHeaders = config.match(
+    /\[\[headers\]\]\s*\nfor\s*=\s*"\/__forms\.html"[\s\S]*?(?=\n\[\[|$)/,
+  )?.[0];
+  assert.ok(formHeaders);
+  assert.match(formHeaders, /X-Robots-Tag\s*=\s*"noindex, nofollow"/);
+  assert.match(formHeaders, /Content-Security-Policy\s*=/);
+  for (const { key } of securityHeaders)
+    assert.match(formHeaders, new RegExp(`${key}\\s*=`));
 });
 
 test("CSP is restrictive, syntactically unique, and permits only required resources", () => {

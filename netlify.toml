@@ -6,6 +6,20 @@
 [build.environment]
   NODE_VERSION = "24"
 
+[[headers]]
+for = "/__forms.html"
+
+[headers.values]
+  X-Robots-Tag = "noindex, nofollow"
+  Cache-Control = "no-store"
+  Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src https://player.vimeo.com; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests"
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), fullscreen=(self \"https://player.vimeo.com\")"
+  X-Frame-Options = "DENY"
+  Cross-Origin-Resource-Policy = "same-origin"
+  Cross-Origin-Opener-Policy = "same-origin"
+
 # Phase 1: confirmed legacy moves. Netlify matches both slash variants.
 # Edge/CDN rules run before Next.js trailing-slash normalization.
 
