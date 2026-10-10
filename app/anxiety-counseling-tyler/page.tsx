@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/anxiety-counseling-tyler/"),
   title: "Anxiety Counseling in Tyler, TX | The Bridge",
   description:
     "Find Christian anxiety counseling at The Bridge in Tyler, Texas. Meet counselors, explore support for worry and stress, and contact our office to book.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/anxiety-counseling-tyler/")} />
       <main id={"main"} className={"service-page"}>
         {"\n"}
         <section

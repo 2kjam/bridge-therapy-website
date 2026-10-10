@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/pregnancy-postpartum-counseling-tyler/"),
   title: "Pregnancy & Postpartum Counseling in Tyler, TX | The Bridge",
   description:
     "Pregnancy and postpartum counseling at The Bridge in Tyler, Texas. Explore emotional support and changing family roles. Contact our office about an appointment.",
@@ -20,6 +24,9 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData
+        data={staticPageSchema("/pregnancy-postpartum-counseling-tyler/")}
+      />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

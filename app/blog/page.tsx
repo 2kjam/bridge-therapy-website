@@ -1,3 +1,6 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { blogStyles } from "@/components/blog/article-template";
@@ -5,12 +8,16 @@ import { blogDate, getBlogPosts } from "@/lib/blog";
 import { blogThumbnail } from "@/lib/presentation-images";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/blog/"),
   title: "Blog | The Bridge Therapeutic Services",
+  description:
+    "Read articles from The Bridge Therapeutic Services about counseling, anxiety, EMDR, trauma, relationships, faith, and family life in Tyler, TX.",
 };
 
 export default function BlogPage() {
   return (
     <SiteShell styles={blogStyles}>
+      <StructuredData data={staticPageSchema("/blog/")} />
       <main id="main" className="blog-page blog-index">
         <nav className="blog-breadcrumb" aria-label="Breadcrumb">
           <ol>

@@ -1,0 +1,1852 @@
+{
+  "reviewDate": "2026-10-09",
+  "scope": "All same-site page URLs found in preserved article HTML, root fragments, local predecessor HTML and legacy route records; not an exhaustive historic crawl. Source references distinguish Squarespace snapshots from locally built predecessor pages.",
+  "validationEnvironment": "Netlify @netlify/redirects 4.0.2 + actual edge handler under Node Web APIs + Next.js production server. Netlify Dev full Deno runtime unavailable: runtime download fetch failed.",
+  "activeRoutes": [
+    "/",
+    "/about/",
+    "/adhd-counseling-tyler/",
+    "/adoption-counseling-tyler/",
+    "/anxiety-counseling-tyler/",
+    "/blog/",
+    "/child-teen-counseling-tyler/",
+    "/christian-counseling-tyler/",
+    "/contact/",
+    "/depression-counseling-tyler/",
+    "/divorce-blended-family-counseling-tyler/",
+    "/emdr-therapy-tyler/",
+    "/family-counseling-tyler/",
+    "/grief-counseling-tyler/",
+    "/individual-counseling-tyler/",
+    "/life-transitions-counseling-tyler/",
+    "/marriage-counseling-tyler/",
+    "/non-epileptic-seizures-counseling-tyler/",
+    "/online-therapy-texas/",
+    "/parenting-support-tyler/",
+    "/pregnancy-postpartum-counseling-tyler/",
+    "/premarital-counseling-tyler/",
+    "/staff/kalynne-arrick/",
+    "/therapists/",
+    "/therapists/alyxandrah-white/",
+    "/therapists/denise-santos/",
+    "/therapists/erin-young/",
+    "/therapists/jennifer-wood/",
+    "/therapists/jill-kirkley/",
+    "/therapists/kelley-bell/",
+    "/therapists/kim-gonzales/",
+    "/therapists/misty-shultz/",
+    "/therapists/sarah-bell/",
+    "/therapists/sarah-critzman/",
+    "/trauma-therapy-tyler/"
+  ],
+  "articleRoutes": [
+    "/news/2019/1/2/big-news/",
+    "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays/",
+    "/news/2019/2/3/traumatic-memories-and-treatment/",
+    "/news/2019/5/21/storm-anxiety/",
+    "/news/2021/12/8/screen-time-recommendations/",
+    "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/",
+    "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/",
+    "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd/",
+    "/news/2026/1/18/is-emdr-therapy-safe-and-effective/",
+    "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work/",
+    "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions/",
+    "/news/2026/1/19/anxiety-therapy-in-tyler-tx/",
+    "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference/",
+    "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling/",
+    "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses/",
+    "/news/2026/1/19/what-is-anxiety-therapy/",
+    "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/",
+    "/news/navigating-life-transitions/",
+    "/news/take-heart/"
+  ],
+  "inventory": [
+    {
+      "oldUrl": "/",
+      "newUrl": "/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/about-us-bedford",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/about-us-bedford",
+          "status": 308,
+          "location": "/about-us-bedford/"
+        },
+        {
+          "url": "/about-us-bedford/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/adhd-counseling-tyler/",
+      "newUrl": "/adhd-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/adhd-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/adhd-counseling-tyler/index.html",
+      "newUrl": "/adhd-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/adhd-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/adhd-counseling-tyler/"
+        },
+        {
+          "url": "/adhd-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/adoption-counseling-tyler/",
+      "newUrl": "/adoption-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/child-teen-counseling-tyler/index.html",
+        "legacy/public/family-counseling-tyler/index.html",
+        "legacy/public/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/adoption-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/adoption-counseling-tyler/index.html",
+      "newUrl": "/adoption-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/adoption-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/adoption-counseling-tyler/"
+        },
+        {
+          "url": "/adoption-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/anxiety-counseling-tyler/",
+      "newUrl": "/anxiety-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/anxiety-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/anxiety-counseling-tyler/index.html",
+      "newUrl": "/anxiety-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/anxiety-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/anxiety-counseling-tyler/"
+        },
+        {
+          "url": "/anxiety-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/blog",
+      "newUrl": "/blog/",
+      "redirectStatus": 308,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/blog",
+          "status": 308,
+          "location": "/blog/"
+        },
+        {
+          "url": "/blog/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/cart",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/cart",
+          "status": 308,
+          "location": "/cart/"
+        },
+        {
+          "url": "/cart/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/child-teen-counseling-tyler/",
+      "newUrl": "/child-teen-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/child-teen-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/child-teen-counseling-tyler/index.html",
+      "newUrl": "/child-teen-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/child-teen-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/child-teen-counseling-tyler/"
+        },
+        {
+          "url": "/child-teen-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/children-families",
+      "newUrl": "/#family-services",
+      "redirectStatus": 308,
+      "rationale": "Existing explicit Next.js redirect preserved; slashless request has a pre-existing extra 308 normalization hop.",
+      "verificationSource": [
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/children-families",
+          "status": 308,
+          "location": "/children-families/"
+        },
+        {
+          "url": "/children-families/",
+          "status": 308,
+          "location": "/#family-services"
+        },
+        {
+          "url": "/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/children-families/",
+      "newUrl": "/#family-services",
+      "redirectStatus": 308,
+      "rationale": "Existing explicit Next.js redirect preserved; slashless request has a pre-existing extra 308 normalization hop.",
+      "verificationSource": [
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/children-families/",
+          "status": 308,
+          "location": "/#family-services"
+        },
+        {
+          "url": "/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/children-families/index.html",
+      "newUrl": "/children-families/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/children-families/index.html",
+          "status": 308,
+          "location": "/children-families/"
+        },
+        {
+          "url": "/children-families/",
+          "status": 308,
+          "location": "/#family-services"
+        },
+        {
+          "url": "/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/christian-counseling-tyler/",
+      "newUrl": "/christian-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/christian-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/christian-counseling-tyler/index.html",
+      "newUrl": "/christian-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/christian-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/christian-counseling-tyler/"
+        },
+        {
+          "url": "/christian-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/contact",
+      "newUrl": "/contact/",
+      "redirectStatus": 308,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/contact",
+          "status": 308,
+          "location": "/contact/"
+        },
+        {
+          "url": "/contact/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/contact/",
+      "newUrl": "/contact/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/contact/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/contact/index.html",
+      "newUrl": "/contact/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/contact/index.html",
+          "status": 308,
+          "location": "/contact/"
+        },
+        {
+          "url": "/contact/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/depression-counseling-tyler/",
+      "newUrl": "/depression-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/depression-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/depression-counseling-tyler/index.html",
+      "newUrl": "/depression-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/depression-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/depression-counseling-tyler/"
+        },
+        {
+          "url": "/depression-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/divorce-blended-family-counseling-tyler/",
+      "newUrl": "/divorce-blended-family-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/family-counseling-tyler/index.html",
+        "legacy/public/index.html",
+        "legacy/public/marriage-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/divorce-blended-family-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/divorce-blended-family-counseling-tyler/index.html",
+      "newUrl": "/divorce-blended-family-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/divorce-blended-family-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/divorce-blended-family-counseling-tyler/"
+        },
+        {
+          "url": "/divorce-blended-family-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/emdr-therapy-tyler/",
+      "newUrl": "/emdr-therapy-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/emdr-therapy-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/emdr-therapy-tyler/index.html",
+      "newUrl": "/emdr-therapy-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/emdr-therapy-tyler/index.html",
+          "status": 308,
+          "location": "/emdr-therapy-tyler/"
+        },
+        {
+          "url": "/emdr-therapy-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/family-counseling-tyler/",
+      "newUrl": "/family-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/family-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/family-counseling-tyler/index.html",
+      "newUrl": "/family-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/family-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/family-counseling-tyler/"
+        },
+        {
+          "url": "/family-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/grief-counseling-tyler/",
+      "newUrl": "/grief-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/grief-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/grief-counseling-tyler/index.html",
+      "newUrl": "/grief-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/grief-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/grief-counseling-tyler/"
+        },
+        {
+          "url": "/grief-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/index.html",
+      "newUrl": "/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/index.html",
+          "status": 308,
+          "location": "/"
+        },
+        {
+          "url": "/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/individual-counseling-tyler/",
+      "newUrl": "/individual-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/individual-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/individual-counseling-tyler/index.html",
+      "newUrl": "/individual-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/individual-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/individual-counseling-tyler/"
+        },
+        {
+          "url": "/individual-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/job-postings",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/job-postings",
+          "status": 308,
+          "location": "/job-postings/"
+        },
+        {
+          "url": "/job-postings/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/life-transitions-counseling-tyler/",
+      "newUrl": "/life-transitions-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/life-transitions-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/life-transitions-counseling-tyler/index.html",
+      "newUrl": "/life-transitions-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/life-transitions-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/life-transitions-counseling-tyler/"
+        },
+        {
+          "url": "/life-transitions-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/marriage-counseling-tyler/",
+      "newUrl": "/marriage-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/marriage-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/marriage-counseling-tyler/index.html",
+      "newUrl": "/marriage-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/marriage-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/marriage-counseling-tyler/"
+        },
+        {
+          "url": "/marriage-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/meet-the-team",
+      "newUrl": "/therapists/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved permanent page move; exact collection index only for /news.",
+      "verificationSource": [
+        "Owner-approved Phase 1 mapping in task instruction",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/meet-the-team",
+          "status": 301,
+          "location": "/therapists/"
+        },
+        {
+          "url": "/therapists/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news",
+      "newUrl": "/blog/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved permanent page move; exact collection index only for /news.",
+      "verificationSource": [
+        "Owner-approved Phase 1 mapping in task instruction",
+        "content/blog/MIGRATION-REPORT.md"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news",
+          "status": 301,
+          "location": "/blog/"
+        },
+        {
+          "url": "/blog/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news?author=5f5e4cd445de701d477994a6",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/news?author=5f5e4cd445de701d477994a6",
+          "status": 308,
+          "location": "/news/?author=5f5e4cd445de701d477994a6"
+        },
+        {
+          "url": "/news/?author=5f5e4cd445de701d477994a6",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news?format=rss",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/news?format=rss",
+          "status": 308,
+          "location": "/news/?format=rss"
+        },
+        {
+          "url": "/news/?format=rss",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2019/1/2/big-news",
+      "newUrl": "/news/2019/1/2/big-news/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/big-news/source/page.html",
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2019/1/2/big-news",
+          "status": 308,
+          "location": "/news/2019/1/2/big-news/"
+        },
+        {
+          "url": "/news/2019/1/2/big-news/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays",
+      "newUrl": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/simple-ways-to-lower-stress-during-the-holidays/source/page.html",
+        "content/blog/storm-anxiety/source/page.html",
+        "content/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays",
+          "status": 308,
+          "location": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays/"
+        },
+        {
+          "url": "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2019/2/3/traumatic-memories-and-treatment",
+      "newUrl": "/news/2019/2/3/traumatic-memories-and-treatment/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/big-news/source/page.html",
+        "content/blog/take-heart/source/page.html",
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2019/2/3/traumatic-memories-and-treatment",
+          "status": 308,
+          "location": "/news/2019/2/3/traumatic-memories-and-treatment/"
+        },
+        {
+          "url": "/news/2019/2/3/traumatic-memories-and-treatment/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2019/5/21/storm-anxiety",
+      "newUrl": "/news/2019/5/21/storm-anxiety/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/simple-ways-to-lower-stress-during-the-holidays/source/page.html",
+        "content/blog/storm-anxiety/source/page.html",
+        "content/blog/take-heart/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2019/5/21/storm-anxiety",
+          "status": 308,
+          "location": "/news/2019/5/21/storm-anxiety/"
+        },
+        {
+          "url": "/news/2019/5/21/storm-anxiety/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2021/12/8/screen-time-recommendations",
+      "newUrl": "/news/2021/12/8/screen-time-recommendations/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/navigating-life-transitions/source/page.html",
+        "content/blog/screen-time-recommendations/source/page.html",
+        "content/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2021/12/8/screen-time-recommendations",
+          "status": 308,
+          "location": "/news/2021/12/8/screen-time-recommendations/"
+        },
+        {
+          "url": "/news/2021/12/8/screen-time-recommendations/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+      "newUrl": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/screen-time-recommendations/source/page.html",
+        "content/blog/simple-ways-to-lower-stress-during-the-holidays/source/page.html",
+        "content/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg",
+          "status": 308,
+          "location": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/"
+        },
+        {
+          "url": "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
+      "newUrl": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/body.html",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/body.html",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx",
+          "status": 308,
+          "location": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/"
+        },
+        {
+          "url": "/news/2026/1/18/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd",
+      "newUrl": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd",
+          "status": 308,
+          "location": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd/"
+        },
+        {
+          "url": "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/18/is-emdr-therapy-safe-and-effective",
+      "newUrl": "/news/2026/1/18/is-emdr-therapy-safe-and-effective/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/source/page.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/body.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/18/is-emdr-therapy-safe-and-effective",
+          "status": 308,
+          "location": "/news/2026/1/18/is-emdr-therapy-safe-and-effective/"
+        },
+        {
+          "url": "/news/2026/1/18/is-emdr-therapy-safe-and-effective/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work",
+      "newUrl": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work",
+          "status": 308,
+          "location": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work/"
+        },
+        {
+          "url": "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions",
+      "newUrl": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/body.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions",
+          "status": 308,
+          "location": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions/"
+        },
+        {
+          "url": "/news/2026/1/18/what-to-expect-in-emdr-therapy-sessions/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/19/anxiety-therapy-in-tyler-tx",
+      "newUrl": "/news/2026/1/19/anxiety-therapy-in-tyler-tx/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/body.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/body.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/19/anxiety-therapy-in-tyler-tx",
+          "status": 308,
+          "location": "/news/2026/1/19/anxiety-therapy-in-tyler-tx/"
+        },
+        {
+          "url": "/news/2026/1/19/anxiety-therapy-in-tyler-tx/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference",
+      "newUrl": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/source/page.html",
+        "content/blog/what-is-anxiety-therapy/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference",
+          "status": 308,
+          "location": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference/"
+        },
+        {
+          "url": "/news/2026/1/19/anxiety-therapy-vs-medication-whats-the-difference/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling",
+      "newUrl": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/can-emdr-be-integrated-with-christian-counseling/source/page.html",
+        "content/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling",
+          "status": 308,
+          "location": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling/"
+        },
+        {
+          "url": "/news/2026/1/19/can-emdr-be-integrated-with-christian-counseling/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses",
+      "newUrl": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/can-emdr-be-integrated-with-christian-counseling/source/page.html",
+        "content/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/source/page.html",
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/body.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses",
+          "status": 308,
+          "location": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses/"
+        },
+        {
+          "url": "/news/2026/1/19/emdr-therapy-for-anxiety-panic-and-trauma-responses/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/1/19/what-is-anxiety-therapy",
+      "newUrl": "/news/2026/1/19/what-is-anxiety-therapy/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/body.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/body.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/1/19/what-is-anxiety-therapy",
+          "status": 308,
+          "location": "/news/2026/1/19/what-is-anxiety-therapy/"
+        },
+        {
+          "url": "/news/2026/1/19/what-is-anxiety-therapy/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god",
+      "newUrl": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god",
+          "status": 308,
+          "location": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/"
+        },
+        {
+          "url": "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/navigating-life-transitions",
+      "newUrl": "/news/navigating-life-transitions/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/source/page.html",
+        "content/blog/navigating-life-transitions/source/page.html",
+        "content/blog/screen-time-recommendations/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/navigating-life-transitions",
+          "status": 308,
+          "location": "/news/navigating-life-transitions/"
+        },
+        {
+          "url": "/news/navigating-life-transitions/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/tag/EDMR",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/news/tag/EDMR",
+          "status": 308,
+          "location": "/news/tag/EDMR/"
+        },
+        {
+          "url": "/news/tag/EDMR/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/tag/Memories",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/news/tag/Memories",
+          "status": 308,
+          "location": "/news/tag/Memories/"
+        },
+        {
+          "url": "/news/tag/Memories/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/tag/Trauma",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/news/tag/Trauma",
+          "status": 308,
+          "location": "/news/tag/Trauma/"
+        },
+        {
+          "url": "/news/tag/Trauma/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/news/take-heart",
+      "newUrl": "/news/take-heart/",
+      "redirectStatus": 308,
+      "rationale": "Original article path retained; existing trailingSlash normalization only.",
+      "verificationSource": [
+        "content/blog/storm-anxiety/source/page.html",
+        "content/blog/take-heart/source/page.html",
+        "content/blog/traumatic-memories-and-treatment/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/news/take-heart",
+          "status": 308,
+          "location": "/news/take-heart/"
+        },
+        {
+          "url": "/news/take-heart/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/our-story",
+      "newUrl": "/about/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved permanent page move; exact collection index only for /news.",
+      "verificationSource": [
+        "Owner-approved Phase 1 mapping in task instruction",
+        "content/blog/big-news/body.html",
+        "content/blog/big-news/source/body.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/our-story",
+          "status": 301,
+          "location": "/about/"
+        },
+        {
+          "url": "/about/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/parenting-support-tyler/",
+      "newUrl": "/parenting-support-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/parenting-support-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/parenting-support-tyler/index.html",
+      "newUrl": "/parenting-support-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/parenting-support-tyler/index.html",
+          "status": 308,
+          "location": "/parenting-support-tyler/"
+        },
+        {
+          "url": "/parenting-support-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/pregnancy-postpartum-counseling-tyler/",
+      "newUrl": "/pregnancy-postpartum-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/pregnancy-postpartum-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/pregnancy-postpartum-counseling-tyler/index.html",
+      "newUrl": "/pregnancy-postpartum-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/pregnancy-postpartum-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/pregnancy-postpartum-counseling-tyler/"
+        },
+        {
+          "url": "/pregnancy-postpartum-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/premarital-counseling-tyler/",
+      "newUrl": "/premarital-counseling-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/premarital-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/premarital-counseling-tyler/index.html",
+      "newUrl": "/premarital-counseling-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/premarital-counseling-tyler/index.html",
+          "status": 308,
+          "location": "/premarital-counseling-tyler/"
+        },
+        {
+          "url": "/premarital-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/programs",
+      "newUrl": null,
+      "redirectStatus": null,
+      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "verificationSource": [
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "low",
+      "disposition": "unresolved",
+      "localTrace": [
+        {
+          "url": "/programs",
+          "status": 308,
+          "location": "/programs/"
+        },
+        {
+          "url": "/programs/",
+          "status": 404,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/schedule-an-apointment",
+      "newUrl": "/contact/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved permanent page move; exact collection index only for /news.",
+      "verificationSource": [
+        "Owner-approved Phase 1 mapping in task instruction",
+        "content/blog/anxiety-therapy-in-tyler-tx/body.html",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/body.html",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/schedule-an-apointment",
+          "status": 301,
+          "location": "/contact/"
+        },
+        {
+          "url": "/contact/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/trauma-therapy-tyler/",
+      "newUrl": "/trauma-therapy-tyler/",
+      "redirectStatus": 200,
+      "rationale": "Existing active route; preserve address, trailingSlash normalization only.",
+      "verificationSource": [
+        "legacy/public/adhd-counseling-tyler/index.html",
+        "legacy/public/adoption-counseling-tyler/index.html",
+        "legacy/public/anxiety-counseling-tyler/index.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/trauma-therapy-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/trauma-therapy-tyler/index.html",
+      "newUrl": "/trauma-therapy-tyler/",
+      "redirectStatus": 308,
+      "rationale": "Existing Next.js index.html normalization preserved; not a newly introduced Squarespace move.",
+      "verificationSource": [
+        "MIGRATION.md",
+        "legacy/routes.json"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/trauma-therapy-tyler/index.html",
+          "status": 308,
+          "location": "/trauma-therapy-tyler/"
+        },
+        {
+          "url": "/trauma-therapy-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    },
+    {
+      "oldUrl": "/what-we-believe",
+      "newUrl": "/christian-counseling-tyler/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved permanent page move; exact collection index only for /news.",
+      "verificationSource": [
+        "Owner-approved Phase 1 mapping in task instruction",
+        "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
+        "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
+        "content/blog/big-news/source/page.html"
+      ],
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
+      "localTrace": [
+        {
+          "url": "/what-we-believe",
+          "status": 301,
+          "location": "/christian-counseling-tyler/"
+        },
+        {
+          "url": "/christian-counseling-tyler/",
+          "status": 200,
+          "location": null
+        }
+      ]
+    }
+  ]
+}

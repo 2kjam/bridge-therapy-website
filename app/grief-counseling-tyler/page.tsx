@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/grief-counseling-tyler/"),
   title: "Grief & Bereavement Counseling in Tyler, TX | The Bridge",
   description:
     "Grief and bereavement counseling at The Bridge in Tyler, Texas. Explore support after loss, meet counselors, and contact our office to book an appointment.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/grief-counseling-tyler/")} />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

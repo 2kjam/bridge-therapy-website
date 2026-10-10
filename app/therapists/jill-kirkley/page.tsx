@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/jill-kirkley/"),
   title: "Jill Kirkley, LPC | Tyler, TX | The Bridge",
   description:
     "Meet Jill Kirkley, LPC, at The Bridge in Tyler, Texas. She counsels individual adults with a Christian perspective and experience in anxiety, grief, and change.",
@@ -27,6 +31,7 @@ export default function JillKirkleyPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/jill-kirkley/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

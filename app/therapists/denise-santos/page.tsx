@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/denise-santos/"),
   title: "Denise Santos, LPC | Tyler, TX | The Bridge",
   description:
     "Meet Denise Santos, LPC, at The Bridge in Tyler, Texas. She counsels children, adolescents, and adults with experience in anxiety, depression, grief, and change.",
@@ -28,6 +32,7 @@ export default function DeniseSantosPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/denise-santos/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

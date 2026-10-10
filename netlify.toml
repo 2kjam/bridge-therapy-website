@@ -5,3 +5,36 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+# Phase 1: confirmed legacy moves. Netlify matches both slash variants.
+# Edge/CDN rules run before Next.js trailing-slash normalization.
+
+[[redirects]]
+from = "/what-we-believe"
+to = "/christian-counseling-tyler/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/our-story"
+to = "/about/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/meet-the-team"
+to = "/therapists/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/schedule-an-apointment"
+to = "/contact/"
+status = 301
+force = true
+
+# Phase 2: deny indexing on every noncanonical host, including production deploy aliases.
+# Explicit declarations precede inline functions, so this wraps legacy-news too.
+[[edge_functions]]
+function = "indexing-guard"
+path = "/*"

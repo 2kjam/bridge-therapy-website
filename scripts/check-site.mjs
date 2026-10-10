@@ -636,8 +636,8 @@ assert.deepEqual(elements(serviceList, "a").map((node) => attr(node, "href")), [
   "/individual-counseling-tyler/", "/depression-counseling-tyler/", "/family-counseling-tyler/",
   "/grief-counseling-tyler/", "/christian-counseling-tyler/", "/divorce-blended-family-counseling-tyler/",
 ]);
-assert.ok(!elements(profile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(profile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(profile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/jennifer-wood/"]);
+assert.equal(elements(profile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const erinProfile = parse(fs.readFileSync(".next/server/app/therapists/erin-young.html", "utf8"));
 pages.set("/therapists/erin-young/", erinProfile);
 assert.equal(elements(erinProfile, "h1").length, 1);
@@ -651,8 +651,8 @@ assert.deepEqual(elements(erinServices, "a").map((node) => attr(node, "href")), 
   "/anxiety-counseling-tyler/", "/grief-counseling-tyler/", "/trauma-therapy-tyler/",
   "/emdr-therapy-tyler/", "/adhd-counseling-tyler/", "/adoption-counseling-tyler/", "/non-epileptic-seizures-counseling-tyler/",
 ]);
-assert.ok(!elements(erinProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(erinProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(erinProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/erin-young/"]);
+assert.equal(elements(erinProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const alyxProfile = parse(fs.readFileSync(".next/server/app/therapists/alyxandrah-white.html", "utf8"));
 pages.set("/therapists/alyxandrah-white/", alyxProfile);
 assert.equal(elements(alyxProfile, "h1").length, 1);
@@ -666,8 +666,8 @@ assert.deepEqual(elements(alyxServices, "a").map((node) => attr(node, "href")), 
   "/marriage-counseling-tyler/", "/family-counseling-tyler/", "/parenting-support-tyler/",
   "/premarital-counseling-tyler/", "/divorce-blended-family-counseling-tyler/",
 ]);
-assert.ok(!elements(alyxProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(alyxProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(alyxProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/alyxandrah-white/"]);
+assert.equal(elements(alyxProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const kelleyProfile = parse(fs.readFileSync(".next/server/app/therapists/kelley-bell.html", "utf8"));
 pages.set("/therapists/kelley-bell/", kelleyProfile);
 assert.equal(elements(kelleyProfile, "h1").length, 1);
@@ -680,8 +680,8 @@ const kelleyServices = all(kelleyMain, (node) => attr(node, "class") === "profil
 assert.deepEqual(elements(kelleyServices, "a").map((node) => attr(node, "href")), [
   "/marriage-counseling-tyler/", "/child-teen-counseling-tyler/", "/parenting-support-tyler/", "/premarital-counseling-tyler/",
 ]);
-assert.ok(!elements(kelleyProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(kelleyProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(kelleyProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/kelley-bell/"]);
+assert.equal(elements(kelleyProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const deniseProfile = parse(fs.readFileSync(".next/server/app/therapists/denise-santos.html", "utf8"));
 pages.set("/therapists/denise-santos/", deniseProfile);
 assert.equal(elements(deniseProfile, "h1").length, 1);
@@ -694,8 +694,8 @@ const deniseServices = all(deniseMain, (node) => attr(node, "class") === "profil
 assert.deepEqual(elements(deniseServices, "a").map((node) => attr(node, "href")), [
   "/individual-counseling-tyler/", "/depression-counseling-tyler/", "/child-teen-counseling-tyler/", "/life-transitions-counseling-tyler/",
 ]);
-assert.ok(!elements(deniseProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(deniseProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(deniseProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/denise-santos/"]);
+assert.equal(elements(deniseProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const jillProfile = parse(fs.readFileSync(".next/server/app/therapists/jill-kirkley.html", "utf8"));
 pages.set("/therapists/jill-kirkley/", jillProfile);
 assert.equal(elements(jillProfile, "h1").length, 1);
@@ -708,8 +708,8 @@ const jillServices = all(jillMain, (node) => attr(node, "class") === "profile-se
 assert.deepEqual(elements(jillServices, "a").map((node) => attr(node, "href")), [
   "/anxiety-counseling-tyler/", "/life-transitions-counseling-tyler/", "/christian-counseling-tyler/",
 ]);
-assert.ok(!elements(jillProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(jillProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(jillProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/jill-kirkley/"]);
+assert.equal(elements(jillProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 const sarahBellProfile = parse(fs.readFileSync(".next/server/app/therapists/sarah-bell.html", "utf8"));
 pages.set("/therapists/sarah-bell/", sarahBellProfile);
 assert.equal(elements(sarahBellProfile, "h1").length, 1);
@@ -722,8 +722,8 @@ const sarahBellServices = all(sarahBellMain, (node) => attr(node, "class") === "
 assert.deepEqual(elements(sarahBellServices, "a").map((node) => attr(node, "href")), [
   "/trauma-therapy-tyler/", "/emdr-therapy-tyler/", "/adhd-counseling-tyler/",
 ]);
-assert.ok(!elements(sarahBellProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(sarahBellProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(sarahBellProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/sarah-bell/"]);
+assert.equal(elements(sarahBellProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 assert.ok(normalizedText(sarahBellMain).includes("Supervised by Whitney Briggs, LPC-S"));
 assert.ok(normalizedText(sarahBellMain).includes("Licensed Professional Counselor Associate"));
 const kimProfile = parse(fs.readFileSync(".next/server/app/therapists/kim-gonzales.html", "utf8"));
@@ -739,8 +739,8 @@ const kimServices = all(kimMain, (node) => attr(node, "class") === "profile-serv
 assert.deepEqual(elements(kimServices, "a").map((node) => attr(node, "href")), [
   "/adoption-counseling-tyler/",
 ]);
-assert.ok(!elements(kimProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(kimProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(kimProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/kim-gonzales/"]);
+assert.equal(elements(kimProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 assert.ok(normalizedText(kimMain).includes("Supervised by Erin Young, LCSW-S"));
 assert.ok(normalizedText(kimMain).includes("Licensed Master Social Worker"));
 const mistyProfile = parse(fs.readFileSync(".next/server/app/therapists/misty-shultz.html", "utf8"));
@@ -752,8 +752,8 @@ assert.equal(attr(elements(mistyProfile, "meta").find((node) => attr(node, "name
 const mistyMain = elements(mistyProfile, "main")[0];
 assert.equal(attr(elements(mistyMain, "img")[0], "src"), "/assets/misty.jpg");
 assert.equal(all(mistyMain, (node) => attr(node, "class") === "profile-services").length, 0);
-assert.ok(!elements(mistyProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(mistyProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(mistyProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/misty-shultz/"]);
+assert.equal(elements(mistyProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 assert.ok(normalizedText(mistyMain).includes("Licensed Professional Counselor"));
 const sarahCritzmanProfile = parse(fs.readFileSync(".next/server/app/therapists/sarah-critzman.html", "utf8"));
 pages.set("/therapists/sarah-critzman/", sarahCritzmanProfile);
@@ -764,8 +764,8 @@ assert.equal(attr(elements(sarahCritzmanProfile, "meta").find((node) => attr(nod
 const sarahCritzmanMain = elements(sarahCritzmanProfile, "main")[0];
 assert.equal(attr(elements(sarahCritzmanMain, "img")[0], "src"), "/assets/sarah-critzman.jpg");
 assert.equal(all(sarahCritzmanMain, (node) => attr(node, "class") === "profile-services").length, 0);
-assert.ok(!elements(sarahCritzmanProfile, "link").some((node) => attr(node, "rel") === "canonical"));
-assert.ok(!elements(sarahCritzmanProfile, "script").some((node) => attr(node, "type") === "application/ld+json"));
+assert.deepEqual(elements(sarahCritzmanProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/sarah-critzman/"]);
+assert.equal(elements(sarahCritzmanProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
 assert.ok(normalizedText(sarahCritzmanMain).includes("Supervised by Christi Lawson, LCSW-S"));
 assert.ok(normalizedText(sarahCritzmanMain).includes("Licensed Master Social Worker"));
 // Authoritative specialty mapping: enforce the exact active-profile associations.

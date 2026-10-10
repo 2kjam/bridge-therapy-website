@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/kim-gonzales/"),
   title: "Kim Gonzales, LMSW | Tyler, TX | The Bridge",
   description:
     "Meet Kim Gonzales, LMSW, at The Bridge in Tyler, Texas. She supports women with stress, anxiety, parenting, and relationship concerns.",
@@ -25,6 +29,7 @@ export default function KimGonzalesPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/kim-gonzales/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

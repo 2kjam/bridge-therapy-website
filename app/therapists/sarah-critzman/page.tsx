@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/sarah-critzman/"),
   title: "Sarah Critzman, LMSW | Tyler, TX | The Bridge",
   description:
     "Meet Sarah Critzman, LMSW, at The Bridge in Tyler, Texas. She works with children, teens, and young women and brings a background in Deaf Education.",
@@ -21,6 +25,7 @@ export default function SarahCritzmanPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/sarah-critzman/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>
@@ -99,7 +104,10 @@ export default function SarahCritzmanPage() {
           </section>
           <section aria-labelledby="sarah-critzman-play">
             <h2 id="sarah-critzman-play">Play Therapy</h2>
-            <p>Play therapy is one of Sarah’s areas of work. Contact the office to discuss whether this support may fit your child’s needs.</p>
+            <p>
+              Play therapy is one of Sarah’s areas of work. Contact the office
+              to discuss whether this support may fit your child’s needs.
+            </p>
           </section>
           <section aria-labelledby="sarah-critzman-background">
             <h2 id="sarah-critzman-background">Professional Background</h2>

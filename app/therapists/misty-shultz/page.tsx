@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/misty-shultz/"),
   title: "Misty Shultz, LPC | Tyler, TX | The Bridge",
   description:
     "Meet Misty Shultz, LPC, at The Bridge in Tyler, Texas. Her Christian perspective informs support with grief, discouragement, and spiritual concerns.",
@@ -21,6 +25,7 @@ export default function MistyShultzPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/misty-shultz/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

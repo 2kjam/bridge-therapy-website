@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/"),
   title: "Therapists in Tyler, TX | The Bridge",
   description:
     "Meet the counselors at The Bridge Therapeutic Services in Tyler, Texas. Contact our office for help finding the right therapist.",
@@ -97,6 +101,7 @@ export default function TherapistsPage() {
         "/therapist-directory.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/")} />
       <main id="main" className="therapist-directory">
         <div className="directory-intro">
           <p className="eyebrow">THE BRIDGE · TYLER, TEXAS</p>
@@ -138,7 +143,9 @@ export default function TherapistsPage() {
                   <a href="/therapists/kim-gonzales/">{therapist.name}</a>
                 ) : therapist.image === "misty" ? (
                   <a href="/therapists/misty-shultz/">{therapist.name}</a>
-                ) : therapist.name}
+                ) : (
+                  therapist.name
+                )}
               </h2>
               <p>{therapist.credential}</p>
             </li>

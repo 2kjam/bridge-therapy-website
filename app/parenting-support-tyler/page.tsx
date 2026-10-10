@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/parenting-support-tyler/"),
   title: "Parenting Support in Tyler, TX | The Bridge",
   description:
     "Parenting support at The Bridge in Tyler, Texas. Explore counseling for parenting stress, communication, changing roles, and co-parenting. Contact our office.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/parenting-support-tyler/")} />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

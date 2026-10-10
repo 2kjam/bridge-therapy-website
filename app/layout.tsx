@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "The Bridge Therapeutic Services",
-  // Keep the existing preview indexing policy until a separate launch review.
+  // Fail closed for unknown/utility routes. Reviewed pages override this explicitly.
   robots: { index: false, follow: false },
   icons: {
     icon: [

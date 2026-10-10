@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/erin-young/"),
   title: "Erin Young, LCSW-S | Tyler, TX | The Bridge",
   description:
     "Meet Erin Young, LCSW-S, co-owner of The Bridge in Tyler, Texas. Her counseling experience includes trauma, anxiety, grief, and ADHD. Inquire about care.",
@@ -31,6 +35,7 @@ export default function ErinYoungPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/erin-young/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

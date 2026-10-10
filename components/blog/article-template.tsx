@@ -1,3 +1,5 @@
+import { StructuredData } from "@/components/structured-data";
+import { articleSchema } from "@/lib/seo/schema";
 import { SiteShell } from "@/components/site-shell";
 import { blogDate, getBlogPosts, type BlogPost } from "@/lib/blog";
 
@@ -22,6 +24,7 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
     post.legacyPath === "/news/2019/2/3/traumatic-memories-and-treatment";
   return (
     <SiteShell styles={blogStyles}>
+      <StructuredData data={articleSchema(post)} />
       <main id="main" className="blog-page">
         <nav className="blog-breadcrumb" aria-label="Breadcrumb">
           <ol>
@@ -35,7 +38,11 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
           </ol>
         </nav>
         <article
-          className={isTraumaticMemories ? "blog-article blog-article--traumatic-memories" : "blog-article"}
+          className={
+            isTraumaticMemories
+              ? "blog-article blog-article--traumatic-memories"
+              : "blog-article"
+          }
           aria-labelledby="article-title"
         >
           <header className="blog-article-header">

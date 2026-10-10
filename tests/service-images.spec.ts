@@ -14,13 +14,21 @@ test("service images: production files and scope", async ({ request }) => {
   expect(crypto.createHash("sha256").update(fs.readFileSync("public/assets/services/service-adhd.webp")).digest("hex"))
     .toBe("27f1c69307f96807cb3b50af4547d2264956c54259b88ac10e7f3fe060b0f399");
   expect(new Set(imported.map(record => record.production!.sha256)).size).toBe(19);
-  const replacements = imported.filter(record => !["adhd", "online", "anxiety", "depression", "parenting"].includes(record.slug));
-  expect(replacements).toHaveLength(14);
-  expect(new Set(replacements.map(record => record.source)).size).toBe(14);
+  const replacements = imported.filter(record => !["adhd", "online", "anxiety", "depression", "parenting", "non-epileptic-seizures"].includes(record.slug));
+  expect(replacements).toHaveLength(13);
+  expect(new Set(replacements.map(record => record.source)).size).toBe(13);
   for (const record of replacements) {
     expect(record.source).toMatch(/^https:\/\/unsplash.com\/photos\//);
     expect("license" in record && record.license).toBe("https://unsplash.com/license");
   }
+  const nes = imported.find(record => record.slug === "non-epileptic-seizures")!;
+  expect(nes.source).toBeNull();
+  expect(nes.photographer).toBeNull();
+  expect(nes.license).toBeNull();
+  expect("provenance" in nes && nes.provenance?.status).toBe("unverified");
+  expect(
+    "supersededProvenance" in nes && nes.supersededProvenance?.source,
+  ).toContain("D6Hkl-wot_E");
   expect(fs.readdirSync("public/assets/services").sort()).toEqual(imported.flatMap(r => 'responsive' in r ? r.responsive!.map(v => v.path.split("/").pop()) : [r.production!.path.split("/").pop()]).sort());
   for (const record of imported) {
     const production = record.production!;

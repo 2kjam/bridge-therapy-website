@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/staff/kalynne-arrick/"),
   title: "Kalynne Arrick, Office Manager | The Bridge",
   description:
     "Meet Kalynne Arrick, Office Manager at The Bridge Therapeutic Services in Tyler, Texas.",
@@ -22,6 +26,7 @@ export default function KalynneArrickPage() {
         "/staff-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/staff/kalynne-arrick/")} />
       <main id="main" className="staff-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

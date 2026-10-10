@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/kelley-bell/"),
   title: "Kelley Bell, LPC | Tyler, TX | The Bridge",
   description:
     "Meet Kelley Bell, LPC, at The Bridge in Tyler, Texas. She supports teens, young adults, parents, and young married couples. Inquire about counseling.",
@@ -28,6 +32,7 @@ export default function KelleyBellPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/kelley-bell/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

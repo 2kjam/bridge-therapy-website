@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/sarah-bell/"),
   title: "Sarah Bell, LPC-A | Tyler, TX | The Bridge",
   description:
     "Meet Sarah Bell, LPC-A, at The Bridge in Tyler, Texas. She works with individuals and couples ages 13 and up and is trained in EMDR.",
@@ -27,6 +31,7 @@ export default function SarahBellPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/sarah-bell/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/child-teen-counseling-tyler/"),
   title: "Child & Teen Counseling in Tyler, TX | The Bridge",
   description:
     "Explore child and teen counseling at The Bridge in Tyler, Texas. Meet counselors and ask about support for emotional, behavioral, and school-related concerns.",
@@ -20,6 +24,9 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData
+        data={staticPageSchema("/child-teen-counseling-tyler/")}
+      />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

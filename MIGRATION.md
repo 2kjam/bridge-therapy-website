@@ -163,6 +163,6 @@ netlify.toml contains the build command, publish directory, and Node version. Re
 
 Settings verified against [Netlify's framework build settings](https://docs.netlify.com/build/frameworks/overview/#nextjs) and [Next.js adapter documentation](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/).
 
-## Pending production SEO redirect
+## Phase 1 SEO redirect preparation
 
-Before production launch, include /what-we-believe/ -> **301** -> /christian-counseling-tyler/ in the final SEO migration/redirect map (including requests without the trailing slash). The new site consolidates its faith destination into Christian Counseling; no separate beliefs page is planned. This is documentation only: do not activate the redirect during staging or while the existing production site remains live.
+Before production launch, include /what-we-believe/ -> **301** -> /christian-counseling-tyler/ in the final SEO migration/redirect map (including requests without the trailing slash). The new site consolidates its faith destination into Christian Counseling; no separate beliefs page is planned. Phase 1 now prepares this rule locally in netlify.toml under explicit owner authorization. It has not been pushed or deployed; staging noindex/nofollow remains unchanged. See SEO-MIGRATION-PHASE-1.md.

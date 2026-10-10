@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/emdr-therapy-tyler/"),
   title: "EMDR Therapy in Tyler, TX | The Bridge",
   description:
     "Learn about EMDR therapy at The Bridge in Tyler, Texas. Meet EMDR-trained counselors, explore what sessions may involve, and contact our office about scheduling.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/emdr-therapy-tyler/")} />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

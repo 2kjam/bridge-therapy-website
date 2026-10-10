@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/divorce-blended-family-counseling-tyler/"),
   title: "Divorce & Blended Family Counseling in Tyler, TX | The Bridge",
   description:
     "Divorce and blended family counseling in Tyler, Texas. Explore support for separation, co-parenting, and changing family roles. Contact The Bridge to book.",
@@ -20,6 +24,9 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData
+        data={staticPageSchema("/divorce-blended-family-counseling-tyler/")}
+      />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

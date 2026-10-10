@@ -1,3 +1,6 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { HomepageMain } from "@/components/home/homepage-main";
@@ -9,6 +12,7 @@ import { TherapistsAndLocation } from "@/components/home/TherapistsAndLocation";
 import { Location } from "@/components/home/Location";
 import { NextSteps } from "@/components/home/NextSteps";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/"),
   title: "Counseling & Therapy in Tyler, TX | The Bridge",
   description:
     "Meet The Bridge Therapeutic Services. Christian counseling for individuals, couples, children, and families in Tyler, Texas.",
@@ -32,10 +36,14 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/")} />
       <HomepageMain>
         <Hero />
         <div className="bridge-positioning">
-          <p>Bridging Heart-Focused Christian Counseling and Whole Health Together</p>
+          <p>
+            Bridging Heart-Focused Christian Counseling and Whole Health
+            Together
+          </p>
         </div>
         <Services />
         <Faith />

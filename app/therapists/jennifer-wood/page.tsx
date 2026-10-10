@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/jennifer-wood/"),
   title: "Jennifer Wood, LPC-S | Tyler, TX | The Bridge",
   description:
     "Jennifer Wood, LPC-S, is co-owner of The Bridge in Tyler, Texas. Her experience includes family concerns, grief, depression, and spiritual issues.",
@@ -33,6 +37,7 @@ export default function JenniferWoodPage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/therapists/jennifer-wood/")} />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>
@@ -69,7 +74,8 @@ export default function JenniferWoodPage() {
             <p>
               You may be looking for support with a relationship, a loss, or
               depression. Jennifer’s experience includes these concerns, and our
-              office can help you consider whether working with her may be a fit.
+              office can help you consider whether working with her may be a
+              fit.
             </p>
             <a className="button" href="/contact/?therapist=jennifer-wood">
               Ask About Working With Jennifer

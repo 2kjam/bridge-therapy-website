@@ -2211,12 +2211,12 @@
       "service": "non-epileptic-seizures",
       "slug": "non-epileptic-seizures",
       "route": "/non-epileptic-seizures-counseling-tyler/",
-      "id": "D6Hkl-wot_E",
-      "photographer": "@invadingkingdom",
-      "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",
+      "id": null,
+      "photographer": null,
+      "source": null,
       "status": "imported",
-      "license": "https://unsplash.com/license",
-      "accessed": "2026-09-22",
+      "license": null,
+      "accessed": null,
       "alt": "A woman with her eyes closed holding both sides of her head",
       "objectPosition": "50% 50%",
       "displayHeight": "auto",
@@ -2271,16 +2271,23 @@
         }
       ],
       "sizes": "(max-width: 900px) 90vw, 45vw",
-      "sourceArchive": "design-backups/unsplash-people/",
-      "downloadUrl": "https://images.unsplash.com/photo-1604780403125-e1cefdc0089a?fm=jpg",
-      "sourceVerification": {
-        "pageResolved": true,
-        "freeLicenseVerifiedInSearchResult": true,
-        "licenseLinkVerifiedOnSourcePage": true,
-        "photographerVerifiedInSearchResult": true
+      "sourceArchive": null,
+      "downloadUrl": null,
+      "provenance": {
+        "status": "unverified",
+        "note": "The repository does not contain verified creator, source URL, download history, or license evidence for the current approved image of a woman holding both sides of her head. Do not attribute this asset to the superseded Unsplash candidate."
       },
-      "selectionReason": "A calm, reflective adult with no medical equipment or suggestion of an active seizure.",
-      "candidates": [
+      "approvalHistory": "The current image and alt text are approved. The selection rationale and source history were not preserved in the repository.",
+      "supersededProvenance": {
+        "id": "D6Hkl-wot_E",
+        "photographer": "@invadingkingdom",
+        "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",
+        "license": "https://unsplash.com/license",
+        "accessed": "2026-09-22",
+        "downloadUrl": "https://images.unsplash.com/photo-1604780403125-e1cefdc0089a?fm=jpg",
+        "note": "These fields describe a superseded candidate photograph of a man and do not establish provenance for the current approved asset."
+      },
+      "supersededCandidates": [
         {
           "id": "D6Hkl-wot_E",
           "source": "https://unsplash.com/photos/man-in-red-and-black-plaid-dress-shirt-D6Hkl-wot_E",

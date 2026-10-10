@@ -32,6 +32,48 @@ export interface BlogPost {
 
 const root = path.join(process.cwd(), "content", "blog");
 
+// Presentation-only metadata. The migrated records and source snapshots remain
+// exact historical evidence, including blank Squarespace descriptions and one
+// source title that contained a literal HTML break tag.
+const presentationSeo: Record<
+  string,
+  Partial<BlogPost["seo"]>
+> = {
+  "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd": {
+    description:
+      "Learn how EMDR therapy may help people process traumatic memories, reduce emotional intensity, and support healing at The Bridge in Tyler, TX.",
+  },
+  "/news/2026/1/18/is-emdr-therapy-safe-and-effective": {
+    description:
+      "Explore common questions about EMDR safety, evidence, preparation, pacing, and readiness from The Bridge Therapeutic Services in Tyler, TX.",
+  },
+  "/news/2021/12/8/screen-time-recommendations": {
+    description:
+      "Review screen-time recommendations for children, including age-based limits, family routines, parental controls, and screen-free bedtime habits.",
+  },
+  "/news/2019/5/21/storm-anxiety": {
+    description:
+      "Learn how storms can trigger anxiety and find grounding, preparation, and parenting strategies discussed by The Bridge therapists in Tyler, TX.",
+  },
+  "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg": {
+    description:
+      "Read The Bridge's community spotlight with Beth Reed about Sight.org, intentional living, faith, and her family's adoption story.",
+  },
+  "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work": {
+    description:
+      "Learn what EMDR stands for, how bilateral stimulation is used, and what a structured EMDR therapy process may involve in Tyler, TX.",
+  },
+  "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays": {
+    title:
+      "Simple Ways to Lower Stress During the Holidays — The Bridge Therapeutic Services",
+  },
+};
+
+const presentationTitles: Record<string, string> = {
+  "/news/2019/11/30/simple-ways-to-lower-stress-during-the-holidays":
+    "Simple Ways to Lower Stress During the Holidays",
+};
+
 // Only reviewed local records are loaded; request parameters never become file paths.
 export function getBlogPosts(): BlogPost[] {
   const posts = fs
@@ -53,8 +95,11 @@ export function getBlogPosts(): BlogPost[] {
       ) {
         throw new Error(`Invalid blog metadata: ${entry.name}`);
       }
+      const seoOverride = presentationSeo[record.legacyPath];
       return {
         ...record,
+        title: presentationTitles[record.legacyPath] ?? record.title,
+        seo: { ...record.seo, ...seoOverride },
         bodyHtml: fs.readFileSync(path.join(directory, "body.html"), "utf8"),
       } as BlogPost;
     });

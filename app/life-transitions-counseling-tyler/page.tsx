@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/life-transitions-counseling-tyler/"),
   title: "Life Transitions Counseling in Tyler, TX | The Bridge",
   description:
     "Life transitions counseling at The Bridge in Tyler, Texas. Explore support for adjustment difficulties, changing roles, and unexpected events. Contact us to book.",
@@ -20,6 +24,9 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData
+        data={staticPageSchema("/life-transitions-counseling-tyler/")}
+      />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>

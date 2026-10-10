@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/about/"),
   title: "About The Bridge | The Bridge Therapeutic Services",
   description:
     "Get to know The Bridge Therapeutic Services in Tyler, Texas, co-owners Jennifer Wood and Erin Young, and our Christian perspective on professional, compassionate care.",
@@ -21,6 +25,7 @@ export default function AboutPage() {
         "/about.css",
       ]}
     >
+      <StructuredData data={staticPageSchema("/about/")} />
       <main id="main" className="about-page">
         <section className="about-intro" aria-labelledby="about-title">
           <p className="eyebrow">THE BRIDGE THERAPEUTIC SERVICES</p>

@@ -137,11 +137,10 @@ test("built article and index retain content, metadata, local image and staging 
     ),
     "noindex, nofollow",
   );
-  assert.equal(
-    all(article, (n) => n.tagName === "link" && attr(n, "rel") === "canonical")
-      .length,
-    0,
-  );
+  assert.deepEqual(
+      all(article, (n) => n.tagName === "link" && attr(n, "rel") === "canonical").map((n) => attr(n, "href")),
+      ["https://www.thebridgetherapy.com" + record.legacyPath + "/"],
+    );
   const image = all(
     article,
     (n) => attr(n, "class") === "blog-featured-image",

@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/non-epileptic-seizures-counseling-tyler/"),
   title: "Non-Epileptic Seizures Counseling | Tyler, TX | The Bridge",
   description:
     "Counseling support for Non-Epileptic Seizures with Erin Young, LCSW-S at The Bridge in Tyler, Texas. Contact our office about an appointment.",
@@ -21,6 +25,9 @@ export default function Page() {
         "/ivory-design.css",
       ]}
     >
+      <StructuredData
+        data={staticPageSchema("/non-epileptic-seizures-counseling-tyler/")}
+      />
       <main id="main" className="service-page">
         <section className="service-opening" aria-labelledby="page-title">
           <p className="service-breadcrumb">
@@ -144,7 +151,8 @@ export default function Page() {
                   background and Christian perspective.
                 </p>
                 <a className="service-text-link" href="/therapists/erin-young/">
-                  Read Erin&apos;s profile <span aria-hidden="true">&rarr;</span>
+                  Read Erin&apos;s profile{" "}
+                  <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </article>

@@ -1,3 +1,4 @@
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleTemplate } from "@/components/blog/article-template";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: post.seo.title },
     description: post.seo.description,
-    // Production canonical/OG infrastructure is deferred; inherit global staging robots.
+    ...publicPageMetadata(post.legacyPath),
   };
 }
 

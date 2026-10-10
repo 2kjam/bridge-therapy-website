@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/marriage-counseling-tyler/"),
   title: "Marriage & Couples Counseling in Tyler, TX | The Bridge",
   description:
     "Explore Christian marriage and couples counseling at The Bridge in Tyler, Texas. Meet counselors, explore relationship support, and contact us to book an appointment.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/marriage-counseling-tyler/")} />
       <main id={"main"} className={"service-page"}>
         {"\n"}
         <section

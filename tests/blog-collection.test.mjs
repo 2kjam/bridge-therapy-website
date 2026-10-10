@@ -71,11 +71,16 @@ test("collection: exactly 19 distinct routes, 23 assets, original excerpts only,
     "2021-12-09",
   );
   assert.equal(posts.at(-1).publicationDate, "2019-01-01");
-  assert.ok(
-    posts
-      .find((p) => p.legacyPath.includes("simple-ways"))
-      .title.includes("Stress  During"),
+  const holiday = posts.find((p) => p.legacyPath.includes("simple-ways"));
+  assert.equal(
+    holiday.title,
+    "Simple Ways to Lower Stress During the Holidays",
   );
+  assert.equal(
+    holiday.seo.title,
+    "Simple Ways to Lower Stress During the Holidays — The Bridge Therapeutic Services",
+  );
+  assert.doesNotMatch(holiday.title + holiday.seo.title, /<br\s*\/?\s*>/i);
   assert.equal(getBlogPost(["unknown-article"]), undefined);
   const index = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
   const cards = all(index, (n) => hasClass(n, "blog-card"));
@@ -207,18 +212,17 @@ for (const directory of directories) {
     );
     assert.equal(
       text(all(built, (n) => n.tagName === "title")[0]),
-      record.seo.title,
+      post.seo.title,
     );
-    assert.equal(meta(built, "description") ?? "", record.seo.description);
+    assert.equal(meta(built, "description") ?? "", post.seo.description);
     assert.equal(meta(built, "robots"), "noindex, nofollow");
-    assert.equal(
-      all(built, (n) => n.tagName === "link" && attr(n, "rel") === "canonical")
-        .length,
-      0,
+    assert.deepEqual(
+      all(built, (n) => n.tagName === "link" && attr(n, "rel") === "canonical").map((n) => attr(n, "href")),
+      ["https://www.thebridgetherapy.com" + record.legacyPath + "/"],
     );
     assert.equal(
       text(all(built, (n) => attr(n, "id") === "article-title")[0]),
-      source.title,
+      post.title,
     );
     const builtBody = all(
       built,

@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/christian-counseling-tyler/"),
   title: "Christian Counseling in Tyler, TX | The Bridge",
   description:
     "Christian counseling in Tyler, Texas, at The Bridge. Learn about our faith-centered approach, meet counselors, and contact our office to book an appointment.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/christian-counseling-tyler/")} />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>
@@ -324,7 +329,9 @@ export default function Page() {
             >
               {"Child & Teen Counseling →"}
             </a>
-            <a className="service-text-link" href="/online-therapy-texas/">Explore Christian online counseling across Texas →</a>
+            <a className="service-text-link" href="/online-therapy-texas/">
+              Explore Christian online counseling across Texas →
+            </a>
           </div>
         </section>
         {"\n "}

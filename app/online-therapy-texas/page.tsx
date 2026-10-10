@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/online-therapy-texas/"),
   title: "Online Therapy in Texas | Telehealth Counseling | The Bridge",
   description:
     "Explore online therapy and telehealth counseling across Texas with The Bridge Therapeutic Services, including counseling that makes room for your Christian faith.",
@@ -72,6 +76,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/online-therapy-texas/")} />
       <main id="main" className="service-page">
         <section className="service-opening" aria-labelledby="page-title">
           <p className="service-breadcrumb">

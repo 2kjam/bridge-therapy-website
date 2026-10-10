@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/adhd-counseling-tyler/"),
   title: "ADHD Counseling & Support in Tyler, TX | The Bridge",
   description:
     "ADHD counseling and support in Tyler, Texas. Meet Bridge counselors and explore support for attention, routines, and relationships. Contact us to book an appointment.",
@@ -20,6 +24,7 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData data={staticPageSchema("/adhd-counseling-tyler/")} />
       <main id={"main"} className={"service-page"}>
         <section className={"service-opening"} aria-labelledby={"page-title"}>
           <p className={"service-breadcrumb"}>
@@ -60,7 +65,9 @@ export default function Page() {
             <figure>
               <img
                 src={"/assets/services/service-adhd.webp"}
-                alt={"A hand placing a wooden letter D beside blocks spelling ADHD"}
+                alt={
+                  "A hand placing a wooden letter D beside blocks spelling ADHD"
+                }
                 width={"612"}
                 height={"408"}
                 style={{ objectPosition: "50% 50%", height: "auto" }}

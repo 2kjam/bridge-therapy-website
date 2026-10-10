@@ -1,7 +1,11 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
+  ...publicPageMetadata("/therapists/alyxandrah-white/"),
   title: "Alyxandrah White, LMFT | Tyler, TX | The Bridge",
   description:
     "Meet Alyxandrah “Alyx” White, LMFT, at The Bridge in Tyler, Texas. Her experience includes couples, family communication, co-parenting, and life changes.",
@@ -32,6 +36,9 @@ export default function AlyxandrahWhitePage() {
         "/therapist-profile.css",
       ]}
     >
+      <StructuredData
+        data={staticPageSchema("/therapists/alyxandrah-white/")}
+      />
       <main id="main" className="therapist-profile">
         <nav className="profile-breadcrumb" aria-label="Breadcrumb">
           <ol>

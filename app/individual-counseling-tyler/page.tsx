@@ -1,6 +1,10 @@
+import { StructuredData } from "@/components/structured-data";
+import { staticPageSchema } from "@/lib/seo/schema";
+import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 export const metadata: Metadata = {
+  ...publicPageMetadata("/individual-counseling-tyler/"),
   title: "Individual Counseling in Tyler, TX | The Bridge",
   description:
     "Explore individual counseling at The Bridge in Tyler, Texas. Find support for anxiety, depression, grief, relationships, and life changes. Contact us to book.",
@@ -20,6 +24,9 @@ export default function Page() {
       ]}
       footerId="location"
     >
+      <StructuredData
+        data={staticPageSchema("/individual-counseling-tyler/")}
+      />
       <main id={"main"} className={"service-page"}>
         {"\n"}
         <section
