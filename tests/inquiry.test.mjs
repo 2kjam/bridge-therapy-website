@@ -14,7 +14,7 @@ const moduleUrl = (file) =>
     }).outputText,
   ).toString("base64");
 const sharedUrl = moduleUrl("lib/inquiry.ts");
-const { therapists, therapistValue, validateInquiry, sendInquiry } = await import(sharedUrl);
+const { inquiryEndpoint, therapists, therapistValue, validateInquiry, sendInquiry } = await import(sharedUrl);
 const valid = {
   first_name: "Test",
   last_name: "Visitor",
@@ -65,7 +65,8 @@ test("both sources construct the same Netlify request; mocked responses do not p
   assert.equal(requests.length, 1);
   await sendInquiry(chat, "/therapists/erin-young/", "chat_widget");
   for (const [i, request] of requests.entries()) {
-   assert.equal(request.url, "/__forms.html"); assert.equal(request.method,"POST");
+   assert.equal(inquiryEndpoint, "/__forms.html");
+   assert.equal(request.url, inquiryEndpoint); assert.equal(request.method,"POST");
    assert.deepEqual(request.headers, {"Content-Type":"application/x-www-form-urlencoded"});
    const params=new URLSearchParams(request.body);
    assert.deepEqual([...params.keys()].sort(), i === 0 ? fields : fields.filter(key => key !== "last_name" && key !== "message"));
@@ -83,6 +84,14 @@ test("both sources construct the same Netlify request; mocked responses do not p
    }
    globalThis.fetch=async()=>new Response("Unavailable",{status:503});
    await assert.rejects(sendInquiry(valid,"/contact/",source));
+   globalThis.fetch=async()=>new Response('<script src="/_next/static/chunks/app.js"></script>',{status:200,headers:{"content-type":"text/html; charset=utf-8"}});
+   await assert.rejects(sendInquiry(valid,"/contact/",source), /Application page returned/);
+   globalThis.fetch=async()=>{
+    const response=new Response("Redirect target",{status:200,headers:{"content-type":"text/html"}});
+    Object.defineProperties(response,{redirected:{value:true},url:{value:"https://www.thebridgetherapy.com/contact/"}});
+    return response;
+   };
+   await assert.rejects(sendInquiry(valid,"/contact/",source), /redirected unexpectedly/);
    globalThis.fetch=async()=>{throw new Error("Mock network failure");};
    await assert.rejects(sendInquiry(valid,"/contact/",source));
    let attempted=false;

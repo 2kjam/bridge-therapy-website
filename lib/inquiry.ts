@@ -25,13 +25,14 @@ export type Inquiry = Record<keyof typeof limits, string>;
 export type ChatInquiry = Omit<Inquiry, "last_name" | "message">;
 export type InquirySource = "contact_form" | "chat_widget";
 type ValidationResult<T> = { data: T; errors: Partial<Record<keyof T, string>> };
+export const inquiryEndpoint = "/__forms.html";
 export async function sendInquiry(data: Inquiry | ChatInquiry, sourcePage: string, inquirySource: InquirySource) {
   // A filled/missing honeypot can be silently discarded by Netlify. Never
   // present that as successful delivery, or remove the value to bypass it.
   if (data["bot-field"] !== "") throw new Error("Inquiry submission failed");
   const checked = validateInquiry(data, inquirySource);
   if (Object.keys(checked.errors).length) throw new Error("Inquiry validation failed");
-  const response = await fetch("/__forms.html", {
+  const response = await fetch(inquiryEndpoint, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
@@ -43,12 +44,24 @@ export async function sendInquiry(data: Inquiry | ChatInquiry, sourcePage: strin
     signal: AbortSignal.timeout(20000),
   });
   if (!response.ok) throw new Error("Inquiry submission failed");
+  if (response.redirected) {
+    const finalUrl = new URL(response.url);
+    const currentOrigin = globalThis.location?.origin;
+    if ((currentOrigin && finalUrl.origin !== currentOrigin) || finalUrl.pathname !== inquiryEndpoint)
+      throw new Error("Inquiry submission redirected unexpectedly");
+  }
   const body = await response.text();
   // A static-file fallback can return 200 without processing the POST. This
   // catches our form blueprint, including Netlify's post-processed version.
   // It is a negative guard, not proof of storage or spam-filter acceptance.
   if (/<form\b[^>]*\bname\s*=\s*["']?bridge-contact-inquiry(?:["'\s>])/i.test(body))
     throw new Error("Form definition returned instead of a submission response");
+  const contentType = response.headers.get("content-type")?.toLowerCase() ?? "";
+  if (
+    contentType.includes("text/html") &&
+    /(?:\b__next_f\.push\b|<script\b[^>]*\bsrc\s*=\s*["'][^"']*\/_next\/|<meta\b[^>]*\bname\s*=\s*["']next-size-adjust["']|\bdata-next-error\b)/i.test(body)
+  )
+    throw new Error("Application page returned instead of a submission response");
 }
 export function therapistValue(value: string | null) {
   return therapists.some(([slug]) => slug === value) ? value! : "";

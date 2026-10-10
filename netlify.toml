@@ -38,3 +38,4 @@ force = true
 [[edge_functions]]
 function = "indexing-guard"
 path = "/*"
+excludedPath = "/__forms.html"

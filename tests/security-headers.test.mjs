@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import fs from "node:fs";
 import indexingGuard from "../netlify/edge-functions/indexing-guard.js";
 import {
   contentSecurityPolicy,
@@ -13,6 +14,17 @@ const directives = new Map(
     return [name, values];
   }),
 );
+
+test("Netlify excludes only the Forms endpoint from the sitewide guard", () => {
+  const config = fs.readFileSync("netlify.toml", "utf8");
+  const declaration = config.match(
+    /\[\[edge_functions\]\][\s\S]*?function\s*=\s*"indexing-guard"[\s\S]*?(?=\n\[|$)/,
+  )?.[0];
+  assert.ok(declaration);
+  assert.match(declaration, /path\s*=\s*"\/\*"/);
+  assert.match(declaration, /excludedPath\s*=\s*"\/__forms\.html"/);
+  assert.equal((declaration.match(/excludedPath\s*=/g) ?? []).length, 1);
+});
 
 test("CSP is restrictive, syntactically unique, and permits only required resources", () => {
   assert.equal(directives.size, contentSecurityPolicy.split(";").length);
