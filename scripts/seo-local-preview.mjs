@@ -15,6 +15,8 @@ const { RedirectsHandler } = await import(
 const { parse } = require(modules + "/smol-toml");
 const { default: legacyNews } =
   await import("../netlify/edge-functions/legacy-news.js");
+const { default: retiredLegacyUrl } =
+  await import("../netlify/edge-functions/retired-legacy-url.js");
 const config = parse(fs.readFileSync("netlify.toml", "utf8"));
 const redirects = new RedirectsHandler({
   configRedirects: config.redirects,
@@ -37,7 +39,10 @@ http
         return fetch("http://127.0.0.1:3012" + req.url, { redirect: "manual" });
       };
       const response = await indexingGuard(request, {
-        next: () => legacyNews(request, { next }),
+        next: () =>
+          retiredLegacyUrl(request, {
+            next: () => legacyNews(request, { next }),
+          }),
       });
       res.writeHead(
         response.status,

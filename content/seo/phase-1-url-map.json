@@ -1,5 +1,5 @@
 {
-  "reviewDate": "2026-10-09",
+  "reviewDate": "2026-10-11",
   "scope": "All same-site page URLs found in preserved article HTML, root fragments, local predecessor HTML and legacy route records; not an exhaustive historic crawl. Source references distinguish Squarespace snapshots from locally built predecessor pages.",
   "validationEnvironment": "Netlify @netlify/redirects 4.0.2 + actual edge handler under Node Web APIs + Next.js production server. Netlify Dev full Deno runtime unavailable: runtime download fetch failed.",
   "activeRoutes": [
@@ -816,24 +816,25 @@
     {
       "oldUrl": "/job-postings",
       "newUrl": null,
-      "redirectStatus": null,
-      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "redirectStatus": 410,
+      "rationale": "Owner-approved permanent retirement. Return HTTP 410 Gone for both slash variants without redirecting or creating replacement content.",
       "verificationSource": [
+        "Owner-approved legacy URL migration decision dated 2026-10-11",
         "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
         "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
         "content/blog/big-news/source/page.html"
       ],
-      "confidence": "low",
-      "disposition": "unresolved",
+      "confidence": "high",
+      "disposition": "permanently-retired",
       "localTrace": [
         {
           "url": "/job-postings",
-          "status": 308,
-          "location": "/job-postings/"
+          "status": 410,
+          "location": null
         },
         {
           "url": "/job-postings/",
-          "status": 404,
+          "status": 410,
           "location": null
         }
       ]
@@ -1729,25 +1730,31 @@
     },
     {
       "oldUrl": "/programs",
-      "newUrl": null,
-      "redirectStatus": null,
-      "rationale": "No approved equivalent. Retain unresolved 404 behavior; owner decision and search/backlink evidence needed.",
+      "newUrl": "/non-epileptic-seizures-counseling-tyler/",
+      "redirectStatus": 301,
+      "rationale": "Owner-approved continuity redirect to the current NES counseling service. This preserves historical access and does not claim the pages have identical content.",
       "verificationSource": [
+        "Owner-approved legacy URL migration decision dated 2026-10-11",
         "content/blog/anxiety-therapy-in-tyler-tx/source/page.html",
         "content/blog/anxiety-therapy-vs-medication-whats-the-difference/source/page.html",
         "content/blog/big-news/source/page.html"
       ],
-      "confidence": "low",
-      "disposition": "unresolved",
+      "confidence": "high",
+      "disposition": "preserve-or-confirmed-move",
       "localTrace": [
         {
           "url": "/programs",
-          "status": 308,
-          "location": "/programs/"
+          "status": 301,
+          "location": "/non-epileptic-seizures-counseling-tyler/"
         },
         {
           "url": "/programs/",
-          "status": 404,
+          "status": 301,
+          "location": "/non-epileptic-seizures-counseling-tyler/"
+        },
+        {
+          "url": "/non-epileptic-seizures-counseling-tyler/",
+          "status": 200,
           "location": null
         }
       ]

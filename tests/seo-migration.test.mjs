@@ -3,6 +3,8 @@ import fs from "node:fs";
 import test from "node:test";
 import { parse } from "parse5";
 import legacyNews from "../netlify/edge-functions/legacy-news.js";
+import retiredLegacyUrl from "../netlify/edge-functions/retired-legacy-url.js";
+import { contentSecurityPolicy } from "../lib/security-headers.mjs";
 import { getBlogPosts } from "../lib/blog.ts";
 
 const moves = [
@@ -11,6 +13,7 @@ const moves = [
   ["/meet-the-team", "/therapists/"],
   ["/schedule-an-apointment", "/contact/"],
   ["/news", "/blog/"],
+  ["/programs", "/non-epileptic-seizures-counseling-tyler/"],
 ];
 const base = process.env.MIGRATION_TEST_URL || "http://127.0.0.1:8888";
 assert.match(base, /^http:\/\/(localhost|127\.0\.0\.1):\d+$/);
@@ -76,8 +79,6 @@ test("confirmed moves: both slash variants make one 301 hop to a 200 destination
 
 test("no speculative redirects, descendant matches, open redirects or homepage fallback", async () => {
   for (const path of [
-    "/programs/",
-    "/job-postings/",
     "/about-us-bedford/",
     "/cart/",
     "/news/tag/Trauma/",
@@ -100,6 +101,33 @@ test("no speculative redirects, descendant matches, open redirects or homepage f
   assert.equal(response.status, 301);
   assert.equal(location.origin, base);
   assert.equal(location.pathname, "/about/");
+});
+
+test("retired Job Postings URL returns a secured 410 for both slash variants", async () => {
+  for (const path of ["/job-postings", "/job-postings/"]) {
+    const edgeResponse = retiredLegacyUrl(new Request(base + path), {
+      next() {
+        throw new Error("retired URL reached the Next.js origin");
+      },
+    });
+    assert.equal(edgeResponse.status, 410, path);
+    assert.equal(edgeResponse.headers.get("location"), null, path);
+    assert.equal(edgeResponse.headers.get("x-robots-tag"), "noindex, nofollow");
+    assert.equal(
+      edgeResponse.headers.get("content-security-policy"),
+      contentSecurityPolicy,
+    );
+    assert.match(await edgeResponse.text(), /This page is no longer available/);
+
+    const response = await get(path);
+    assert.equal(response.status, 410, path);
+    assert.equal(response.headers.get("location"), null, path);
+    assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow");
+    assert.equal(
+      response.headers.get("content-security-policy"),
+      contentSecurityPolicy,
+    );
+  }
 });
 
 test("all 19 original article URLs retain their own page and title", async () => {

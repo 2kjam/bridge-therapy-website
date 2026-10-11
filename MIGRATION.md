@@ -166,3 +166,7 @@ Settings verified against [Netlify's framework build settings](https://docs.netl
 ## Phase 1 SEO redirect preparation
 
 Before production launch, include /what-we-believe/ -> **301** -> /christian-counseling-tyler/ in the final SEO migration/redirect map (including requests without the trailing slash). The new site consolidates its faith destination into Christian Counseling; no separate beliefs page is planned. Phase 1 now prepares this rule locally in netlify.toml under explicit owner authorization. It has not been pushed or deployed; staging noindex/nofollow remains unchanged. See SEO-MIGRATION-PHASE-1.md.
+
+## Owner-approved legacy URL decisions (2026-10-11)
+
+The local migration configuration now sends both slash forms of `/programs` directly to `/non-epileptic-seizures-counseling-tyler/` with one Netlify 301. This is a continuity decision, not a content-equivalence claim. Both slash forms of `/job-postings` return HTTP 410 from an exact-path Netlify Edge Function before Next.js trailing-slash handling. The 410 response remains nonindexable and uses the shared security headers. No Programs or Job Postings page, navigation item, or sitemap entry was added. These changes have not been pushed or deployed.

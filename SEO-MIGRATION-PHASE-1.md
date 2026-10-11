@@ -1,10 +1,17 @@
 # SEO launch migration — Phase 1 preparation
 
-Reviewed 2026-10-09. Local implementation only. No push, deployment, domain change, indexing change, or launch action.
+Reviewed 2026-10-11. Local implementation only. No push, deployment, domain change, indexing change, or launch action.
+
+## Owner-approved follow-up decisions (2026-10-11)
+
+- **Programs:** both `/programs` and `/programs/` now receive one Netlify 301 to `/non-epileptic-seizures-counseling-tyler/`, whose final response is 200. This is an owner-approved continuity redirect and does not assert that the historical Programs page and the current NES page contain identical content.
+- **Job Postings:** both `/job-postings` and `/job-postings/` now receive an actual HTTP 410 Gone response from the exact-path `retired-legacy-url` Netlify Edge Function. The response has no Location header, includes an HTML error presentation, and carries `noindex, nofollow`, `no-store`, and the shared security headers. This avoids Next.js trailing-slash normalization and does not create a Job Postings page.
+
+The Netlify-matching local harness executes the sitewide indexing/security guard, exact retirement handler, query-aware News handler, Netlify redirect engine, and Next.js production server in deployment order. A non-production Netlify deploy is still required to confirm CDN/Edge packaging and precedence.
 
 ## Outcome and review scope
 
-Prepared the five owner-approved permanent moves. The [machine-readable URL map](content/seo/phase-1-url-map.json) contains all 76 concrete page/query URLs found in the inspected records, each with old URL, destination (or null), exact status, rationale, source references, confidence, and observed local response chain. Its activeRoutes and articleRoutes arrays enumerate all 54 active content URLs (35 static pages and 19 original articles). Next's internal not-found response is not a content URL.
+Prepared six owner-approved permanent moves and one permanent retirement. The [machine-readable URL map](content/seo/phase-1-url-map.json) contains all 76 concrete page/query URLs found in the inspected records, each with old URL, destination (or null), exact status, rationale, source references, confidence, and observed local response chain. Its activeRoutes and articleRoutes arrays enumerate all 54 active content URLs (35 static pages and 19 original articles). Next's internal not-found response is not a content URL.
 
 Inspected next.config.ts, netlify.toml, the generated .netlify/netlify.toml from the earlier adapter build, MIGRATION.md, legacy/routes.json, archived local HTML, root HTML fragments, all 19 article metadata files and preserved HTML snapshots, content/blog/MIGRATION-REPORT.md, and content/blog/AUTHOR-LINK-AUDIT.md. No public/_redirects or other authored redirect file was found. The earlier generated Netlify configuration contains image-proxy rules, not these page moves.
 
@@ -22,11 +29,11 @@ A standalone prior SEO audit was not found among repository records. Its locatio
 | /schedule-an-apointment | /contact/ | 301 → 200 | Appointment inquiry destination moved to Contact | Owner task, preserved article-body links and scheduling page | High |
 | /news | /blog/ | 301 → 200 | Collection index moved; individual articles retain their URLs | Owner task, blog metadata and migration report | High |
 
-The historical misspelling **apointment** is intentional. No corrected-spelling alias was invented. All five final destinations returned 200. Both slash forms were tested independently. No added mapping points to the homepage, captures article descendants, or takes its destination from user input.
+The historical misspelling **apointment** is intentional. No corrected-spelling alias was invented. All six final destinations returned 200. Both slash forms were tested independently. No added mapping points to the homepage, captures article descendants, or takes its destination from user input.
 
 ## Configuration, query protection, and precedence
 
-Four exact 301 rules live in netlify.toml. Netlify's URL normalization matches slashless and trailing-slash requests with a single rule, so duplicate rules are unnecessary. force=true makes the intended move win over a future file with the same legacy name. Destinations already include their final slash. Netlify evaluates user-defined rules before adapter-generated routing, avoiding a Next.js slash-normalization hop for these moves.
+Five exact 301 rules live in netlify.toml. Netlify's URL normalization matches slashless and trailing-slash requests with a single rule, so duplicate rules are unnecessary. force=true makes the intended move win over a future file with the same legacy name. Destinations already include their final slash. Netlify evaluates user-defined rules before adapter-generated routing, avoiding a Next.js slash-normalization hop for these moves.
 
 The /news move lives in netlify/edge-functions/legacy-news.js, scoped to exactly /news and /news/. It emits 301 with a fixed local /blog/ destination for the plain index and tracking-only queries (utm_*, gclid, fbclid, msclkid). Other query keys continue through normal routing without a migration redirect. This is needed because the original author archive uses /news?author=..., and the RSS feed uses /news?format=rss. A blanket path-only rule would incorrectly redirect those unresolved resources to the index. Tag paths and article paths do not match the edge function. There is no wildcard /news/* → /blog/ rule.
 
@@ -58,8 +65,6 @@ No speculative redirects were added for the following. Their trailing-slash form
 
 | Historical URL/resource | Evidence and current knowledge | Recommended options / evidence needed |
 |---|---|---|
-| /programs/ | Preserved navigation; retrieved historical page contains multiple programs, not one equivalent destination | Owner decides whether to retain a programs overview or approve a truly equivalent consolidated destination. Obtain GSC landing-page/query performance, backlinks, and current program scope. Do not map the entire page to one service based on a partial topic match. |
-| /job-postings/ | Preserved navigation; retrieved page advertises clinician and associate roles | Confirm current recruiting needs. Retain/recreate careers content if active; otherwise consider deliberate retirement (404/410) after owner approval and backlink review. Contact is not an assumed replacement. |
 | /about-us-bedford/ | Navigation-folder reference in snapshots; fetch did not establish page content/status | Obtain Squarespace page export and URL mappings, GSC and backlink evidence. Determine whether this is a folder placeholder, an actual page, or obsolete URL before mapping. |
 | /news/tag/Trauma | Original Traumatic Memories snapshot | Decide whether topic archives will exist. Preserve exact spelling/case. Require tag membership, impressions/clicks and backlinks. Do not map all tags to Blog. |
 | /news/tag/Memories | Same source | Same archive review required. |
@@ -145,7 +150,7 @@ The following inventory includes the original discovered spelling and slash form
 | /index.html | / | 308 → 200 |
 | /individual-counseling-tyler/ | /individual-counseling-tyler/ | 200 |
 | /individual-counseling-tyler/index.html | /individual-counseling-tyler/ | 308 → 200 |
-| /job-postings | Unresolved; no migration redirect | 308 → 404 |
+| /job-postings | Permanently retired | 410 |
 | /life-transitions-counseling-tyler/ | /life-transitions-counseling-tyler/ | 200 |
 | /life-transitions-counseling-tyler/index.html | /life-transitions-counseling-tyler/ | 308 → 200 |
 | /marriage-counseling-tyler/ | /marriage-counseling-tyler/ | 200 |
@@ -183,7 +188,7 @@ The following inventory includes the original discovered spelling and slash form
 | /pregnancy-postpartum-counseling-tyler/index.html | /pregnancy-postpartum-counseling-tyler/ | 308 → 200 |
 | /premarital-counseling-tyler/ | /premarital-counseling-tyler/ | 200 |
 | /premarital-counseling-tyler/index.html | /premarital-counseling-tyler/ | 308 → 200 |
-| /programs | Unresolved; no migration redirect | 308 → 404 |
+| /programs | /non-epileptic-seizures-counseling-tyler/ | 301 → 200 |
 | /schedule-an-apointment | /contact/ | 301 → 200 |
 | /trauma-therapy-tyler/ | /trauma-therapy-tyler/ | 200 |
 | /trauma-therapy-tyler/index.html | /trauma-therapy-tyler/ | 308 → 200 |
@@ -198,7 +203,7 @@ Before production launch, obtain:
 4. Current Squarespace sitemap(s), full published/unlisted page export, URL Mappings configuration, blog collection/author/tag/category IDs, pagination and feed URLs.
 5. Analytics organic/referral landing pages and server/CDN request logs, if available; backlink exports from other tools and known external partners.
 6. Historical host/protocol variants (www/non-www, HTTP/HTTPS), earlier domains, renamed slugs, downloadable documents and images with incoming links.
-7. Owner decisions on the unresolved resources above.
+7. Owner decisions on the remaining unresolved resources above. Programs and Job Postings were resolved on 2026-10-11.
 
 Merge those exports into this inventory, deduplicate against implemented rules, and validate every added mapping individually. The 76 rows are the complete known inventory from the inspected records, not a guarantee of every URL ever indexed.
 
@@ -209,7 +214,7 @@ Merge those exports into this inventory, deduplicate against implemented rules, 
 - npm run lint: passed, including a separate ESLint check of the new edge handler.
 - git diff --check: passed.
 - Article preservation tests: 24/24 passed, including all 19 articles, source/body hashes, titles/dates and built metadata.
-- Migration HTTP tests: 4/4 passed, covering ten slash variants, final 200 destinations, no speculative archive redirect, unknown routes, fixed local destinations, all 19 articles and staging noindex/nofollow.
+- Migration HTTP tests: 5/5 passed, covering twelve permanent-redirect slash variants, both 410 variants, final 200 destinations, no speculative archive redirect, unknown routes, fixed local destinations, all 19 articles and staging noindex/nofollow.
 - Both slash forms of each implemented move: exactly one 301; no loop or extra normalization hop.
 - Existing children-families chain: unchanged and explicitly documented above.
 - No protected application/content files changed.
@@ -222,7 +227,8 @@ Re-run HTTP tests against a locally running Netlify Dev server:
 
 ## Files changed
 
-- netlify.toml — four exact permanent redirects.
+- netlify.toml — five exact permanent redirects.
+- netlify/edge-functions/retired-legacy-url.js — exact-path 410 response for both Job Postings variants.
 - netlify/edge-functions/legacy-news.js — query-aware index-only 301.
 - tests/seo-migration.test.mjs — migration regression tests.
 - scripts/seo-local-preview.mjs — documented offline platform-matching test harness.

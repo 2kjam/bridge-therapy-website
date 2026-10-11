@@ -47,6 +47,13 @@ to = "/contact/"
 status = 301
 force = true
 
+# Owner-approved continuity mapping. This does not assert content equivalence.
+[[redirects]]
+from = "/programs"
+to = "/non-epileptic-seizures-counseling-tyler/"
+status = 301
+force = true
+
 # Phase 2: deny indexing on every noncanonical host, including production deploy aliases.
 # Explicit declarations precede inline functions, so this wraps legacy-news too.
 [[edge_functions]]
