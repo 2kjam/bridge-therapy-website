@@ -95,6 +95,10 @@ test("Netlify guard adds security headers without changing redirects", async () 
   const response = await indexingGuard(
     new Request("https://bridge-therapy-website.netlify.app/what-we-believe/"),
     {
+      // The default alias now intentionally redirects in production. Preserve
+      // this upstream-redirect assertion in a nonproduction deploy context.
+      site: { id: "1c0ce777-b889-4f6b-8292-ef7590a4a25e" },
+      deploy: { context: "deploy-preview" },
       next: async () =>
         new Response(null, {
           status: 301,
