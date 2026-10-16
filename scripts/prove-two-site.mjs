@@ -99,6 +99,10 @@ try {
         assert.equal(alias.status, 301);
         assert.equal(alias.headers.get("location"), productionOrigin + route);
         assert.equal(await alias.text(), "");
+        const mainAlias = await guard(new Request("https://main--bridge-therapy-website.netlify.app" + route), { site: { id: productionSiteId }, deploy: { context: "production" }, next: () => { throw Error("Main alias leaked enabled body"); } });
+        assert.equal(mainAlias.status, 301);
+        assert.equal(mainAlias.headers.get("location"), productionOrigin + route);
+        assert.equal(await mainAlias.text(), "");
         const id = "6acbde0b31a91800096938ba";
         const permalink = await guard(new Request(`https://${id}--bridge-therapy-website.netlify.app${route}`), { site: { id: productionSiteId }, deploy: { id, context: "production", published: false }, next: () => { throw Error("Permalink leaked body"); } });
         assert.equal(permalink.status, 301);
