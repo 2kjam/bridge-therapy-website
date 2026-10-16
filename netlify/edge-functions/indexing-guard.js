@@ -4,6 +4,7 @@ import { applySecurityHeaders } from "../../lib/security-headers.mjs";
 
 const productionOrigin = "https://www.thebridgetherapy.com";
 const productionAlias = "bridge-therapy-website.netlify.app";
+const productionMainAlias = "main--bridge-therapy-website.netlify.app";
 const productionSiteId = "1c0ce777-b889-4f6b-8292-ef7590a4a25e";
 // Netlify deploy IDs are 24 hex characters. This is deliberately not a
 // wildcard for branch/preview prefixes or for any other Netlify site's name.
@@ -35,10 +36,10 @@ export default async function indexingGuard(request, context) {
     return response;
   }
   const permalink = productionPermalink.exec(url.hostname);
-  // Redirect page-like requests on this site's exact alias or deploy permalink.
-  // Files/assets stay local; previews/branches remain independently noindex.
+  // Redirect page-like requests on this site's exact aliases or deploy permalink.
+  // Files/assets stay local; other preview/branch hosts remain noindex.
   if (
-    (url.hostname === productionAlias || permalink) &&
+    (url.hostname === productionAlias || url.hostname === productionMainAlias || permalink) &&
     !/^\/assets(?:\/|$)/.test(url.pathname) &&
     !url.pathname.split("/").filter(Boolean).at(-1)?.includes(".")
   ) {
