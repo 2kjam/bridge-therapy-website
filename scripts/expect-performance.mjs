@@ -25,6 +25,21 @@ export function expectPerformance(doc, route) {
     const entry = images[attr(image, "src")];
     if (entry?.src.includes("/presentation/home/")) set(image, "src", entry.src);
   }
+  // The five approved homepage replacements leave every other attribute intact.
+  const homepageReplacements = {
+    "anxiety": "anxiety",
+    "parenting": "parenting",
+    "teen": "teens",
+    "grief": "grief",
+    "relationships": "relationships",
+  };
+  for (const image of all(main, n => n.tagName === "img")) {
+    for (const [previous, replacement] of Object.entries(homepageReplacements)) {
+      if (attr(image, "src") === `/assets/presentation/home/${previous}-800.webp`) {
+        set(image, "src", `/assets/presentation/home/replacements/${replacement}-800.webp`);
+      }
+    }
+  }
   const next = all(main, n => attr(n, "id") === "getting-started")[0];
   const image = parseFragment('<img class="ivory-next-background" src="/assets/ivory-lake.jpg" width="2172" height="724" alt="" loading="lazy">').childNodes[0];
   image.parentNode = next;

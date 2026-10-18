@@ -23,7 +23,7 @@ export function Services() {
           href={"/anxiety-counseling-tyler/"}
         >
           <img
-            src={"/assets/presentation/home/anxiety-800.webp"}
+            src={"/assets/presentation/home/replacements/anxiety-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -39,7 +39,7 @@ export function Services() {
           href={"/marriage-counseling-tyler/"}
         >
           <img
-            src={"/assets/presentation/home/relationships-800.webp"}
+            src={"/assets/presentation/home/replacements/relationships-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -69,7 +69,7 @@ export function Services() {
           id={"family-services"}
         >
           <img
-            src={"/assets/presentation/home/parenting-800.webp"}
+            src={"/assets/presentation/home/replacements/parenting-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -82,7 +82,7 @@ export function Services() {
         </a>
         <a className={"ivory-service tile-4"} href={"/grief-counseling-tyler/"}>
           <img
-            src={"/assets/presentation/home/grief-800.webp"}
+            src={"/assets/presentation/home/replacements/grief-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
@@ -98,7 +98,7 @@ export function Services() {
           href={"/child-teen-counseling-tyler/"}
         >
           <img
-            src={"/assets/presentation/home/teen-800.webp"}
+            src={"/assets/presentation/home/replacements/teens-800.webp"}
             alt={""}
             width={"640"}
             height={"480"}
