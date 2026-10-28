@@ -19,7 +19,7 @@ test("approved announcement date and organization metadata; 19 historical URLs r
   assert.equal(post.authorType, "Organization");
   assert.equal(post.displayedByline, "The Bridge Therapeutic Services Team");
   assert.equal((post.bodyHtml.match(/https:\/\/2kjam.com\//g) || []).length, 1);
-  assert.match(post.bodyHtml, /<a href="https:\/\/2kjam.com\/">2KJAM<\/a>/);
+  assert.match(post.bodyHtml, /<a href="https:\/\/2kjam.com\/" target="_blank" rel="noopener noreferrer">2KJAM<\/a>/);
   assert.doesNotMatch(post.bodyHtml, /nofollow|sponsored/);
   const original = { ...process.env };
   try {
