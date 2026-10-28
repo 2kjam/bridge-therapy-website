@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { parse, parseFragment } from "parse5";
-import { getBlogPosts, getBlogPost } from "../lib/blog.ts";
+import { getBlogPosts, getBlogPost, getPublishedBlogPosts } from "../lib/blog.ts";
 import {
   all,
   attr,
@@ -17,6 +17,7 @@ import {
   renderLegacyBody,
 } from "../scripts/legacy-blog-content.mjs";
 const posts = getBlogPosts();
+const publishedPosts = getPublishedBlogPosts();
 const paths = new Set(posts.map((p) => p.legacyPath));
 // Erin confirmed authorship; only displayed metadata changes, never source evidence.
 const erinAuthored = new Set([
@@ -84,25 +85,26 @@ test("collection: exactly 19 distinct routes, 23 assets, original excerpts only,
   assert.equal(getBlogPost(["unknown-article"]), undefined);
   const index = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
   const cards = all(index, (n) => hasClass(n, "blog-card"));
-  assert.equal(cards.length, 19);
+  assert.equal(cards.length, 20);
+  assert.equal(publishedPosts.length, 20);
   cards.forEach((card, i) => {
-    assert.equal(text(all(card, (n) => n.tagName === "h2")[0]), posts[i].title);
+    assert.equal(text(all(card, (n) => n.tagName === "h2")[0]), publishedPosts[i].title);
     assert.equal(
       attr(all(card, (n) => hasClass(n, "blog-card-link"))[0], "href"),
-      posts[i].legacyPath,
+      publishedPosts[i].legacyPath,
     );
     assert.equal(
       attr(all(card, (n) => n.tagName === "time")[0], "datetime"),
-      posts[i].publicationDate,
+      publishedPosts[i].publicationDate,
     );
     const excerpt = all(card, (n) => hasClass(n, "blog-card-excerpt"))[0];
     assert.deepEqual(
       excerpt?.childNodes.map(signature) ?? [],
-      parseFragment(posts[i].excerptHtml).childNodes.map(signature),
+      parseFragment(publishedPosts[i].excerptHtml).childNodes.map(signature),
     );
     assert.equal(
       all(card, (n) => n.tagName === "img").length,
-      posts[i].featuredImage ? 1 : 0,
+      publishedPosts[i].featuredImage ? 1 : 0,
     );
   });
 });
@@ -323,10 +325,10 @@ for (const directory of directories) {
       0,
     );
     const neighbors = all(built, (n) => hasClass(n, "blog-neighbors"))[0];
-    const index = posts.findIndex((p) => p.id === post.id);
+    const index = publishedPosts.findIndex((p) => p.id === post.id);
     assert.deepEqual(
       all(neighbors, (n) => n.tagName === "a").map((n) => attr(n, "href")),
-      [posts[index + 1], posts[index - 1]]
+      [publishedPosts[index + 1], publishedPosts[index - 1]]
         .filter(Boolean)
         .map((p) => p.legacyPath),
     );

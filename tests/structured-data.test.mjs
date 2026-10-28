@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 import { parse } from "parse5";
-import { getBlogPosts } from "../lib/blog.ts";
+import { getBlogPosts, getPublishedBlogPosts } from "../lib/blog.ts";
 import { serializeJsonLd } from "../lib/seo/json-ld.mjs";
 import { services, therapists } from "../lib/seo/schema-data.ts";
 import { canonicalUrl } from "../lib/seo/policy.ts";
@@ -262,9 +262,11 @@ test("breadcrumbs use only real parent destinations and truthful hierarchy", () 
 test("every JSON-LD script is valid, canonical, safe, and free of forbidden markup", () => {
   const routes = [
     ...publicPages,
-    ...posts.map((post) => `${post.legacyPath}/`),
+    ...getPublishedBlogPosts().map(
+      (post) => post.legacyPath.replace(/\/$/, "") + "/",
+    ),
   ];
-  assert.equal(routes.length, 54);
+  assert.equal(routes.length, 55);
   for (const path of routes) {
     const { raw, data } = builtJsonLd(path);
     assert.equal(raw.includes("<"), false, path);
@@ -302,5 +304,38 @@ test("every JSON-LD script is valid, canonical, safe, and free of forbidden mark
   assert.deepEqual(
     nodeOfType(builtJsonLd("/").data, "LocalBusiness")["@type"],
     ["Organization", "LocalBusiness"],
+  );
+});
+
+test("announcement has approved date, shared organization author/publisher, image and breadcrumbs", () => {
+  const path = "/blog/welcome-to-our-new-website/";
+  const { data } = builtJsonLd(path);
+  const post = nodeOfType(data, "BlogPosting");
+  assert.equal(post.headline, "Welcome to Our New Website!");
+  assert.equal(post.datePublished, "2026-10-28");
+  assert.equal(post.dateModified, undefined);
+  assert.deepEqual(post.author, { "@id": ORGANIZATION_ID });
+  assert.deepEqual(post.publisher, { "@id": ORGANIZATION_ID });
+  assert.equal(post.url, origin + path);
+  assert.deepEqual(post.mainEntityOfPage, {
+    "@id": origin + path + "#webpage",
+  });
+  assert.equal(
+    post.image,
+    origin + "/assets/presentation/blog/website-homepage-1440.webp",
+  );
+  assert.equal(
+    post.description,
+    "Explore the newly redesigned website for The Bridge Therapeutic Services in Tyler, TX. Learn about our therapists, counseling services, and more.",
+  );
+  assert.equal(
+    graph(data).filter((node) =>
+      ["Person", "Organization"].includes(node["@type"]),
+    ).length,
+    0,
+  );
+  assert.deepEqual(
+    nodeOfType(data, "BreadcrumbList").itemListElement.map((item) => item.name),
+    ["Home", "Blog", "Welcome to Our New Website!"],
   );
 });

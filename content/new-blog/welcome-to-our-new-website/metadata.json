@@ -1,0 +1,27 @@
+{
+  "id": "welcome-to-our-new-website",
+  "legacyPath": "/blog/welcome-to-our-new-website/",
+  "status": "published",
+  "title": "Welcome to Our New Website!",
+  "publishedAt": "2026-10-28T05:00:00.000Z",
+  "publicationDate": "2026-10-28",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "The Bridge Therapeutic Services Team",
+  "authorType": "Organization",
+  "excerptHtml": "",
+  "categories": [],
+  "tags": [],
+  "seo": {
+    "title": "Welcome to Our New Website | The Bridge Therapeutic Services",
+    "description": "Explore the newly redesigned website for The Bridge Therapeutic Services in Tyler, TX. Learn about our therapists, counseling services, and more.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/blog/welcome-to-our-new-website/",
+    "sourceOpenGraphImage": "https://www.thebridgetherapy.com/assets/presentation/blog/website-homepage-1440.webp"
+  },
+  "featuredImage": {
+    "src": "/assets/presentation/blog/website-homepage-1440.webp",
+    "sourceUrl": "http://127.0.0.1:3020/",
+    "width": 1440,
+    "height": 960,
+    "alt": "Redesigned homepage of The Bridge Therapeutic Services counseling website"
+  }
+}

@@ -1,7 +1,8 @@
 import { StructuredData } from "@/components/structured-data";
 import { articleSchema } from "@/lib/seo/schema";
+import { blogThumbnail } from "@/lib/presentation-images";
 import { SiteShell } from "@/components/site-shell";
-import { blogDate, getBlogPosts, type BlogPost } from "@/lib/blog";
+import { blogDate, getVisibleBlogPosts, type BlogPost } from "@/lib/blog";
 
 export const blogStyles = [
   "/style.css",
@@ -15,7 +16,7 @@ export const blogStyles = [
 ] as const;
 
 export function ArticleTemplate({ post }: { post: BlogPost }) {
-  const posts = getBlogPosts();
+  const posts = getVisibleBlogPosts();
   const index = posts.findIndex((entry) => entry.id === post.id);
   const newer = posts[index - 1];
   const older = posts[index + 1];
@@ -48,7 +49,11 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
           <header className="blog-article-header">
             <h1 id="article-title">{post.title}</h1>
             <div className="blog-meta">
-              <time dateTime={post.publicationDate}>{blogDate(post)}</time>
+              {post.publicationDate ? (
+                <time dateTime={post.publicationDate}>{blogDate(post)}</time>
+              ) : (
+                <span>Draft: awaiting publication approval</span>
+              )}
               <span>
                 {post.bylinePrefix ?? "Written By"}{" "}
                 {post.authorProfilePath ? (
@@ -62,6 +67,13 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
           {post.featuredImage && !isTraumaticMemories && (
             <img
               className="blog-featured-image"
+              {...(post.authorType === "Organization"
+                ? {
+                    srcSet: blogThumbnail(post.featuredImage.src).srcSet,
+                    sizes:
+                      "(max-width: 600px) calc(100vw - 46px), (max-width: 884px) calc(100vw - 64px), 820px",
+                  }
+                : {})}
               src={post.featuredImage.src}
               width={post.featuredImage.width}
               height={post.featuredImage.height}

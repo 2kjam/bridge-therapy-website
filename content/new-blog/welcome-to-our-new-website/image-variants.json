@@ -1,0 +1,22 @@
+[
+  {
+    "src": "/assets/presentation/blog/website-homepage-400.webp",
+    "width": 400,
+    "height": 267
+  },
+  {
+    "src": "/assets/presentation/blog/website-homepage-800.webp",
+    "width": 800,
+    "height": 533
+  },
+  {
+    "src": "/assets/presentation/blog/website-homepage-1080.webp",
+    "width": 1080,
+    "height": 720
+  },
+  {
+    "src": "/assets/presentation/blog/website-homepage-1440.webp",
+    "width": 1440,
+    "height": 960
+  }
+]

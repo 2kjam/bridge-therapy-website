@@ -3,6 +3,8 @@ import path from "node:path";
 
 export interface BlogPost {
   id: string;
+  status?: "draft" | "published";
+  authorType?: "Organization";
   legacyPath: string;
   title: string;
   publishedAt: string;
@@ -35,10 +37,7 @@ const root = path.join(process.cwd(), "content", "blog");
 // Presentation-only metadata. The migrated records and source snapshots remain
 // exact historical evidence, including blank Squarespace descriptions and one
 // source title that contained a literal HTML break tag.
-const presentationSeo: Record<
-  string,
-  Partial<BlogPost["seo"]>
-> = {
+const presentationSeo: Record<string, Partial<BlogPost["seo"]>> = {
   "/news/2026/1/18/how-emdr-therapy-helps-heal-trauma-and-ptsd": {
     description:
       "Learn how EMDR therapy may help people process traumatic memories, reduce emotional intensity, and support healing at The Bridge in Tyler, TX.",
@@ -55,10 +54,11 @@ const presentationSeo: Record<
     description:
       "Learn how storms can trigger anxiety and find grounding, preparation, and parenting strategies discussed by The Bridge therapists in Tyler, TX.",
   },
-  "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg": {
-    description:
-      "Read The Bridge's community spotlight with Beth Reed about Sight.org, intentional living, faith, and her family's adoption story.",
-  },
+  "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg":
+    {
+      description:
+        "Read The Bridge's community spotlight with Beth Reed about Sight.org, intentional living, faith, and her family's adoption story.",
+    },
   "/news/2026/1/18/what-is-emdr-therapy-and-how-does-it-work": {
     description:
       "Learn what EMDR stands for, how bilateral stimulation is used, and what a structured EMDR therapy process may involve in Tyler, TX.",
@@ -122,4 +122,59 @@ export function blogDate(post: Pick<BlogPost, "publicationDate">): string {
     day: "numeric",
     timeZone: "UTC",
   }).format(new Date(`${post.publicationDate}T12:00:00Z`));
+}
+
+// Native articles share the migrated article model, template and cards. Source
+// evidence directories remain reserved for the 19 immutable Squarespace records.
+export function getNewBlogPosts(includeDrafts = false): BlogPost[] {
+  const directory = path.join(process.cwd(), "content", "new-blog");
+  return fs
+    .readdirSync(directory, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => {
+      const root = path.join(directory, entry.name);
+      const post = JSON.parse(
+        fs.readFileSync(path.join(root, "metadata.json"), "utf8"),
+      ) as BlogPost;
+      if (
+        !/^\/blog\/[a-z0-9-]+\/$/.test(post.legacyPath) ||
+        !post.title ||
+        post.authorType !== "Organization" ||
+        !["draft", "published"].includes(post.status ?? "")
+      )
+        throw new Error("Invalid native blog metadata");
+      if (
+        post.status === "published" &&
+        (!/^\d{4}-\d{2}-\d{2}$/.test(post.publicationDate) ||
+          !Number.isFinite(Date.parse(post.publishedAt)))
+      )
+        throw new Error("An approved publication date is required");
+      return {
+        ...post,
+        bodyHtml: fs.readFileSync(path.join(root, "body.html"), "utf8"),
+      };
+    })
+    .filter((post) => post.status === "published" || includeDrafts);
+}
+
+export function draftPreviewEnabled(): boolean {
+  return (
+    process.env.BRIDGE_PREVIEW_DRAFTS === "true" &&
+    !process.env.NETLIFY &&
+    !process.env.CONTEXT
+  );
+}
+
+export function getPublishedBlogPosts(): BlogPost[] {
+  return [...getBlogPosts(), ...getNewBlogPosts()].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  );
+}
+
+export function getVisibleBlogPosts(): BlogPost[] {
+  return [...getBlogPosts(), ...getNewBlogPosts(draftPreviewEnabled())].sort(
+    (a, b) =>
+      Number(b.status === "draft") - Number(a.status === "draft") ||
+      b.publishedAt.localeCompare(a.publishedAt),
+  );
 }
