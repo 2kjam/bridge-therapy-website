@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import { limits, therapistValue, validateInquiry, sendInquiry, type ChatInquiry } from "@/lib/inquiry";
 import styles from "./inquiry-widget.module.css";
 
@@ -39,10 +39,10 @@ export function InquiryWidget() {
   const sourcePage = useRef("/");
   const busy = useRef(false);
 
-  function rememberPrompt() {
+  const rememberPrompt = useCallback(() => {
     interacted.current = true;
     try { sessionStorage.setItem(sessionKey, "1"); } catch { /* UI remains usable without storage. */ }
-  }
+  }, []);
   useEffect(() => {
     try { if (sessionStorage.getItem(sessionKey)) return; } catch { /* Storage may be unavailable. */ }
     const timer = setTimeout(() => {
@@ -74,7 +74,17 @@ export function InquiryWidget() {
     return () => { viewport?.removeEventListener("resize", resize); viewport?.removeEventListener("scroll", resize); window.removeEventListener("resize", resize); };
   }, []);
 
-  function close() { rememberPrompt(); setPrompt(false); setOpen(false); launcher.current?.focus(); }
+  const close = useCallback(() => { rememberPrompt(); setPrompt(false); setOpen(false); launcher.current?.focus(); }, [rememberPrompt]);
+  useEffect(() => {
+    if (!open) return;
+    // Typing/submission can unmount the focused composer control and leave focus
+    // on body. Escape must still dismiss the open, nonmodal dialog.
+    function escape(event: KeyboardEvent) {
+      if (event.key === "Escape") { event.stopPropagation(); close(); }
+    }
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [open, close]);
   function expand() {
     rememberPrompt(); setPrompt(false);
     if (!initialized.current) {
@@ -167,8 +177,7 @@ export function InquiryWidget() {
         <button className={styles.close} aria-label="Dismiss welcome prompt" onClick={close}>×</button>
         <button className={styles.welcomeBubble} onClick={expand}><AssistantAvatar /><span>{popupWelcome}</span></button>
       </div>}
-      {open && <section id="inquiry-widget-panel" role="dialog" aria-labelledby="widget-title" className={styles.panel}
-        onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); close(); } }}>
+      {open && <section id="inquiry-widget-panel" role="dialog" aria-labelledby="widget-title" className={styles.panel}>
         <header className={styles.header}>
           <AssistantAvatar />
           <div><strong id="widget-title">The Bridge</strong></div>
