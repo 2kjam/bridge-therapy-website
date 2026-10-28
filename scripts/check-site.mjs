@@ -1,3 +1,4 @@
+import { getNewBlogPosts } from "../lib/blog.ts";
 import { expectBatchTwo } from "./expect-batch2.mjs";
 import { expectPerformance } from "./expect-performance.mjs";
 import { expectResourcesMenu } from "./expect-resources-menu.mjs";
@@ -835,6 +836,10 @@ assert.deepEqual(elements(aboutMain, "a").map(n => attr(n, "href")), [
 assert.equal(normalizedText(elements(aboutMain, "a").find(n => attr(n, "href") === "/staff/kalynne-arrick/")), "Kalynne Arrick, Office Manager");
 assert.ok(!elements(elements(pages.get("/"), "main")[0], "img").some(n => attr(n, "src") === "/assets/our-story.jpg"));
 
+for (const post of getNewBlogPosts()) {
+  const article = parse(fs.readFileSync(`.next/server/app${post.legacyPath.slice(0, -1)}.html`, "utf8"));
+  pages.set(post.legacyPath, article);
+}
 for (const [route, doc] of pages) {
   assert.ok(!normalizedText(all(doc, n => attr(n, "id") === "team-panel")[0]).includes("Kalynne"), `${route}: staff excluded from therapist carousel`);
   if (route !== "/contact/" && route !== "/about/" && !route.startsWith("/staff/")) {

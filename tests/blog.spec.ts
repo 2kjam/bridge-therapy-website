@@ -33,7 +33,7 @@ for (const width of [375, 390, 768, 1440]) {
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
     await page.goto("/blog/");
-    await expect(page.locator(".blog-card")).toHaveCount(19);
+    await expect(page.locator(".blog-card")).toHaveCount(20);
     await expect(
       page.locator(`.blog-card:has(a[href="${record.legacyPath}"]) h2`),
     ).toHaveText(record.title);

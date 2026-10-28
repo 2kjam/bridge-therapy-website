@@ -3,15 +3,18 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { parse } from "parse5";
-import { getBlogPosts } from "../lib/blog.ts";
+import { getBlogPosts, getPublishedBlogPosts } from "../lib/blog.ts";
 import { all, attr } from "../scripts/legacy-blog-content.mjs";
 
 const origin = "https://www.thebridgetherapy.com";
 const pages = JSON.parse(
   fs.readFileSync("content/seo/public-pages.json", "utf8"),
 );
-const posts = getBlogPosts();
-const paths = [...pages, ...posts.map((post) => post.legacyPath + "/")].sort();
+const posts = getPublishedBlogPosts();
+const paths = [
+  ...pages,
+  ...posts.map((post) => post.legacyPath.replace(/\/$/, "") + "/"),
+].sort();
 const production = process.env.SEO_TEST_MODE === "simulated-production";
 const base = process.env.SEO_TEST_URL || "http://127.0.0.1:3012";
 assert.ok(
@@ -49,7 +52,9 @@ test("reviewed inventory exactly matches real static routes plus original articl
     fs.readFileSync("content/seo/phase-1-url-map.json", "utf8"),
   );
   assert.deepEqual([...legacy.activeRoutes].sort(), [...pages].sort());
-  assert.equal(posts.length, 19);
+  assert.equal(getBlogPosts().length, 19);
+  assert.equal(posts.length, 20);
+  assert.equal(paths.length, 55);
   for (const path of paths) assert.match(path, /^\/(?:[a-z0-9-]+\/)*$/);
 });
 test("all public pages have unique, plain-text descriptions", async () => {
@@ -62,11 +67,19 @@ test("all public pages have unique, plain-text descriptions", async () => {
     assert.equal(values.length, 1, path);
     assert.ok(values[0].trim(), path);
     assert.doesNotMatch(values[0], /<[^>]+>|localhost|netlify\.app/i, path);
-    assert.equal(seen.has(values[0]), false, `${path} duplicates ${seen.get(values[0])}`);
+    assert.equal(
+      seen.has(values[0]),
+      false,
+      `${path} duplicates ${seen.get(values[0])}`,
+    );
     seen.set(values[0], path);
     const title = all(doc, (n) => n.tagName === "title");
     assert.equal(title.length, 1, path);
-    assert.doesNotMatch(title[0].childNodes.map((n) => n.value ?? "").join(""), /<br\s*\/?\s*>/i, path);
+    assert.doesNotMatch(
+      title[0].childNodes.map((n) => n.value ?? "").join(""),
+      /<br\s*\/?\s*>/i,
+      path,
+    );
   }
 });
 test("every public page serves one exact canonical, expected robots, and one-hop slash normalization", async () => {

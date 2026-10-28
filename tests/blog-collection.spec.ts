@@ -1,3 +1,4 @@
+import { getPublishedBlogPosts } from "../lib/blog";
 import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 const posts = fs
@@ -167,7 +168,7 @@ for (const width of [375, 390, 768, 1440]) {
     }
     await page.goto("/blog/");
     await expect(page.locator(".blog-card h2")).toHaveText(
-      posts.map((p) => p.title),
+      getPublishedBlogPosts().map((p) => p.title),
     );
     await expect(page.locator(".blog-card-excerpt")).toHaveCount(3);
     expect(
@@ -209,9 +210,9 @@ test("verified therapist bylines: all 19 links, direct profile routes, keyboard 
   }
   await page.goto("/blog/");
   const cardLinks = page.locator(".blog-card-link");
-  await expect(cardLinks).toHaveCount(19);
+  await expect(cardLinks).toHaveCount(20);
   await expect(cardLinks.locator("a")).toHaveCount(0);
-  await expect(page.locator(".blog-card-copy > p")).toHaveText(posts.map((post) => post.displayedByline));
+  await expect(page.locator(".blog-card-copy > p")).toHaveText(getPublishedBlogPosts().map((post) => post.displayedByline));
 });
 
 test("Vimeo reference and browser availability evidence", async ({

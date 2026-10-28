@@ -4,7 +4,7 @@ import { publicPageMetadata } from "@/lib/seo/metadata";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import { blogStyles } from "@/components/blog/article-template";
-import { blogDate, getBlogPosts } from "@/lib/blog";
+import { blogDate, getVisibleBlogPosts } from "@/lib/blog";
 import { blogThumbnail } from "@/lib/presentation-images";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function BlogPage() {
           <h1>Blog</h1>
         </header>
         <div className="blog-grid">
-          {getBlogPosts().map((post, index) => (
+          {getVisibleBlogPosts().map((post, index) => (
             <article className="blog-card" key={post.id}>
               <a className="blog-card-link" href={post.legacyPath}>
                 {post.featuredImage && (
@@ -43,7 +43,13 @@ export default function BlogPage() {
                   />
                 )}
                 <div className="blog-card-copy">
-                  <time dateTime={post.publicationDate}>{blogDate(post)}</time>
+                  {post.publicationDate ? (
+                    <time dateTime={post.publicationDate}>
+                      {blogDate(post)}
+                    </time>
+                  ) : (
+                    <span>Draft: awaiting publication approval</span>
+                  )}
                   <h2>{post.title}</h2>
                   <p>{post.displayedByline}</p>
                   <span className="blog-read">

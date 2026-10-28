@@ -285,16 +285,24 @@ export function staticPageSchema(path: string): JsonObject {
 }
 
 export function articleSchema(post: BlogPost): JsonObject {
-  const path = `${post.legacyPath}/`;
+  const path = post.legacyPath.endsWith("/")
+    ? post.legacyPath
+    : `${post.legacyPath}/`;
   const url = canonicalUrl(path);
-  const author: JsonObject = post.authorProfilePath
-    ? { "@id": personId(post.authorProfilePath) }
-    : { "@type": "Person", name: post.displayedByline };
+  const author: JsonObject =
+    post.authorType === "Organization"
+      ? { "@id": ORGANIZATION_ID }
+      : post.authorProfilePath
+        ? { "@id": personId(post.authorProfilePath) }
+        : { "@type": "Person", name: post.displayedByline };
   const posting: JsonObject = {
     "@type": "BlogPosting",
     "@id": `${url}#article`,
     headline: post.title,
-    datePublished: post.publicationDate,
+    ...(post.publicationDate ? { datePublished: post.publicationDate } : {}),
+    ...(post.authorType === "Organization"
+      ? { description: post.seo.description }
+      : {}),
     mainEntityOfPage: { "@id": `${url}#webpage` },
     url,
     author,

@@ -155,7 +155,7 @@ test("built article and index retain content, metadata, local image and staging 
   );
   const index = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
   const cards = all(index, (n) => attr(n, "class") === "blog-card");
-  assert.equal(cards.length, 19);
+  assert.equal(cards.length, 20);
   const originalCard = cards.find(
     (card) =>
       attr(all(card, (n) => n.tagName === "a")[0], "href") ===
