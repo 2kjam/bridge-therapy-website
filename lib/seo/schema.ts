@@ -291,9 +291,22 @@ export function articleSchema(post: BlogPost): JsonObject {
   const url = canonicalUrl(path);
   const author: JsonObject =
     post.authorType === "Organization"
-      ? { "@id": ORGANIZATION_ID }
+      ? {
+          "@type": "Organization",
+          "@id": ORGANIZATION_ID,
+          name: "The Bridge Therapeutic Services",
+          url: `${PRODUCTION_ORIGIN}/`,
+        }
       : post.authorProfilePath
-        ? { "@id": personId(post.authorProfilePath) }
+        ? {
+            "@type": "Person",
+            "@id": personId(post.authorProfilePath),
+            name:
+              therapists.find(
+                (person) => person.path === post.authorProfilePath,
+              )?.name ?? post.displayedByline,
+            url: canonicalUrl(post.authorProfilePath),
+          }
         : { "@type": "Person", name: post.displayedByline };
   const posting: JsonObject = {
     "@type": "BlogPosting",

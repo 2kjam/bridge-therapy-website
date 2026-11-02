@@ -211,6 +211,9 @@ test("all 19 BlogPosting nodes preserve dates, images, publisher, and verified a
     assert.equal(article.headline, post.title);
     assert.equal(article.datePublished, post.publicationDate);
     assert.equal(article.dateModified, undefined);
+    assert.equal(article.author["@type"], "Person");
+    assert.equal(article.author.url, canonicalUrl(post.authorProfilePath));
+    assert.equal(article.author.name, therapists.find((person) => person.path === post.authorProfilePath).name);
     assert.equal(article.url, canonicalUrl(post.legacyPath));
     assert.equal(article.publisher["@id"], ORGANIZATION_ID);
     assert.equal(
@@ -314,7 +317,7 @@ test("announcement has approved date, shared organization author/publisher, imag
   assert.equal(post.headline, "Welcome to Our New Website!");
   assert.equal(post.datePublished, "2026-10-28");
   assert.equal(post.dateModified, undefined);
-  assert.deepEqual(post.author, { "@id": ORGANIZATION_ID });
+  assert.deepEqual(post.author, { "@type": "Organization", "@id": ORGANIZATION_ID, name: "The Bridge Therapeutic Services", url: `${origin}/` });
   assert.deepEqual(post.publisher, { "@id": ORGANIZATION_ID });
   assert.equal(post.url, origin + path);
   assert.deepEqual(post.mainEntityOfPage, {

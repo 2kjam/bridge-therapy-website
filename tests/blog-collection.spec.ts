@@ -127,6 +127,7 @@ for (const width of [375, 390, 768, 1440]) {
               .getBoundingClientRect().width,
             images: images.map((image) => ({
               src: image.getAttribute("src"),
+              currentSrc: image.currentSrc,
               natural: [image.naturalWidth, image.naturalHeight],
               width: image.getBoundingClientRect().width,
               height: image.getBoundingClientRect().height,
@@ -148,7 +149,12 @@ for (const width of [375, 390, 768, 1440]) {
         const mapping = (post.assets ?? [post.featuredImage]).find(
           (a: { src: string }) => a.src === image.src,
         );
-        expect(image.natural).toEqual([mapping.width, mapping.height]);
+        if (image.currentSrc.includes("/assets/presentation/blog/")) {
+          expect(image.natural[0]).toBeLessThanOrEqual(1080);
+          expect(Math.abs(image.natural[1] - image.natural[0] * mapping.height / mapping.width)).toBeLessThanOrEqual(1.5);
+        } else {
+          expect(image.natural).toEqual([mapping.width, mapping.height]);
+        }
         expect(image.width / image.height).toBeCloseTo(
           mapping.width / mapping.height,
           2,

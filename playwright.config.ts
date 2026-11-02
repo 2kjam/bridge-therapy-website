@@ -2,12 +2,14 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
+  testMatch: "**/*.spec.ts",
   fullyParallel: false,
   workers: 1,
   reporter: "list",
   use: {
     baseURL: "http://127.0.0.1:3000",
-    channel: "msedge",
+    channel: process.env.PLAYWRIGHT_EXECUTABLE_PATH ? undefined : "msedge",
+    launchOptions: { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH },
     trace: "retain-on-failure",
   },
   projects: [

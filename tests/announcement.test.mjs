@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import sharp from "sharp";
 import {
   getBlogPosts,
@@ -66,7 +68,7 @@ test("homepage screenshot variants preserve aspect ratio, dimensions and actual 
 test("approved publication adds exactly one native URL without changing historical inventory", () => {
   const originalDirectory = process.cwd();
   const fixture = fs.mkdtempSync(
-    originalDirectory + "/tmp/announcement-publication-",
+    path.join(os.tmpdir(), "bridge-announcement-publication-"),
   );
   try {
     const directory = fixture + "/content/new-blog/welcome-to-our-new-website";
@@ -132,6 +134,6 @@ test("approved publication adds exactly one native URL without changing historic
     assert.throws(() => getNewBlogPosts(), /approved publication date/);
   } finally {
     process.chdir(originalDirectory);
-    // The small synthetic fixture stays under ignored tmp for inspection.
+    fs.rmSync(fixture, { recursive: true, force: true });
   }
 });

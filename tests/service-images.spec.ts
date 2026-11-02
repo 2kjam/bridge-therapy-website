@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 import crypto from "node:crypto";
 import sharp from "sharp";
-import manifest from "../content/service-images.json";
+import manifest from "../content/service-images.json" with { type: "json" };
 
 const imported = manifest.images.filter(record => record.status === "imported");
 

@@ -22,3 +22,16 @@ export function blogThumbnail(source: string) {
     style: { aspectRatio: `${image.originalWidth} / ${image.originalHeight}` },
   };
 }
+
+// Hero delivery uses the same verified, uncropped variants as collection cards.
+// Unmapped future images retain their original source without a broken srcset.
+export function blogHero(source: string) {
+  if (
+    !(source in images) &&
+    source !== "/assets/presentation/blog/website-homepage-1440.webp"
+  ) {
+    return { src: source, srcSet: undefined };
+  }
+  const image = blogThumbnail(source);
+  return { src: source, srcSet: image.srcSet };
+}

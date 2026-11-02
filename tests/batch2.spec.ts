@@ -2,8 +2,8 @@ import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { parse, parseFragment, type DefaultTreeAdapterTypes } from "parse5";
-import updates from "./fixtures/batch2-copy.json";
-import protectedFiles from "./fixtures/batch2-protected.json";
+import updates from "./fixtures/batch2-copy.json" with { type: "json" };
+import protectedFiles from "./fixtures/batch2-protected.json" with { type: "json" };
 type Node = DefaultTreeAdapterTypes.Node;
 const all = (n: Node, p: (n: Node) => boolean): Node[] => [
   ...(p(n) ? [n] : []),
@@ -20,7 +20,7 @@ const normalized = (n: Node) => text(n).replace(/\s+/g, " ").trim();
 const hash = (s: string | Buffer) =>
   createHash("sha256").update(s).digest("hex");
 
-test("Batch 2 preserves form/widget sources and NES content outside getting-started FAQ", () => {
+test("Batch 2 preserves form sources and reviewed NES content outside getting-started FAQ", () => {
   for (const [file, expected] of Object.entries(protectedFiles)) {
     if (file === "nesExceptGettingStarted") continue;
     expect(hash(fs.readFileSync(file)), file).toBe(expected);

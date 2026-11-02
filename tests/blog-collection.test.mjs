@@ -1,3 +1,4 @@
+import { presentArticleBody } from "../lib/blog-presentation.ts";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -232,7 +233,7 @@ for (const directory of directories) {
     )[0];
     assert.deepEqual(
       builtBody.childNodes.map(signature),
-      body.childNodes.map(signature),
+      parseFragment(presentArticleBody(post.bodyHtml)).childNodes.map(signature),
     );
     const sourceBlocks = blocks(source.body);
     if (record.assets)

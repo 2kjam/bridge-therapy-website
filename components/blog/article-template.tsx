@@ -1,6 +1,7 @@
 import { StructuredData } from "@/components/structured-data";
 import { articleSchema } from "@/lib/seo/schema";
-import { blogThumbnail } from "@/lib/presentation-images";
+import { blogHero } from "@/lib/presentation-images";
+import { presentArticleBody } from "@/lib/blog-presentation";
 import { SiteShell } from "@/components/site-shell";
 import { blogDate, getVisibleBlogPosts, type BlogPost } from "@/lib/blog";
 
@@ -17,6 +18,9 @@ export const blogStyles = [
 
 export function ArticleTemplate({ post }: { post: BlogPost }) {
   const posts = getVisibleBlogPosts();
+  const hero = post.featuredImage
+    ? blogHero(post.featuredImage.src)
+    : undefined;
   const index = posts.findIndex((entry) => entry.id === post.id);
   const newer = posts[index - 1];
   const older = posts[index + 1];
@@ -67,25 +71,29 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
           {post.featuredImage && !isTraumaticMemories && (
             <img
               className="blog-featured-image"
-              {...(post.authorType === "Organization"
-                ? {
-                    srcSet: blogThumbnail(post.featuredImage.src).srcSet,
-                    sizes:
-                      "(max-width: 600px) calc(100vw - 46px), (max-width: 884px) calc(100vw - 64px), 820px",
-                  }
-                : {})}
-              src={post.featuredImage.src}
+              srcSet={hero?.srcSet}
+              sizes={
+                hero?.srcSet
+                  ? "(max-width: 600px) calc(100vw - 46px), (max-width: 884px) calc(100vw - 64px), 820px"
+                  : undefined
+              }
+              src={hero?.src ?? post.featuredImage.src}
               width={post.featuredImage.width}
               height={post.featuredImage.height}
+              style={{
+                aspectRatio: `${post.featuredImage.width} / ${post.featuredImage.height}`,
+              }}
               alt={post.featuredImage.alt}
               fetchPriority="high"
             />
           )}
-          {/* Trusted, reviewed local HTML only. The original body has no new chrome. */}
+          {/* Trusted, reviewed local HTML only. Source evidence stays intact; presentation normalizes headings and links. */}
           <div
             className="legacy-article-body"
             data-original-article-body
-            dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
+            dangerouslySetInnerHTML={{
+              __html: presentArticleBody(post.bodyHtml),
+            }}
           />
         </article>
         <nav className="blog-neighbors" aria-label="Article navigation">
