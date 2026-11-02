@@ -1,5 +1,7 @@
 "use client";
 
+import optimizedLogos from "@/lib/insurance-image-paths.json";
+
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "@/lib/use-reduced-motion";
 
@@ -94,7 +96,8 @@ export function InsuranceCarousel() {
               >
                 {file ? (
                   <img
-                    src={`/assets/insurance/${file}`}
+                    src={optimizedLogos[file as keyof typeof optimizedLogos] ?? `/assets/insurance/${file}`}
+                    loading="lazy"
                     alt={duplicate ? "" : name}
                     width="180"
                     height="72"

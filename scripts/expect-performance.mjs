@@ -1,5 +1,7 @@
+import { optimizedImageProps, serviceImageProps, heroImageSizes, portraitImageSizes } from "../lib/optimized-images.ts";
 import fs from "node:fs";
 import { parseFragment } from "parse5";
+const optimized = JSON.parse(fs.readFileSync("lib/optimized-images.json", "utf8"));
 const images = JSON.parse(fs.readFileSync("lib/presentation-images.json", "utf8"));
 const all = (n, p) => [...(p(n) ? [n] : []), ...(n.childNodes ?? []).flatMap(c => all(c, p))];
 const attr = (n, key) => n.attrs?.find(a => a.name === key)?.value;
@@ -44,4 +46,14 @@ export function expectPerformance(doc, route) {
   const image = parseFragment('<img class="ivory-next-background" src="/assets/ivory-lake.jpg" width="2172" height="724" alt="" loading="lazy">').childNodes[0];
   image.parentNode = next;
   next.childNodes.unshift(image);
+  // Reviewed delivery attributes only: retain every original frame/crop/text attribute.
+  for (const item of all(main, n => n.tagName === "img")) {
+    const source = attr(item, "src");
+    let props = {};
+    if (source === "/assets/ivory-hero.jpg") props = optimizedImageProps(source, heroImageSizes);
+    else if (source === "/assets/ivory-lake.jpg") props = optimizedImageProps(source, "max(100vw, 1080px)");
+    else if (source?.startsWith("/assets/presentation/home/")) props = serviceImageProps(source);
+    else if (optimized[source] && source.endsWith(".jpg")) props = optimizedImageProps(source, portraitImageSizes);
+    for (const [key, value] of Object.entries(props)) set(item, key === "srcSet" ? "srcset" : key, value);
+  }
 }

@@ -1,3 +1,4 @@
+import { optimizedImageProps, heroImageSizes } from "@/lib/optimized-images";
 import { FindTherapistButton } from "../site-interactions";
 export function Hero() {
   return (
@@ -5,6 +6,7 @@ export function Hero() {
       <img
         className={"ivory-hero-photo"}
         src={"/assets/ivory-hero.jpg"}
+        {...optimizedImageProps("/assets/ivory-hero.jpg", heroImageSizes)}
         alt={""}
         width={"2172"}
         height={"724"}

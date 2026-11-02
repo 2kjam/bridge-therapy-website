@@ -1,0 +1,783 @@
+{
+  "/assets/ivory-hero.jpg": {
+    "sha256": "9e695488ee9dfe7ea5640549c2c2e4b89c2c5fb75147f723c0bb744d480aa201",
+    "inputSource": "/assets/ivory-hero.jpg",
+    "inputSha256": "9e695488ee9dfe7ea5640549c2c2e4b89c2c5fb75147f723c0bb744d480aa201",
+    "width": 2172,
+    "height": 724,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/hero-1080.webp",
+        "width": 1080,
+        "height": 360,
+        "bytes": 58076,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/hero-1448.webp",
+        "width": 1448,
+        "height": 483,
+        "bytes": 84848,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/hero-2172.webp",
+        "width": 2172,
+        "height": 724,
+        "bytes": 140682,
+        "lossless": false,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/ivory-lake.jpg": {
+    "sha256": "18ce98391274cf68744094f50b36597f773855431e7944a7948fb4a982d32192",
+    "inputSource": "/assets/ivory-lake.jpg",
+    "inputSha256": "18ce98391274cf68744094f50b36597f773855431e7944a7948fb4a982d32192",
+    "width": 2172,
+    "height": 724,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/lake-1080.webp",
+        "width": 1080,
+        "height": 360,
+        "bytes": 146032,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/lake-1448.webp",
+        "width": 1448,
+        "height": 483,
+        "bytes": 238850,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/ivory-lake.jpg",
+        "width": 2172,
+        "height": 724,
+        "bytes": 417618,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/replacements/anxiety-800.webp": {
+    "sha256": "332a72d0f067dd14e495f9ca38d3aa331184447916a4134c56ddfb7ef1665c72",
+    "inputSource": "/assets/presentation/home/replacements/anxiety-800.webp",
+    "inputSha256": "332a72d0f067dd14e495f9ca38d3aa331184447916a4134c56ddfb7ef1665c72",
+    "width": 800,
+    "height": 1227,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-anxiety-240.webp",
+        "width": 240,
+        "height": 368,
+        "bytes": 10134,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-anxiety-400.webp",
+        "width": 400,
+        "height": 614,
+        "bytes": 19308,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-anxiety-600.webp",
+        "width": 600,
+        "height": 920,
+        "bytes": 29654,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/replacements/anxiety-800.webp",
+        "width": 800,
+        "height": 1227,
+        "bytes": 38180,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/replacements/relationships-800.webp": {
+    "sha256": "93b19c630176d86816151c2d50fe85631100950030b188e8771b1efbd1b64a46",
+    "inputSource": "/assets/presentation/home/replacements/relationships-800.webp",
+    "inputSha256": "93b19c630176d86816151c2d50fe85631100950030b188e8771b1efbd1b64a46",
+    "width": 800,
+    "height": 1202,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-relationships-240.webp",
+        "width": 240,
+        "height": 361,
+        "bytes": 18410,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-relationships-400.webp",
+        "width": 400,
+        "height": 601,
+        "bytes": 41316,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-relationships-600.webp",
+        "width": 600,
+        "height": 902,
+        "bytes": 65694,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/replacements/relationships-800.webp",
+        "width": 800,
+        "height": 1202,
+        "bytes": 90324,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/replacements/parenting-800.webp": {
+    "sha256": "91655b9cccc1645c4d4727f3b16eb1aa5874450616eb2afaa537a99b2e91a983",
+    "inputSource": "/assets/presentation/home/replacements/parenting-800.webp",
+    "inputSha256": "91655b9cccc1645c4d4727f3b16eb1aa5874450616eb2afaa537a99b2e91a983",
+    "width": 800,
+    "height": 533,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-parenting-240.webp",
+        "width": 240,
+        "height": 160,
+        "bytes": 6510,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-parenting-400.webp",
+        "width": 400,
+        "height": 266,
+        "bytes": 14912,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-parenting-600.webp",
+        "width": 600,
+        "height": 400,
+        "bytes": 26790,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/replacements/parenting-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 42530,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/replacements/grief-800.webp": {
+    "sha256": "ab0f6cb2483a0e2070a8bc005edc31f479be9d9df4e89376d7a4a323a8a2d6b5",
+    "inputSource": "/assets/presentation/home/replacements/grief-800.webp",
+    "inputSha256": "ab0f6cb2483a0e2070a8bc005edc31f479be9d9df4e89376d7a4a323a8a2d6b5",
+    "width": 800,
+    "height": 1000,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-grief-240.webp",
+        "width": 240,
+        "height": 300,
+        "bytes": 8872,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-grief-400.webp",
+        "width": 400,
+        "height": 500,
+        "bytes": 18678,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-grief-600.webp",
+        "width": 600,
+        "height": 750,
+        "bytes": 28188,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/replacements/grief-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 39046,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/replacements/teens-800.webp": {
+    "sha256": "1994a8f36a3bf1d405113b565f8a6557c779591fa820e31c24214188afb9db96",
+    "inputSource": "/assets/presentation/home/replacements/teens-800.webp",
+    "inputSha256": "1994a8f36a3bf1d405113b565f8a6557c779591fa820e31c24214188afb9db96",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-teens-240.webp",
+        "width": 240,
+        "height": 135,
+        "bytes": 6140,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-teens-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 13344,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-teens-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 20738,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/replacements/teens-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 28314,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/presentation/home/trauma-800.webp": {
+    "sha256": "994d3267922dc6e54d7d116a296cf7b027f9d55c820f482194ed38ebd9ebd7a5",
+    "inputSource": "/assets/ivory-trauma.jpg",
+    "inputSha256": "cc0437b565604f3e4c2dc16305c67e191aa89d2105d33c2cccedc118be053459",
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/service-trauma-240.webp",
+        "width": 240,
+        "height": 180,
+        "bytes": 14454,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-trauma-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 38290,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/service-trauma-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 77438,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/home/trauma-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 122144,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/jennifer.jpg": {
+    "sha256": "273c6e5c1d09909599a9333cb79535a8047ce32151401f1e4bfee6a953f0ad3c",
+    "inputSource": "/assets/jennifer.jpg",
+    "inputSha256": "273c6e5c1d09909599a9333cb79535a8047ce32151401f1e4bfee6a953f0ad3c",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-jennifer-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 19510,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/jennifer-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 43458,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/erin.jpg": {
+    "sha256": "97ee7a8849b3feebfd3cd9772ff5a928ae3d02e102a004d6418779c4ac34b0ac",
+    "inputSource": "/assets/erin.jpg",
+    "inputSha256": "97ee7a8849b3feebfd3cd9772ff5a928ae3d02e102a004d6418779c4ac34b0ac",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/erin-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 78734,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/jill.jpg": {
+    "sha256": "c2b77e6699c088ee386c5e341b2a6837de59c8564cc44f3af21685e9b29d8d69",
+    "inputSource": "/assets/jill.jpg",
+    "inputSha256": "c2b77e6699c088ee386c5e341b2a6837de59c8564cc44f3af21685e9b29d8d69",
+    "width": 500,
+    "height": 601,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-jill-240.webp",
+        "width": 240,
+        "height": 288,
+        "bytes": 14608,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/jill-500.webp",
+        "width": 500,
+        "height": 601,
+        "bytes": 42056,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/alyx.jpg": {
+    "sha256": "09cfad11586b91db64caeeff9a7e42d5832a218fe5238bf8d5dbb20ec1f6a5f6",
+    "inputSource": "/assets/alyx.jpg",
+    "inputSha256": "09cfad11586b91db64caeeff9a7e42d5832a218fe5238bf8d5dbb20ec1f6a5f6",
+    "width": 750,
+    "height": 1125,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-alyx-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 16326,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/alyx-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 43472,
+        "lossless": false,
+        "reused": true
+      },
+      {
+        "src": "/assets/presentation/delivery/portrait-alyx-750.webp",
+        "width": 750,
+        "height": 1125,
+        "bytes": 88580,
+        "lossless": false,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/misty.jpg": {
+    "sha256": "d341f4c0cf350df6b61d952ca6c4e99ed653198a9376436423a5c53bcf75a54e",
+    "inputSource": "/assets/misty.jpg",
+    "inputSha256": "d341f4c0cf350df6b61d952ca6c4e99ed653198a9376436423a5c53bcf75a54e",
+    "width": 500,
+    "height": 707,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-misty-240.webp",
+        "width": 240,
+        "height": 339,
+        "bytes": 15228,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/misty-500.webp",
+        "width": 500,
+        "height": 707,
+        "bytes": 38526,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/kim.jpg": {
+    "sha256": "ddd46593c0bf576a35fd87d8d8ebe9ff2c1d7f56147d8854658bcc72458e87f5",
+    "inputSource": "/assets/kim.jpg",
+    "inputSha256": "ddd46593c0bf576a35fd87d8d8ebe9ff2c1d7f56147d8854658bcc72458e87f5",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-kim-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 19798,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/kim-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 47234,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/kelley.jpg": {
+    "sha256": "0d6ecb5e37f7d2a11d1d6d4261c7346089ed2594549bd55cb342fe43b827ea90",
+    "inputSource": "/assets/kelley.jpg",
+    "inputSha256": "0d6ecb5e37f7d2a11d1d6d4261c7346089ed2594549bd55cb342fe43b827ea90",
+    "width": 750,
+    "height": 1125,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-kelley-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 15654,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/kelley-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 38516,
+        "lossless": false,
+        "reused": true
+      },
+      {
+        "src": "/assets/presentation/delivery/portrait-kelley-750.webp",
+        "width": 750,
+        "height": 1125,
+        "bytes": 76630,
+        "lossless": false,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/denise.jpg": {
+    "sha256": "be27f155f8faa568ed0f0ad10b3bbe1bb5c848cd6c256d5cd04b9f108cd22280",
+    "inputSource": "/assets/denise.jpg",
+    "inputSha256": "be27f155f8faa568ed0f0ad10b3bbe1bb5c848cd6c256d5cd04b9f108cd22280",
+    "width": 750,
+    "height": 1125,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-denise-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 14986,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/denise-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 34510,
+        "lossless": false,
+        "reused": true
+      },
+      {
+        "src": "/assets/presentation/delivery/portrait-denise-750.webp",
+        "width": 750,
+        "height": 1125,
+        "bytes": 65780,
+        "lossless": false,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/sarah-bell.jpg": {
+    "sha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
+    "inputSource": "/assets/sarah-bell.jpg",
+    "inputSha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-sarah-bell-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 23148,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/sarah-bell-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 66312,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/sarah-critzman.jpg": {
+    "sha256": "42bf485e8c6ba59463987cf520e8f64c393abf6c9d8911facf9183f077141935",
+    "inputSource": "/assets/sarah-critzman.jpg",
+    "inputSha256": "42bf485e8c6ba59463987cf520e8f64c393abf6c9d8911facf9183f077141935",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/portrait-sarah-critzman-240.webp",
+        "width": 240,
+        "height": 360,
+        "bytes": 22682,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/menu/sarah-critzman-500.webp",
+        "width": 500,
+        "height": 750,
+        "bytes": 60802,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  },
+  "/assets/insurance/aetna.png": {
+    "sha256": "4145ca051d846946797530127e7a2a91ac3ed57f4abf3dea667db174d75ae667",
+    "inputSource": "/assets/insurance/aetna.png",
+    "inputSha256": "4145ca051d846946797530127e7a2a91ac3ed57f4abf3dea667db174d75ae667",
+    "width": 300,
+    "height": 87,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-aetna-300.webp",
+        "width": 300,
+        "height": 87,
+        "bytes": 4368,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/allied-transparent.png": {
+    "sha256": "3d4e154f92d1ad2ba57f1d811be96c3f454a266f9444a2128d632744cb685bea",
+    "inputSource": "/assets/insurance/allied-transparent.png",
+    "inputSha256": "3d4e154f92d1ad2ba57f1d811be96c3f454a266f9444a2128d632744cb685bea",
+    "width": 216,
+    "height": 216,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-allied-transparent-216.webp",
+        "width": 216,
+        "height": 216,
+        "bytes": 12374,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/blue-cross-transparent.png": {
+    "sha256": "8117fc8eaf8539bfa4ff694a77eda16e22263f9a1e91efc70aca428a8f21ff4f",
+    "inputSource": "/assets/insurance/blue-cross-transparent.png",
+    "inputSha256": "8117fc8eaf8539bfa4ff694a77eda16e22263f9a1e91efc70aca428a8f21ff4f",
+    "width": 324,
+    "height": 124,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-blue-cross-transparent-324.webp",
+        "width": 324,
+        "height": 124,
+        "bytes": 19786,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/christus-transparent.png": {
+    "sha256": "46ceb5c10687dbdcc5b8484cda4983834e9c02075c9d2b8004ef4fd811c8eb3f",
+    "inputSource": "/assets/insurance/christus-transparent.png",
+    "inputSha256": "46ceb5c10687dbdcc5b8484cda4983834e9c02075c9d2b8004ef4fd811c8eb3f",
+    "width": 324,
+    "height": 113,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-christus-transparent-324.webp",
+        "width": 324,
+        "height": 113,
+        "bytes": 3644,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/healthfirst-transparent.png": {
+    "sha256": "e75aee90b8b287c5f3c95c262eafc8f22f794d535147b59b614cbece45c3a3b1",
+    "inputSource": "/assets/insurance/healthfirst-transparent.png",
+    "inputSha256": "e75aee90b8b287c5f3c95c262eafc8f22f794d535147b59b614cbece45c3a3b1",
+    "width": 324,
+    "height": 107,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-healthfirst-transparent-324.webp",
+        "width": 324,
+        "height": 107,
+        "bytes": 10220,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/humana.png": {
+    "sha256": "16fb476a4cceb311674ffb25390e1b3d7a034ebfde37cdb5aa15328b4b956f5d",
+    "inputSource": "/assets/insurance/humana.png",
+    "inputSha256": "16fb476a4cceb311674ffb25390e1b3d7a034ebfde37cdb5aa15328b4b956f5d",
+    "width": 300,
+    "height": 58,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-humana-300.webp",
+        "width": 300,
+        "height": 58,
+        "bytes": 2032,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/multiplan.png": {
+    "sha256": "1b1925fd6253c771f0287ca446f9fd3eba4628794b9edb6c446034ef8796c674",
+    "inputSource": "/assets/insurance/multiplan.png",
+    "inputSha256": "1b1925fd6253c771f0287ca446f9fd3eba4628794b9edb6c446034ef8796c674",
+    "width": 300,
+    "height": 100,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-multiplan-300.webp",
+        "width": 300,
+        "height": 100,
+        "bytes": 3224,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/umr-transparent.png": {
+    "sha256": "0b8e4bc9ce20877e8e25adea5d551c9f9394b208c8befc2e5ce5e8b9a5090d4a",
+    "inputSource": "/assets/insurance/umr-transparent.png",
+    "inputSha256": "0b8e4bc9ce20877e8e25adea5d551c9f9394b208c8befc2e5ce5e8b9a5090d4a",
+    "width": 270,
+    "height": 188,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-umr-transparent-270.webp",
+        "width": 270,
+        "height": 188,
+        "bytes": 14376,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/webtpa.png": {
+    "sha256": "0853b733ef54305c411e9796ff6008462f3a0ec96cf7a73a034ef1f94edb5777",
+    "inputSource": "/assets/insurance/webtpa.png",
+    "inputSha256": "0853b733ef54305c411e9796ff6008462f3a0ec96cf7a73a034ef1f94edb5777",
+    "width": 300,
+    "height": 93,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-webtpa-300.webp",
+        "width": 300,
+        "height": 93,
+        "bytes": 7314,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/insurance/magellan-transparent.png": {
+    "sha256": "13ccc8bb5ef95fabd14392aa6cd82734cc7474bf05f5ef1cd2f797ff73257f87",
+    "inputSource": "/assets/insurance/magellan-transparent.png",
+    "inputSha256": "13ccc8bb5ef95fabd14392aa6cd82734cc7474bf05f5ef1cd2f797ff73257f87",
+    "width": 324,
+    "height": 123,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/insurance-magellan-transparent-324.webp",
+        "width": 324,
+        "height": 123,
+        "bytes": 4186,
+        "lossless": true,
+        "reused": false
+      }
+    ]
+  },
+  "/assets/chat-assistant.webp": {
+    "sha256": "96eb8150f858f4325de538c8acc95dd1c6f8dbb72c8ed68494a47a90738a4431",
+    "inputSource": "/assets/chat-assistant.webp",
+    "inputSha256": "96eb8150f858f4325de538c8acc95dd1c6f8dbb72c8ed68494a47a90738a4431",
+    "width": 256,
+    "height": 243,
+    "variants": [
+      {
+        "src": "/assets/presentation/delivery/assistant-96.webp",
+        "width": 96,
+        "height": 91,
+        "bytes": 2570,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/assistant-192.webp",
+        "width": 192,
+        "height": 182,
+        "bytes": 6346,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/chat-assistant.webp",
+        "width": 256,
+        "height": 243,
+        "bytes": 11130,
+        "lossless": false,
+        "reused": true
+      }
+    ]
+  }
+}

@@ -1,13 +1,16 @@
 {
-  "approvedStagingCommit": "366075abe5daaa081fcdda262b8a7c85f3638538",
-  "approvedTree": "883fbcec7942b5d87b5026aa364d6d6475d714bf",
-  "captureSourceCommit": "b11e781f2cb315f86d0890b746e85e2de5d5f6e5",
-  "captureSourceTree": "429323ecb32eb471492508d8b7505c1fa16c8506",
-  "reason": "Approved fluid header (3efa91d), later homepage copy and photos supersede September 19 Batch 1 snapshots. Homepage source/assets are identical in captureSourceCommit and approvedStagingCommit.",
+  "reason": "Reviewed responsive encoding of the same approved photos and lossless insurance wordmarks. Original sources, crops, colors, faces, CSS, text and section geometry are preserved. Historical Batch 1 references remain archived.",
   "platform": "linux",
   "os": "Debian GNU/Linux 13",
   "browser": "Chromium 154.0.8037.57",
-  "desktopViewport": { "width": 1440, "height": 1000 },
+  "desktopViewport": {
+    "width": 1440,
+    "height": 1000
+  },
   "mobileDevice": "Playwright iPhone 13, Chromium, CSS screenshot scale",
-  "capture": "Reduced motion, welcome prompt suppressed, all images decoded and fonts ready. Independent staging and candidate screenshots had zero differing pixels and identical geometry before fixtures were accepted."
+  "capture": "Reduced motion, welcome prompt suppressed, images decoded and fonts ready. Independent before/after review confirmed identical geometry and zero changed pixels outside known image frames across desktop/mobile DPR 1, 2 and 3. Image differences were visually reviewed before refreshing these fixtures; the strict pixel threshold is unchanged.",
+  "approvedBaseCommit": "8cdd4f9012b0b332f6d67249929059cc6efffef9",
+  "approvedBaseTree": "e864c6acb676658bcb69b09ec74bcabf18f83197",
+  "deliveryManifestSha256": "993dee9f164d4e091113583371d58466fdcf6137c2152b06d5d6e572adbe8cee",
+  "referenceCommitLookup": "git log -1 --format=%H -- tests/fixtures/homepage-reviewed-linux-desktop.png"
 }
