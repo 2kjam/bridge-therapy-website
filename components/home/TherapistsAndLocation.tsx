@@ -1,3 +1,7 @@
+import {
+  optimizedImageProps,
+  portraitImageSizes,
+} from "@/lib/optimized-images";
 import { TeamCarousel } from "../team-carousel";
 export function TherapistsAndLocation() {
   return (
@@ -15,6 +19,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/jennifer-wood/"}>
               <img
                 src={"/assets/jennifer.jpg"}
+                {...optimizedImageProps(
+                  "/assets/jennifer.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Jennifer Wood, LPC-S"}
                 loading="lazy"
                 width={"240"}
@@ -28,6 +36,7 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/erin-young/"}>
               <img
                 src={"/assets/erin.jpg"}
+                {...optimizedImageProps("/assets/erin.jpg", portraitImageSizes)}
                 alt={"Erin Young, LCSW-S"}
                 loading="lazy"
                 width={"240"}
@@ -41,6 +50,7 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/jill-kirkley/"}>
               <img
                 src={"/assets/jill.jpg"}
+                {...optimizedImageProps("/assets/jill.jpg", portraitImageSizes)}
                 alt={"Jill Kirkley, LPC"}
                 loading="lazy"
                 width={"240"}
@@ -57,6 +67,7 @@ export function TherapistsAndLocation() {
             >
               <img
                 src={"/assets/alyx.jpg"}
+                {...optimizedImageProps("/assets/alyx.jpg", portraitImageSizes)}
                 alt={"Alyxandrah “Alyx” White"}
                 loading="lazy"
                 width={"240"}
@@ -70,6 +81,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/misty-shultz/"}>
               <img
                 src={"/assets/misty.jpg"}
+                {...optimizedImageProps(
+                  "/assets/misty.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Misty Shultz, LPC"}
                 loading="lazy"
                 width={"240"}
@@ -84,6 +99,7 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/kim-gonzales/"}>
               <img
                 src={"/assets/kim.jpg"}
+                {...optimizedImageProps("/assets/kim.jpg", portraitImageSizes)}
                 alt={"Kim Gonzales, LMSW"}
                 loading="lazy"
                 width={"240"}
@@ -99,6 +115,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/kelley-bell/"}>
               <img
                 src={"/assets/kelley.jpg"}
+                {...optimizedImageProps(
+                  "/assets/kelley.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Kelley Bell, LPC"}
                 loading="lazy"
                 width={"240"}
@@ -112,6 +132,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/denise-santos/"}>
               <img
                 src={"/assets/denise.jpg"}
+                {...optimizedImageProps(
+                  "/assets/denise.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Denise Santos, LPC"}
                 loading="lazy"
                 width={"240"}
@@ -125,6 +149,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/sarah-bell/"}>
               <img
                 src={"/assets/sarah-bell.jpg"}
+                {...optimizedImageProps(
+                  "/assets/sarah-bell.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Sarah Bell, LPC-A"}
                 loading="lazy"
                 width={"240"}
@@ -140,6 +168,10 @@ export function TherapistsAndLocation() {
             <a className={"portrait-card"} href={"/therapists/sarah-critzman/"}>
               <img
                 src={"/assets/sarah-critzman.jpg"}
+                {...optimizedImageProps(
+                  "/assets/sarah-critzman.jpg",
+                  portraitImageSizes,
+                )}
                 alt={"Sarah Critzman, LMSW"}
                 loading="lazy"
                 width={"240"}

@@ -1,3 +1,4 @@
+import { serviceImageProps } from "@/lib/optimized-images";
 export function Services() {
   return (
     <section
@@ -24,6 +25,9 @@ export function Services() {
         >
           <img
             src={"/assets/presentation/home/replacements/anxiety-800.webp"}
+            {...serviceImageProps(
+              "/assets/presentation/home/replacements/anxiety-800.webp",
+            )}
             alt={""}
             width={"640"}
             height={"480"}
@@ -39,7 +43,12 @@ export function Services() {
           href={"/marriage-counseling-tyler/"}
         >
           <img
-            src={"/assets/presentation/home/replacements/relationships-800.webp"}
+            src={
+              "/assets/presentation/home/replacements/relationships-800.webp"
+            }
+            {...serviceImageProps(
+              "/assets/presentation/home/replacements/relationships-800.webp",
+            )}
             alt={""}
             width={"640"}
             height={"480"}
@@ -53,6 +62,7 @@ export function Services() {
         <a className={"ivory-service tile-2"} href={"/trauma-therapy-tyler/"}>
           <img
             src={"/assets/presentation/home/trauma-800.webp"}
+            {...serviceImageProps("/assets/presentation/home/trauma-800.webp")}
             alt={""}
             width={"640"}
             height={"480"}
@@ -70,6 +80,9 @@ export function Services() {
         >
           <img
             src={"/assets/presentation/home/replacements/parenting-800.webp"}
+            {...serviceImageProps(
+              "/assets/presentation/home/replacements/parenting-800.webp",
+            )}
             alt={""}
             width={"640"}
             height={"480"}
@@ -83,6 +96,9 @@ export function Services() {
         <a className={"ivory-service tile-4"} href={"/grief-counseling-tyler/"}>
           <img
             src={"/assets/presentation/home/replacements/grief-800.webp"}
+            {...serviceImageProps(
+              "/assets/presentation/home/replacements/grief-800.webp",
+            )}
             alt={""}
             width={"640"}
             height={"480"}
@@ -99,6 +115,9 @@ export function Services() {
         >
           <img
             src={"/assets/presentation/home/replacements/teens-800.webp"}
+            {...serviceImageProps(
+              "/assets/presentation/home/replacements/teens-800.webp",
+            )}
             alt={""}
             width={"640"}
             height={"480"}

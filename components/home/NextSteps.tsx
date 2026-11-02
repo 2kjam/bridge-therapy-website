@@ -1,7 +1,16 @@
+import { optimizedImageProps } from "@/lib/optimized-images";
 export function NextSteps() {
   return (
     <section className={"ivory-next"} id={"getting-started"}>
-      <img className="ivory-next-background" src="/assets/ivory-lake.jpg" width="2172" height="724" alt="" loading="lazy" />
+      <img
+        className="ivory-next-background"
+        src="/assets/ivory-lake.jpg"
+        {...optimizedImageProps("/assets/ivory-lake.jpg", "max(100vw, 1080px)")}
+        width="2172"
+        height="724"
+        alt=""
+        loading="lazy"
+      />
       <div>
         <h2>{"Take the Next Step"}</h2>
         <p>

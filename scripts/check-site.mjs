@@ -10,6 +10,7 @@ import { parse, parseFragment } from "parse5";
 
 const routes = JSON.parse(fs.readFileSync("legacy/routes.json", "utf8"));
 const pages = new Map();
+const optimizedInsurance = JSON.parse(fs.readFileSync("lib/insurance-image-paths.json", "utf8"));
 const serviceImages = JSON.parse(fs.readFileSync("content/service-images.json", "utf8")).images;
 const attr = (node, name) =>
   node.attrs?.find((entry) => entry.name === name)?.value;
@@ -66,6 +67,11 @@ function expectedSignature(node) {
       return entry;
     const file = entry.attrs.src.slice(prefix.length);
     if (replacements[file]) entry.attrs.src = prefix + replacements[file];
+    const optimized = optimizedInsurance[replacements[file] ?? file];
+    if (optimized) {
+      entry.attrs.src = optimized;
+      entry.attrs.loading = "lazy";
+    }
     if (file === "humana.png" || file === "webtpa.png")
       entry.attrs.style = "width:92%";
     return entry;

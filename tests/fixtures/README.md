@@ -6,14 +6,16 @@ service photos. Do not shrink the current logo or revert those changes to satisf
 that older image.
 
 `homepage-reviewed-linux-*` is the reviewed current design. Its provenance and
-capture environment are recorded in `homepage-reviewed.json`. Capture came from
-an untouched staging build, not the test-fix candidate; independent candidate
-screenshots matched every pixel and section rectangle before acceptance. Tests
-retain exact geometry, screenshot dimensions and the original <0.1% pixel
-threshold. No update-snapshots flag is used.
+capture environment are recorded in `homepage-reviewed.json`. The first current-design
+capture came from untouched staging. The latest revision incorporates explicitly
+reviewed image-only delivery changes: independent desktop/mobile comparisons at
+DPR 1, 2 and 3 found identical section/image geometry and no changed pixels outside
+image frames. Faces, crops, colors and detail were visually reviewed before the
+PNG references were refreshed. Tests retain exact geometry, screenshot dimensions
+and the original <0.1% pixel threshold. No update-snapshots flag is used.
 
-For another OS/browser, build the immutable capture-source commit from the
-manifest separately and set `PLAYWRIGHT_VISUAL_REFERENCE_URL` to its localhost
+For another OS/browser, locate the immutable reference revision with the manifest's
+`referenceCommitLookup` command, build that commit separately, and set `PLAYWRIGHT_VISUAL_REFERENCE_URL` to its localhost
 server. The test compares reference and candidate in the same browser context,
 with the same strict thresholds. Never point it at the candidate's server. To
 refresh durable fixtures, first identify approved source changes, independently

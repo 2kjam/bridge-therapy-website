@@ -9,7 +9,16 @@ for (const width of [375, 390, 768, 1024, 1100, 1280, 1440]) {
     const imageRequests: string[] = [];
     page.on("request", request => { if (request.resourceType() === "image") imageRequests.push(request.url()); });
     await page.goto("/", { waitUntil: "networkidle" });
-    expect(imageRequests.some(url => url.includes("/presentation/menu/"))).toBe(false);
+    // A homepage portrait may legitimately reuse a menu derivative. Only images
+    // not selected by the homepage must remain deferred until the menu opens.
+    const sharedWithMain = new Set(await page.locator("main img").evaluateAll(nodes => nodes.map(node => {
+      const image = node as HTMLImageElement;
+      return image.currentSrc || image.src;
+    })));
+    const menuOnly = await page.locator("header .mega img").evaluateAll(nodes => nodes.map(node => (node as HTMLImageElement).src));
+    expect(menuOnly.some(source => source.includes("resources-blog-720.webp"))).toBe(true);
+    for (const source of menuOnly.filter(source => !sharedWithMain.has(source)))
+      expect(imageRequests, `Menu-only image loaded before opening: ${source}`).not.toContain(source);
     const headerBefore = await page.locator(".header").boundingBox();
     if (width <= 1050) await page.locator(".mobile-toggle").click();
     const trigger = page.locator('[aria-controls="about-panel"]');

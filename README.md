@@ -108,3 +108,38 @@ configuration was not available to confirm which external setting caused the
 reported missing-adapter deployment.
 
 No push or deployment was performed. See `MIGRATION.md` for the file inventory and validation results.
+
+## LLM-readable overview
+
+`public/llms.txt` is a small static Markdown overview served at `/llms.txt`
+(with the plural `llms`). Keep its business summary grounded in approved site
+copy, and update its selected canonical links when pages move. Do not add
+unverified clinical claims, private information, or crawler/training permissions.
+It supplements the site and does not replace `robots.txt` or the sitemap.
+
+Run `node --test tests/llms.test.mjs` to check the format, canonical link inventory,
+and staging host protection. After building, verify `/llms.txt` returns `200`,
+plain-text content, and the exact file bytes without a redirect. Staging must keep
+`X-Robots-Tag: noindex, nofollow`; do not enable indexing to test this file. Check
+linked destinations on the intended deployment before promoting it.
+
+## Homepage image delivery
+
+Original photos and wordmarks stay unchanged. `lib/optimized-images.json` records
+source hashes, full-frame derivatives and measured file sizes. Reproduce them with
+`node scripts/generate-homepage-delivery.mjs` using the installed Sharp version.
+The small insurance-path map is kept separate from the server image manifest so
+the client carousel does not ship the full manifest.
+
+Keep `sizes` aligned with the actual CSS image frames, including `object-fit: cover`
+for the hero, lake and service cards. Preserve the eager, high-priority hero,
+existing crops, intrinsic dimensions, logo transparency and native-resolution
+ceiling. Existing 500px portraits and 800px service images remain reusable; Erin's
+reviewed 500px image is retained because the smaller encoding lost color detail.
+A native original remains a candidate when recompression would increase its size.
+
+Run `node --test tests/homepage-delivery.test.mjs` for source integrity, full-frame
+proportions, decoded quality and lossless logo colors/alpha, plus the Playwright
+homepage delivery tests for responsive selection and stable frames. Review actual
+faces and background detail on desktop/mobile before accepting any new visual
+reference. Transfer-byte savings are not guaranteed Lighthouse scores or timing.

@@ -14,7 +14,7 @@ const sessionKey = "bridge-inquiry-prompt-shown";
 const labels = { first_name: "First name", email: "Email", phone: "Phone" };
 
 function AssistantAvatar() {
-  return <img className={styles.avatar} src="/assets/chat-assistant.webp" width={256} height={243} alt="" aria-hidden="true" />;
+  return <img className={styles.avatar} src="/assets/chat-assistant.webp" srcSet="/assets/presentation/delivery/assistant-96.webp 96w, /assets/presentation/delivery/assistant-192.webp 192w, /assets/chat-assistant.webp 256w" sizes="52px" width={256} height={243} alt="" aria-hidden="true" />;
 }
 
 export function InquiryWidget() {
