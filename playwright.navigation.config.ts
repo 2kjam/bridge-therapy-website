@@ -2,14 +2,21 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
-  testMatch: ["navigation.spec.ts", "migration.spec.ts", "staff.spec.ts", "service-images.spec.ts", "resources-menu.spec.ts"],
+  testMatch: [
+    "navigation.spec.ts",
+    "migration.spec.ts",
+    "staff.spec.ts",
+    "service-images.spec.ts",
+    "resources-menu.spec.ts",
+  ],
   grep: /shared cleanup|navigation, keyboard|desktop hover|staff profile|service images|resources menu/,
   workers: 1,
   reporter: "list",
   outputDir: "test-results/navigation",
   use: {
     baseURL: "http://127.0.0.1:3019",
-    channel: "msedge",
+    channel: process.env.PLAYWRIGHT_EXECUTABLE_PATH ? undefined : "msedge",
+    launchOptions: { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH },
     trace: "retain-on-failure",
   },
   projects: [

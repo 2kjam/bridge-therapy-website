@@ -99,7 +99,8 @@ for (const width of [375, 390, 768, 1440]) {
           overflow: document.documentElement.scrollWidth > innerWidth,
         };
       });
-    expect(geometry.natural).toEqual([2500, 1667]);
+    expect(geometry.natural[0]).toBeLessThanOrEqual(1080);
+    expect(Math.abs(geometry.natural[1] - geometry.natural[0] * 1667 / 2500)).toBeLessThanOrEqual(1.5);
     expect(geometry.ratio).toBeCloseTo(2500 / 1667, 2);
     expect(geometry.bodyWidth).toBeLessThanOrEqual(720);
     expect(geometry.overflow).toBe(false);

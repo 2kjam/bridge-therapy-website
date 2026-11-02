@@ -2,8 +2,8 @@ import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { parse, parseFragment, type DefaultTreeAdapterTypes } from "parse5";
-import updates from "./fixtures/batch2-copy.json";
-import protectedFiles from "./fixtures/batch2-protected.json";
+import updates from "./fixtures/batch2-copy.json" with { type: "json" };
+import protectedFiles from "./fixtures/batch2-protected.json" with { type: "json" };
 type Node = DefaultTreeAdapterTypes.Node;
 const all = (n: Node, p: (n: Node) => boolean): Node[] => [
   ...(p(n) ? [n] : []),
