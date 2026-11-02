@@ -1,0 +1,13 @@
+{
+  "approvedStagingCommit": "366075abe5daaa081fcdda262b8a7c85f3638538",
+  "approvedTree": "883fbcec7942b5d87b5026aa364d6d6475d714bf",
+  "captureSourceCommit": "b11e781f2cb315f86d0890b746e85e2de5d5f6e5",
+  "captureSourceTree": "429323ecb32eb471492508d8b7505c1fa16c8506",
+  "reason": "Approved fluid header (3efa91d), later homepage copy and photos supersede September 19 Batch 1 snapshots. Homepage source/assets are identical in captureSourceCommit and approvedStagingCommit.",
+  "platform": "linux",
+  "os": "Debian GNU/Linux 13",
+  "browser": "Chromium 154.0.8037.57",
+  "desktopViewport": { "width": 1440, "height": 1000 },
+  "mobileDevice": "Playwright iPhone 13, Chromium, CSS screenshot scale",
+  "capture": "Reduced motion, welcome prompt suppressed, all images decoded and fonts ready. Independent staging and candidate screenshots had zero differing pixels and identical geometry before fixtures were accepted."
+}

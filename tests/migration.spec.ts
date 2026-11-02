@@ -14,7 +14,7 @@ async function ready(page: Page, url: string) {
   });
 }
 
-test("homepage matches approved Batch 1 pixels and responsive geometry", async ({
+test("homepage matches reviewed design pixels and responsive geometry", async ({
   page,
 }, testInfo) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -30,9 +30,28 @@ test("homepage matches approved Batch 1 pixels and responsive geometry", async (
         return { width: rect.width, height: rect.height, x: rect.x, y: rect.y };
       }),
     );
-  const baseline = `tests/fixtures/homepage-batch1-${testInfo.project.name}`;
-  expect(await geometry(page)).toEqual(JSON.parse(fs.readFileSync(`${baseline}.json`, "utf8")));
-  const before = fs.readFileSync(`${baseline}.png`);
+  // OS-specific reviewed images are durable references for the cloud runner.
+  // Other platforms can compare an independently built, immutable reference in
+  // this same browser; never regenerate a reference from the candidate.
+  const referenceUrl = process.env.PLAYWRIGHT_VISUAL_REFERENCE_URL;
+  let before: Buffer;
+  if (referenceUrl) {
+    const url = new URL(referenceUrl);
+    expect(["localhost", "127.0.0.1"]).toContain(url.hostname);
+    expect(url.protocol).toBe("http:");
+    expect(url.origin, "Reference must be an independently built server").not.toBe(new URL(page.url()).origin);
+    const reference = await page.context().newPage();
+    await reference.emulateMedia({ reducedMotion: "reduce" });
+    await reference.addInitScript(() => sessionStorage.setItem("bridge-inquiry-prompt-shown", "1"));
+    await ready(reference, new URL("/", url).href);
+    expect(await geometry(page)).toEqual(await geometry(reference));
+    before = await reference.screenshot({ fullPage: true, animations: "disabled", scale: "css" });
+    await reference.close();
+  } else {
+    const baseline = `tests/fixtures/homepage-reviewed-${process.platform}-${testInfo.project.name}`;
+    expect(await geometry(page)).toEqual(JSON.parse(fs.readFileSync(`${baseline}.json`, "utf8")));
+    before = fs.readFileSync(`${baseline}.png`);
+  }
   const after = await page.screenshot({
     fullPage: true,
     animations: "disabled",
@@ -204,7 +223,7 @@ test("contact links and native FAQ work after navigation", async ({ page }) => {
   await question.locator("summary").click();
   await expect(question).toHaveAttribute("open", "");
   await expect(
-    page.locator(".contact-options a[href^='tel:']"),
+    page.getByRole("region", { name: "Contact Information", exact: true }).getByRole("link", { name: "(903) 283-8729", exact: true }),
   ).toHaveAttribute("href", "tel:9032838729");
   await page.locator("#chat-open").click();
   await expect(page.locator("#inquiry-widget-panel")).toBeVisible();

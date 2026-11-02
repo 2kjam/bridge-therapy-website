@@ -25,7 +25,7 @@ npm run test:e2e
 
 `check` runs TypeScript and compares the production HTML with the archived site, so run `build` first. It checks all 19 pages, including content, element structure, metadata, CSS ordering, local links, images, anchors, and IDs.
 
-The Playwright suite starts production and legacy comparison servers on ports 3000 and 4322. It uses installed Microsoft Edge with desktop and mobile emulation, verifies interactions and all content routes, and compares homepage screenshots against the original. Install Microsoft Edge on the test machine, or set `PLAYWRIGHT_EXECUTABLE_PATH` to an installed Chromium-compatible browser (for example, `PLAYWRIGHT_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e`). The same override works for the blog and navigation suites. Test screenshots and traces are written under the ignored `test-results/` directory.
+The Playwright suite starts production and legacy comparison servers on ports 3000 and 4322. It uses installed Microsoft Edge with desktop and mobile emulation, verifies interactions and all content routes, and compares homepage screenshots against the reviewed current design. Historical Batch 1 images remain archived; see `tests/fixtures/README.md` for baseline provenance and cross-platform reference-server validation. Install Microsoft Edge on the test machine, or set `PLAYWRIGHT_EXECUTABLE_PATH` to an installed Chromium-compatible browser (for example, `PLAYWRIGHT_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e`). The same override works for the blog and navigation suites. Test screenshots and traces are written under the ignored `test-results/` directory.
 
 ## Editing the application
 
