@@ -5,9 +5,9 @@ const configured = { BRIDGE_BABYLOVE_PREVIEW: 'true', BABYLOVEGROWTH_BLOG_API_KE
 test('preview is opt-in and never enabled on production site', () => {
   assert.equal(previewEnabled({}), false);
   assert.equal(previewEnabled({...configured, NODE_ENV: 'production'}), false);
-  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://thebridgetherapy.com', BRANCH:'main'}), false);
-  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://bridge-therapy-staging.netlify.app', BRANCH:'main'}), false);
-  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://bridge-therapy-staging.netlify.app', BRANCH:'staging'}), true);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', SITE_ID:'1c0ce777-b889-4f6b-8292-ef7590a4a25e', BRANCH:'main'}), false);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', SITE_ID:'c9ac64dc-b248-4666-bc90-6219f2b483a4', BRANCH:'main'}), false);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', SITE_ID:'c9ac64dc-b248-4666-bc90-6219f2b483a4', BRANCH:'staging'}), true);
   assert.equal(previewEnabled({...configured, NODE_ENV:'development'}), true);
 });
 test('only published articles belonging to the correct website pass', () => {

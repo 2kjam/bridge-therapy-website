@@ -9,7 +9,7 @@ sitemap, indexing guards and production settings are unchanged.
 - Isolated `/blog/cms-preview/` list and `/blog/cms-preview/[slug]/` article previews.
 - Disabled unless `BRIDGE_BABYLOVE_PREVIEW=true` and a server-side
   `BABYLOVEGROWTH_BLOG_API_KEY` exist. On Netlify, also requires the exact staging
-  site URL and `BRANCH=staging`; local access requires development mode.
+  site ID `c9ac64dc-b248-4666-bc90-6219f2b483a4` and `BRANCH=staging`; local access requires development mode.
 - Always noindex/nofollow. Not linked from public navigation or the sitemap.
 - Published-only content, matching The Bridge website, validated slugs, one-hour
   response caching, 15-second timeout, fixed official API destination and no redirects.
