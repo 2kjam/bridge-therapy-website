@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { previewEnabled, validArticle, cleanArticleHtml } from '../lib/babylovegrowth/policy.mjs';
+const configured = { BRIDGE_BABYLOVE_PREVIEW: 'true', BABYLOVEGROWTH_BLOG_API_KEY: 'test-placeholder' };
+test('preview is opt-in and never enabled on production site', () => {
+  assert.equal(previewEnabled({}), false);
+  assert.equal(previewEnabled({...configured, NODE_ENV: 'production'}), false);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://thebridgetherapy.com', BRANCH:'main'}), false);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://bridge-therapy-staging.netlify.app', BRANCH:'main'}), false);
+  assert.equal(previewEnabled({...configured, NETLIFY:'true', URL:'https://bridge-therapy-staging.netlify.app', BRANCH:'staging'}), true);
+  assert.equal(previewEnabled({...configured, NODE_ENV:'development'}), true);
+});
+test('only published articles belonging to the correct website pass', () => {
+  const article = { id:1, title:'Example', slug:'example-article', published:true, orgWebsite:'https://thebridgetherapy.com/' };
+  assert.equal(validArticle(article), true);
+  for (const patch of [{published:false},{published:'true'},{orgWebsite:'https://thebridgetherapy.com.attacker.example'},{orgWebsite:'https://user@thebridgetherapy.com'}, {slug:'../example'},{id:'1'},{title:''}]) assert.equal(validArticle({...article,...patch}), false);
+  assert.equal(validArticle(null), false);
+});
+test('external HTML is sanitized before rendering', () => {
+  const clean = cleanArticleHtml('<h1>Title</h1><script>alert(1)</script><img src="https://tracker.example/x" onerror="alert(1)"><iframe src="x"></iframe><form>secret<input></form><a href="javascript:alert(1)" onclick="alert(1)">bad</a><a href="//tracker.example">relative host</a><a href="https://example.com" style="color:red">safe</a><p>Content</p>');
+  assert.match(clean, /<h2>Title<\/h2>/);
+  assert.match(clean, /safe/);
+  assert.doesNotMatch(clean, /<script|<img|<iframe|<form|<input|onclick|javascript:|style=|href="\/\//);
+});
