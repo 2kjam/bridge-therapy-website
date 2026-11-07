@@ -3,6 +3,7 @@ import { expectBatchTwo } from "./expect-batch2.mjs";
 import { expectPerformance } from "./expect-performance.mjs";
 import { expectResourcesMenu } from "./expect-resources-menu.mjs";
 import fs from "node:fs";
+import { spawn } from "node:child_process";
 import { expectBatchOne } from "./expect-homepage-batch1.mjs";
 import path from "node:path";
 import assert from "node:assert/strict";
@@ -811,8 +812,22 @@ assert.equal(elements(telehealth, "h1").length, 1);
 assert.equal(normalizedText(elements(telehealth, "h1")[0]), "Online Therapy & Telehealth Counseling Across Texas");
 assert.equal(elements(elements(telehealth, "main")[0], "details").length, 6);
 assert.equal(attr(elements(telehealth, "meta").find(n => attr(n, "name") === "robots"), "content"), "noindex, nofollow");
-// Include new blog routes in the same link/asset/widget checks.
-const blogIndex = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
+// Blog routes are request-rendered for the protected CMS staging integration.
+// Exercise the real local built server rather than expecting static HTML files.
+const dynamicBlogHtml = new Map();
+const blogServer = spawn(process.execPath, ["node_modules/next/dist/bin/next", "start", "--hostname", "127.0.0.1", "--port", "3187"], { stdio: "ignore", env: {...process.env, BRIDGE_BABYLOVE_PREVIEW: "false"} });
+try {
+  for (const route of ["/blog/", ...getNewBlogPosts().map(p => p.legacyPath)]) {
+    let response;
+    for (let attempt = 0; attempt < 50; attempt++) {
+      try { response = await fetch(`http://127.0.0.1:3187${route}`); break; }
+      catch { await new Promise(resolve => setTimeout(resolve, 100)); }
+    }
+    assert.ok(response?.ok, `Built blog route responds: ${route}`);
+    dynamicBlogHtml.set(route, await response.text());
+  }
+} finally { blogServer.kill(); }
+const blogIndex = parse(dynamicBlogHtml.get("/blog/"));
 pages.set("/blog/", blogIndex);
 for (const entry of fs.readdirSync("content/blog", { withFileTypes: true }).filter((entry) => entry.isDirectory())) {
   const record = JSON.parse(fs.readFileSync(`content/blog/${entry.name}/metadata.json`, "utf8"));
@@ -843,7 +858,7 @@ assert.equal(normalizedText(elements(aboutMain, "a").find(n => attr(n, "href") =
 assert.ok(!elements(elements(pages.get("/"), "main")[0], "img").some(n => attr(n, "src") === "/assets/our-story.jpg"));
 
 for (const post of getNewBlogPosts()) {
-  const article = parse(fs.readFileSync(`.next/server/app${post.legacyPath.slice(0, -1)}.html`, "utf8"));
+  const article = parse(dynamicBlogHtml.get(post.legacyPath));
   pages.set(post.legacyPath, article);
 }
 for (const [route, doc] of pages) {

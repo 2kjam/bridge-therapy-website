@@ -74,3 +74,8 @@ test('pagination includes older generated articles and deduplicates by ID', asyn
   assert.equal(result.length,51); assert.equal(seen[1].offset,50); assert.equal(seen[0].publishedOnly,false);
   await assert.rejects(()=>collectStagingArticles(async()=>Array.from({length:50},(_,i)=>item(i+1))), /did not advance/);
 });
+
+test('requested personal-name removal is scoped to the two staging articles', () => {
+  assert.equal(cleanArticleHtml('<p>Adam</p><p>Welcome Adam.</p>', 'religious-trauma-therapy'), '<p></p><p>Welcome .</p>');
+  assert.equal(cleanArticleHtml('<p>Adam</p>', 'unrelated-article'), '<p>Adam</p>');
+});

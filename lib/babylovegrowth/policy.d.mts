@@ -9,3 +9,5 @@ export function safeImageUrl(value: unknown): string | null;
 export function articleImageUrls(html: unknown): string[];
 
 export function collectStagingArticles<T>(listPage: (options: {limit: number; offset: number; publishedOnly: boolean}) => Promise<T[]>): Promise<T[]>;
+
+export function removeStagingName(value: string, slug: string): string;
