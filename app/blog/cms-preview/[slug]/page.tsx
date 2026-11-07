@@ -14,12 +14,12 @@ export default async function CmsArticle({ params }: { params: Promise<{ slug: s
   if (!previewEnabled(process.env)) notFound();
   const article = await previewArticle((await params).slug);
   if (!article) notFound();
-  return <SiteShell styles={blogStyles}>
+  return <SiteShell styles={[...blogStyles, "/cms-article.css"]}>
     <main id="main" className="blog-page">
       <p>Staging preview. Requires editorial and clinical review before public release.</p>
-      <article className="blog-article">
-        <h1>{article.title}</h1>
-        <div className="legacy-article-body" dangerouslySetInnerHTML={{ __html: cleanArticleHtml(article.content_html) }} />
+      <article className="blog-article cms-article">
+        <header className="blog-article-header"><h1>{article.title}</h1></header>
+        <div className="legacy-article-body cms-article-body" dangerouslySetInnerHTML={{ __html: cleanArticleHtml(article.content_html, article.slug, article.title) }} />
       </article>
       <a href="/blog/cms-preview/">Back to CMS preview</a>
     </main>

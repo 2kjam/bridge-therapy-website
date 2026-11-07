@@ -1,0 +1,22 @@
+/* Scoped to the staging CMS renderer; the existing blog is untouched. */
+.cms-article-body { line-height: 1.8; }
+.cms-article-body :is(h2,h3,h4,h5,h6) { scroll-margin-top: 110px; color: #293d36; }
+.cms-article-body :is(h3,h4) { margin: 1.5em 0 .65em; }
+.cms-article-body :is(ul,ol) { padding-left: 1.6em; margin: 0 0 1.5em; }
+.cms-article-body ul { list-style: disc; }
+.cms-article-body ol { list-style: decimal; }
+.cms-article-body li { display: list-item; margin: .55em 0; padding-left: .2em; }
+.cms-article-body li > p { margin-bottom: .5em; }
+.cms-article-body :is(strong,b) { font-weight: 700; }
+.cms-article-body :is(em,i) { font-style: italic; }
+.cms-article-body img { display: block; width: 100%; height: auto; border-radius: 12px; margin: 1.7em 0; }
+.cms-article-body blockquote { border-left: 3px solid #718474; padding: 1em 1.4em; margin: 1.6em 0; background: #f1f3ed; }
+.cms-article-body table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.8em 0; max-width: 100%; font-size: .9em; }
+.cms-article-body :is(th,td) { padding: 12px 16px; border: 1px solid #d8dfd6; text-align: left; min-width: 120px; }
+.cms-article-body th { background: #e9eee6; font-weight: 700; }
+.cms-article-body figcaption { font-size: .85em; color: #5e6b62; text-align: center; }
+.cms-article-body .cms-cta { background: #edf1e9; border: 1px solid #d7dfd2; border-radius: 16px; padding: clamp(20px,4vw,32px); margin: 32px 0; }
+.cms-article-body .cms-cta div:has(> span), .cms-article-body .cms-cta div:has(> a) { margin: 12px 0; }
+.cms-article-body .cms-cta div:not(:has(div)):not(:has(a)) { margin-bottom: 12px; }
+.cms-article-body .cms-cta a { display: inline-block; background: #41543c; color: white; border-radius: 8px; padding: 10px 18px; margin: 6px 8px 0 0; text-decoration: none; font-weight: 600; }
+@media (max-width:600px) { .cms-article-body :is(th,td) { padding: 9px; } }

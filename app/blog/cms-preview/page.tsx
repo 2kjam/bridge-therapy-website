@@ -16,7 +16,7 @@ export default async function CmsPreview() {
   return <SiteShell styles={blogStyles}>
     <main id="main" className="blog-page">
       <h1>BabyLoveGrowth article preview</h1>
-      <p>Staging preview only. These articles have not been added to the public blog. Images and embeds are omitted pending review.</p>
+      <p>Staging preview only. These articles have not been added to the public blog.</p>
       {articles.length ? <ul>{articles.map(article => <li key={article.id}>
         <a href={`/blog/cms-preview/${article.slug}/`}>{article.title}</a>
       </li>)}</ul> : <p>No approved articles for The Bridge were returned.</p>}

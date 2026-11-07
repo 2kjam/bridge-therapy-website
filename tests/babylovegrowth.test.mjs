@@ -43,3 +43,24 @@ test('staging permits only the two specifically approved drafts', () => {
   assert.equal(validStagingArticle({...article,orgWebsite:'https://other.example'}), false);
   assert.equal(validArticle(article), false);
 });
+
+test('restores safe image, semantic layout and anchored links without supplied styles', () => {
+  const src = 'https://media.babylovegrowth.ai/blog-images/organization-65684/1793990449656_Abstract-bridge.jpeg';
+  const html = `<h1>My title</h1><div data-cta-card="true" style="position:fixed"><div>CTA copy</div><a href="https://thebridgetherapy.com/contact/">Contact</a></div><h2 id="details">Details</h2><a href="#details">Jump</a><img src="${src}" alt='Photo & "caption"' onerror="alert(1)"><table><tr><td colspan="2">Value</td></tr></table>`;
+  const clean = cleanArticleHtml(html, 'online-couples-counseling', 'My title');
+  assert.doesNotMatch(clean, /My title|onerror|style=|src="https:/);
+  assert.match(clean, /class="cms-cta"/);
+  assert.match(clean, /id="cms-details"/);
+  assert.match(clean, /href="#cms-details"/);
+  assert.match(clean, /href="\/contact\/"/);
+  assert.match(clean, /src="\/blog\/cms-preview\/media\/\?slug=online-couples-counseling&amp;file=/);
+  assert.match(clean, /alt="Photo &amp; &quot;caption&quot;"/);
+  assert.match(clean, /colspan="2"/);
+});
+test('only organization raster media is permitted; traversal and tracking rejected', async () => {
+  const {safeImageUrl, articleImageUrls} = await import('../lib/babylovegrowth/policy.mjs');
+  const base = 'https://media.babylovegrowth.ai/blog-images/organization-65684/';
+  assert.equal(safeImageUrl(base + 'photo.jpeg'), base + 'photo.jpeg');
+  for (const url of [base+'photo.svg',base+'photo.jpeg?track=1',base+'photo.jpeg#x',base+'../private.jpeg',base+'%2fprivate.jpeg','https://evil.example/photo.jpeg',base.replace('65684','1')+'photo.jpeg','http://media.babylovegrowth.ai/blog-images/organization-65684/photo.jpeg']) assert.equal(safeImageUrl(url), null);
+  assert.deepEqual(articleImageUrls(`<img src="${base}photo.jpeg"><script><img src="${base}bad.jpeg"></script><img src="https://tracker.example/x">`), [base+'photo.jpeg']);
+});
