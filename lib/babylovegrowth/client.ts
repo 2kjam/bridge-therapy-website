@@ -1,8 +1,12 @@
 import "server-only";
 import { BlogClient } from "babylovegrowth-next-js-blog";
-import { previewEnabled, validArticle } from "./policy.mjs";
+import { previewEnabled as policyPreviewEnabled, validArticle } from "./policy.mjs";
 
-export { previewEnabled, cleanArticleHtml } from "./policy.mjs";
+export { cleanArticleHtml } from "./policy.mjs";
+
+export function previewEnabled(env: NodeJS.ProcessEnv) {
+  return policyPreviewEnabled(env, process.env.BRIDGE_BUILD_CMS_STAGING === "true");
+}
 
 function client() {
   if (!previewEnabled(process.env)) throw new Error("CMS preview is disabled");

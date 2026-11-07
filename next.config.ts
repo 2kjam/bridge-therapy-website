@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { stagingBuildAllowed } from "./lib/babylovegrowth/policy.mjs";
 import { productionIndexingAllowed } from "./lib/seo/policy";
 import {
   securityHeaderRule,
@@ -10,7 +11,11 @@ export default function nextConfig(phase: string): NextConfig {
     trailingSlash: true,
     poweredByHeader: false,
     // Boolean only, never secrets. Ignore any externally supplied BRIDGE_BUILD_INDEXING.
-    env: { BRIDGE_BUILD_INDEXING: String(indexingEnabled) },
+    env: {
+      BRIDGE_BUILD_INDEXING: String(indexingEnabled),
+      // Non-secret boolean only. Ignore externally supplied BRIDGE_BUILD_CMS_STAGING.
+      BRIDGE_BUILD_CMS_STAGING: String(stagingBuildAllowed(process.env)),
+    },
     async headers() {
       return [
         securityHeaderRule("Content-Security-Policy"),
