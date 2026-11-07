@@ -79,3 +79,12 @@ test('requested personal-name removal is scoped to the two staging articles', ()
   assert.equal(cleanArticleHtml('<p>Adam</p><p>Welcome Adam.</p>', 'religious-trauma-therapy'), '<p></p><p>Welcome .</p>');
   assert.equal(cleanArticleHtml('<p>Adam</p>', 'unrelated-article'), '<p>Adam</p>');
 });
+
+ test('removes only requested standalone vendor credits on the two staging articles', () => {
+  const credit = '<p><a href="https://www.babylovegrowth.ai/">Created with BabyLoveGrowth, an AI writing tool</a></p>';
+  for (const slug of ['online-couples-counseling', 'religious-trauma-therapy']) {
+    assert.equal(cleanArticleHtml('<p>Article body</p>'+credit, slug), '<p>Article body</p>');
+    assert.match(cleanArticleHtml('<p>We discussed BabyLoveGrowth.</p>', slug), /BabyLoveGrowth/);
+  }
+  assert.match(cleanArticleHtml(credit, 'another-article'), /Created with BabyLoveGrowth/);
+});
