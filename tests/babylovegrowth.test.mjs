@@ -34,12 +34,12 @@ test('build identity safely survives absent serverless build variables', () => {
   assert.equal(previewEnabled({NODE_ENV:'production'}, true), false);
 });
 
-test('staging permits only the two specifically approved drafts', () => {
+test('staging permits generated Bridge drafts without production publication', () => {
   const article = {id:1069980, slug:'online-couples-counseling', title:'Example', published:false, orgWebsite:'https://thebridgetherapy.com/'};
   assert.equal(validStagingArticle(article), true);
   assert.equal(validStagingArticle({...article,id:1069962,slug:'religious-trauma-therapy'}), true);
-  assert.equal(validStagingArticle({...article,id:1069981}), false);
-  assert.equal(validStagingArticle({...article,slug:'different-article'}), false);
+  assert.equal(validStagingArticle({...article,id:1069981}), true);
+  assert.equal(validStagingArticle({...article,slug:'different-article'}), true);
   assert.equal(validStagingArticle({...article,orgWebsite:'https://other.example'}), false);
   assert.equal(validArticle(article), false);
 });
@@ -63,4 +63,14 @@ test('only organization raster media is permitted; traversal and tracking reject
   assert.equal(safeImageUrl(base + 'photo.jpeg'), base + 'photo.jpeg');
   for (const url of [base+'photo.svg',base+'photo.jpeg?track=1',base+'photo.jpeg#x',base+'../private.jpeg',base+'%2fprivate.jpeg','https://evil.example/photo.jpeg',base.replace('65684','1')+'photo.jpeg','http://media.babylovegrowth.ai/blog-images/organization-65684/photo.jpeg']) assert.equal(safeImageUrl(url), null);
   assert.deepEqual(articleImageUrls(`<img src="${base}photo.jpeg"><script><img src="${base}bad.jpeg"></script><img src="https://tracker.example/x">`), [base+'photo.jpeg']);
+});
+
+
+test('pagination includes older generated articles and deduplicates by ID', async () => {
+  const {collectStagingArticles} = await import('../lib/babylovegrowth/policy.mjs');
+  const item = i => ({id:i,slug:`article-${i}`,title:'Article',published:false,orgWebsite:'https://thebridgetherapy.com/'});
+  const seen=[];
+  const result=await collectStagingArticles(async opts => { seen.push(opts); return opts.offset===0 ? Array.from({length:50},(_,i)=>item(i+1)) : [item(50),item(51)]; });
+  assert.equal(result.length,51); assert.equal(seen[1].offset,50); assert.equal(seen[0].publishedOnly,false);
+  await assert.rejects(()=>collectStagingArticles(async()=>Array.from({length:50},(_,i)=>item(i+1))), /did not advance/);
 });

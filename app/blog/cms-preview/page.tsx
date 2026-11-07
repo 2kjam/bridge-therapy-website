@@ -16,8 +16,8 @@ export default async function CmsPreview() {
   return <SiteShell styles={blogStyles}>
     <main id="main" className="blog-page">
       <h1>BabyLoveGrowth article preview</h1>
-      <p>Staging preview only. These articles have not been added to the public blog.</p>
-      {articles.length ? <ul>{articles.map(article => <li key={article.id}>
+      <p>Staging preview only. New articles appear here automatically for review. Nothing moves to the public blog without approval.</p>
+      {articles.length ? <ul>{articles.map(article => <li key={article.id} data-cms-article-id={article.id} data-cms-updated-at={article.updated_at}>
         <a href={`/blog/cms-preview/${article.slug}/`}>{article.title}</a>
       </li>)}</ul> : <p>No approved articles for The Bridge were returned.</p>}
       <a href="/blog/">Return to the existing blog</a>
