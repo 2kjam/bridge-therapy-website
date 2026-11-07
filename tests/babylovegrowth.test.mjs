@@ -53,7 +53,7 @@ test('restores safe image, semantic layout and anchored links without supplied s
   assert.match(clean, /id="cms-details"/);
   assert.match(clean, /href="#cms-details"/);
   assert.match(clean, /href="\/contact\/"/);
-  assert.match(clean, /src="\/blog\/cms-preview\/media\/\?slug=online-couples-counseling&amp;file=/);
+  assert.match(clean, /src="\/api\/cms-media\/\?slug=online-couples-counseling&amp;file=/);
   assert.match(clean, /alt="Photo &amp; &quot;caption&quot;"/);
   assert.match(clean, /colspan="2"/);
 });

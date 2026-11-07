@@ -33,11 +33,10 @@ export async function previewArticles() {
 
 export async function previewArticle(slug: string) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
-  // Require Bridge ownership in both list and detail; never render unfinished empty content.
-  const summary = (await previewArticles()).find((article) => article.slug === slug);
-  if (!summary) return null;
+  // Direct detail lookup avoids downloading the entire archive for every image.
+  // Ownership, slug and generated HTML are still checked before rendering.
   try {
-    const article = await client().getArticleById(summary.id);
+    const article = await client().getArticleBySlug(slug);
     return validStagingArticle(article) && article?.slug === slug && typeof article.content_html === "string" && article.content_html.trim() ? article : null;
   } catch {
     throw new Error("BabyLoveGrowth article preview is unavailable.");

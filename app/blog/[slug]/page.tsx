@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CmsArticleTemplate } from "@/components/blog/cms-article";
+import { previewEnabled, previewArticle } from "@/lib/babylovegrowth/client";
 import { ArticleTemplate } from "@/components/blog/article-template";
 import { getNewBlogPosts, draftPreviewEnabled } from "@/lib/blog";
 import { publicPageMetadata } from "@/lib/seo/metadata";
@@ -7,7 +9,8 @@ import { canonicalUrl } from "@/lib/seo/policy";
 import { assetUrl } from "@/lib/seo/schema";
 
 type Props = { params: Promise<{ slug: string }> };
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const dynamic = "force-dynamic";
 export function generateStaticParams() {
   return getNewBlogPosts(draftPreviewEnabled()).map((post) => ({
     slug: post.id,
@@ -17,11 +20,16 @@ function findPost(slug: string) {
   const post = getNewBlogPosts(draftPreviewEnabled()).find(
     (post) => post.legacyPath === `/blog/${slug}/`,
   );
-  if (!post) notFound();
   return post;
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = findPost((await params).slug);
+  const slug = (await params).slug;
+  const post = findPost(slug);
+  if (!post) {
+    const article = previewEnabled(process.env) ? await previewArticle(slug) : null;
+    if (!article) notFound();
+    return { title: { absolute: `${article.title} | The Bridge` }, description: article.meta_description, robots: { index: false, follow: false } };
+  }
   const image = post.featuredImage!;
   return {
     ...publicPageMetadata(post.legacyPath),
@@ -55,5 +63,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 export default async function ArticlePage({ params }: Props) {
-  return <ArticleTemplate post={findPost((await params).slug)} />;
+  const slug = (await params).slug;
+  const post = findPost(slug);
+  if (post) return <ArticleTemplate post={post} />;
+  const article = previewEnabled(process.env) ? await previewArticle(slug) : null;
+  if (!article) notFound();
+  return <CmsArticleTemplate article={article} />;
 }
