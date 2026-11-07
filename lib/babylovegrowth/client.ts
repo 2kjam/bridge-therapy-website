@@ -14,9 +14,11 @@ function client() {
     apiKey: process.env.BABYLOVEGROWTH_BLOG_API_KEY,
     revalidate: false,
     // Never permit a custom host or follow redirects carrying the credential.
-    fetch: (input, init) => fetch(input, {
-      ...init, redirect: "error", signal: AbortSignal.timeout(15000),
-    }),
+    fetch: async (input, init) => {
+      const response = await fetch(input, { ...init, redirect: "error", signal: AbortSignal.timeout(15000) });
+      if (!response.ok) console.error("CMS upstream status", response.status);
+      return response;
+    },
   });
 }
 
@@ -44,7 +46,8 @@ export async function previewArticle(slug: string) {
   try {
     const article = await client().getArticleById(summary.id);
     return validStagingArticle(article) && article?.slug === slug && typeof article.content_html === "string" && article.content_html.trim() ? cleanMetadata(article) : null;
-  } catch {
+  } catch (error) {
+    console.error("CMS detail failure type", error instanceof Error ? error.name : "unknown");
     throw new Error("BabyLoveGrowth article preview is unavailable.");
   }
 }
