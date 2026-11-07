@@ -20,3 +20,6 @@
 .cms-article-body .cms-cta div:not(:has(div)):not(:has(a)) { margin-bottom: 12px; }
 .cms-article-body .cms-cta a { display: inline-block; background: #41543c; color: white; border-radius: 8px; padding: 10px 18px; margin: 6px 8px 0 0; text-decoration: none; font-weight: 600; }
 @media (max-width:600px) { .cms-article-body :is(th,td) { padding: 9px; } }
+
+.cms-article-body .cms-cta div:has(> span) { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #41543c; }
+.cms-article-body .cms-cta div:has(> span) + div:not(:has(div)), .cms-article-body .cms-cta div > div:first-child:not(:has(div,span,a)):not(:empty) { font-size: 23px; font-weight: 700; line-height: 1.3; }
