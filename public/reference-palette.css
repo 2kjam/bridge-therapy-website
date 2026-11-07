@@ -1,0 +1,40 @@
+/* Sampled from the supplied reference: terracotta, blue, teal. */
+:root{--brand-terracotta:#d97b66;--brand-blue:#264e76;--brand-teal:#3d7c7c;--teal:#264e76;--dark:#1e3e5e;--muted:#526573;--coral:#d97b66;--pale:#f7f3eb;--pink:#efd2c8;--blue:#c7dedd;--line:#d5dfdb}
+body{background:#faf7f0;color:var(--brand-blue)}
+.header{background:#faf7f0fa}.utility{background:#e1ebe6}
+.brand{background:var(--brand-blue);border-color:var(--brand-terracotta)}
+.nav-trigger span{color:#b65c49}.nav-trigger[aria-expanded=true]{color:#a64b3b}
+.button,.chat-button{background:var(--brand-blue);color:#fff}
+.button:hover,.chat-button:hover{background:#1e3e5e}
+.chat-button{border-color:var(--brand-blue)}
+.hero h1 span,.photo-hero h1 span,.service-hero h1 span{color:var(--brand-teal)}
+.hero h2,.services-heading h2,.therapist-heading h2,.getting-started-heading h2,#concerns-title{color:var(--brand-blue)}
+.photo-hero .text-button{color:var(--brand-blue);border-color:var(--brand-teal)}
+.pathways,.service-highlights{background:#efd2c8;border-color:#d5a093}
+.pathways>:is(a,button),.highlight-card{border-color:#d5afa3;background:#fffdf8}
+.specialty-directory{border-color:#c39588}
+.highlight-topics :is(button,a),.therapist-info li{background:#e0ece7;border-color:#b8d1c9}
+.highlight-link span,.therapist-info>a span,.team-directory-link span{color:#ad503d}
+.why-bridge{background:var(--brand-blue)}
+.why-bridge :is(h2,h3,.eyebrow,.why-text-link){color:#fff}
+.why-bridge :is(.why-intro,.why-values p,.founders-story p){color:#edf3f0}
+.why-bridge .founders-photo{border-color:var(--brand-terracotta)}
+.why-bridge .founders-photo figcaption{background:#e2ebe4;color:var(--brand-blue)}
+.why-text-link span{color:#efb7a7}
+.therapist-section{background:#faf7f0}.therapist-card{background:#e2ebe4;border-color:#b7cdc6}
+.therapist-credentials{color:#9d4938}
+.getting-started{background:#ece8df;border-color:#d2d6cb}
+.starting-steps{gap:24px}
+.starting-steps li{display:block;padding:28px;border-radius:10px;background:var(--brand-blue);color:#fff}
+.starting-steps li:first-child{background:var(--brand-terracotta);color:#172e45}
+.starting-steps li:last-child{background:var(--brand-teal)}
+.starting-steps h3,.starting-steps p{color:inherit}
+.starting-steps .step-number{background:transparent;border-color:currentColor;color:inherit;margin-bottom:18px}
+.individual-concerns,.service-booking{background:#efd2c8}
+.service-process{background:#dce8e3}.individual-faq{background:#f3f0e8}
+.service-hero figure{background:#e9b5a6}
+.site-footer{background:var(--brand-blue)}
+.site-footer :is(h2,a){color:#fff}
+a:focus-visible,button:focus-visible{outline-color:var(--brand-blue)}
+.why-bridge :focus-visible,.site-footer :focus-visible{outline-color:#efb7a7}
+@media(max-width:760px){.starting-steps li{padding:25px}.starting-steps p{font-size:18px}}

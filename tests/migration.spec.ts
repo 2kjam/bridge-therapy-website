@@ -1,0 +1,275 @@
+import { test, expect, type Page } from "@playwright/test";
+import { PNG } from "pngjs";
+import pixelmatch from "pixelmatch";
+import fs from "node:fs";
+
+async function ready(page: Page, url: string) {
+  await page.goto(url);
+  await page.evaluate(async () => {
+    document.querySelectorAll("img").forEach((img) => {
+      img.loading = "eager";
+    });
+    await document.fonts.ready;
+    await Promise.all([...document.images].map((image) => image.decode()));
+  });
+}
+
+test("homepage matches reviewed design pixels and responsive geometry", async ({
+  page,
+}, testInfo) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+
+  // Keep the timed welcome prompt out of layout snapshots; widget tests cover it separately.
+  await page.addInitScript(() => sessionStorage.setItem("bridge-inquiry-prompt-shown", "1"));
+  await ready(page, "/");
+  await expect(page.locator("[data-duplicate]:visible")).toHaveCount(0);
+  const geometry = (target: Page) =>
+    target.locator("header, main > section, footer").evaluateAll((nodes) =>
+      nodes.map((node) => {
+        const rect = node.getBoundingClientRect();
+        return { width: rect.width, height: rect.height, x: rect.x, y: rect.y };
+      }),
+    );
+  // OS-specific reviewed images are durable references for the cloud runner.
+  // Other platforms can compare an independently built, immutable reference in
+  // this same browser; never regenerate a reference from the candidate.
+  const referenceUrl = process.env.PLAYWRIGHT_VISUAL_REFERENCE_URL;
+  let before: Buffer;
+  if (referenceUrl) {
+    const url = new URL(referenceUrl);
+    expect(["localhost", "127.0.0.1"]).toContain(url.hostname);
+    expect(url.protocol).toBe("http:");
+    expect(url.origin, "Reference must be an independently built server").not.toBe(new URL(page.url()).origin);
+    const reference = await page.context().newPage();
+    await reference.emulateMedia({ reducedMotion: "reduce" });
+    await reference.addInitScript(() => sessionStorage.setItem("bridge-inquiry-prompt-shown", "1"));
+    await ready(reference, new URL("/", url).href);
+    expect(await geometry(page)).toEqual(await geometry(reference));
+    before = await reference.screenshot({ fullPage: true, animations: "disabled", scale: "css" });
+    await reference.close();
+  } else {
+    const baseline = `tests/fixtures/homepage-reviewed-${process.platform}-${testInfo.project.name}`;
+    expect(await geometry(page)).toEqual(JSON.parse(fs.readFileSync(`${baseline}.json`, "utf8")));
+    before = fs.readFileSync(`${baseline}.png`);
+  }
+  const after = await page.screenshot({
+    fullPage: true,
+    animations: "disabled",
+    scale: "css",
+  });
+  fs.writeFileSync(testInfo.outputPath("approved-home.png"), before);
+  fs.writeFileSync(testInfo.outputPath("next-home.png"), after);
+  const a = PNG.sync.read(before),
+    b = PNG.sync.read(after);
+  expect([b.width, b.height]).toEqual([a.width, a.height]);
+  const difference = new PNG({ width: a.width, height: a.height });
+  const changed = pixelmatch(
+    a.data,
+    b.data,
+    difference.data,
+    a.width,
+    a.height,
+    { threshold: 0.1 },
+  );
+  fs.writeFileSync(
+    testInfo.outputPath("home-difference.png"),
+    PNG.sync.write(difference),
+  );
+  console.log(
+    `${testInfo.project.name}: ${changed} changed pixels / ${a.width * a.height}`,
+  );
+  expect(changed / (a.width * a.height)).toBeLessThan(0.001);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("navigation, keyboard focus, therapist arrows, and dismissal", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
+  if (isMobile) await page.locator(".mobile-toggle").click();
+  const trigger = page.locator('[aria-controls="team-panel"]');
+  await trigger.focus();
+  await trigger.press("ArrowDown");
+  await expect(trigger).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator("#team-panel a").first()).toBeFocused();
+  const track = page.locator("#team-track");
+  await track.focus();
+  await track.press("ArrowRight");
+  await expect
+    .poll(() => track.evaluate((node) => node.scrollLeft))
+    .toBeGreaterThan(0);
+  await expect(
+    page.locator("#team-panel").getByRole("button", { name: "Previous therapists" }),
+  ).toHaveAttribute("aria-disabled", "false");
+  await page.keyboard.press("Escape");
+  await expect(trigger).toBeFocused();
+  await expect(page.locator("#team-panel")).toBeHidden();
+  if (isMobile) {
+    await page.keyboard.press("Escape");
+    await expect(page.locator(".mobile-toggle")).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
+  }
+  await page.locator("#meet-team").click();
+  await expect(page.locator("#team-panel")).toBeVisible();
+  await expect(trigger).toBeFocused();
+  await page.locator("#hero-title").click({ force: true });
+  await expect(page.locator("#team-panel")).toBeHidden();
+});
+
+test("desktop hover moves between menus without a stale close timer", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(isMobile, "Hover is intentionally desktop-only");
+  await page.goto("/");
+  await page.locator('[aria-controls="care-panel"]').hover();
+  await expect(page.locator("#care-panel")).toBeVisible();
+  await page.locator('[aria-controls="team-panel"]').hover();
+  await expect(page.locator("#team-panel")).toBeVisible();
+  await page.waitForTimeout(300);
+  await expect(page.locator("#team-panel")).toBeVisible();
+  await expect(page.locator("#care-panel")).toBeHidden();
+  await page.mouse.move(1430, 950);
+  await expect(page.locator("#team-panel")).toBeHidden();
+});
+
+test("shared cleanup: service discovery excludes out-of-scope specialties and inquiry launcher remains usable", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.locator(".specialty-directory summary").click();
+  await expect(page.locator(".service-list button, [data-service], #detail-dialog")).toHaveCount(0);
+  await expect(page.locator(".service-list")).not.toContainText(/Support after abuse|Anger counseling|Codependency|Eating disorders/i);
+  await expect(page.locator("footer")).not.toContainText("Local design preview");
+  await page.locator("#chat-open").click();
+  await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
+  await page.locator("#inquiry-widget-panel").getByRole("button", { name: "Close inquiry assistant", exact: true }).click();
+  await expect(page.locator("#inquiry-widget-panel")).toHaveCount(0);
+  await page.locator("#chat-open").click();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#inquiry-widget-panel")).toHaveCount(0);
+});
+
+test("insurance animation pauses, resumes, and respects reduced motion", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("#insurance button")).toHaveCount(0);
+  await expect(page.locator("#insurance h2, .insurance-options")).toHaveCount(0);
+  const carousel = page.locator(".insurance-window");
+  await carousel.scrollIntoViewIfNeeded();
+  await page.mouse.move(0, 0);
+  await expect
+    .poll(() => carousel.evaluate((node) => node.scrollLeft))
+    .toBeGreaterThan(2);
+  await carousel.focus();
+  const focused = await carousel.evaluate((node) => node.scrollLeft);
+  await page.waitForTimeout(250);
+  expect(await carousel.evaluate((node) => node.scrollLeft)).toBe(focused);
+  await carousel.evaluate((node: HTMLElement) => node.blur());
+  await expect
+    .poll(() => carousel.evaluate((node) => node.scrollLeft))
+    .toBeGreaterThan(focused);
+  if (!isMobile) {
+    await carousel.hover();
+    const hovered = await carousel.evaluate((node) => node.scrollLeft);
+    await page.waitForTimeout(250);
+    expect(await carousel.evaluate((node) => node.scrollLeft)).toBe(hovered);
+    await page.mouse.move(0, 0);
+  } else {
+    await carousel.dispatchEvent("touchstart");
+    const touched = await carousel.evaluate((node) => node.scrollLeft);
+    await page.waitForTimeout(250);
+    expect(await carousel.evaluate((node) => node.scrollLeft)).toBe(touched);
+  }
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator("[data-duplicate]:visible")).toHaveCount(0);
+  await expect.poll(() => carousel.evaluate((node) => node.scrollLeft)).toBe(0);
+  await expect(
+    page.locator(".insurance-logos li:not([data-duplicate])"),
+  ).toHaveCount(12);
+});
+
+test("scroll reveals and reduced-motion content remain accessible", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const last = page.locator(".ivory-next > div");
+  await expect(last).toHaveClass(/scroll-pending/);
+  await last.scrollIntoViewIfNeeded();
+  await expect(last).not.toHaveClass(/scroll-pending/);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator(".scroll-pending, .scroll-enter")).toHaveCount(0);
+});
+
+test("contact links and native FAQ work after navigation", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await page.locator(".ivory-hero .button").first().click();
+  await expect(page).toHaveURL(/\/contact\/$/);
+  await expect(page).toHaveTitle(
+    "Book an Appointment | Contact The Bridge in Tyler, TX",
+  );
+  const question = page.locator(".contact-faq details").first();
+  await question.locator("summary").click();
+  await expect(question).toHaveAttribute("open", "");
+  await expect(
+    page.getByRole("region", { name: "Contact Information", exact: true }).getByRole("link", { name: "(903) 283-8729", exact: true }),
+  ).toHaveAttribute("href", "tel:9032838729");
+  await page.locator("#chat-open").click();
+  await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test("all content routes render without hydration errors", async ({ page }) => {
+  const routes: string[] = JSON.parse(
+    fs.readFileSync("legacy/routes.json", "utf8"),
+  );
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  for (const route of routes.filter(
+    (route) => route !== "/children-families/",
+  )) {
+    const response = await page.goto(route);
+    expect(response?.status(), route).toBe(200);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await page.locator("#chat-open").click();
+    await expect(page.locator("#inquiry-widget-panel")).toBeVisible();
+    await page.keyboard.press("Escape");
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+      route,
+    ).toBe(true);
+  }
+  expect(errors).toEqual([]);
+});
+
+test("legacy URLs redirect and static content works without JavaScript", async ({
+  browser,
+  page,
+}) => {
+  await page.goto("/children-families/");
+  await expect(page).toHaveURL(/\/#family-services$/);
+  await page.goto("/contact/index.html");
+  await expect(page).toHaveURL(/\/contact\/$/);
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    viewport: page.viewportSize() ?? undefined,
+  });
+  const plain = await context.newPage();
+  await plain.goto(new URL("/", page.url()).href);
+  await expect(plain.locator("h1")).toHaveText("Counseling and Therapy in Tyler, TX");
+  await expect(plain.locator(".ivory-next h2")).toBeVisible();
+  await context.close();
+});

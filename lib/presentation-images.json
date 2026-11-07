@@ -1,0 +1,717 @@
+{
+  "/assets/kalynne.jpg": {
+    "sha256": "63c904d894fc084e0264e88535c3e41e535a1c68cab27c12b208381fddf1c179",
+    "originalWidth": 2500,
+    "originalHeight": 3750,
+    "src": "/assets/presentation/menu/kalynne-480.webp",
+    "width": 480,
+    "height": 720,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/kalynne-480.webp",
+        "width": 480,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/jennifer.jpg": {
+    "sha256": "273c6e5c1d09909599a9333cb79535a8047ce32151401f1e4bfee6a953f0ad3c",
+    "originalWidth": 500,
+    "originalHeight": 750,
+    "src": "/assets/presentation/menu/jennifer-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/jennifer-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/erin.jpg": {
+    "sha256": "97ee7a8849b3feebfd3cd9772ff5a928ae3d02e102a004d6418779c4ac34b0ac",
+    "originalWidth": 500,
+    "originalHeight": 750,
+    "src": "/assets/presentation/menu/erin-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/erin-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/jill.jpg": {
+    "sha256": "c2b77e6699c088ee386c5e341b2a6837de59c8564cc44f3af21685e9b29d8d69",
+    "originalWidth": 500,
+    "originalHeight": 601,
+    "src": "/assets/presentation/menu/jill-500.webp",
+    "width": 500,
+    "height": 601,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/jill-500.webp",
+        "width": 500,
+        "height": 601
+      }
+    ]
+  },
+  "/assets/alyx.jpg": {
+    "sha256": "09cfad11586b91db64caeeff9a7e42d5832a218fe5238bf8d5dbb20ec1f6a5f6",
+    "originalWidth": 750,
+    "originalHeight": 1125,
+    "src": "/assets/presentation/menu/alyx-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/alyx-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/misty.jpg": {
+    "sha256": "d341f4c0cf350df6b61d952ca6c4e99ed653198a9376436423a5c53bcf75a54e",
+    "originalWidth": 500,
+    "originalHeight": 707,
+    "src": "/assets/presentation/menu/misty-500.webp",
+    "width": 500,
+    "height": 707,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/misty-500.webp",
+        "width": 500,
+        "height": 707
+      }
+    ]
+  },
+  "/assets/kim.jpg": {
+    "sha256": "ddd46593c0bf576a35fd87d8d8ebe9ff2c1d7f56147d8854658bcc72458e87f5",
+    "originalWidth": 500,
+    "originalHeight": 750,
+    "src": "/assets/presentation/menu/kim-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/kim-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/kelley.jpg": {
+    "sha256": "0d6ecb5e37f7d2a11d1d6d4261c7346089ed2594549bd55cb342fe43b827ea90",
+    "originalWidth": 750,
+    "originalHeight": 1125,
+    "src": "/assets/presentation/menu/kelley-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/kelley-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/denise.jpg": {
+    "sha256": "be27f155f8faa568ed0f0ad10b3bbe1bb5c848cd6c256d5cd04b9f108cd22280",
+    "originalWidth": 750,
+    "originalHeight": 1125,
+    "src": "/assets/presentation/menu/denise-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/denise-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/sarah-bell.jpg": {
+    "sha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
+    "originalWidth": 500,
+    "originalHeight": 750,
+    "src": "/assets/presentation/menu/sarah-bell-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/sarah-bell-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/sarah-critzman.jpg": {
+    "sha256": "42bf485e8c6ba59463987cf520e8f64c393abf6c9d8911facf9183f077141935",
+    "originalWidth": 500,
+    "originalHeight": 750,
+    "src": "/assets/presentation/menu/sarah-critzman-500.webp",
+    "width": 500,
+    "height": 750,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/sarah-critzman-500.webp",
+        "width": 500,
+        "height": 750
+      }
+    ]
+  },
+  "/assets/team.jpg": {
+    "sha256": "eb2902cc8d44e66fb2be67f9d98c6018c43bed2753a2b980274274c8ae62d39c",
+    "originalWidth": 1500,
+    "originalHeight": 1000,
+    "src": "/assets/presentation/menu/team-1200.webp",
+    "width": 1200,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/presentation/menu/team-1200.webp",
+        "width": 1200,
+        "height": 800
+      }
+    ]
+  },
+  "/assets/blog/anxiety-therapy-in-tyler-tx/featured.png": {
+    "sha256": "347febaa5d32f174fc3178cfd485f77c616c3083278548d51d75f7f4faec4a5d",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/anxiety-therapy-vs-medication-whats-the-difference/featured.png": {
+    "sha256": "4aa3a4f25456967b7c2a5bcdbca0275cf312818b407338413819d2554ba0c5b9",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/anxiety-therapy-vs-medication-whats-the-difference-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-vs-medication-whats-the-difference-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-vs-medication-whats-the-difference-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-vs-medication-whats-the-difference-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/big-news/featured.jpg": {
+    "sha256": "1d90045762cbede76e9541ea6a6161d1875e6931fe1e21fc56c79a3120744438",
+    "originalWidth": 1024,
+    "originalHeight": 680,
+    "src": "/assets/presentation/blog/big-news-800.webp",
+    "width": 800,
+    "height": 531,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/big-news-400.webp",
+        "width": 400,
+        "height": 266
+      },
+      {
+        "src": "/assets/presentation/blog/big-news-800.webp",
+        "width": 800,
+        "height": 531
+      },
+      {
+        "src": "/assets/presentation/blog/big-news-1080.webp",
+        "width": 1024,
+        "height": 680
+      }
+    ]
+  },
+  "/assets/blog/can-emdr-be-integrated-with-christian-counseling/featured.png": {
+    "sha256": "b9e44533547e9c1504f6fabea56f14307243b77dee77b77adc1b06f655032856",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/can-emdr-be-integrated-with-christian-counseling-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/can-emdr-be-integrated-with-christian-counseling-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/can-emdr-be-integrated-with-christian-counseling-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/can-emdr-be-integrated-with-christian-counseling-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses/featured.png": {
+    "sha256": "4f506d95e5bc4ccc490d2e9219c56951d7395a5a185492b5399a9b17dfcc3e30",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-anxiety-panic-and-trauma-responses-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx/featured.png": {
+    "sha256": "54598fc61dbff86899c8381529d321e07c980b2083c5bc532a35657a4e908b22",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/emdr-therapy-for-trauma-and-ptsd-in-tyler-tx-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd/featured.png": {
+    "sha256": "ca810aade503e2b35e62c626489b3ad8d63c7bb85680575d67bb7c957e99e0d9",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/how-emdr-therapy-helps-heal-trauma-and-ptsd-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/featured.jpg": {
+    "sha256": "d377d6a19b0bd35e58c8a1a296b3e2f106418d8e9e7c8e7426b3468d02b9f95c",
+    "originalWidth": 2500,
+    "originalHeight": 2879,
+    "src": "/assets/presentation/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god-800.webp",
+    "width": 800,
+    "height": 921,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god-400.webp",
+        "width": 400,
+        "height": 460
+      },
+      {
+        "src": "/assets/presentation/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god-800.webp",
+        "width": 800,
+        "height": 921
+      },
+      {
+        "src": "/assets/presentation/blog/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god-1080.webp",
+        "width": 1080,
+        "height": 1244
+      }
+    ]
+  },
+  "/assets/blog/is-emdr-therapy-safe-and-effective/featured.png": {
+    "sha256": "75a2c03c7e1d9e31742fd43a8cceb9d1c142d08a422ac041c64a6f152d85c239",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/is-emdr-therapy-safe-and-effective-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/is-emdr-therapy-safe-and-effective-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/is-emdr-therapy-safe-and-effective-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/is-emdr-therapy-safe-and-effective-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/navigating-life-transitions/image-asset.jpeg": {
+    "sha256": "dc43cf37d97a9e4b9e957dd125c719f7aca0ea7f135d833b11310ff3f0eb8e63",
+    "originalWidth": 2500,
+    "originalHeight": 1667,
+    "src": "/assets/presentation/blog/navigating-life-transitions-800.webp",
+    "width": 800,
+    "height": 533,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/navigating-life-transitions-400.webp",
+        "width": 400,
+        "height": 266
+      },
+      {
+        "src": "/assets/presentation/blog/navigating-life-transitions-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/assets/presentation/blog/navigating-life-transitions-1080.webp",
+        "width": 1080,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/screen-time-recommendations/featured.jpg": {
+    "sha256": "47365d199ea6780e6591b6ce1a64d7211520848a36ce4503aadeee0d2200231b",
+    "originalWidth": 2285,
+    "originalHeight": 1523,
+    "src": "/assets/presentation/blog/screen-time-recommendations-800.webp",
+    "width": 800,
+    "height": 533,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/screen-time-recommendations-400.webp",
+        "width": 400,
+        "height": 266
+      },
+      {
+        "src": "/assets/presentation/blog/screen-time-recommendations-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/assets/presentation/blog/screen-time-recommendations-1080.webp",
+        "width": 1080,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/simple-ways-to-lower-stress-during-the-holidays/featured.jpg": {
+    "sha256": "10ab0db10440a411b21f47403cd72b0a8156d630425ae1379c1fa4a41ab5435f",
+    "originalWidth": 2500,
+    "originalHeight": 1667,
+    "src": "/assets/presentation/blog/simple-ways-to-lower-stress-during-the-holidays-800.webp",
+    "width": 800,
+    "height": 533,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/simple-ways-to-lower-stress-during-the-holidays-400.webp",
+        "width": 400,
+        "height": 266
+      },
+      {
+        "src": "/assets/presentation/blog/simple-ways-to-lower-stress-during-the-holidays-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/assets/presentation/blog/simple-ways-to-lower-stress-during-the-holidays-1080.webp",
+        "width": 1080,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/storm-anxiety/featured.png": {
+    "sha256": "322df5d1f548591360c848b13cb831ac34664ba8c2c010b2055bb78e3ad795af",
+    "originalWidth": 1268,
+    "originalHeight": 706,
+    "src": "/assets/presentation/blog/storm-anxiety-800.webp",
+    "width": 800,
+    "height": 445,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/storm-anxiety-400.webp",
+        "width": 400,
+        "height": 223
+      },
+      {
+        "src": "/assets/presentation/blog/storm-anxiety-800.webp",
+        "width": 800,
+        "height": 445
+      },
+      {
+        "src": "/assets/presentation/blog/storm-anxiety-1080.webp",
+        "width": 1080,
+        "height": 601
+      }
+    ]
+  },
+  "/assets/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/featured.png": {
+    "sha256": "830ab676e8b3c404d91c4eb9a1774e5c4d821e22cdaa7bf1452fa7e99aa3ff67",
+    "originalWidth": 2048,
+    "originalHeight": 2048,
+    "src": "/assets/presentation/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg-800.webp",
+    "width": 800,
+    "height": 800,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg-400.webp",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/assets/presentation/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/assets/presentation/blog/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg-1080.webp",
+        "width": 1080,
+        "height": 1080
+      }
+    ]
+  },
+  "/assets/blog/traumatic-memories-and-treatment/featured.jpg": {
+    "sha256": "41796d5f9ced2678a65a3592764828bc546274ab38ca236bb8b057034d4d3452",
+    "originalWidth": 640,
+    "originalHeight": 365,
+    "src": "/assets/presentation/blog/traumatic-memories-and-treatment-800.webp",
+    "width": 640,
+    "height": 365,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/traumatic-memories-and-treatment-400.webp",
+        "width": 400,
+        "height": 228
+      },
+      {
+        "src": "/assets/presentation/blog/traumatic-memories-and-treatment-800.webp",
+        "width": 640,
+        "height": 365
+      }
+    ]
+  },
+  "/assets/blog/what-is-anxiety-therapy/featured.png": {
+    "sha256": "9d5e68712ad33d84ddd36203c7b0f270066aa889880471c61db5f71ac05ce32b",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/what-is-anxiety-therapy-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/what-is-anxiety-therapy-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/what-is-anxiety-therapy-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/what-is-anxiety-therapy-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/what-is-emdr-therapy-and-how-does-it-work/featured.png": {
+    "sha256": "642a0397687bbe802907e0a9506d32189d8e20d16899f6fc450fe0afe896bcf1",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/what-is-emdr-therapy-and-how-does-it-work-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/what-is-emdr-therapy-and-how-does-it-work-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/what-is-emdr-therapy-and-how-does-it-work-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/what-is-emdr-therapy-and-how-does-it-work-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/blog/what-to-expect-in-emdr-therapy-sessions/featured.png": {
+    "sha256": "72e0e5de221b43dd93280a6470bbd198c8cd096006ca9afd76cf8d5a22a0c49b",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/what-to-expect-in-emdr-therapy-sessions-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/what-to-expect-in-emdr-therapy-sessions-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/what-to-expect-in-emdr-therapy-sessions-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/what-to-expect-in-emdr-therapy-sessions-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
+  },
+  "/assets/ivory-anxiety.jpg": {
+    "sha256": "41b762086a4de87d039606ac4f573af79d3f88c2260050434aecd7a563692a1f",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/anxiety-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/anxiety-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  "/assets/ivory-relationships.jpg": {
+    "sha256": "0bef1eebc8fcf23f73538e1b534339dc5fa50f509cb1acef743d08a2b2376304",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/relationships-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/relationships-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  "/assets/ivory-trauma.jpg": {
+    "sha256": "cc0437b565604f3e4c2dc16305c67e191aa89d2105d33c2cccedc118be053459",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/trauma-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/trauma-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  "/assets/ivory-parenting.jpg": {
+    "sha256": "b223301bfab4007f554fc88fdd7b526d0ecc71962e9e22a9d8826d49c943b655",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/parenting-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/parenting-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  "/assets/ivory-grief.jpg": {
+    "sha256": "8d498b06d241c4a84c27dff00a9e3bf5919216a11e2a39c51913ce3a46dbf256",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/grief-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/grief-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  },
+  "/assets/ivory-teen.jpg": {
+    "sha256": "863a1757c6db734fc72049f820eb4d630dff5f82612758956800b4a4a2b28cb7",
+    "originalWidth": 1448,
+    "originalHeight": 1086,
+    "src": "/assets/presentation/home/teen-800.webp",
+    "width": 800,
+    "height": 600,
+    "variants": [
+      {
+        "src": "/assets/presentation/home/teen-800.webp",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
