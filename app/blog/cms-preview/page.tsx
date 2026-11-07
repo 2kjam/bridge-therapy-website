@@ -19,7 +19,7 @@ export default async function CmsPreview() {
       <p>Staging preview only. These articles have not been added to the public blog. Images and embeds are omitted pending review.</p>
       {articles.length ? <ul>{articles.map(article => <li key={article.id}>
         <a href={`/blog/cms-preview/${article.slug}/`}>{article.title}</a>
-      </li>)}</ul> : <p>No published articles for The Bridge were returned.</p>}
+      </li>)}</ul> : <p>No approved articles for The Bridge were returned.</p>}
       <a href="/blog/">Return to the existing blog</a>
     </main>
   </SiteShell>;

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { stagingBuildAllowed, previewEnabled, validArticle, cleanArticleHtml } from '../lib/babylovegrowth/policy.mjs';
+import { stagingBuildAllowed, previewEnabled, validArticle, validStagingArticle, cleanArticleHtml } from '../lib/babylovegrowth/policy.mjs';
 const configured = { BRIDGE_BABYLOVE_PREVIEW: 'true', BABYLOVEGROWTH_BLOG_API_KEY: 'test-placeholder' };
 test('preview is opt-in and never enabled on production site', () => {
   assert.equal(previewEnabled({}), false);
@@ -32,4 +32,14 @@ test('build identity safely survives absent serverless build variables', () => {
   assert.equal(previewEnabled({...configured, NODE_ENV:'production'}, true), true);
   assert.equal(previewEnabled({...configured, NODE_ENV:'production'}, false), false);
   assert.equal(previewEnabled({NODE_ENV:'production'}, true), false);
+});
+
+test('staging permits only the two specifically approved drafts', () => {
+  const article = {id:1069980, slug:'online-couples-counseling', title:'Example', published:false, orgWebsite:'https://thebridgetherapy.com/'};
+  assert.equal(validStagingArticle(article), true);
+  assert.equal(validStagingArticle({...article,id:1069962,slug:'religious-trauma-therapy'}), true);
+  assert.equal(validStagingArticle({...article,id:1069981}), false);
+  assert.equal(validStagingArticle({...article,slug:'different-article'}), false);
+  assert.equal(validStagingArticle({...article,orgWebsite:'https://other.example'}), false);
+  assert.equal(validArticle(article), false);
 });
