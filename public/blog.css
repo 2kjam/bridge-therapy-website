@@ -248,7 +248,7 @@
 .blog-support-card .blog-support-label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
 .legacy-article-body .blog-support-card a { font-weight: 600; }
 
-/* Verified author credentials appear on published native guides only. */
+/* Verified author credentials match native and audited migrated bylines. */
 .blog-author-card {
   display: flex;
   flex-wrap: nowrap;

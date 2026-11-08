@@ -105,7 +105,7 @@ for (const width of [375, 390, 768, 1440]) {
     expect(geometry.bodyWidth).toBeLessThanOrEqual(720);
     expect(geometry.overflow).toBe(false);
     await expect(page.locator(".header")).toBeVisible();
-    await expect(page.locator("footer")).toBeAttached();
+    await expect(page.locator(".site-footer")).toBeAttached();
     await page.screenshot({
       path: testInfo.outputPath(`article-${width}.png`),
       fullPage: true,

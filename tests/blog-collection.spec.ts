@@ -109,10 +109,15 @@ for (const width of [375, 390, 768, 1440]) {
         await expect(page.locator(".blog-meta a")).toHaveText(post.displayedByline);
         await expect(page.locator(".blog-meta a")).toHaveAttribute("href", post.authorProfilePath);
       }
+      const authorCard = page.locator(".blog-author-card");
+      await expect(authorCard).toHaveCount(1);
+      await expect(authorCard.locator("h2")).toHaveText(post.displayedByline);
+      await expect(authorCard.locator("a")).toHaveAttribute("href", post.authorProfilePath);
+      await expect(authorCard).toHaveCSS("flex-wrap", "nowrap");
       const layout = await page
         .locator(".blog-article")
         .evaluate(async (article) => {
-          const images = Array.from(article.querySelectorAll("img"));
+          const images = Array.from(article.querySelectorAll<HTMLImageElement>(".blog-featured-image, .legacy-article-body img"));
           // Decode lazy images too, including below-the-fold body placements.
           await Promise.all(
             images.map(async (image) => {
