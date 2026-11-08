@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {measurementId,analyticsReleaseApproved,analyticsBuildAllowed,productionOrigin,safePageView,analyticsConfiguration} from '../lib/analytics-policy.mjs';
+import {measurementId,analyticsReleaseApproved,analyticsBuildAllowed,productionOrigin,safePageView,analyticsConfiguration,analyticsEnabledForChoice} from '../lib/analytics-policy.mjs';
 import {createAnalyticsController} from '../lib/analytics-client.mjs';
 import {contentSecurityPolicy,analyticsContentSecurityPolicy,securityHeaderRule} from '../lib/security-headers.mjs';
 const env={NETLIFY:'true',NODE_ENV:'production',CONTEXT:'production',SITE_ID:'1c0ce777-b889-4f6b-8292-ef7590a4a25e',BRANCH:'main',URL:productionOrigin};
@@ -23,11 +23,11 @@ function browser(origin=productionOrigin){
  const doc={head:{appendChild:s=>appended.push(s)},createElement:tag=>{assert.equal(tag,'script');return{};},set cookie(s){cookies.push(s);},get cookie(){throw Error('Do not read cookie values');},get body(){throw Error('Do not read page or form content');}};
  return {win,doc,appended,cookies,controller:createAnalyticsController(win,doc),commands:()=>win.dataLayer?.map(a=>[...a])??[]};
 }
-test('controller is inert before opt-in and sends fixed pageviews only after caller opts in',()=>{
+test('controller is inert until enabled by caller and sends only fixed pageviews',()=>{
  const b=browser();assert.equal(b.appended.length,0);assert.equal(b.commands().length,0);
  b.controller.pageview('/religious-trauma-therapy/?email=synthetic@example.test#private');
  assert.equal(b.appended.length,1);assert.equal(b.appended[0].src,'https://www.googletagmanager.com/gtag/js?id=G-61RSPK36Y0');assert.equal(b.appended[0].referrerPolicy,'no-referrer');assert.equal(b.appended[0].async,true);
- const consent=b.commands().filter(a=>a[0]==='consent');assert.ok(consent.every(a=>Object.values(a[2]).every(v=>v==='denied')));
+ const consent=b.commands().filter(a=>a[0]==='consent');assert.ok(consent.every(a=>a[2].analytics_storage==='granted' && a[2].ad_storage==='denied' && a[2].ad_user_data==='denied' && a[2].ad_personalization==='denied'));
  const event=b.commands().find(a=>a[0]==='event');assert.deepEqual(event,['event','page_view',{send_to:measurementId,...safePageView()}]);
  assert.doesNotMatch(JSON.stringify(b.commands()),/synthetic|trauma|private|email|user_id|user_properties/);
  b.controller.pageview('/religious-trauma-therapy/?email=synthetic@example.test#private');assert.equal(b.commands().filter(a=>a[0]==='event').length,1);
@@ -49,7 +49,23 @@ test('exact-path CSP proposal is isolated; baseline and all other directives rem
  assert.equal(securityHeaderRule().headers.find(h=>h.key==='Content-Security-Policy').value,contentSecurityPolicy);
  assert.equal(securityHeaderRule('Content-Security-Policy',true).headers.find(h=>h.key==='Content-Security-Policy').value,analyticsContentSecurityPolicy);
 });
-test('client source has no form/chat extraction, telemetry hooks or automatic provider metadata',()=>{
+test('tracking has no visible UI or form/chat extraction',()=>{
  const source=fs.readFileSync('lib/analytics-client.mjs','utf8');assert.doesNotMatch(source,/querySelector|addEventListener|FormData|\.value|innerHTML|textContent|location\.(?:href|search|hash)|document\.(?:title|referrer)/);
- const ui=fs.readFileSync('components/analytics-preferences.tsx','utf8');assert.match(ui,/useSyncExternalStore/);assert.match(ui,/globalPrivacyControl/);assert.match(ui,/allowedPaths\.includes\(pathname\)/);
+ const tracker=fs.readFileSync('components/analytics-tracker.tsx','utf8');assert.match(tracker,/return null/);assert.match(tracker,/allowedPaths\.includes\(pathname\)/);assert.match(tracker,/choice === "pending"/);
+ const choice=fs.readFileSync('components/analytics-choice.ts','utf8');assert.match(choice,/useSyncExternalStore/);assert.match(choice,/globalPrivacyControl/);assert.match(choice,/bridge.analytics-choice.v1/);
+});
+test('footer has only an ordinary privacy link; controls are on the privacy page',()=>{
+ const footer=fs.readFileSync('components/footer.tsx','utf8');assert.doesNotMatch(footer,/AnalyticsPreferences|<button|<details/);assert.match(footer,/<a href="\/privacy\/">Privacy/);
+ assert.equal(fs.existsSync('components/analytics-preferences.tsx'),false);
+ assert.equal(fs.existsSync('components/analytics-preferences.module.css'),false);
+ const page=fs.readFileSync('app/privacy/page.tsx','utf8');assert.match(page,/<AnalyticsPrivacyControls/);assert.match(page,/policies.google.com\/technologies\/partner-sites/);
+ assert.doesNotMatch(fs.readFileSync('public/privacy.css','utf8'),/position:\s*(fixed|absolute)|z-index/);
+});
+test('ordinary analytics defaults wait for hydration and preserve saved/browser opt-outs',()=>{
+ for(const choice of ['unknown','granted'])assert.equal(analyticsEnabledForChoice(choice),true);
+ for(const choice of ['denied','blocked','pending'])assert.equal(analyticsEnabledForChoice(choice),false);
+ const source=fs.readFileSync('components/analytics-choice.ts','utf8');assert.match(source,/serverChoice = \(\) => "pending"/);
+ assert.equal(analyticsConfiguration().cookie_expires,7776000);
+ const b=browser();b.controller.pageview('/');b.controller.stop();b.controller.pageview('/');
+ assert.equal(b.commands().filter(a=>a[0]==='event').length,2);assert.equal(b.commands().filter(a=>a[0]==='consent').at(-1)[2].analytics_storage,'granted');
 });

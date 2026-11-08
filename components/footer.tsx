@@ -50,6 +50,7 @@ export function Footer({ id = "location" }: { id?: string }) {
       </div>
       <div className={"footer-fine-print"}>
         <p>{"© 2026 The Bridge Therapeutic Services. All rights reserved."}</p>
+        <a href="/privacy/">Privacy</a>
       </div>
     </footer>
   );

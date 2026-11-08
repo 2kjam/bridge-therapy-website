@@ -537,6 +537,16 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       assert.ok(normalizedText(inquiry).includes("Please do not include sensitive medical or personal health information in this form."));
       inquiry.parentNode.childNodes = inquiry.parentNode.childNodes.filter((n) => n !== inquiry);
     }
+    if (tag === "footer") {
+      // Only the ordinary privacy link is added to the shared footer.
+      const referenceFooter = elements(legacy, "footer")[0];
+      const finePrint = all(referenceFooter, n => attr(n, "class") === "footer-fine-print")[0];
+      const privacyLink = parseFragment('<a href="/privacy/">Privacy</a>').childNodes[0];
+      privacyLink.parentNode = finePrint;
+      finePrint.childNodes.push(privacyLink);
+      assert.equal(elements(current, "details").length, 0);
+      assert.equal(elements(current, "button").length, 0);
+    }
     const original = elements(legacy, tag)[0];
     assert.deepEqual(
       signature(current),
@@ -580,6 +590,11 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     `${route}: legacy script loaded`,
   );
 }
+const privacy = parse(fs.readFileSync(".next/server/app/privacy.html", "utf8"));
+pages.set("/privacy/", privacy);
+assert.equal(normalizedText(elements(privacy, "h1")[0]), "Website privacy");
+assert.equal(elements(privacy, "button").filter(n => normalizedText(n).includes("analytics")).length, 2);
+assert.equal(elements(privacy, "a").filter(n => attr(n, "href") === "https://policies.google.com/technologies/partner-sites").length, 1);
 const directory = parse(fs.readFileSync(".next/server/app/therapists.html", "utf8"));
 pages.set("/therapists/", directory);
 const directoryMain = elements(directory, "main")[0];

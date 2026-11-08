@@ -6,3 +6,6 @@ export function analyticsBuildAllowed(env: Record<string,string|undefined>, phas
 export function safePageView(): Record<string,string>;
 export function analyticsConfiguration(): Record<string,unknown>;
 export const deniedConsent: Record<string,string>;
+
+export const measurementConsent: typeof deniedConsent;
+export function analyticsEnabledForChoice(choice: string): boolean;

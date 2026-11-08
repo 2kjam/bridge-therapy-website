@@ -1,0 +1,10 @@
+.privacy-page { box-sizing: border-box; max-width: 780px; margin: 0 auto; padding: 52px 24px 72px; color: #24332c; overflow-wrap: anywhere; }
+.privacy-page h1 { font: 42px/1.15 Georgia, serif; margin: 0 0 24px; }
+.privacy-page h2 { font: 27px/1.25 Georgia, serif; margin: 32px 0 12px; }
+.privacy-page p { font: 17px/1.65 Arial, sans-serif; margin: 0 0 16px; }
+.privacy-page a { color: #315f57; text-decoration: underline; }
+.privacy-analytics-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.privacy-analytics-actions button { min-height: 44px; padding: 10px 15px; border: 1px solid #41543c; border-radius: 5px; color: #24332c; background: #fbfaf7; font: 16px/1.3 Arial, sans-serif; cursor: pointer; }
+.privacy-analytics-actions button:disabled { opacity: .65; cursor: default; }
+.privacy-page :is(button,a):focus-visible { outline: 3px solid #315f57; outline-offset: 3px; }
+@media (max-width: 480px) { .privacy-page { padding-top: 32px; } .privacy-page h1 { font-size: 34px; } }
