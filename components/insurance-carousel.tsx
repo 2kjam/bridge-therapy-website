@@ -15,7 +15,7 @@ const logos = [
   ["humana.png", "Humana"],
   ["", "UnitedHealthcare"],
   ["multiplan.png", "MultiPlan"],
-  ["umr-transparent.png", "UMR"],
+  ["umr-transparent.png", "UMR insurance logo"],
   ["webtpa.png", "WebTPA"],
   ["magellan-transparent.png", "Magellan Health"],
 ] as const;

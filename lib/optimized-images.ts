@@ -32,3 +32,11 @@ export function serviceImageProps(source: string) {
       `calc((min(94vw, 1520px) - 90px) * ${other / 6})`,
   );
 }
+
+// Progressive enhancement: WebP remains the fallback for browsers without AVIF.
+export function backgroundAvifProps(source: "/assets/ivory-hero.jpg" | "/assets/ivory-lake.jpg", sizes: string) {
+  return {
+    srcSet: images[source].avifVariants.map(variant => `${variant.src} ${variant.width}w`).join(", "),
+    sizes,
+  };
+}

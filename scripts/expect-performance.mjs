@@ -1,4 +1,4 @@
-import { optimizedImageProps, serviceImageProps, heroImageSizes, portraitImageSizes } from "../lib/optimized-images.ts";
+import { optimizedImageProps, serviceImageProps, heroImageSizes, portraitImageSizes, backgroundAvifProps } from "../lib/optimized-images.ts";
 import fs from "node:fs";
 import { parseFragment } from "parse5";
 const optimized = JSON.parse(fs.readFileSync("lib/optimized-images.json", "utf8"));
@@ -55,5 +55,17 @@ export function expectPerformance(doc, route) {
     else if (source?.startsWith("/assets/presentation/home/")) props = serviceImageProps(source);
     else if (optimized[source] && source.endsWith(".jpg")) props = optimizedImageProps(source, portraitImageSizes);
     for (const [key, value] of Object.entries(props)) set(item, key === "srcSet" ? "srcset" : key, value);
+    if (["/assets/ivory-hero.jpg", "/assets/ivory-lake.jpg"].includes(source)) {
+      const hero = source.includes("hero");
+      set(item, "src", `/assets/presentation/delivery/${hero ? "hero" : "lake"}-1448.webp`);
+      const picture = parseFragment('<picture style="display:contents"><source type="image/avif"></picture>').childNodes[0];
+      const parent = item.parentNode;
+      parent.childNodes[parent.childNodes.indexOf(item)] = picture;
+      picture.parentNode = parent;
+      const avif = backgroundAvifProps(source, hero ? heroImageSizes : "max(100vw, 1080px)");
+      for (const [key, value] of Object.entries(avif)) set(picture.childNodes[0], key === "srcSet" ? "srcset" : key, value);
+      item.parentNode = picture;
+      picture.childNodes.push(item);
+    }
   }
 }

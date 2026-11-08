@@ -13,7 +13,7 @@ test("delivery variants preserve originals, composition, dimensions and image qu
     const input = fs.readFileSync(`public${entry.inputSource}`);
     assert.equal(hash(input), entry.inputSha256, entry.inputSource);
     assert.equal(new Set(entry.variants.map(v => v.width)).size, entry.variants.length);
-    for (const variant of entry.variants) {
+    for (const variant of [...entry.variants, ...(entry.avifVariants ?? [])]) {
       const bytes = fs.readFileSync(`public${variant.src}`);
       const metadata = await sharp(bytes).metadata();
       assert.equal(bytes.length, variant.bytes, variant.src);

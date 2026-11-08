@@ -30,6 +30,32 @@
         "lossless": false,
         "reused": false
       }
+    ],
+    "avifVariants": [
+      {
+        "src": "/assets/presentation/delivery/hero-seo-1080.avif",
+        "width": 1080,
+        "height": 360,
+        "bytes": 27061,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/hero-seo-1448.avif",
+        "width": 1448,
+        "height": 483,
+        "bytes": 42401,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/hero-seo-2172.avif",
+        "width": 2172,
+        "height": 724,
+        "bytes": 79748,
+        "lossless": false,
+        "reused": false
+      }
     ]
   },
   "/assets/ivory-lake.jpg": {
@@ -56,12 +82,38 @@
         "reused": false
       },
       {
-        "src": "/assets/ivory-lake.jpg",
+        "src": "/assets/presentation/delivery/lake-seo-2172.webp",
         "width": 2172,
         "height": 724,
-        "bytes": 417618,
+        "bytes": 313726,
         "lossless": false,
-        "reused": true
+        "reused": false
+      }
+    ],
+    "avifVariants": [
+      {
+        "src": "/assets/presentation/delivery/lake-seo-1080.avif",
+        "width": 1080,
+        "height": 360,
+        "bytes": 76930,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/lake-seo-1448.avif",
+        "width": 1448,
+        "height": 483,
+        "bytes": 129449,
+        "lossless": false,
+        "reused": false
+      },
+      {
+        "src": "/assets/presentation/delivery/lake-seo-2172.avif",
+        "width": 2172,
+        "height": 724,
+        "bytes": 248778,
+        "lossless": false,
+        "reused": false
       }
     ]
   },
