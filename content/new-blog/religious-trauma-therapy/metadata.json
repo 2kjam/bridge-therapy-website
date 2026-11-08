@@ -6,8 +6,8 @@
   "publishedAt": "2026-11-08T01:12:43.746Z",
   "publicationDate": "2026-11-07",
   "publicationTimezone": "America/Chicago",
-  "displayedByline": "The Bridge Therapeutic Services Team",
-  "authorType": "Organization",
+  "displayedByline": "Jennifer Wood LPC-S",
+  "authorType": "Person",
   "excerptHtml": "",
   "categories": [
     "Trauma"
@@ -25,5 +25,6 @@
     "width": 1260,
     "height": 720,
     "alt": "Abstract path bridging two calm platforms"
-  }
+  },
+  "authorProfilePath": "/therapists/jennifer-wood/"
 }

@@ -30,12 +30,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : {}),
     title: { absolute: post.seo.title },
     description: post.seo.description,
+    ...(post.authorType === "Person" && post.authorProfilePath
+      ? { authors: [{ name: post.displayedByline, url: canonicalUrl(post.authorProfilePath) }] }
+      : {}),
     openGraph: {
       type: "article",
       title: post.seo.title,
       description: post.seo.description,
       url: canonicalUrl(post.legacyPath),
       siteName: "The Bridge Therapeutic Services",
+      ...(post.authorType === "Person" && post.authorProfilePath
+        ? { authors: [canonicalUrl(post.authorProfilePath)] }
+        : {}),
       ...(post.publishedAt ? { publishedTime: post.publishedAt } : {}),
       images: [
         {

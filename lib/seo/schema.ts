@@ -302,7 +302,7 @@ export function articleSchema(post: BlogPost): JsonObject {
             "@type": "Person",
             "@id": personId(post.authorProfilePath),
             name:
-              therapists.find(
+              post.authorType === "Person" ? post.displayedByline : therapists.find(
                 (person) => person.path === post.authorProfilePath,
               )?.name ?? post.displayedByline,
             url: canonicalUrl(post.authorProfilePath),
@@ -313,7 +313,7 @@ export function articleSchema(post: BlogPost): JsonObject {
     "@id": `${url}#article`,
     headline: post.title,
     ...(post.publicationDate ? { datePublished: post.publicationDate } : {}),
-    ...(post.authorType === "Organization"
+    ...(post.authorType
       ? { description: post.seo.description }
       : {}),
     mainEntityOfPage: { "@id": `${url}#webpage` },
