@@ -8,15 +8,15 @@ export function AnalyticsPreferencesPreview() {
   return <details className={styles.preferences}>
     <summary>Analytics preferences</summary>
     <section className={styles.panel} aria-labelledby="analytics-choice-title">
-      <h2 id="analytics-choice-title">Optional website analytics</h2>
-      <p>This website uses Google Analytics to understand general website use, with analytics cookies lasting up to 90 days. You can turn analytics off here. We exclude page topics, URL details, and form or chat contents. Advertising features are disabled. Google still receives connection information such as your IP address.</p>
-      <p><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses data</a>. You can change your choice here at any time.</p>
+      <h2 id="analytics-choice-title">Website analytics</h2>
+      <p>We use Google Analytics cookies to understand website traffic. Turn it off below.</p>
+      <p><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Privacy details</a></p>
       <div className={styles.actions}>
         <button onClick={() => setEnabled(false)}>Turn off analytics</button>
         <button onClick={() => setEnabled(true)}>Turn on analytics</button>
       </div>
-      <p className={styles.status} role="status">Website analytics {enabled ? "on" : "off"} (preview only).</p>
-      <p><strong>Staging preview:</strong> these buttons demonstrate the design only. No Google Analytics script, cookies or events are enabled here.</p>
+      <p className={styles.status} role="status">Preview only: {enabled ? "on" : "off"}. No tracking.</p>
+
     </section>
   </details>;
 }
