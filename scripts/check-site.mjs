@@ -538,6 +538,18 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       assert.ok(normalizedText(inquiry).includes("Please do not include sensitive medical or personal health information in this form."));
       inquiry.parentNode.childNodes = inquiry.parentNode.childNodes.filter((n) => n !== inquiry);
     }
+    if (tag === "footer") {
+      // Approved optional control: validate it independently, then keep the
+      // complete pre-existing footer comparison intact.
+      const preferences = elements(current, "details").filter(n => normalizedText(elements(n, "summary")[0]) === "Analytics preferences");
+      assert.ok(preferences.length <= 1, `${route}: one analytics footer control`);
+      for (const control of preferences) {
+        assert.equal(attr(control, "open"), undefined, `${route}: preferences collapsed`);
+        assert.deepEqual(elements(control, "button").map(normalizedText), ["Turn off analytics", "Turn on analytics"]);
+        assert.equal(elements(control, "script").length, 0);
+      }
+      current = {...current, childNodes: current.childNodes.filter(n => !preferences.includes(n))};
+    }
     const original = elements(legacy, tag)[0];
     assert.deepEqual(
       signature(current),

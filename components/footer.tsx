@@ -1,3 +1,5 @@
+import { AnalyticsPreferencesPreview } from "./analytics-preferences-preview";
+
 export function Footer({ id = "location" }: { id?: string }) {
   return (
     <footer className={"site-footer ivory-footer"} id={id}>
@@ -51,6 +53,7 @@ export function Footer({ id = "location" }: { id?: string }) {
       <div className={"footer-fine-print"}>
         <p>{"© 2026 The Bridge Therapeutic Services. All rights reserved."}</p>
       </div>
+      {process.env.BRIDGE_BUILD_CMS_STAGING === "true" && <AnalyticsPreferencesPreview />}
     </footer>
   );
 }
