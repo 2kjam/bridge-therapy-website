@@ -1,9 +1,7 @@
-# No-popup Analytics design preview
+# Analytics staging preview
 
-Staging-only design preview requested by Adam. The footer has a native closed disclosure matching the proposed production design, with simulated turn-off/turn-on state. It never opens automatically or floats over content.
+Adam requested removal of the Analytics footer control entirely. Staging has no Analytics popup, floating button, footer disclosure or provider loader. All preview-only control code and styles have been removed; the original footer is restored.
 
-This component imports no analytics provider and performs no network, cookie or storage operations. It clearly labels its controls as a preview. The existing trusted staging build flag gates it; production and other site identities exclude it. Existing restrictive CSP, noindex, password protection, CMS integration and article content are unchanged.
+Staging remains protected and noindex with its existing restrictive CSP and sends no GA events. This previews the unobstructed presentation only, not production measurement or Google receipt. Production remains unchanged pending review and approval.
 
-This preview tests presentation, accessibility and local button behavior only. It does not test default-on production measurement, saved choices, cookie lifetime, outgoing GA payloads or Google receipt. Production publication remains on hold pending review.
-
-Checks: eight preview/security tests, staging production build, TypeScript/site checks and ESLint. Hosted verification is a separate post-deploy step.
+The proposed production direction remains default-on analytics, saved opt-outs/GPC/DNT respected, no form/chat contents or sensitive URL parameters. Its disclosure belongs in an ordinary accurate privacy policy, not a replacement popup. No existing full privacy-policy page was verified by this UI removal. This change does not assert legal sufficiency or publish a policy for the business.
