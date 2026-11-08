@@ -1,3 +1,4 @@
+import { ArticleAuthorCard } from "@/components/blog/article-author-card";
 import { StructuredData } from "@/components/structured-data";
 import { articleSchema } from "@/lib/seo/schema";
 import { blogHero } from "@/lib/presentation-images";
@@ -95,6 +96,7 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
               __html: presentArticleBody(post.bodyHtml),
             }}
           />
+          <ArticleAuthorCard post={post} />
         </article>
         <nav className="blog-neighbors" aria-label="Article navigation">
           {older && (

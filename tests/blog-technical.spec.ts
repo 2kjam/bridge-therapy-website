@@ -54,6 +54,14 @@ for (const width of [320, 375, 390, 768, 1440]) {
       }
       if (path.startsWith("/blog/")) {
         await expect(page.locator(".blog-support-card")).toHaveCount(2);
+        const authorCard = page.locator(".blog-author-card");
+        await expect(authorCard).toHaveCount(1);
+        await expect(authorCard.getByRole("heading", { name: "Jennifer Wood LPC-S", exact: true })).toBeVisible();
+        const profileLink = authorCard.getByRole("link", { name: /View Jennifer’s profile/ });
+        await expect(profileLink).toHaveAttribute("href", "/therapists/jennifer-wood/");
+        await profileLink.focus();
+        expect(await profileLink.evaluate(node => getComputedStyle(node).outlineStyle)).not.toBe("none");
+        expect(await authorCard.evaluate(node => node.getBoundingClientRect().right <= innerWidth)).toBe(true);
         await expect(page.locator("main")).not.toContainText(/Adam|BabyLoveGrowth/i);
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://www.thebridgetherapy.com" + path);
         const structure = await page.locator(".legacy-article-body").evaluate((body) => ({
