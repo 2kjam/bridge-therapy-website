@@ -49,7 +49,7 @@ test('restores safe image, semantic layout and anchored links without supplied s
   const html = `<h1>My title</h1><div data-cta-card="true" style="position:fixed"><div>CTA copy</div><a href="https://thebridgetherapy.com/contact/">Contact</a></div><h2 id="details">Details</h2><a href="#details">Jump</a><img src="${src}" alt='Photo & "caption"' onerror="alert(1)"><table><tr><td colspan="2">Value</td></tr></table>`;
   const clean = cleanArticleHtml(html, 'online-couples-counseling', 'My title');
   assert.doesNotMatch(clean, /My title|onerror|style=|src="https:/);
-  assert.match(clean, /class="cms-cta"/);
+  assert.match(clean, /class="cms-cta blog-support-card"/);
   assert.match(clean, /id="cms-details"/);
   assert.match(clean, /href="#cms-details"/);
   assert.match(clean, /href="\/contact\/"/);
@@ -87,4 +87,13 @@ test('requested personal-name removal is scoped to the two staging articles', ()
     assert.match(cleanArticleHtml('<p>We discussed BabyLoveGrowth.</p>', slug), /BabyLoveGrowth/);
   }
   assert.match(cleanArticleHtml(credit, 'another-article'), /Created with BabyLoveGrowth/);
+});
+
+
+test("CMS card semantics preserve text and distinguish headings from paragraphs", () => {
+  const html = '<div data-cta-card="true"><div><div><span>THE BRIDGE</span></div><div>Family support</div><div>First paragraph.</div><div>Second paragraph.</div><a href="/contact/">Contact us</a></div></div>';
+  const result = cleanArticleHtml(html, "blended-family-counseling");
+  assert.match(result, /<h2>Family support<\/h2>/);
+  assert.match(result, /<p>First paragraph.<\/p><p>Second paragraph.<\/p>/);
+  assert.match(result, /href="\/contact\/"/);
 });

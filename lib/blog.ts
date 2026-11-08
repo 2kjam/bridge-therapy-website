@@ -4,7 +4,7 @@ import path from "node:path";
 export interface BlogPost {
   id: string;
   status?: "draft" | "published";
-  authorType?: "Organization";
+  authorType?: "Organization" | "Person";
   legacyPath: string;
   title: string;
   publishedAt: string;
@@ -139,7 +139,8 @@ export function getNewBlogPosts(includeDrafts = false): BlogPost[] {
       if (
         !/^\/blog\/[a-z0-9-]+\/$/.test(post.legacyPath) ||
         !post.title ||
-        post.authorType !== "Organization" ||
+        (post.authorType !== "Organization" &&
+          !(post.authorType === "Person" && /^\/therapists\/[a-z-]+\/$/.test(post.authorProfilePath ?? ""))) ||
         !["draft", "published"].includes(post.status ?? "")
       )
         throw new Error("Invalid native blog metadata");

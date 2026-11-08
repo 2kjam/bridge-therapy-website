@@ -23,3 +23,11 @@
 
 .cms-article-body .cms-cta div:has(> span) { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #41543c; }
 .cms-article-body .cms-cta div:has(> span) + div:not(:has(div)), .cms-article-body .cms-cta div > div:first-child:not(:has(div,span,a)):not(:empty) { font-size: 23px; font-weight: 700; line-height: 1.3; }
+
+/* Share production callout proportions; keep vendor card text in real blocks. */
+.cms-article-body .cms-cta { background: #f0f2eb; border-color: #cdd3c6; border-radius: 12px; }
+.cms-article-body .cms-cta p { margin: .75rem 0; }
+.cms-article-body .cms-cta h2 { font-size: clamp(27px, 3vw, 34px); margin: .5rem 0 .65em; }
+.cms-article-body .cms-cta p:has(> span) { font-size: .85rem; font-weight: 600; letter-spacing: .04em; }
+.cms-article-body .cms-cta a { min-height: 44px; box-sizing: border-box; }
+.cms-article-body .cms-cta a:focus-visible { outline: 3px solid #455a3d; outline-offset: 3px; }
