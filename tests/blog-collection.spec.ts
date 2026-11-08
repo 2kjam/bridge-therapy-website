@@ -216,7 +216,7 @@ test("verified therapist bylines: all 19 links, direct profile routes, keyboard 
   }
   await page.goto("/blog/");
   const cardLinks = page.locator(".blog-card-link");
-  await expect(cardLinks).toHaveCount(20);
+  await expect(cardLinks).toHaveCount(22);
   await expect(cardLinks.locator("a")).toHaveCount(0);
   await expect(page.locator(".blog-card-copy > p")).toHaveText(getPublishedBlogPosts().map((post) => post.displayedByline));
 });

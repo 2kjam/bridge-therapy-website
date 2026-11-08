@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const articles = [
+  "/blog/online-couples-counseling/",
+  "/blog/religious-trauma-therapy/",
   "/news/2021/4/11/the-bridge-community-spotlight-featuring-beth-reed-with-sightorg/",
   "/news/2026/8/21/how-to-calm-an-anxious-mind-learning-to-quiet-your-soul-with-god/",
   "/news/2019/5/21/storm-anxiety/",
@@ -44,11 +46,26 @@ for (const width of [320, 375, 390, 768, 1440]) {
             loading: img.loading,
           };
         });
-        expect(data.src).toContain("/assets/presentation/blog/");
-        expect(data.width).toBeLessThanOrEqual(1080);
+        expect(data.src).toContain(path.startsWith("/blog/") ? "/assets/blog/approved-2026-11/" : "/assets/presentation/blog/");
+        expect(data.width).toBeLessThanOrEqual(path.startsWith("/blog/") ? 1260 : 1080);
         expect(data.ratio).toBeCloseTo(data.originalRatio, 1);
         expect(data.priority).toBe("high");
         expect(data.loading).not.toBe("lazy");
+      }
+      if (path.startsWith("/blog/")) {
+        await expect(page.locator(".blog-support-card")).toHaveCount(2);
+        await expect(page.locator("main")).not.toContainText(/Adam|BabyLoveGrowth/i);
+        await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://www.thebridgetherapy.com" + path);
+        const structure = await page.locator(".legacy-article-body").evaluate((body) => ({
+          brokenAnchors: [...body.querySelectorAll('a[href^="#"]')].filter(a => !document.getElementById(a.getAttribute("href")!.slice(1))).length,
+          externalMedia: [...body.querySelectorAll("img")].filter(img => !img.getAttribute("src")!.startsWith("/assets/blog/approved-2026-11/")).length,
+          unsizedImages: [...body.querySelectorAll("img")].filter(img => !img.width || !img.height || img.loading !== "lazy").length,
+          headings: body.querySelectorAll("h2,h3").length,
+        }));
+        expect(structure.brokenAnchors).toBe(0);
+        expect(structure.externalMedia).toBe(0);
+        expect(structure.unsizedImages).toBe(0);
+        expect(structure.headings).toBeGreaterThan(20);
       }
       await page.screenshot({
         path: info.outputPath(

@@ -269,7 +269,7 @@ test("every JSON-LD script is valid, canonical, safe, and free of forbidden mark
       (post) => post.legacyPath.replace(/\/$/, "") + "/",
     ),
   ];
-  assert.equal(routes.length, 55);
+  assert.equal(routes.length, 57);
   for (const path of routes) {
     const { raw, data } = builtJsonLd(path);
     assert.equal(raw.includes("<"), false, path);
@@ -342,3 +342,19 @@ test("announcement has approved date, shared organization author/publisher, imag
     ["Home", "Blog", "Welcome to Our New Website!"],
   );
 });
+
+for (const slug of ["online-couples-counseling", "religious-trauma-therapy"]) {
+  test(`approved native article ${slug} has organization schema and a canonical image`, () => {
+    const path = `/blog/${slug}/`;
+    const { data } = builtJsonLd(path);
+    const post = nodeOfType(data, "BlogPosting");
+    assert.equal(post.url, origin + path);
+    assert.equal(post.datePublished, "2026-11-07");
+    assert.equal(post.author["@type"], "Organization");
+    assert.equal(post.author["@id"], ORGANIZATION_ID);
+    assert.equal(post.publisher["@id"], ORGANIZATION_ID);
+    assert.match(post.image, /^https:\/\/www\.thebridgetherapy\.com\/assets\/blog\/approved-2026-11\//);
+    assert.ok(fs.existsSync("public" + post.image.slice(origin.length)));
+    assert.doesNotMatch(JSON.stringify(data), /Adam|BabyLoveGrowth|cms-preview/i);
+  });
+}

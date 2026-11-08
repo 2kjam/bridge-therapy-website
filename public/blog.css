@@ -233,3 +233,17 @@
     padding: 22px;
   }
 }
+
+/* Reviewed native article callouts retain readable paragraphs on every screen. */
+.blog-support-card {
+  margin: 2rem 0;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px solid #cdd3c6;
+  border-radius: 12px;
+  background: #f0f2eb;
+  overflow-wrap: anywhere;
+}
+.legacy-article-body .blog-support-card h2 { margin-top: 0.5rem; }
+.legacy-article-body .blog-support-card p { margin: 0.75rem 0; }
+.blog-support-card .blog-support-label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; }
+.legacy-article-body .blog-support-card a { font-weight: 600; }
