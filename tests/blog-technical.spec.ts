@@ -56,6 +56,7 @@ for (const width of [320, 375, 390, 768, 1440]) {
         await expect(page.locator(".blog-support-card")).toHaveCount(2);
         const authorCard = page.locator(".blog-author-card");
         await expect(authorCard).toHaveCount(1);
+        await expect(authorCard).toHaveCSS("flex-wrap", "nowrap");
         await expect(authorCard.getByRole("heading", { name: "Jennifer Wood LPC-S", exact: true })).toBeVisible();
         const profileLink = authorCard.getByRole("link", { name: /View Jennifer’s profile/ });
         await expect(profileLink).toHaveAttribute("href", "/therapists/jennifer-wood/");
