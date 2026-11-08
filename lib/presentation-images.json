@@ -773,5 +773,61 @@
     "src": "/assets/blog/approved-2026-11/1793990449656_abstract-bridge-between-two-counseling-platforms-480.webp",
     "width": 480,
     "height": 274
+  },
+  "/assets/blog/approved-2026-11/blended-family-sunset-1080.webp": {
+    "src": "/assets/blog/approved-2026-11/blended-family-sunset-1080.webp",
+    "width": 1080,
+    "height": 720,
+    "bytes": 110484,
+    "originalWidth": 1080,
+    "originalHeight": 720,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-sunset-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 35542
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-sunset-960.webp",
+        "width": 960,
+        "height": 640,
+        "bytes": 92808
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-sunset-1080.webp",
+        "width": 1080,
+        "height": 720,
+        "bytes": 110484
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11/blended-family-stages-1280.webp": {
+    "src": "/assets/blog/approved-2026-11/blended-family-stages-1280.webp",
+    "width": 1280,
+    "height": 720,
+    "bytes": 85946,
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-stages-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 19858
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-stages-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 54962
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/blended-family-stages-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 85946
+      }
+    ]
   }
 }

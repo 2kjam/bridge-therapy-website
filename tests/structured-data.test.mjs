@@ -269,7 +269,7 @@ test("every JSON-LD script is valid, canonical, safe, and free of forbidden mark
       (post) => post.legacyPath.replace(/\/$/, "") + "/",
     ),
   ];
-  assert.equal(routes.length, 57);
+  assert.equal(routes.length, 58);
   for (const path of routes) {
     const { raw, data } = builtJsonLd(path);
     assert.equal(raw.includes("<"), false, path);
@@ -343,13 +343,13 @@ test("announcement has approved date, shared organization author/publisher, imag
   );
 });
 
-for (const slug of ["online-couples-counseling", "religious-trauma-therapy"]) {
+for (const slug of ["online-couples-counseling", "religious-trauma-therapy", "blended-family-counseling"]) {
   test(`approved native article ${slug} has Jennifer Wood Person authorship and a canonical image`, () => {
     const path = `/blog/${slug}/`;
     const { data } = builtJsonLd(path);
     const post = nodeOfType(data, "BlogPosting");
     assert.equal(post.url, origin + path);
-    assert.equal(post.datePublished, "2026-11-07");
+    assert.equal(post.datePublished, slug === "blended-family-counseling" ? "2026-11-08" : "2026-11-07");
     assert.equal(post.author["@type"], "Person");
     assert.equal(post.author.name, "Jennifer Wood LPC-S");
     assert.equal(post.author["@id"], origin + "/therapists/jennifer-wood/#person");
