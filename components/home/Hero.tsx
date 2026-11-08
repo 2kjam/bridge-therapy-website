@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section className={"ivory-hero"} aria-labelledby={"hero-title"}>
       <picture style={{ display: "contents" }}>
-      <source type="image/avif" {...backgroundAvifProps("/assets/ivory-hero.jpg", heroImageSizes)} />
+      <source style={{ display: "none" }} type="image/avif" {...backgroundAvifProps("/assets/ivory-hero.jpg", heroImageSizes)} />
       <img
         className={"ivory-hero-photo"}
         src={"/assets/presentation/delivery/hero-1448.webp"}

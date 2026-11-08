@@ -58,7 +58,7 @@ export function expectPerformance(doc, route) {
     if (["/assets/ivory-hero.jpg", "/assets/ivory-lake.jpg"].includes(source)) {
       const hero = source.includes("hero");
       set(item, "src", `/assets/presentation/delivery/${hero ? "hero" : "lake"}-1448.webp`);
-      const picture = parseFragment('<picture style="display:contents"><source type="image/avif"></picture>').childNodes[0];
+      const picture = parseFragment('<picture style="display:contents"><source style="display:none" type="image/avif"></picture>').childNodes[0];
       const parent = item.parentNode;
       parent.childNodes[parent.childNodes.indexOf(item)] = picture;
       picture.parentNode = parent;
