@@ -1,3 +1,4 @@
+import { analyticsBuildAllowed } from "./lib/analytics-policy.mjs";
 import type { NextConfig } from "next";
 import { productionIndexingAllowed } from "./lib/seo/policy";
 import {
@@ -5,15 +6,16 @@ import {
 } from "./lib/security-headers.mjs";
 
 export default function nextConfig(phase: string): NextConfig {
+  const analyticsEnabled = analyticsBuildAllowed(process.env, phase);
   const indexingEnabled = productionIndexingAllowed(process.env, phase);
   return {
     trailingSlash: true,
     poweredByHeader: false,
     // Boolean only, never secrets. Ignore any externally supplied BRIDGE_BUILD_INDEXING.
-    env: { BRIDGE_BUILD_INDEXING: String(indexingEnabled) },
+    env: { BRIDGE_BUILD_INDEXING: String(indexingEnabled), BRIDGE_BUILD_ANALYTICS: String(analyticsEnabled) },
     async headers() {
       return [
-        securityHeaderRule("Content-Security-Policy"),
+        securityHeaderRule("Content-Security-Policy", analyticsEnabled),
         {
           source: indexingEnabled
             ? "/:file(robots\\.txt|sitemap\\.xml)"
