@@ -1,0 +1,11 @@
+# Homepage image audit correction
+
+Rendered production inspection found zero img elements without an alt attribute. The audit conflated intentional empty alternatives with missing attributes. Actual pixels and roles were inspected: the hero is a scenic overlook, the lake a sunset, the resource menu a woodland footbridge, Kalynne a portrait beside her visible name/role, and the service cards illustrative photos beside linked text labels. These and the explicitly hidden assistant avatar remain decorative/redundant with alt="". The original ten image logos already have meaningful names; repeated marquee copies remain alt="" within aria-hidden list items. Only the original UMR alternative is clarified to “UMR insurance logo”.
+
+The browser selected hero-2172.webp (140,682 bytes) at the inspected desktop viewport, not the original hero JPEG. The lake stayed lazy until scrolling, then selected lake-1448.webp (238,850 bytes). Thus JPEG fallback references were an audit concern, not evidence both JPEGs loaded on that visit.
+
+Changes: progressive responsive AVIF picture sources at 1080/1448/2172, WebP-only img fallbacks/candidates, unchanged original JPEG files, full proportional composition/dimensions, unchanged crop CSS and loading priority. AVIF hero bytes: 27,061 / 42,401 / 79,748. Lake: 76,930 / 129,449 / 248,778. High-detail lake candidates exceed the suggested 100 KB threshold to retain tested fidelity. A smaller lake encoding failed the existing decoded quality threshold and was rejected; final variants pass >=34 dB PSNR. This is a lab fidelity check, not a field Core Web Vitals measurement.
+
+Validation: production-mode build, TypeScript/site checks for 76 pages, lint, 63 focused homepage/image/article/schema node tests pass. Existing Playwright responsive tests cannot launch the installed Chromium because this environment denies its socket operation; the HTTP-only test passes. Hosted mobile/desktop browser verification follows release. No trace tool is available, so no new LCP/INP/CLS field or trace result is claimed.
+
+Scope excludes article bodies, author attributions, dates, schema, canonical/indexing rules, GTM, forms and vendor settings. Blended Family Counseling remains staging-only pending explicit article approval.

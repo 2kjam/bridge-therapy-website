@@ -1,3 +1,4 @@
+import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CmsArticleTemplate } from "@/components/blog/cms-article";
@@ -28,7 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) {
     const article = previewEnabled(process.env) ? await previewArticle(slug) : null;
     if (!article) notFound();
-    return { title: { absolute: `${article.title} | The Bridge` }, description: article.meta_description, robots: { index: false, follow: false } };
+    const attribution = stagingArticleAuthor(article);
+    return {
+      title: { absolute: `${article.title} | The Bridge` },
+      description: article.meta_description,
+      robots: { index: false, follow: false },
+      ...(attribution ? { authors: [{ name: attribution.name, url: canonicalUrl(attribution.profilePath) }] } : {}),
+    };
   }
   const image = post.featuredImage!;
   return {

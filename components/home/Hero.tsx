@@ -1,17 +1,20 @@
-import { optimizedImageProps, heroImageSizes } from "@/lib/optimized-images";
+import { optimizedImageProps, heroImageSizes, backgroundAvifProps } from "@/lib/optimized-images";
 import { FindTherapistButton } from "../site-interactions";
 export function Hero() {
   return (
     <section className={"ivory-hero"} aria-labelledby={"hero-title"}>
+      <picture style={{ display: "contents" }}>
+      <source type="image/avif" {...backgroundAvifProps("/assets/ivory-hero.jpg", heroImageSizes)} />
       <img
         className={"ivory-hero-photo"}
-        src={"/assets/ivory-hero.jpg"}
+        src={"/assets/presentation/delivery/hero-1448.webp"}
         {...optimizedImageProps("/assets/ivory-hero.jpg", heroImageSizes)}
         alt={""}
         width={"2172"}
         height={"724"}
         fetchPriority={"high"}
       />
+      </picture>
       <div className={"ivory-hero-copy"}>
         <h1 id={"hero-title"}>Counseling and Therapy in Tyler, TX</h1>
         <p className="hero-brand">Real Help for Real Life</p>

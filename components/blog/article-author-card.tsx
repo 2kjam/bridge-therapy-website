@@ -1,12 +1,16 @@
 import type { BlogPost } from "@/lib/blog";
 import { getArticleAuthor } from "@/lib/article-author";
 import { therapists } from "@/lib/seo/schema-data";
+import type { TherapistSchemaRecord } from "@/lib/seo/schema-data";
 import optimizedImages from "@/lib/optimized-images.json";
 
 export function ArticleAuthorCard({ post }: { post: BlogPost }) {
   const author = getArticleAuthor(post, therapists);
   if (!author) return null;
+  return <VerifiedArticleAuthorCard author={author} displayedByline={post.displayedByline} />;
+}
 
+export function VerifiedArticleAuthorCard({ author, displayedByline }: { author: TherapistSchemaRecord; displayedByline: string }) {
   const portrait = optimizedImages[author.image as keyof typeof optimizedImages]?.variants[0];
   const firstName = author.name.split(/[ ,]/)[0];
   // Reuse verified profile facts; this is authorship, not a clinical-review claim.
@@ -23,7 +27,7 @@ export function ArticleAuthorCard({ post }: { post: BlogPost }) {
       />
       <div className="blog-author-copy">
         <p className="blog-author-eyebrow">About the author</p>
-        <h2 id="article-author-name">{post.displayedByline}</h2>
+        <h2 id="article-author-name">{displayedByline}</h2>
         <p className="blog-author-credential">{author.credential}</p>
         {author.role && (
           <p className="blog-author-role">

@@ -3,8 +3,8 @@ import fs from "node:fs";
 
 const images = JSON.parse(fs.readFileSync("lib/optimized-images.json", "utf8"));
 const variants = new Map<string, { width: number }>();
-for (const entry of Object.values(images) as Array<{ variants: Array<{ src: string; width: number }> }>) {
-  for (const variant of entry.variants) variants.set(variant.src, variant);
+for (const entry of Object.values(images) as Array<{ variants: Array<{ src: string; width: number }>; avifVariants?: Array<{ src: string; width: number }> }>) {
+  for (const variant of [...entry.variants, ...(entry.avifVariants ?? [])]) variants.set(variant.src, variant);
 }
 const selector = ".ivory-hero-photo,.ivory-next-background,.ivory-service img,.homepage-team-carousel img,.insurance-logos img,img[src='/assets/chat-assistant.webp']";
 
@@ -33,7 +33,7 @@ for (const width of [320, 375, 390, 768, 1440]) {
       const r = n.getBoundingClientRect(); return { x: r.x, y: r.y, width: r.width, height: r.height };
     }))).toEqual(before);
     for (const row of rows) {
-      const source = images[row.fallback] ?? Object.values(images).find((entry: unknown) => (entry as { variants: Array<{src: string}> }).variants.some(v => v.src === row.selected));
+      const source = images[row.fallback] ?? Object.values(images).find((entry: unknown) => [...(entry as { variants: Array<{src: string}> }).variants, ...((entry as { avifVariants?: Array<{src: string}> }).avifVariants ?? [])].some(v => v.src === row.selected));
       expect(source, row.selected).toBeTruthy();
       const entry = source as {width:number;height:number;variants:Array<{src:string;width:number}>};
       const variant = variants.get(row.selected)!;

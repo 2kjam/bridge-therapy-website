@@ -63,6 +63,7 @@ function expectedSignature(node) {
     "magellan.png": "magellan-transparent.png",
   };
   return signature(node).map((entry) => {
+    if (entry.tag === "img" && entry.attrs.alt === "UMR") entry.attrs.alt = "UMR insurance logo";
     const prefix = "/assets/insurance/";
     if (entry.tag !== "img" || !entry.attrs.src?.startsWith(prefix))
       return entry;

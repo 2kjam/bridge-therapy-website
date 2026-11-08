@@ -1,16 +1,19 @@
-import { optimizedImageProps } from "@/lib/optimized-images";
+import { optimizedImageProps, backgroundAvifProps } from "@/lib/optimized-images";
 export function NextSteps() {
   return (
     <section className={"ivory-next"} id={"getting-started"}>
+      <picture style={{ display: "contents" }}>
+      <source type="image/avif" {...backgroundAvifProps("/assets/ivory-lake.jpg", "max(100vw, 1080px)")} />
       <img
         className="ivory-next-background"
-        src="/assets/ivory-lake.jpg"
+        src="/assets/presentation/delivery/lake-1448.webp"
         {...optimizedImageProps("/assets/ivory-lake.jpg", "max(100vw, 1080px)")}
         width="2172"
         height="724"
         alt=""
         loading="lazy"
       />
+      </picture>
       <div>
         <h2>{"Take the Next Step"}</h2>
         <p>
