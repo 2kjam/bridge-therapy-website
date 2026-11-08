@@ -27,6 +27,7 @@ test('decorative backgrounds offer responsive AVIF and WebP with preserved loadi
     assert.equal(img.parentNode.tagName,'picture');
     const source=all(img.parentNode,n=>n.tagName==='source')[0];
     assert.equal(attr(source,'type'),'image/avif');
+    assert.equal(attr(source,'style'),'display:none', 'Global reset must not turn source into an invisible flex item');
     assert.match(attr(source,'srcset'),/1080\.avif 1080w.*1448\.avif 1448w.*2172\.avif 2172w/);
     assert.match(attr(img,'src'),/\.webp$/);
     assert.doesNotMatch(attr(img,'srcset'),/\.jpg/);
