@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { stagingBuildAllowed, previewEnabled, validArticle, validStagingArticle, cleanArticleHtml, articlePresentation } from '../lib/babylovegrowth/policy.mjs';
 import { parseFragment, serialize } from 'parse5';
+import { readFileSync } from 'node:fs';
 const configured = { BRIDGE_BABYLOVE_PREVIEW: 'true', BABYLOVEGROWTH_BLOG_API_KEY: 'test-placeholder' };
 test('preview is opt-in and never enabled on production site', () => {
   assert.equal(previewEnabled({}), false);
@@ -129,4 +130,49 @@ test("internal editorial links remain ordinary links and external links stay pro
   assert.match(clean, /<a href="\/grief-counseling-tyler\/">Grief support<\/a>/);
   assert.match(clean, /<a href="#cms-answer">Answer<\/a>/);
   assert.match(clean, /<a href="https:\/\/example.com\/" rel="noopener noreferrer nofollow">Reference<\/a>/);
+});
+
+test("generated map cards become first-party location cards without map data or detached credit", () => {
+  const cards = JSON.parse(readFileSync(new URL('./fixtures/babylove-location-cards.json', import.meta.url), 'utf8'));
+  for (const card of cards) {
+    const before = '<p>Article before.</p>';
+    const after = '<h2 id="cms-next">Next section</h2><p>Article after.</p>';
+    const { bodyHtml } = articlePresentation(before + card + after);
+    assert.match(bodyHtml, /^<p>Article before\.<\/p>/);
+    assert.ok(bodyHtml.endsWith(after));
+    assert.match(bodyHtml, /3800 Paluxy Drive, Suite 240, Building 2, Tyler, TX 75703/);
+    assert.match(bodyHtml, /<a href="\/contact\/#location">Get directions<\/a>/);
+    assert.doesNotMatch(bodyHtml, /openstreetmap|google\.com\/maps|32\.307|95\.28|<iframe|<img/i);
+    for (const tag of ['h2', 'p']) {
+      const original = parseFragment(card);
+      const nodes = [];
+      const visit = node => { if (node.tagName === tag) nodes.push(node); for (const child of node.childNodes ?? []) visit(child); };
+      visit(original);
+      const preserved = tag === 'h2' ? nodes[0] : nodes[1];
+      assert.ok(bodyHtml.includes(serialize(preserved)), 'Preserves the support heading and description');
+    }
+    assert.equal(articlePresentation(bodyHtml).bodyHtml, bodyHtml, 'Presentation is idempotent');
+  }
+});
+
+test("map-card replacement removes a map image as well as its attribution", () => {
+  const [card] = JSON.parse(readFileSync(new URL('./fixtures/babylove-location-cards.json', import.meta.url), 'utf8'));
+  const withMap = card.replace('<div><div><div></div>', '<div><div><div><img src="/api/cms-media/?slug=example&amp;file=map.png" alt="Map"></div>');
+  assert.match(withMap, /<img/);
+  assert.doesNotMatch(articlePresentation(withMap).bodyHtml, /<img|openstreetmap|map\.png/i);
+});
+
+test("unrecognized attributed content is not stripped or mistaken for a location card", () => {
+  const html = '<div class="cms-cta blog-support-card"><h2>Article with a map</h2><p>Unrelated content.</p><img src="/map.png"><a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a></div>';
+  assert.equal(articlePresentation(html).bodyHtml, serialize(parseFragment(html)));
+  const [card] = JSON.parse(readFileSync(new URL('./fixtures/babylove-location-cards.json', import.meta.url), 'utf8'));
+  const unknownContent = [
+    card.replace('3800 Paluxy Dr Ste 240, Tyler, TX 75703', 'Important appointment information that must stay.'),
+    card.replace('</h2>', '</h2><section>Important appointment information that must stay.</section>'),
+    card.replace('</h2>', '</h2>Important appointment information that must stay.'),
+    card.replace('© OpenStreetMap contributors', 'Important license information that must stay.'),
+  ];
+  for (const source of unknownContent) {
+    assert.equal(articlePresentation(source).bodyHtml, serialize(parseFragment(source)), 'Preserves unrecognized text and its map attribution');
+  }
 });
