@@ -164,6 +164,8 @@ test("insurance animation pauses, resumes, and respects reduced motion", async (
   await page.goto("/");
   await expect(page.locator("#insurance button")).toHaveCount(0);
   await expect(page.locator("#insurance h2, .insurance-options")).toHaveCount(0);
+  await expect(page.locator('#insurance img[alt="Humana"], #insurance img[src*="humana"]')).toHaveCount(0);
+  await expect(page.locator(".insurance-logos li:not([data-duplicate])")).toHaveCount(11);
   const carousel = page.locator(".insurance-window");
   await carousel.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
@@ -195,7 +197,7 @@ test("insurance animation pauses, resumes, and respects reduced motion", async (
   await expect.poll(() => carousel.evaluate((node) => node.scrollLeft)).toBe(0);
   await expect(
     page.locator(".insurance-logos li:not([data-duplicate])"),
-  ).toHaveCount(12);
+  ).toHaveCount(11);
 });
 
 test("scroll reveals and reduced-motion content remain accessible", async ({
