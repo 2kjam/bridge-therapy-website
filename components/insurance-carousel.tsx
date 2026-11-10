@@ -12,7 +12,6 @@ const logos = [
   ["christus-transparent.png", "CHRISTUS Health"],
   ["", "TRICARE"],
   ["healthfirst-transparent.png", "HealthFirst"],
-  ["humana.png", "Humana"],
   ["", "UnitedHealthcare"],
   ["multiplan.png", "MultiPlan"],
   ["umr-transparent.png", "UMR insurance logo"],
@@ -105,7 +104,7 @@ export function InsuranceCarousel() {
                     // These originals have no surrounding transparent padding.
                     // Balance their painted width with the other wordmarks.
                     style={
-                      file === "humana.png" || file === "webtpa.png"
+                      file === "webtpa.png"
                         ? { width: "92%" }
                         : undefined
                     }

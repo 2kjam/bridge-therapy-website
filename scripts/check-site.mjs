@@ -475,6 +475,20 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     }
   }
   expectBatchOne(legacy, route);
+  if (route === "/") {
+    // Approved removal of Humana only; retain exact checks for all other logos.
+    const insurance = all(legacy, node => attr(node, "id") === "insurance")[0];
+    const humana = elements(insurance, "img").filter(node => attr(node, "alt") === "Humana");
+    assert.equal(humana.length, 2);
+    for (const image of humana) {
+      const item = image.parentNode;
+      assert.equal(item.tagName, "li");
+      item.parentNode.childNodes = item.parentNode.childNodes.filter(node => node !== item);
+    }
+    const currentInsurance = all(built, node => attr(node, "id") === "insurance")[0];
+    assert.equal(elements(currentInsurance, "li").filter(node => attr(node, "data-duplicate") === undefined).length, 11);
+    assert.equal(elements(currentInsurance, "img").filter(node => /humana/i.test(`${attr(node, "src")} ${attr(node, "alt")}`)).length, 0);
+  }
   expectBatchTwo(legacy, route);
   expectPerformance(legacy, route);
   expectResourcesMenu(legacy);
