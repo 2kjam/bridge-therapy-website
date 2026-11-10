@@ -25,11 +25,11 @@ try {
     );
     await expect(page.locator(".next-script")).toHaveCount(0);
     const track = page.locator("#homepage-team-track");
-    await expect(track.locator("li")).toHaveCount(10);
+    await expect(track.locator("li")).toHaveCount(9);
     const links = await track
       .locator("a")
       .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("href")));
-    expect(new Set(links).size).toBe(10);
+    expect(new Set(links).size).toBe(9);
     for (const href of links)
       expect((await page.request.get(href)).status()).toBe(200);
     const menuLinks = await page

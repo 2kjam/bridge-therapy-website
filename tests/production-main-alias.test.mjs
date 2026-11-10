@@ -14,8 +14,8 @@ const identity = { site: { id: "1c0ce777-b889-4f6b-8292-ef7590a4a25e" }, deploy:
 const paths = [...JSON.parse(fs.readFileSync("content/seo/public-pages.json")), ...getBlogPosts().map(p => p.legacyPath.replace(/\/$/, "") + "/")];
 const enabledDocument = () => new Response('<!doctype html><meta name="robots" content="index, follow">');
 
-test("exact production main alias redirects all 54 GET/HEAD pages without exposing enabled HTML", async () => {
-  assert.equal(paths.length, 54);
+test("exact production main alias redirects all 53 GET/HEAD pages without exposing enabled HTML", async () => {
+  assert.equal(paths.length, 53);
   for (const path of paths) for (const method of ["GET", "HEAD"]) {
     const r = await guard(new Request(main + path, { method }), { ...identity, next: enabledDocument });
     assert.equal(r.status, 301, method + path);

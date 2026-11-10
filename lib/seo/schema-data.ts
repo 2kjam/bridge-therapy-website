@@ -68,13 +68,6 @@ export const therapists: TherapistSchemaRecord[] = [
     image: "/assets/misty.jpg",
   },
   {
-    path: "/therapists/sarah-bell/",
-    name: "Sarah Bell, LPC-A",
-    credential: "Licensed Professional Counselor Associate",
-    role: "Supervised by Whitney Briggs, LPC-S",
-    image: "/assets/sarah-bell.jpg",
-  },
-  {
     path: "/therapists/sarah-critzman/",
     name: "Sarah Critzman, LMSW",
     credential: "Licensed Master Social Worker",
@@ -89,7 +82,7 @@ export const services: ServiceSchemaRecord[] = [
     name: "ADHD Counseling & Support",
     description:
       "ADHD counseling and support in Tyler, Texas. Meet Bridge counselors and explore support for attention, routines, and relationships.",
-    therapists: ["/therapists/erin-young/", "/therapists/sarah-bell/"],
+    therapists: ["/therapists/erin-young/"],
   },
   {
     path: "/adoption-counseling-tyler/",
@@ -138,7 +131,7 @@ export const services: ServiceSchemaRecord[] = [
     name: "EMDR Therapy",
     description:
       "EMDR therapy at The Bridge in Tyler, Texas with trained counselors.",
-    therapists: ["/therapists/erin-young/", "/therapists/sarah-bell/"],
+    therapists: ["/therapists/erin-young/"],
   },
   {
     path: "/family-counseling-tyler/",
@@ -216,6 +209,6 @@ export const services: ServiceSchemaRecord[] = [
     name: "Trauma & PTSD Counseling",
     description:
       "Trauma and PTSD counseling at The Bridge in Tyler, Texas, including the option to discuss EMDR with a trained counselor.",
-    therapists: ["/therapists/erin-young/", "/therapists/sarah-bell/"],
+    therapists: ["/therapists/erin-young/"],
   },
 ];

@@ -13,8 +13,8 @@ const identity = { site: { id: "1c0ce777-b889-4f6b-8292-ef7590a4a25e" }, deploy:
 const noUpstream = () => { throw Error("Redirect must not fetch a content document"); };
 const paths = [...JSON.parse(fs.readFileSync("content/seo/public-pages.json")), ...getBlogPosts().map(p => p.legacyPath.replace(/\/$/, "") + "/")];
 
-test("actual guard redirects all 54 content paths for GET and HEAD, without a document", async () => {
-  assert.equal(paths.length, 54);
+test("actual guard redirects all 53 content paths for GET and HEAD, without a document", async () => {
+  assert.equal(paths.length, 53);
   for (const path of paths) for (const method of ["GET", "HEAD"]) {
     const r = await guard(new Request(alias + path, { method }), { ...identity, next: noUpstream });
     assert.equal(r.status, 301, method + path);

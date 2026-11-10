@@ -222,34 +222,6 @@ export default function Page() {
                 </a>
               </div>
             </article>
-            <article>
-              <img
-                src={"/assets/sarah-bell.jpg"}
-                alt={"Sarah Bell, LPC-A"}
-                width={"300"}
-                height={"360"}
-                loading={"lazy"}
-              />
-              <div>
-                <h3>{"Sarah Bell, LPC-A"}</h3>
-                <p className={"service-credential"}>
-                  {
-                    "Licensed Professional Counselor Associate · Supervised by Whitney Briggs, LPC-S"
-                  }
-                </p>
-                <p>
-                  {
-                    "Sarah is trained in EMDR and works with individuals and couples ages 13 and up. Her experience includes trauma, anxiety, depression, and relationship concerns."
-                  }
-                </p>
-                <a
-                  className={"service-text-link"}
-                  href={"/therapists/sarah-bell/"}
-                >
-                  {"Read counselor profile →"}
-                </a>
-              </div>
-            </article>
           </div>
         </section>
         {"\n "}

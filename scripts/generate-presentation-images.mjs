@@ -25,7 +25,7 @@ async function generate(src, group, name, widths) {
     ...variants[Math.min(1, variants.length - 1)], variants,
   };
 }
-for (const name of ["kalynne", "jennifer", "erin", "jill", "alyx", "misty", "kim", "kelley", "denise", "sarah-bell", "sarah-critzman", "team"]) {
+for (const name of ["kalynne", "jennifer", "erin", "jill", "alyx", "misty", "kim", "kelley", "denise",  "sarah-critzman", "team"]) {
   await generate(`/assets/${name}.jpg`, "menu", name, [name === "kalynne" ? 480 : name === "team" ? 1200 : 500]);
 }
 for (const folder of fs.readdirSync("content/blog")) {

@@ -36,7 +36,7 @@ for (const name of ["anxiety","relationships","parenting","grief","teens"]) {
   await generate(src, `service-${name}`, [240,400,600,800], { existing: {800:src} });
 }
 await generate("/assets/presentation/home/trauma-800.webp", "service-trauma", [240,400,600,800], { inputSource:"/assets/ivory-trauma.jpg", existing:{800:"/assets/presentation/home/trauma-800.webp"} });
-for (const name of ["jennifer","erin","jill","alyx","misty","kim","kelley","denise","sarah-bell","sarah-critzman"]) {
+for (const name of ["jennifer","erin","jill","alyx","misty","kim","kelley","denise","sarah-critzman"]) {
   const src = `/assets/${name}.jpg`;
   const info = await sharp(`public${src}`).metadata();
   await generate(src, `portrait-${name}`, name === "erin" ? [500] : info.width > 500 ? [240,500,info.width] : [240,500], { existing:{500:`/assets/presentation/menu/${name}-500.webp`}, quality:90 });

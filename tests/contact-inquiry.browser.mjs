@@ -42,16 +42,15 @@ try {
     "kim-gonzales",
     "kelley-bell",
     "denise-santos",
-    "sarah-bell",
     "sarah-critzman",
   ];
-  for (const slug of [...slugs, "unknown"]) {
+  for (const slug of [...slugs, "unknown", "sarah-bell"]) {
     await page.goto(`${base}/contact/?therapist=${slug}`, {
       waitUntil: "networkidle",
     });
     assert.equal(
       await page.locator("#inquiry-therapist").inputValue(),
-      slug === "unknown" ? "" : slug,
+      slugs.includes(slug) ? slug : "",
     );
   }
   await page.selectOption("#inquiry-therapist", "erin-young");
@@ -142,7 +141,7 @@ try {
       assert.equal((await page.request.get(href)).status(), 200);
   }
   console.log(
-    "PASS: 10 preselected therapists, unknown fallback, editable selection, client validation, mocked success/error, retained input, fallback links, four widths, existing FAQs and local links. No mail sent.",
+    "PASS: 9 preselected current therapists, unknown fallback, editable selection, client validation, mocked success/error, retained input, fallback links, four widths, existing FAQs and local links. No mail sent.",
   );
 } finally {
   await browser.close();

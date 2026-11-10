@@ -247,22 +247,6 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a className={"portrait-card"} href={"/therapists/sarah-bell/"}>
-                  <img loading="lazy"
-                    src={"/assets/presentation/menu/sarah-bell-500.webp"}
-                    alt={"Sarah Bell, LPC-A"}
-                    width={"240"}
-                    height={"280"}
-                  />
-                  <strong>{"Sarah Bell, LPC-A"}</strong>
-                  <span>
-                    {
-                      "Counselor Associate · Supervised by Whitney Briggs, LPC-S"
-                    }
-                  </span>
-                </a>
-              </li>
-              <li>
                 <a
                   className={"portrait-card"}
                   href={"/therapists/sarah-critzman/"}

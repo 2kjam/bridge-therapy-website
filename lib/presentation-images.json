@@ -134,21 +134,6 @@
       }
     ]
   },
-  "/assets/sarah-bell.jpg": {
-    "sha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
-    "originalWidth": 500,
-    "originalHeight": 750,
-    "src": "/assets/presentation/menu/sarah-bell-500.webp",
-    "width": 500,
-    "height": 750,
-    "variants": [
-      {
-        "src": "/assets/presentation/menu/sarah-bell-500.webp",
-        "width": 500,
-        "height": 750
-      }
-    ]
-  },
   "/assets/sarah-critzman.jpg": {
     "sha256": "42bf485e8c6ba59463987cf520e8f64c393abf6c9d8911facf9183f077141935",
     "originalWidth": 500,

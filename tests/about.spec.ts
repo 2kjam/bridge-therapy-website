@@ -124,7 +124,7 @@ for (const width of [375, 390, 768, 1440]) {
     await expect(page.locator(".ivory-local address")).toContainText(
       "3800 Paluxy Drive",
     );
-    await expect(page.locator("#homepage-team-track li")).toHaveCount(10);
+    await expect(page.locator("#homepage-team-track li")).toHaveCount(9);
     if (width <= 1050) await page.locator(".mobile-toggle").click();
     await page
       .locator(".header")
