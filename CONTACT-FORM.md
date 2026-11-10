@@ -8,7 +8,7 @@ Fields: `first_name`, `last_name`, `email`, `phone`, `preferred_therapist`, `mes
 
 The static definition carries `data-netlify="true"` and `data-netlify-honeypot="bot-field"`. The visible form includes the same field names and honeypot, which is offscreen, excluded from keyboard navigation and hidden from assistive technology. Netlify performs spam filtering; local tests cannot establish its effectiveness. The site check enforces synchronization of both forms, their name and honeypot.
 
-Names are required and limited to 80 characters each; email is required with basic format validation and a 254-character maximum. Phone is limited to 40 characters; message to 2,000. Therapist choices are allowlisted. These are client-side usability checks, not server-enforced validation against forged requests. Netlify is the submission backend.
+First name is required and last name is optional; both are limited to 80 characters. Email is required with basic format validation and a 254-character maximum. Phone is required (blank or whitespace-only values are rejected) and limited to 40 characters; message to 2,000. Therapist choices are allowlisted. These are client-side usability checks, not server-enforced validation against forged requests. Netlify is the submission backend.
 
 Successful HTTP acceptance shows the existing success message on Contact. HTTP errors and network failures preserve entered values and show phone/email fallback. Acceptance does not prove that a notification reached the mailbox or that a submission passed spam filtering. No appointment is confirmed. The existing sensitive-health-information warning remains. The application does not log values, save them in browser storage, or put messages in URLs. Netlify stores submissions; restrict dashboard access and manage retention there.
 
@@ -25,7 +25,7 @@ Successful HTTP acceptance shows the existing success message on Contact. HTTP e
 
 - `npm run build`, then `npm run check` and `npm run lint`.
 - `node --test tests/inquiry.test.mjs` checks required fields, format, lengths and therapist allowlist.
-- Run `npm run start -- --port 3011`, then `node tests/contact-inquiry.browser.mjs`. Uses installed Microsoft Edge. All POSTs are intercepted with synthetic responses; no submission or email leaves the machine. Checks all ten query selections, unknown fallback, editable selection, errors, success, payload/honeypot, FAQs, local links and 375/390/768/1440px layouts.
+- Run `npm run start -- --port 3011`, then `node tests/contact-inquiry.browser.mjs`. Uses installed Microsoft Edge, or the browser at `PLAYWRIGHT_EXECUTABLE_PATH` when supplied. All POSTs are intercepted with synthetic responses; no submission or email leaves the machine. Checks all ten query selections, unknown fallback, editable selection, errors, success, payload/honeypot, FAQs, local links and 375/390/768/1440px layouts.
 - Local Next.js does not process Netlify Forms. Real acceptance, storage, spam classification and notification delivery require the later authorized staging deployment and manual test above.
 
 References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms), [Netlify setup](https://docs.netlify.com/manage/forms/setup/), [notifications](https://docs.netlify.com/manage/forms/notifications/).
@@ -34,7 +34,7 @@ References: [OpenNext Forms integration](https://opennext.js.org/netlify/forms),
 
 The widget replaces the old chat-preview launcher inside the shared SiteProvider. Specialty preview dialogs are preserved. This is a deterministic form, with no AI or live staff connection.
 
-Flow: original welcome/name prompt -> first name -> email -> required U.S. phone -> automatic submission -> accepted/error. Chat omits last_name and message; source-aware validation requires a valid email and phone. Contact still requires last name, with its optional phone/message and therapist dropdown unchanged. Chat has no custom message, review, or edit menu. Answers and transcript stay in component memory only; restart clears them.
+Flow: original welcome/name prompt -> first name -> email -> required U.S. phone -> automatic submission -> accepted/error. Chat omits last_name and message; source-aware validation requires a valid email and phone. Contact requires first name, email and phone; last name and message are optional. The therapist dropdown remains unchanged. Chat has no custom message, review, or edit menu. Answers and transcript stay in component memory only; restart clears them.
 
 A small prompt appears after approximately 1.5 seconds, without moving focus or opening the panel. One sessionStorage flag prevents repeat automatic prompts after showing, opening or dismissing it. Storage contains no answers. Manual reopening remains available. If browser storage is blocked, the widget remains usable but suppression cannot survive page navigation.
 

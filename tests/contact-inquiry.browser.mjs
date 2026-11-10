@@ -7,7 +7,7 @@ import path from "node:path";
 const base = process.env.INQUIRY_TEST_URL || "http://localhost:3011";
 if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(base))
   throw new Error("Use a local test server.");
-const browser = await chromium.launch({ headless: true, channel: "msedge" });
+const browser = await chromium.launch({ headless: true, channel: process.env.PLAYWRIGHT_EXECUTABLE_PATH ? undefined : "msedge", executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH });
 try {
   const page = await browser.newPage();
   let calls = 0;
@@ -23,6 +23,8 @@ try {
     assert.equal(payload.get("bot-field"), "");
     assert.equal(payload.get("source_page"), "/contact/");
     assert.equal(payload.get("inquiry_source"), "contact_form");
+    assert.equal(payload.get("last_name"), "");
+    assert.equal(payload.get("phone"), "903-555-0123");
     if (mode === "static") return route.fulfill({status:200, contentType:"text/html", body:fs.readFileSync("public/__forms.html","utf8")});
     if (mode === "network-error") return route.abort();
     await route.fulfill({
@@ -63,12 +65,12 @@ try {
     "Enter your first name.",
   );
   await page.fill("#inquiry-first_name", "Test");
-  await page.getByRole("button", { name: "Send Inquiry" }).click();
-  assert.equal(
-    await page.locator("#last_name-error").innerText(),
-    "Enter your last name.",
-  );
-  await page.fill("#inquiry-last_name", "Visitor");
+  assert.equal(await page.getByLabel("Last Name (optional)", {exact:true}).getAttribute("required"), null);
+  assert.equal(await page.getByLabel("Phone (required)", {exact:true}).getAttribute("required"), "");
+  assert.equal(await page.getByLabel("Phone (required)", {exact:true}).getAttribute("type"), "tel");
+  assert.equal(await page.getByLabel("Phone (required)", {exact:true}).getAttribute("autocomplete"), "tel");
+  assert.match(await page.locator("#inquiry-privacy").innerText(), /do not include sensitive medical or personal health information/);
+  assert.equal(await page.locator("#inquiry-message").getAttribute("aria-describedby"), "inquiry-privacy");
   await page.fill("#inquiry-email", "invalid");
   await page.getByRole("button", { name: "Send Inquiry" }).click();
   assert.equal(
@@ -77,6 +79,17 @@ try {
   );
   assert.equal(calls, 0);
   await page.fill("#inquiry-email", "visitor@example.com");
+  for (const phone of ["", "   "]) {
+    await page.fill("#inquiry-phone", phone);
+    await page.getByRole("button", { name: "Send Inquiry" }).click();
+    assert.equal(await page.locator("#phone-error").innerText(), "Enter your phone number.");
+    assert.equal(await page.locator("#inquiry-phone").getAttribute("aria-invalid"), "true");
+    assert.equal(await page.locator("#inquiry-phone").getAttribute("aria-describedby"), "phone-error");
+    assert.equal(await page.evaluate(() => document.activeElement.id), "inquiry-phone");
+    assert.equal(await page.locator("#last_name-error").count(), 0);
+    assert.equal(calls, 0);
+  }
+  await page.fill("#inquiry-phone", "903-555-0123");
   await page.getByRole("button", { name: "Send Inquiry" }).click();
   await page
     .getByRole("alert")

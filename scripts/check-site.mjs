@@ -542,6 +542,16 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
         assert.equal(attr(form, "data-netlify-honeypot"), "bot-field");
         assert.equal(attr(elements(form, "input").find((n) => attr(n, "name") === "form-name"), "value"), "bridge-contact-inquiry");
       }
+      for (const form of [visibleForm, staticForm]) {
+        for (const name of ["first_name", "email", "phone"]) {
+          const field = elements(form, "input").find((n) => attr(n, "name") === name);
+          assert.ok(field.attrs.some((a) => a.name === "required"), `${name} must be required`);
+        }
+        const lastName = elements(form, "input").find((n) => attr(n, "name") === "last_name");
+        assert.ok(!lastName.attrs.some((a) => a.name === "required"), "Last name must be optional");
+      }
+      assert.ok(normalizedText(inquiry).includes("Last Name (optional)"));
+      assert.ok(normalizedText(inquiry).includes("Phone (required)"));
       assert.equal(attr(staticForm, "data-netlify"), "true");
       assert.equal(attr(visibleForm, "action"), "/__forms.html");
       assert.equal(attr(visibleForm, "method"), "post");

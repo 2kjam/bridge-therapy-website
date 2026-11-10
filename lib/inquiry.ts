@@ -86,9 +86,9 @@ export function validateInquiry(input: unknown, inquirySource: InquirySource = "
       errors[key] = `Please use ${limits[key]} characters or fewer.`;
   }
   if (!data.first_name) errors.first_name = "Enter your first name.";
-  if (inquirySource === "contact_form" && !data.last_name) errors.last_name = "Enter your last name.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
     errors.email = "Enter a valid email address.";
+  if (!data.phone) errors.phone = "Enter your phone number.";
   if (inquirySource === "chat_widget") {
     const digits = data.phone.replace(/\D/g, "");
     const national = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
