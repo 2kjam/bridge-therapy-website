@@ -121,7 +121,7 @@ try {
  await button('Restart conversation').click(); await page.waitForTimeout(1300);
  await expect(page.locator('#widget-answer')).toBeVisible(); await expect(log).not.toContainText('What is your email address?');
  await expect(page.locator('#widget-answer')).toHaveValue('');
- const slugs=['jennifer-wood','erin-young','jill-kirkley','alyxandrah-white','misty-shultz','kim-gonzales','kelley-bell','denise-santos','sarah-bell','sarah-critzman'];
+ const slugs=['jennifer-wood','erin-young','jill-kirkley','alyxandrah-white','misty-shultz','kim-gonzales','kelley-bell','denise-santos','sarah-critzman'];
  for(const slug of slugs) {
   await page.goto(base+'/therapists/'+slug+'/?ignored=private',{waitUntil:'networkidle'});
   await page.locator('#chat-open').click(); await details(); await expect(log).toContainText('Perfect. Thank you.');
@@ -149,5 +149,5 @@ try {
   }
  }
  assert.deepEqual(errors,[]);
- console.log('PASS: transcript/bubbles, composer, scroll, validation, required email/phone, no message/review/skip, all 10 automatic profile contexts, no therapist selection or last name, retry, delayed prompt/session, focus/Escape, source-aware payload, mocked HTTP/network/static errors and success, storage privacy, four widths and reduced-height viewport. No real submissions.');
+ console.log('PASS: transcript/bubbles, composer, scroll, validation, required email/phone, no message/review/skip, all 9 current automatic profile contexts, no therapist selection or last name, retry, delayed prompt/session, focus/Escape, source-aware payload, mocked HTTP/network/static errors and success, storage privacy, four widths and reduced-height viewport. No real submissions.');
 } finally {await browser.close();}

@@ -117,8 +117,8 @@ test("About and Contact pages reference the same practice without duplicate defi
   }
 });
 
-test("all 10 therapist profiles publish accurate Person identities", () => {
-  assert.equal(therapists.length, 10);
+test("all 9 current therapist profiles publish accurate Person identities", () => {
+  assert.equal(therapists.length, 9);
   for (const expected of therapists) {
     const { data } = builtJsonLd(expected.path);
     const person = nodeOfType(data, "Person");
@@ -156,7 +156,7 @@ test("Kalynne is administrative staff and absent from the therapist collection",
     builtJsonLd("/therapists/").data,
     "CollectionPage",
   );
-  assert.equal(directory.mainEntity.numberOfItems, 10);
+  assert.equal(directory.mainEntity.numberOfItems, 9);
   assert.equal(JSON.stringify(directory).includes("kalynne"), false);
 });
 
@@ -269,7 +269,7 @@ test("every JSON-LD script is valid, canonical, safe, and free of forbidden mark
       (post) => post.legacyPath.replace(/\/$/, "") + "/",
     ),
   ];
-  assert.equal(routes.length, 60);
+  assert.equal(routes.length, 59);
   for (const path of routes) {
     const { raw, data } = builtJsonLd(path);
     assert.equal(raw.includes("<"), false, path);

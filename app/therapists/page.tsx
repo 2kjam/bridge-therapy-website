@@ -70,14 +70,6 @@ const therapists = [
     height: 1125,
   },
   {
-    name: "Sarah Bell",
-    credential:
-      "LPC-A · Licensed Professional Counselor Associate · Supervised by Whitney Briggs, LPC-S",
-    image: "sarah-bell",
-    width: 500,
-    height: 750,
-  },
-  {
     name: "Sarah Critzman",
     credential:
       "LMSW · Licensed Master Social Worker · Supervised by Christi Lawson, LCSW-S",
@@ -135,8 +127,6 @@ export default function TherapistsPage() {
                   <a href="/therapists/denise-santos/">{therapist.name}</a>
                 ) : therapist.image === "jill" ? (
                   <a href="/therapists/jill-kirkley/">{therapist.name}</a>
-                ) : therapist.image === "sarah-bell" ? (
-                  <a href="/therapists/sarah-bell/">{therapist.name}</a>
                 ) : therapist.image === "sarah-critzman" ? (
                   <a href="/therapists/sarah-critzman/">{therapist.name}</a>
                 ) : therapist.image === "kim" ? (

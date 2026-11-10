@@ -29,7 +29,7 @@ const goneHtml = String.raw`<!doctype html>
 
 export default function retiredLegacyUrl(request, context) {
   const pathname = new URL(request.url).pathname;
-  if (!["/job-postings", "/job-postings/"].includes(pathname))
+  if (!["/job-postings", "/job-postings/", "/therapists/sarah-bell", "/therapists/sarah-bell/"].includes(pathname))
     return context.next();
   const headers = new Headers({
     "Content-Type": "text/html; charset=utf-8",
@@ -40,4 +40,4 @@ export default function retiredLegacyUrl(request, context) {
   return new Response(goneHtml, { status: 410, headers });
 }
 
-export const config = { path: ["/job-postings", "/job-postings/"] };
+export const config = { path: ["/job-postings", "/job-postings/", "/therapists/sarah-bell", "/therapists/sarah-bell/"] };

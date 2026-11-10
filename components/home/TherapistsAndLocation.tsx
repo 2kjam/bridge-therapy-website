@@ -146,25 +146,6 @@ export function TherapistsAndLocation() {
             </a>
           </li>
           <li>
-            <a className={"portrait-card"} href={"/therapists/sarah-bell/"}>
-              <img
-                src={"/assets/sarah-bell.jpg"}
-                {...optimizedImageProps(
-                  "/assets/sarah-bell.jpg",
-                  portraitImageSizes,
-                )}
-                alt={"Sarah Bell, LPC-A"}
-                loading="lazy"
-                width={"240"}
-                height={"280"}
-              />
-              <strong>{"Sarah Bell, LPC-A"}</strong>
-              <span>
-                {"Counselor Associate · Supervised by Whitney Briggs, LPC-S"}
-              </span>
-            </a>
-          </li>
-          <li>
             <a className={"portrait-card"} href={"/therapists/sarah-critzman/"}>
               <img
                 src={"/assets/sarah-critzman.jpg"}

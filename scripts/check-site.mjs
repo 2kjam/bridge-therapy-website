@@ -129,13 +129,16 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       text.value = text.value.replaceAll("↗", "→");
     }
   }
+  // Sarah Bell is no longer part of the practice. Preserve the archived source.
   for (const link of all(legacy, (node) => node.tagName === "a" &&
-    attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell")) {
-    link.attrs = link.attrs.filter(({ name }) => !["target", "rel"].includes(name));
-    link.attrs.find(({ name }) => name === "href").value = "/therapists/sarah-bell/";
-    for (const text of all(link, (node) => node.nodeName === "#text")) {
-      text.value = text.value.replaceAll("↗", "→");
-    }
+    ["https://www.thebridgetherapy.com/meet-the-team#:~:text=Sarah%20Bell", "/therapists/sarah-bell/"].includes(attr(node, "href")))) {
+    let card = link;
+    while (card.parentNode && !["li", "article"].includes(card.tagName)) card = card.parentNode;
+    assert.ok(["li", "article"].includes(card.tagName), "Former staff reference must be a whole card");
+    card.parentNode.childNodes = card.parentNode.childNodes.filter((node) => node !== card);
+  }
+  for (const text of all(legacy, (node) => node.nodeName === "#text")) {
+    text.value = text.value.replace(" Sarah Bell works with people ages 13 and older.", "");
   }
   for (const link of all(legacy, (node) => node.tagName === "a" &&
     attr(node, "href") === "https://www.thebridgetherapy.com/meet-the-team#:~:text=Jill%20Kirkley")) {
@@ -556,7 +559,7 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
       assert.equal(attr(visibleForm, "action"), "/__forms.html");
       assert.equal(attr(visibleForm, "method"), "post");
       assert.deepEqual(elements(inquiry, "input").map((n) => attr(n, "name")), ["form-name", "source_page", "inquiry_source", "first_name", "last_name", "email", "phone", "bot-field"]);
-      assert.equal(elements(inquiry, "option").length, 11);
+      assert.equal(elements(inquiry, "option").length, 10);
       assert.equal(attr(elements(inquiry, "textarea")[0], "maxlength"), "2000");
       assert.ok(normalizedText(inquiry).includes("Please do not include sensitive medical or personal health information in this form."));
       inquiry.parentNode.childNodes = inquiry.parentNode.childNodes.filter((n) => n !== inquiry);
@@ -623,7 +626,7 @@ const directory = parse(fs.readFileSync(".next/server/app/therapists.html", "utf
 pages.set("/therapists/", directory);
 const directoryMain = elements(directory, "main")[0];
 const cards = all(directoryMain, (node) => attr(node, "class") === "directory-card");
-assert.equal(cards.length, 10, "Directory must contain ten therapists");
+assert.equal(cards.length, 9, "Directory must contain nine current therapists");
 assert.equal(elements(directory, "h1").length, 1);
 assert.equal(normalizedText(elements(directory, "h1")[0]), "Meet Our Therapists");
 assert.equal(normalizedText(elements(directory, "title")[0]), "Therapists in Tyler, TX | The Bridge");
@@ -631,7 +634,7 @@ assert.equal(attr(elements(directory, "meta").find((node) => attr(node, "name") 
 assert.ok(!normalizedText(directoryMain).includes("Kalynne"));
 assert.deepEqual(cards.map((card) => normalizedText(elements(card, "h2")[0])), [
   "Jennifer Wood", "Erin Young", "Jill Kirkley", "Alyxandrah “Alyx” White", "Misty Shultz",
-  "Kim Gonzales", "Kelley Bell", "Denise Santos", "Sarah Bell", "Sarah Critzman",
+  "Kim Gonzales", "Kelley Bell", "Denise Santos", "Sarah Critzman",
 ]);
 for (const card of cards) {
   assert.equal(elements(card, "img").length, 1);
@@ -654,9 +657,6 @@ for (const card of cards) {
   } else if (normalizedText(elements(card, "h2")[0]) === "Jill Kirkley") {
     assert.equal(links.length, 1);
     assert.equal(attr(links[0], "href"), "/therapists/jill-kirkley/");
-  } else if (normalizedText(elements(card, "h2")[0]) === "Sarah Bell") {
-    assert.equal(links.length, 1);
-    assert.equal(attr(links[0], "href"), "/therapists/sarah-bell/");
   } else if (normalizedText(elements(card, "h2")[0]) === "Sarah Critzman") {
     assert.equal(links.length, 1);
     assert.equal(attr(links[0], "href"), "/therapists/sarah-critzman/");
@@ -757,22 +757,8 @@ assert.deepEqual(elements(jillServices, "a").map((node) => attr(node, "href")), 
 ]);
 assert.deepEqual(elements(jillProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/jill-kirkley/"]);
 assert.equal(elements(jillProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
-const sarahBellProfile = parse(fs.readFileSync(".next/server/app/therapists/sarah-bell.html", "utf8"));
-pages.set("/therapists/sarah-bell/", sarahBellProfile);
-assert.equal(elements(sarahBellProfile, "h1").length, 1);
-assert.equal(normalizedText(elements(sarahBellProfile, "h1")[0]), "Sarah Bell, LPC-A");
-assert.equal(normalizedText(elements(sarahBellProfile, "title")[0]), "Sarah Bell, LPC-A | Tyler, TX | The Bridge");
-assert.equal(attr(elements(sarahBellProfile, "meta").find((node) => attr(node, "name") === "robots"), "content"), "noindex, nofollow");
-const sarahBellMain = elements(sarahBellProfile, "main")[0];
-assert.equal(attr(elements(sarahBellMain, "img")[0], "src"), "/assets/sarah-bell.jpg");
-const sarahBellServices = all(sarahBellMain, (node) => attr(node, "class") === "profile-services")[0];
-assert.deepEqual(elements(sarahBellServices, "a").map((node) => attr(node, "href")), [
-  "/trauma-therapy-tyler/", "/emdr-therapy-tyler/", "/adhd-counseling-tyler/",
-]);
-assert.deepEqual(elements(sarahBellProfile, "link").filter((node) => attr(node, "rel") === "canonical").map((node) => attr(node, "href")), ["https://www.thebridgetherapy.com/therapists/sarah-bell/"]);
-assert.equal(elements(sarahBellProfile, "script").filter((node) => attr(node, "type") === "application/ld+json").length, 1);
-assert.ok(normalizedText(sarahBellMain).includes("Supervised by Whitney Briggs, LPC-S"));
-assert.ok(normalizedText(sarahBellMain).includes("Licensed Professional Counselor Associate"));
+assert.equal(fs.existsSync(".next/server/app/therapists/sarah-bell.html"), false);
+assert.doesNotMatch(JSON.stringify([...pages.values()].map(normalizedText)), /Sarah Bell/);
 const kimProfile = parse(fs.readFileSync(".next/server/app/therapists/kim-gonzales.html", "utf8"));
 pages.set("/therapists/kim-gonzales/", kimProfile);
 assert.equal(elements(kimProfile, "h1").length, 1);

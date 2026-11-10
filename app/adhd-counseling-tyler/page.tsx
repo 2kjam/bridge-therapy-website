@@ -217,34 +217,6 @@ export default function Page() {
                 </a>
               </div>
             </article>
-            <article>
-              <img
-                src={"/assets/sarah-bell.jpg"}
-                alt={"Sarah Bell, LPC-A"}
-                width={"300"}
-                height={"360"}
-                loading={"lazy"}
-              />
-              <div>
-                <h3>{"Sarah Bell, LPC-A"}</h3>
-                <p className={"service-credential"}>
-                  {
-                    "Licensed Professional Counselor–Associate · Supervised by Whitney Briggs, LPC-S"
-                  }
-                </p>
-                <p>
-                  {
-                    "Sarah works with people ages 13 and older. Her experience includes ADHD, anxiety, and relationship concerns."
-                  }
-                </p>
-                <a
-                  className={"service-text-link"}
-                  href={"/therapists/sarah-bell/"}
-                >
-                  {"Read counselor profile →"}
-                </a>
-              </div>
-            </article>
           </div>
           <a className={"service-text-link"} href={"/therapists/"}>
             {"View All Therapists"}
@@ -262,7 +234,7 @@ export default function Page() {
             <summary>{"Do you work with adults as well as children?"}</summary>
             <p>
               {
-                "Erin works with children, adolescents, individual adults, and families. Sarah Bell works with people ages 13 and older. Contact our office about age, counselor fit, and availability."
+                "Erin works with children, adolescents, individual adults, and families. Contact our office about age, counselor fit, and availability."
               }
             </p>
           </details>

@@ -8,7 +8,6 @@ export const therapists = [
   ["kim-gonzales", "Kim Gonzales, LMSW"],
   ["kelley-bell", "Kelley Bell, LPC"],
   ["denise-santos", "Denise Santos, LPC"],
-  ["sarah-bell", "Sarah Bell, LPC-A"],
   ["sarah-critzman", "Sarah Critzman, LMSW"],
 ] as const;
 

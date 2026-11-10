@@ -579,31 +579,6 @@
       }
     ]
   },
-  "/assets/sarah-bell.jpg": {
-    "sha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
-    "inputSource": "/assets/sarah-bell.jpg",
-    "inputSha256": "59625b26fcdd38c55a44bb0a295f226ee23d0e106eef81c7f667c0b4b6d3d3a6",
-    "width": 500,
-    "height": 750,
-    "variants": [
-      {
-        "src": "/assets/presentation/delivery/portrait-sarah-bell-240.webp",
-        "width": 240,
-        "height": 360,
-        "bytes": 23148,
-        "lossless": false,
-        "reused": false
-      },
-      {
-        "src": "/assets/presentation/menu/sarah-bell-500.webp",
-        "width": 500,
-        "height": 750,
-        "bytes": 66312,
-        "lossless": false,
-        "reused": true
-      }
-    ]
-  },
   "/assets/sarah-critzman.jpg": {
     "sha256": "42bf485e8c6ba59463987cf520e8f64c393abf6c9d8911facf9183f077141935",
     "inputSource": "/assets/sarah-critzman.jpg",
