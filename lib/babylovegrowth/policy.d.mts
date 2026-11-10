@@ -2,6 +2,7 @@ export function stagingBuildAllowed(env: Record<string, string | undefined>): bo
 export function previewEnabled(env: Record<string, string | undefined>, verifiedStagingBuild?: boolean): boolean;
 export function validArticle(article: unknown): boolean;
 export function cleanArticleHtml(html: unknown, slug?: string, title?: string): string;
+export function articlePresentation(cleanHtml: string): { heroHtml: string; bodyHtml: string };
 
 export function validStagingArticle(article: unknown): boolean;
 

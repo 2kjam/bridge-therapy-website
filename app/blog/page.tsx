@@ -8,6 +8,7 @@ import { blogDate, getVisibleBlogPosts } from "@/lib/blog";
 import { previewEnabled, previewArticles } from "@/lib/babylovegrowth/client";
 import { safeImageUrl } from "@/lib/babylovegrowth/policy.mjs";
 import { blogThumbnail } from "@/lib/presentation-images";
+import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 
 export const metadata: Metadata = {
   ...publicPageMetadata("/blog/"),
@@ -48,7 +49,9 @@ export default async function BlogPage() {
             <a className="blog-card-link" href={`/blog/${post.slug}/`}>
               {safeImageUrl(post.hero_image_url) && <img src={`/api/cms-media/?slug=${encodeURIComponent(post.slug)}&file=${encodeURIComponent(new URL(post.hero_image_url).pathname.split("/").pop()!)}`} alt={post.title} loading="lazy" />}
               <div className="blog-card-copy">
+                <span>Draft: awaiting publication approval</span>
                 <h2>{post.title}</h2>
+                {stagingArticleAuthor(post) && <p>{stagingArticleAuthor(post)!.name}</p>}
                 <p>{post.excerpt || post.meta_description}</p>
                 <span className="blog-read">Read article <span aria-hidden="true">→</span></span>
               </div>

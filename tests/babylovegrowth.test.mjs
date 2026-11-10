@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { stagingBuildAllowed, previewEnabled, validArticle, validStagingArticle, cleanArticleHtml } from '../lib/babylovegrowth/policy.mjs';
+import { stagingBuildAllowed, previewEnabled, validArticle, validStagingArticle, cleanArticleHtml, articlePresentation } from '../lib/babylovegrowth/policy.mjs';
+import { parseFragment, serialize } from 'parse5';
 const configured = { BRIDGE_BABYLOVE_PREVIEW: 'true', BABYLOVEGROWTH_BLOG_API_KEY: 'test-placeholder' };
 test('preview is opt-in and never enabled on production site', () => {
   assert.equal(previewEnabled({}), false);
@@ -96,4 +97,36 @@ test("CMS card semantics preserve text and distinguish headings from paragraphs"
   assert.match(result, /<h2>Family support<\/h2>/);
   assert.match(result, /<p>First paragraph.<\/p><p>Second paragraph.<\/p>/);
   assert.match(result, /href="\/contact\/"/);
+});
+
+test("CMS hero uses the shared production class without duplication or article-text loss", () => {
+  const image = 'https://media.babylovegrowth.ai/blog-images/organization-65684/hero.jpeg';
+  const clean = cleanArticleHtml(`<p><img src="${image}" alt="Counseling illustration"></p><h2 id="answer">An answer</h2><p>Preserved text.</p>`, 'christian-grief-counseling');
+  const result = articlePresentation(clean);
+  assert.match(result.heroHtml, /class="blog-featured-image"/);
+  assert.match(result.heroHtml, /fetchpriority="high"/);
+  assert.match(result.heroHtml, /alt="Counseling illustration"/);
+  assert.equal(result.bodyHtml, '<h2 id="cms-answer">An answer</h2><p>Preserved text.</p>');
+  assert.doesNotMatch(result.bodyHtml, /<img/);
+  const mixed = `<p>Keep the introduction <img src="${image}" alt="Illustration"></p>`;
+  const retained = cleanArticleHtml(mixed, 'christian-grief-counseling');
+  assert.equal(articlePresentation(retained).heroHtml, '');
+  assert.equal(articlePresentation(retained).bodyHtml, serialize(parseFragment(retained)));
+});
+
+test("communication table gets semantic headers and a keyboard-accessible overflow region", () => {
+  const clean = cleanArticleHtml('<table><tr><td>Pattern</td><td>What it looks like</td><td>What helps instead</td></tr><tr><td>Criticism</td><td>Blame</td><td>Name a behavior</td></tr></table>');
+  const { bodyHtml } = articlePresentation(clean);
+  assert.match(bodyHtml, /role="region" aria-label="Article table 1" tabindex="0"/);
+  assert.equal((bodyHtml.match(/<th scope="col">/g) ?? []).length, 3);
+  assert.match(bodyHtml, /<td>Criticism<\/td><td>Blame<\/td><td>Name a behavior<\/td>/);
+  const unrelated = articlePresentation(cleanArticleHtml('<table><tr><td>A</td><td>B</td></tr></table>'));
+  assert.doesNotMatch(unrelated.bodyHtml, /<th/);
+});
+
+test("internal editorial links remain ordinary links and external links stay protected", () => {
+  const clean = cleanArticleHtml('<a href="https://www.thebridgetherapy.com/grief-counseling-tyler/">Grief support</a><a href="#answer">Answer</a><a href="https://example.com/">Reference</a>');
+  assert.match(clean, /<a href="\/grief-counseling-tyler\/">Grief support<\/a>/);
+  assert.match(clean, /<a href="#cms-answer">Answer<\/a>/);
+  assert.match(clean, /<a href="https:\/\/example.com\/" rel="noopener noreferrer nofollow">Reference<\/a>/);
 });
