@@ -1,0 +1,119 @@
+{
+  "vendorArticleId": 1083766,
+  "sourceUrl": "https://bridge-therapy-staging.netlify.app/blog/christian-grief-counseling/",
+  "sourceUpdatedAt": "2026-11-09T18:40:21.178Z",
+  "stagingDeploy": "6af34029609f9e933f37d6ef",
+  "approvedPublicationDate": "2026-11-09",
+  "datePrecision": "date only; no publication time was supplied or inferred",
+  "authorApproval": "Owner explicitly assigned Jennifer Wood LPC-S before publication",
+  "approvedStagingBodySha256": "a25d7d4202eb485aa9628c24a453e0550cfd3cd6012f74c82f3578ba9c3b48f2",
+  "approvedStagingTextSha256": "7fa7f1340bf45775ff59ab545fb5f4e02195725783f05099a4919df1ff62f96d",
+  "reviewedBodySha256": "81fe38cf528247aff78ee6c51c03a77497ca888d291a9363fece5099f3d8cecc",
+  "images": [
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794249542682_Isometric-path-bridging-two-quiet-geometric-platforms.jpeg",
+      "sha256": "9a0625c2c645fec108b9895446a99a2d572d1e2c8622a2a6d9b9621b78a75ea2",
+      "sourceBytes": 44295,
+      "originalWidth": 1260,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-480.webp",
+          "width": 480,
+          "height": 274,
+          "bytes": 8574
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-960.webp",
+          "width": 960,
+          "height": 549,
+          "bytes": 24398
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-1260.webp",
+          "width": 1260,
+          "height": 720,
+          "bytes": 37286
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794249554503_Woman-visiting-a-grave-in-a-quiet-cemetery.jpeg",
+      "sha256": "7b561e3f2ba2fd9f6e2b56cedc8bdcf9a6cf57e30c937150adeaaae22b3456f1",
+      "sourceBytes": 127995,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794249554503_woman-visiting-a-grave-in-a-quiet-cemetery-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 37332
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249554503_woman-visiting-a-grave-in-a-quiet-cemetery-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 107006
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249554503_woman-visiting-a-grave-in-a-quiet-cemetery-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 148366
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794249614824_What-to-look-for-in-a-Christian-grief-counselor.jpeg",
+      "sha256": "309934fba5554a181dc9ee4f2e08c79748bda8915c4a4763476e53a86550479e",
+      "sourceBytes": 102074,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794249614824_what-to-look-for-in-a-christian-grief-counselor-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17672
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249614824_what-to-look-for-in-a-christian-grief-counselor-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 46606
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794249614824_what-to-look-for-in-a-christian-grief-counselor-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 68818
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1793990231597_thebridgetherapy.jpg",
+      "reusedPreviouslyPublishedAsset": true,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22020
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 61038
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-1440.webp",
+          "width": 1440,
+          "height": 810,
+          "bytes": 106938
+        }
+      ]
+    }
+  ]
+}

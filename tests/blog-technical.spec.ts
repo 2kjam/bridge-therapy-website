@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const articles = [
+  "/blog/christian-grief-counseling/",
+  "/blog/marriage-communication-problems/",
   "/blog/blended-family-counseling/",
   "/blog/online-couples-counseling/",
   "/blog/religious-trauma-therapy/",
@@ -54,7 +56,8 @@ for (const width of [320, 375, 390, 768, 1440]) {
         expect(data.loading).not.toBe("lazy");
       }
       if (path.startsWith("/blog/")) {
-        await expect(page.locator(".blog-support-card")).toHaveCount(path.includes("blended-family-counseling") ? 3 : 2);
+        const threeCards = ["blended-family-counseling", "christian-grief-counseling", "marriage-communication-problems"].some(slug => path.includes(slug));
+        await expect(page.locator(".blog-support-card")).toHaveCount(threeCards ? 3 : 2);
         const authorCard = page.locator(".blog-author-card");
         await expect(authorCard).toHaveCount(1);
         await expect(authorCard).toHaveCSS("flex-wrap", "nowrap");

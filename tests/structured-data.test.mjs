@@ -269,7 +269,7 @@ test("every JSON-LD script is valid, canonical, safe, and free of forbidden mark
       (post) => post.legacyPath.replace(/\/$/, "") + "/",
     ),
   ];
-  assert.equal(routes.length, 58);
+  assert.equal(routes.length, 60);
   for (const path of routes) {
     const { raw, data } = builtJsonLd(path);
     assert.equal(raw.includes("<"), false, path);
