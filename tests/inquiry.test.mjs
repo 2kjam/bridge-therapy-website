@@ -31,9 +31,9 @@ test("validation and therapist allowlist", () => {
   assert.equal(last_name, "Visitor");
   assert.ok(message);
   assert.deepEqual(validateInquiry(chat, "chat_widget").errors, {});
-  assert.ok(validateInquiry(chat, "contact_form").errors.last_name);
+  assert.deepEqual(validateInquiry(chat, "contact_form").errors, {});
   assert.ok(!("last_name" in validateInquiry(valid, "chat_widget").data));
-  for (const key of ["first_name", "last_name", "email"])
+  for (const key of ["first_name", "email", "phone"])
     assert.ok(validateInquiry({ ...valid, [key]: "" }).errors[key]);
   assert.ok(validateInquiry({ ...valid, email: "invalid" }).errors.email);
   assert.ok(
@@ -61,7 +61,7 @@ test("both sources construct the same Netlify request; mocked responses do not p
   await sendInquiry(sample, "/contact/", "contact_form");
   const {last_name, message, ...chat} = sample;
   assert.ok(last_name); assert.ok(message);
-  await assert.rejects(sendInquiry(chat, "/contact/", "contact_form"), /validation/);
+  await assert.rejects(sendInquiry({...chat, phone:""}, "/contact/", "contact_form"), /validation/);
   assert.equal(requests.length, 1);
   await sendInquiry(chat, "/therapists/erin-young/", "chat_widget");
   for (const [i, request] of requests.entries()) {
@@ -102,12 +102,22 @@ test("both sources construct the same Netlify request; mocked responses do not p
  } finally {globalThis.fetch=originalFetch;}
 });
 
-test("chat phone/email validation is enforced by submission; Contact phone stays optional", async () => {
+test("both sources require phone; Contact accepts an optional last name", async () => {
  const originalFetch=globalThis.fetch;
  let calls=0;
  globalThis.fetch=async()=>{calls++;return new Response("Mock");};
  try {
-  assert.deepEqual(validateInquiry({...valid,phone:""}, "contact_form").errors,{});
+  for (const phone of ["", "   ", undefined, null]) {
+   assert.equal(validateInquiry({...valid,phone}, "contact_form").errors.phone,"Enter your phone number.");
+   await assert.rejects(sendInquiry({...valid,phone},"/contact/","contact_form"),/validation/);
+  }
+  for (const last_name of ["", "   ", undefined])
+   assert.deepEqual(validateInquiry({...valid,last_name}, "contact_form").errors,{});
+  assert.ok(validateInquiry({...valid,last_name:"x".repeat(81)}).errors.last_name);
+  assert.ok(validateInquiry({...valid,last_name:{}}).errors.last_name);
+  assert.ok(validateInquiry({...valid,phone:"9".repeat(41)}).errors.phone);
+  // Contact retains its existing phone-format flexibility; widget stays U.S.-validated.
+  assert.deepEqual(validateInquiry({...valid,phone:"+44 20 7946 0958"}).errors,{});
   for(const phone of ["9032838729","903-283-8729","(903) 283-8729","903 283 8729","+1 903 283 8729","+1 (903) 283-8729","19032838729"])
    assert.deepEqual(validateInquiry({...valid,phone},"chat_widget").errors,{});
   for(const phone of ["","123","555","abcdefghij","903-28","0000000000","903abc2838729"]) {
@@ -121,5 +131,19 @@ test("chat phone/email validation is enforced by submission; Contact phone stays
   for(const email of ["adam@example.com","adam.wood@example.com"])
    assert.deepEqual(validateInquiry({...valid,email},"chat_widget").errors,{});
   assert.equal(calls,0);
+ } finally {globalThis.fetch=originalFetch;}
+});
+
+
+test("Contact sends empty last name with the unchanged Netlify payload", async () => {
+ const originalFetch=globalThis.fetch;
+ let payload;
+ try {
+  globalThis.fetch=async (_url, options)=>{payload=new URLSearchParams(options.body); return new Response("Mock");};
+  await sendInquiry({...valid,last_name:"   "},"/contact/","contact_form");
+  assert.equal(payload.get("last_name"),"");
+  assert.equal(payload.get("phone"),valid.phone);
+  assert.equal(payload.get("form-name"),"bridge-contact-inquiry");
+  assert.equal(payload.get("inquiry_source"),"contact_form");
  } finally {globalThis.fetch=originalFetch;}
 });

@@ -9,10 +9,10 @@
     <!-- Keep field names synchronized with ContactInquiry; check-site verifies this. -->
     <form name="bridge-contact-inquiry" method="post" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="bridge-contact-inquiry" />
-      <input name="first_name" />
+      <input name="first_name" required />
       <input name="last_name" />
-      <input type="email" name="email" />
-      <input name="phone" />
+      <input type="email" name="email" required />
+      <input type="tel" name="phone" required />
       <input name="preferred_therapist" />
       <textarea name="message"></textarea>
       <input name="bot-field" />

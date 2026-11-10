@@ -107,14 +107,14 @@ export function ContactInquiry() {
               <div key={name}>
                 <label htmlFor={`inquiry-${name}`}>
                   {label}
-                  {name === "phone" ? " (optional)" : " (required)"}
+                  {name === "last_name" ? " (optional)" : " (required)"}
                 </label>
                 <input
                   id={`inquiry-${name}`}
                   name={name}
                   type={type}
                   autoComplete={autoComplete}
-                  required={name !== "phone"}
+                  required={name !== "last_name"}
                   maxLength={limits[name]}
                   aria-invalid={!!errors[name]}
                   aria-describedby={errors[name] ? `${name}-error` : undefined}

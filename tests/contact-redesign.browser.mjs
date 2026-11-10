@@ -4,7 +4,7 @@ import {chromium, expect} from '@playwright/test';
 
 const base=process.env.INQUIRY_TEST_URL || 'http://127.0.0.1:3012';
 if(!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(base))throw new Error('Use a local server.');
-const browser=await chromium.launch({channel:'msedge'});
+const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_EXECUTABLE_PATH ? undefined : 'msedge', executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
 const results=[];
 fs.mkdirSync('test-results/contact-redesign',{recursive:true});
 try {
@@ -41,7 +41,7 @@ try {
   assert.ok(metrics.faq.y>=metrics.form.y+metrics.form.height);
   if(width>=1024){assert.ok(metrics.information.x+metrics.information.width<=metrics.form.x);}
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  for(const name of ['First Name (required)','Last Name (required)','Email (required)','Phone (optional)','Preferred Therapist','Message (optional)'])await expect(page.getByLabel(name,{exact:true})).toBeVisible();
+  for(const name of ['First Name (required)','Last Name (optional)','Email (required)','Phone (required)','Preferred Therapist','Message (optional)'])await expect(page.getByLabel(name,{exact:true})).toBeVisible();
   const meet=page.getByRole('link',{name:'Meet Kalynne'});
   await meet.focus();expect(await meet.evaluate(n=>getComputedStyle(n).outlineStyle)).not.toBe('none');
   await expect(meet).toHaveAttribute('href','/staff/kalynne-arrick/');
