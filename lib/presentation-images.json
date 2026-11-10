@@ -829,5 +829,55 @@
         "bytes": 85946
       }
     ]
+  },
+  "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-1260.webp": {
+    "sha256": "9a0625c2c645fec108b9895446a99a2d572d1e2c8622a2a6d9b9621b78a75ea2",
+    "originalWidth": 1260,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-480.webp",
+    "width": 480,
+    "height": 274,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-480.webp",
+        "width": 480,
+        "height": 274
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-960.webp",
+        "width": 960,
+        "height": 549
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794249542682_isometric-path-bridging-two-quiet-geometric-platforms-1260.webp",
+        "width": 1260,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-1260.webp": {
+    "sha256": "70bedad5fb550e5a67ed2af5387d6d93f8ac30f3d9ce10be1437ec81e82e275d",
+    "originalWidth": 1260,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-480.webp",
+    "width": 480,
+    "height": 274,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-480.webp",
+        "width": 480,
+        "height": 274
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-960.webp",
+        "width": 960,
+        "height": 549
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-1260.webp",
+        "width": 1260,
+        "height": 720
+      }
+    ]
   }
 }

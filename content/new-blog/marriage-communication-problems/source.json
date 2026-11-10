@@ -1,0 +1,119 @@
+{
+  "vendorArticleId": 1086181,
+  "sourceUrl": "https://bridge-therapy-staging.netlify.app/blog/marriage-communication-problems/",
+  "sourceUpdatedAt": "2026-11-10T07:22:22.392Z",
+  "stagingDeploy": "6af34029609f9e933f37d6ef",
+  "approvedPublicationDate": "2026-11-10",
+  "datePrecision": "date only; no publication time was supplied or inferred",
+  "authorApproval": "Owner explicitly assigned Jennifer Wood LPC-S before publication",
+  "approvedStagingBodySha256": "bf5c2695d7a86b6ff4697f11d34acf47a2b1956d7cb0a946c2e00dddce9d153a",
+  "approvedStagingTextSha256": "f1c6543e1f2fe04634d26423f76ad453cd669e57376ee9bbbc92001a1b9dba17",
+  "reviewedBodySha256": "7db4d6ec8680b353af5bbf512898b01510ef473bcdb71eb49617dfebd6951eaa",
+  "images": [
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794295252572_Abstract-planes-linked-across-a-narrow-gap.jpeg",
+      "sha256": "70bedad5fb550e5a67ed2af5387d6d93f8ac30f3d9ce10be1437ec81e82e275d",
+      "sourceBytes": 41182,
+      "originalWidth": 1260,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-480.webp",
+          "width": 480,
+          "height": 274,
+          "bytes": 9082
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-960.webp",
+          "width": 960,
+          "height": 549,
+          "bytes": 24212
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295252572_abstract-planes-linked-across-a-narrow-gap-1260.webp",
+          "width": 1260,
+          "height": 720,
+          "bytes": 36112
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794295299165_How-assumptions-derail-a-couple-s-conversation.jpeg",
+      "sha256": "57f97f04d76117f7614d1e80a7dbe43958f223aeb48406f79e045d75b86229cb",
+      "sourceBytes": 102494,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794295299165_how-assumptions-derail-a-couple-s-conversation-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 17694
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295299165_how-assumptions-derail-a-couple-s-conversation-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 46140
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295299165_how-assumptions-derail-a-couple-s-conversation-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 70256
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794295336589_Why-communication-breaks-down-even-when-you-know-better.jpeg",
+      "sha256": "6575f2dfaa65128995b7ef999618fdb8b3243ed225f51ac4bf2dd7dce953c8fe",
+      "sourceBytes": 100018,
+      "originalWidth": 1280,
+      "originalHeight": 720,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1794295336589_why-communication-breaks-down-even-when-you-know-better-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 16244
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295336589_why-communication-breaks-down-even-when-you-know-better-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 43960
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1794295336589_why-communication-breaks-down-even-when-you-know-better-1280.webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 67702
+        }
+      ]
+    },
+    {
+      "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1793990231597_thebridgetherapy.jpg",
+      "reusedPreviouslyPublishedAsset": true,
+      "variants": [
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-480.webp",
+          "width": 480,
+          "height": 270,
+          "bytes": 22020
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-960.webp",
+          "width": 960,
+          "height": 540,
+          "bytes": 61038
+        },
+        {
+          "src": "/assets/blog/approved-2026-11/1793990231597_thebridgetherapy-1440.webp",
+          "width": 1440,
+          "height": 810,
+          "bytes": 106938
+        }
+      ]
+    }
+  ]
+}
