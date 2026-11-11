@@ -816,7 +816,7 @@ const focusMappings = [
   [/eating disorders/i, ["jennifer-wood"]],
   [/non-epileptic/i, ["erin-young"]],
   [/Brain Gym/i, ["erin-young"]],
-  [/fibromyalgia/i, ["erin-young", "jill-kirkley"]],
+  [/fibromyalgia/i, ["erin-young"]],
   [/mentoring (?:and|&) discipleship/i, ["jennifer-wood", "jill-kirkley", "misty-shultz"]],
 ];
 for (const [term, expected] of focusMappings) {
