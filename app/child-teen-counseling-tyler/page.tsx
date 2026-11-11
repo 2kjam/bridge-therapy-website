@@ -236,6 +236,32 @@ export default function Page() {
                 </a>
               </div>
             </article>
+            <article>
+              <img
+                src={"/assets/alyx.jpg"}
+                alt={"Alyxandrah “Alyx” White, LMFT"}
+                width={750}
+                height={1125}
+                loading={"lazy"}
+              />
+              <div>
+                <h3>{"Alyxandrah “Alyx” White, LMFT"}</h3>
+                <p className={"service-credential"}>
+                  {"Licensed Marriage and Family Therapist"}
+                </p>
+                <p>
+                  {
+                    "Alyx specializes in therapy for teens with persistent mental illness, including concerns that occur alongside substance use or personality disorders."
+                  }
+                </p>
+                <a
+                  className={"service-text-link"}
+                  href={"/therapists/alyxandrah-white/"}
+                >
+                  {"Read counselor profile →"}
+                </a>
+              </div>
+            </article>
           </div>
         </section>
         {"\n "}
