@@ -195,6 +195,12 @@ for (const route of routes.filter((route) => route !== "/children-families/")) {
     children.forEach((child) => { child.parentNode = node; });
     node.childNodes.push(...children);
   }
+  // Alyx's approved teen-counseling card supplements the two existing counselors.
+  // Transform the frozen reference explicitly so unrelated markup remains checked.
+  if (route === "/child-teen-counseling-tyler/") {
+    const grid = all(legacy, (node) => attr(node, "class") === "individual-team-grid")[0];
+    appendHtml(grid, '<article><img src="/assets/alyx.jpg" alt="Alyxandrah “Alyx” White, LMFT" width="750" height="1125" loading="lazy"><div><h3>Alyxandrah “Alyx” White, LMFT</h3><p class="service-credential">Licensed Marriage and Family Therapist</p><p>Alyx specializes in therapy for teens with persistent mental illness, including concerns that occur alongside substance use or personality disorders.</p><a class="service-text-link" href="/therapists/alyxandrah-white/">Read counselor profile →</a></div></article>');
+  }
   if (route === "/") {
     const section = all(legacy, (node) => attr(node, "id") === "services")[0];
     appendHtml(elements(section, "p")[0], ' Explore <a href="/individual-counseling-tyler/">Individual counseling</a>.');
@@ -696,6 +702,7 @@ const alyxMain = elements(alyxProfile, "main")[0];
 assert.equal(attr(elements(alyxMain, "img")[0], "src"), "/assets/alyx.jpg");
 const alyxServices = all(alyxMain, (node) => attr(node, "class") === "profile-services")[0];
 assert.deepEqual(elements(alyxServices, "a").map((node) => attr(node, "href")), [
+  "/child-teen-counseling-tyler/",
   "/marriage-counseling-tyler/", "/family-counseling-tyler/", "/parenting-support-tyler/",
   "/premarital-counseling-tyler/", "/divorce-blended-family-counseling-tyler/",
 ]);

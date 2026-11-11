@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  ["Child & Teen Counseling", "/child-teen-counseling-tyler/"],
   ["Marriage Counseling", "/marriage-counseling-tyler/"],
   ["Family Counseling", "/family-counseling-tyler/"],
   ["Parenting Support", "/parenting-support-tyler/"],
@@ -70,6 +71,11 @@ export default function AlyxandrahWhitePage() {
             <p>
               Alyx works with couples, families, co-parents, and parent-child
               pairs, as well as individual adolescents and adults.
+            </p>
+            <p>
+              She specializes in therapy for teens with persistent mental
+              illness, including concerns that occur alongside substance use
+              or personality disorders.
             </p>
             <p>
               Her experience includes helping people with communication,

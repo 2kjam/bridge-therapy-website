@@ -103,7 +103,7 @@ export const services: ServiceSchemaRecord[] = [
     name: "Child & Teen Counseling",
     description:
       "Child and teen counseling at The Bridge in Tyler, Texas for emotional, behavioral, and school-related concerns.",
-    therapists: ["/therapists/denise-santos/", "/therapists/kelley-bell/"],
+    therapists: ["/therapists/denise-santos/", "/therapists/kelley-bell/", "/therapists/alyxandrah-white/"],
   },
   {
     path: "/christian-counseling-tyler/",
