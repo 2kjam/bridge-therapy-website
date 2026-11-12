@@ -7,13 +7,14 @@ import { canonicalUrl } from "@/lib/seo/policy";
 import { ORGANIZATION_ID, personId } from "@/lib/seo/schema";
 import { SiteShell } from "@/components/site-shell";
 import { blogStyles } from "@/components/blog/article-template";
-import { cleanArticleHtml, articlePresentation } from "@/lib/babylovegrowth/policy.mjs";
+import { cleanArticleHtml, articlePresentation, articleImageUrls } from "@/lib/babylovegrowth/policy.mjs";
 import { presentArticleBody } from "@/lib/blog-presentation";
 import type { BlogArticle } from "babylovegrowth-next-js-blog";
 export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
   const attribution = stagingArticleAuthor(article);
   const author = attribution && therapists.find(person => person.path === attribution.profilePath);
   const seo = stagingArticleMetadata(article);
+  const hero = articleImageUrls(article.content_html)[0];
   const presentation = articlePresentation(presentArticleBody(cleanArticleHtml(article.content_html, article.slug, article.title)));
   return <SiteShell styles={[...blogStyles, "/cms-article.css"]}>
     {attribution && author && <StructuredData data={{
@@ -22,6 +23,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
       headline: article.title,
       description: seo.description,
       inLanguage: "en-US",
+      ...(hero ? { image: hero } : {}),
       author: { "@type": "Person", "@id": personId(author.path), name: attribution.name, url: canonicalUrl(author.path) },
       publisher: { "@id": ORGANIZATION_ID },
     }} />}

@@ -3,6 +3,18 @@ import type { BlogArticle } from "babylovegrowth-next-js-blog";
 // These presentation overrides do not alter the vendor content or publish drafts.
 const reviewedMetadata = [
   {
+    id: 1089880,
+    slug: "adjustment-disorder-therapy",
+    title: "Adjustment Disorder Therapy: What to Expect | The Bridge",
+    description: "Learn how adjustment disorder therapy supports coping with stressful changes, what treatment involves, and counseling options in Tyler, TX and across Texas.",
+  },
+  {
+    id: 1096084,
+    slug: "how-much-does-therapy-cost-in-texas",
+    title: "How Much Does Therapy Cost in Texas? | The Bridge",
+    description: "Understand private-pay therapy costs, insurance copays and deductibles, and Good Faith Estimates. Learn what to ask before booking counseling in Tyler, TX.",
+  },
+  {
     id: 1083766,
     slug: "christian-grief-counseling",
     title: "Christian Grief Counseling: What to Expect | The Bridge",

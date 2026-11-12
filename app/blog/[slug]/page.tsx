@@ -1,3 +1,4 @@
+import { articleImageUrls } from "@/lib/babylovegrowth/policy.mjs";
 import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 import { stagingArticleMetadata } from "@/lib/babylovegrowth/presentation";
 import type { Metadata } from "next";
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!article) notFound();
     const attribution = stagingArticleAuthor(article);
     const seo = stagingArticleMetadata(article);
+    const hero = articleImageUrls(article.content_html)[0];
     return {
       title: { absolute: seo.title },
       description: seo.description,
@@ -42,8 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: seo.title,
         description: seo.description,
         siteName: "The Bridge Therapeutic Services",
+        ...(hero ? { images: [{ url: hero }] } : {}),
         ...(attribution ? { authors: [canonicalUrl(attribution.profilePath)] } : {}),
       },
+      twitter: { card: hero ? "summary_large_image" : "summary", title: seo.title, description: seo.description, ...(hero ? { images: [hero] } : {}) },
     };
   }
   const image = post.featuredImage!;
