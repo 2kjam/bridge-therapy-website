@@ -39,6 +39,8 @@ export async function sendInquiry(data: Inquiry | ChatInquiry, sourcePage: strin
       ...checked.data,
       source_page: sourcePage,
       inquiry_source: inquirySource,
+      "notification-id": crypto.randomUUID(),
+      "notification-form": "bridge-contact-inquiry",
     }).toString(),
     signal: AbortSignal.timeout(20000),
   });
