@@ -75,7 +75,7 @@ test("both sources construct the same Netlify request; mocked responses do not p
    assert.equal(params.get("inquiry_source"), i===0 ? "contact_form" : "chat_widget");
    for (const [key,value] of Object.entries(i === 0 ? sample : chat)) assert.equal(params.get(key),value);
   }
-  const core = request => { const p=new URLSearchParams(request.body); p.delete("last_name"); p.delete("message"); p.delete("source_page"); p.delete("inquiry_source"); return p.toString(); };
+  const core = request => { const p=new URLSearchParams(request.body); p.delete("last_name"); p.delete("message"); p.delete("source_page"); p.delete("inquiry_source"); p.delete("notification-id"); return p.toString(); };
   assert.equal(core(requests[0]),core(requests[1]));
   for (const source of ["contact_form","chat_widget"]) {
    for (const html of [definition, definition.replaceAll('data-netlify="true"','').replaceAll('data-netlify-honeypot="bot-field"','')]) {

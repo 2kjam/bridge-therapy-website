@@ -95,6 +95,8 @@ export function ContactInquiry() {
           <input type="hidden" name="form-name" value="bridge-contact-inquiry" />
           <input type="hidden" name="source_page" value="/contact/" />
           <input type="hidden" name="inquiry_source" value="contact_form" />
+          <input type="hidden" name="notification-form" value="bridge-contact-inquiry" />
+          <input type="hidden" name="notification-id" value="" />
           <div className="inquiry-grid">
             {(
               [

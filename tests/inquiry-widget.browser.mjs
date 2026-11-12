@@ -99,7 +99,7 @@ try {
  assert.equal(payload.source_page,'/'); assert.equal(payload.inquiry_source,'chat_widget');
  assert.equal(payload.first_name,'Test'); assert.equal(payload.preferred_therapist,'');
  assert.equal(payload['bot-field'],''); assert.ok(!('message' in payload));
- assert.deepEqual(Object.keys(payload).sort(),['form-name','first_name','email','phone','preferred_therapist','source_page','inquiry_source','bot-field'].sort());
+ assert.deepEqual(Object.keys(payload).sort(),['form-name','first_name','email','phone','preferred_therapist','source_page','inquiry_source','bot-field','notification-id','notification-form'].sort());
  assert.equal(payload['form-name'],'bridge-contact-inquiry');
  assert.ok(!('last_name' in payload));
  await expect(panel).not.toContainText(/last name/i);
