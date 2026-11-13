@@ -1,0 +1,13 @@
+# Approved November article release
+
+Owner approved only Adjustment Disorder Therapy (vendor 1089880), dated November 10, 2026, and How Much Does Therapy Cost in Texas (vendor 1096084), dated November 11, 2026. Both use Jennifer Wood LPC-S with the verified profile and shared credential card.
+
+Source: authenticated staging render captures reviewed at staging commit 5b574f5b53dc659c4912e0871e047ed8c3f3d206, deploy 6af6500f6ee5fc82e1945e84. Production baseline 4ed455ecd49cd409a7248ccebb251498aa80b5a4; previous published deploy 6af64014cda93ffec4ce417c identifies the baseline. Rollback means reverting this release commit and letting Git continuous deployment publish the revert. No staging merge, vendor API activation, future-draft publication, security/analytics/GTM/Resend changes or old article edits.
+
+Added two local static article snapshots, 21 WebP files for seven shared/distinct approved images, responsive image-map entries and release tests. Images were saved from the authenticated staging page because the public vendor media host rejected direct downloads. Their local variants are uncropped at 480/840/1260 widths (limited by source dimensions), with explicit dimensions, lazy inline images and high-priority hero. Largest variants are 32–90 KB.
+
+Preserved reviewed substance, illustrations, citations, table of contents, table regions, recommendations and internal links. Narrow accuracy/SEO improvements: answer-first opening retained; broad recovery claims qualified; Spanish crisis instructions updated from 988's current guidance; statewide fee assertions made illustrative rather than an unsupported average or Bridge quote; CMS Good Faith Estimate timing and $400 dispute threshold clarified and linked. Existing canonical/BlogPosting/Person/breadcrumb metadata and sitemap architecture cover the two new static records. No ranking or citation guarantees.
+
+Pre-release checks: production build; TypeScript and 81-page site checks; ESLint; 64 blog collection, schema, author-card and release tests. A schema-test false positive on 'reviewing' in an image path was narrowed to exact prohibited schema values, without allowing Review/FAQPage/AggregateRating schema. Existing migration/body-hash tests remain intact. Post-release hosted verification is recorded separately in the completion report.
+
+Accuracy references checked: Mayo Clinic adjustment-disorder diagnosis/treatment and symptoms pages; TDI 2026 Texas Health Coverage Guide; CMS Good Faith Estimate timing and patient-provider dispute guidance; 988 Get Help. These checks do not establish The Bridge's exact fees or individual insurance coverage; readers are directed to obtain their own quote and benefits information.

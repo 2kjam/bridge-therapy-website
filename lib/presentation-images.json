@@ -864,5 +864,55 @@
         "height": 720
       }
     ]
+  },
+  "/assets/blog/approved-2026-11/1794369455291-abstract-path-representing-adjustment-and-therapy-1260.webp": {
+    "sha256": "7e69c7d301f26d6a27a17ec23bf2bf2a58088107e0a308dbd0fcdc344bcc08a9",
+    "originalWidth": 1260,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/1794369455291-abstract-path-representing-adjustment-and-therapy-480.webp",
+    "width": 480,
+    "height": 274,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/1794369455291-abstract-path-representing-adjustment-and-therapy-480.webp",
+        "width": 480,
+        "height": 274
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794369455291-abstract-path-representing-adjustment-and-therapy-840.webp",
+        "width": 840,
+        "height": 480
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794369455291-abstract-path-representing-adjustment-and-therapy-1260.webp",
+        "width": 1260,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11/1794474268553-client-reviewing-expected-therapy-charges-with-therapist-1260.webp": {
+    "sha256": "f3a2c1cce9d61bf1ebf047168318eb130c492827519349d999f49f1003b5d231",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/1794474268553-client-reviewing-expected-therapy-charges-with-therapist-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/1794474268553-client-reviewing-expected-therapy-charges-with-therapist-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794474268553-client-reviewing-expected-therapy-charges-with-therapist-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/1794474268553-client-reviewing-expected-therapy-charges-with-therapist-1260.webp",
+        "width": 1260,
+        "height": 709
+      }
+    ]
   }
 }

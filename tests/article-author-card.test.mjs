@@ -8,6 +8,8 @@ import { getArticleAuthor } from "../lib/article-author.ts";
 import { therapists } from "../lib/seo/schema-data.ts";
 
 const approvedNative = new Set([
+  "/blog/adjustment-disorder-therapy/",
+  "/blog/how-much-does-therapy-cost-in-texas/",
   "/blog/christian-grief-counseling/",
   "/blog/marriage-communication-problems/",
   "/blog/blended-family-counseling/",

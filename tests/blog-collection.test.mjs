@@ -86,8 +86,8 @@ test("collection: exactly 19 distinct routes, 23 assets, original excerpts only,
   assert.equal(getBlogPost(["unknown-article"]), undefined);
   const index = parse(fs.readFileSync(".next/server/app/blog.html", "utf8"));
   const cards = all(index, (n) => hasClass(n, "blog-card"));
-  assert.equal(cards.length, 25);
-  assert.equal(publishedPosts.length, 25);
+  assert.equal(cards.length, 27);
+  assert.equal(publishedPosts.length, 27);
   cards.forEach((card, i) => {
     assert.equal(text(all(card, (n) => n.tagName === "h2")[0]), publishedPosts[i].title);
     assert.equal(
