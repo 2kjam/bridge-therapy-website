@@ -864,5 +864,30 @@
         "height": 720
       }
     ]
+  },
+  "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-800.webp": {
+    "sha256": "347febaa5d32f174fc3178cfd485f77c616c3083278548d51d75f7f4faec4a5d",
+    "originalWidth": 1366,
+    "originalHeight": 768,
+    "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-800.webp",
+    "width": 800,
+    "height": 450,
+    "variants": [
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-400.webp",
+        "width": 400,
+        "height": 225
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/assets/presentation/blog/anxiety-therapy-in-tyler-tx-1080.webp",
+        "width": 1080,
+        "height": 607
+      }
+    ]
   }
 }
