@@ -6,7 +6,7 @@ import {getPublishedBlogPosts} from '../lib/blog.ts';
 const all=(n,f)=>[...(f(n)?[n]:[]),...(n.childNodes??[]).flatMap(c=>all(c,f))];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const txt=n=>n.nodeName==='#text'?n.value:(n.childNodes??[]).map(txt).join('');
-for(const [slug,date] of [['adjustment-disorder-therapy','2026-11-10'],['how-much-does-therapy-cost-in-texas','2026-11-11']])test(`${slug}: approved snapshot, date, links, image and author schema`,()=>{
+for(const [slug,date] of [['christian-anxiety-counseling','2026-11-13'],['infidelity-counseling','2026-11-14'],['adjustment-disorder-therapy','2026-11-10'],['how-much-does-therapy-cost-in-texas','2026-11-11']])test(`${slug}: approved snapshot, date, links, image and author schema`,()=>{
  const post=getPublishedBlogPosts().find(p=>p.id===slug);assert.ok(post);assert.equal(post.publicationDate,date);assert.equal(post.publishedAt,date);assert.equal(post.displayedByline,'Jennifer Wood LPC-S');
  assert.doesNotMatch(post.bodyHtml,/cms-media|BabyLoveGrowth|Created using|Adam Wood|<script|<style/);
  const d=parse(fs.readFileSync(`.next/server/app/blog/${slug}.html`,'utf8'));
@@ -19,5 +19,5 @@ for(const [slug,date] of [['adjustment-disorder-therapy','2026-11-10'],['how-muc
  assert.ok(all(d,n=>n.tagName==='link'&&attr(n,'rel')==='canonical').some(n=>attr(n,'href')===`https://www.thebridgetherapy.com/blog/${slug}/`));
 });
 test('release adds exactly the two approved newest snapshots in date order',()=>{
- assert.equal(getPublishedBlogPosts().length,27);assert.deepEqual(getPublishedBlogPosts().slice(0,2).map(p=>p.id),['how-much-does-therapy-cost-in-texas','adjustment-disorder-therapy']);
+ assert.equal(getPublishedBlogPosts().length,29);assert.deepEqual(getPublishedBlogPosts().slice(0,2).map(p=>p.id),['infidelity-counseling','christian-anxiety-counseling']);
 });
