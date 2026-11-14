@@ -939,5 +939,55 @@
         "height": 607
       }
     ]
+  },
+  "/assets/blog/approved-2026-11/christian-anxiety-counseling-cover-1260.webp": {
+    "sha256": "09a238929457bd87b5a61a488cf1ff96d364b96ebc3d48cccbe42a1f4ea9e73b",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/christian-anxiety-counseling-cover-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/christian-anxiety-counseling-cover-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/christian-anxiety-counseling-cover-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/christian-anxiety-counseling-cover-1260.webp",
+        "width": 1260,
+        "height": 709
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11/infidelity-counseling-cover-1260.webp": {
+    "sha256": "975ec8c4304655348004f3a2f92ccdbb7c72cb7427d2fadf43965ff65c127200",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11/infidelity-counseling-cover-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11/infidelity-counseling-cover-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/infidelity-counseling-cover-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/approved-2026-11/infidelity-counseling-cover-1260.webp",
+        "width": 1260,
+        "height": 709
+      }
+    ]
   }
 }
