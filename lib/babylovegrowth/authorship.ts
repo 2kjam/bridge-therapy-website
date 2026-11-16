@@ -1,14 +1,8 @@
-// Owner-approved attribution only; generated signatures never establish authorship.
-const jenniferArticles = new Map([
-  [1089880, "adjustment-disorder-therapy"],
-  [1096084, "how-much-does-therapy-cost-in-texas"],
-  [1077552, "blended-family-counseling"],
-  [1083766, "christian-grief-counseling"],
-  [1086181, "marriage-communication-problems"],
-]);
-
-export function stagingArticleAuthor(article: { id: number; slug: string }) {
-  if (jenniferArticles.get(article.id) !== article.slug) return undefined;
+// Adam’s November 16, 2026 standing direction: new Bridge articles use
+// Jennifer unless he specifies otherwise. This applies only to validated CMS
+// previews; historical/local production bylines remain unchanged.
+export function stagingArticleAuthor(_article: { id: number; slug: string }) {
+  void _article; // Keep the call contract available for future explicit exceptions.
   return {
     name: "Jennifer Wood LPC-S",
     profilePath: "/therapists/jennifer-wood/",
