@@ -29,7 +29,7 @@ export function ArticleTemplate({ post }: { post: BlogPost }) {
   const isTraumaticMemories =
     post.legacyPath === "/news/2019/2/3/traumatic-memories-and-treatment";
   return (
-    <SiteShell styles={blogStyles}>
+    <SiteShell styles={post.featuredImage?.src.startsWith("/assets/blog/approved-2026-11-17/") ? [...blogStyles, "/approved-article.css"] : blogStyles}>
       <StructuredData data={articleSchema(post)} />
       <main id="main" className="blog-page">
         <nav className="blog-breadcrumb" aria-label="Breadcrumb">

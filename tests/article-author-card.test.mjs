@@ -8,6 +8,9 @@ import { getArticleAuthor } from "../lib/article-author.ts";
 import { therapists } from "../lib/seo/schema-data.ts";
 
 const approvedNative = new Set([
+  "/blog/family-conflict-counseling/",
+  "/blog/self-esteem-counseling/",
+  "/blog/christian-trauma-counseling/",
   "/blog/christian-anxiety-counseling/",
   "/blog/infidelity-counseling/",
   "/blog/adjustment-disorder-therapy/",

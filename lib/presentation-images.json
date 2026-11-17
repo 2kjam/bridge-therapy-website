@@ -989,5 +989,50 @@
         "height": 709
       }
     ]
+  },
+  "/assets/blog/approved-2026-11-17/1794607499444_Parents-and-teen-pause-during-a-conversation.jpeg": {
+    "sha256": "b6061ecfe05b6cb4fc7a1a606ac2c265283a1a67cedbf9a9f4f4d56fb829bee2",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11-17/1794607499444_Parents-and-teen-pause-during-a-conversation.jpeg",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11-17/1794607499444_Parents-and-teen-pause-during-a-conversation.jpeg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11-17/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg": {
+    "sha256": "669efbc6371c7fb3742b81c7b5827c2e3a5820bb9df7d6384aa6d14f8aec98ed",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11-17/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11-17/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/approved-2026-11-17/1794767450939_Client-asks-counselor-questions-in-Tyler.jpeg": {
+    "sha256": "8e22686b2fa435cf256a51d295b1b6dff0826c35ebcf700873ddce82ef772f1a",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/approved-2026-11-17/1794767450939_Client-asks-counselor-questions-in-Tyler.jpeg",
+    "width": 1280,
+    "height": 720,
+    "variants": [
+      {
+        "src": "/assets/blog/approved-2026-11-17/1794767450939_Client-asks-counselor-questions-in-Tyler.jpeg",
+        "width": 1280,
+        "height": 720
+      }
+    ]
   }
 }
