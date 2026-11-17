@@ -1,0 +1,30 @@
+{
+  "id": "self-esteem-counseling",
+  "legacyPath": "/blog/self-esteem-counseling/",
+  "status": "published",
+  "title": "Self-Esteem Counseling: How Therapy Builds Self-Worth",
+  "publishedAt": "2026-11-17",
+  "publicationDate": "2026-11-17",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood LPC-S",
+  "authorType": "Person",
+  "authorProfilePath": "/therapists/jennifer-wood/",
+  "excerptHtml": "",
+  "categories": [
+    "Self-Esteem"
+  ],
+  "tags": [],
+  "seo": {
+    "title": "Self-Esteem Counseling: How Therapy Builds Self-Worth | The Bridge",
+    "description": "What self-esteem counseling is, what happens in sessions, how CBT challenges negative beliefs, and how to find support for yourself, your child or your family.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/blog/self-esteem-counseling/",
+    "sourceOpenGraphImage": "https://www.thebridgetherapy.com/assets/blog/approved-2026-11-17/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg"
+  },
+  "featuredImage": {
+    "src": "/assets/blog/approved-2026-11-17/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg",
+    "width": 1280,
+    "height": 720,
+    "sourceUrl": "https://media.babylovegrowth.ai/blog-images/organization-65684/1794673866843_Client-speaking-with-her-therapist-in-counseling.jpeg",
+    "alt": "Client speaking with her therapist in counseling"
+  }
+}

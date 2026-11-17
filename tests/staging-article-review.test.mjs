@@ -13,7 +13,7 @@ for (const article of [
     assert.ok(metadata.title.length < 65);
     assert.ok(metadata.description.length >= 120 && metadata.description.length <= 165);
     assert.match(metadata.description, /Tyler, TX/);
-    assert.equal(stagingArticleAuthor({ ...article, slug: 'unreviewed-article' }), undefined);
+    assert.deepEqual(stagingArticleAuthor({ ...article, slug: 'unreviewed-article' }), { name: 'Jennifer Wood LPC-S', profilePath: '/therapists/jennifer-wood/' });
     assert.equal(stagingArticleMetadata({ ...article, id: 0 }).description, 'Original');
   });
 }
