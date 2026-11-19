@@ -8,6 +8,15 @@ import { getArticleAuthor } from "../lib/article-author.ts";
 import { therapists } from "../lib/seo/schema-data.ts";
 
 const approvedNative = new Set([
+  "/blog/anxiety-therapist-texas/",
+  "/blog/christian-counseling-insurance/",
+  "/blog/family-conflict-counseling/",
+  "/blog/self-esteem-counseling/",
+  "/blog/christian-trauma-counseling/",
+  "/blog/christian-anxiety-counseling/",
+  "/blog/infidelity-counseling/",
+  "/blog/adjustment-disorder-therapy/",
+  "/blog/how-much-does-therapy-cost-in-texas/",
   "/blog/christian-grief-counseling/",
   "/blog/marriage-communication-problems/",
   "/blog/blended-family-counseling/",
