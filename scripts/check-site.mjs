@@ -891,10 +891,10 @@ for (const [route, doc] of pages) {
     assert.equal(contacts.length, 2);
     contacts.forEach((n) => assert.equal(attr(n, "href"), `/contact/?therapist=${route.split("/")[2]}`));
   }
-  // Historical articles are immutable; removed-service rules still cover all new chrome.
+  // Reviewed article bodies can discuss other providers; removed-service rules still cover site chrome.
   const currentSiteText = (node) => ["script", "style"].includes(node.tagName) || attr(node, "data-original-article-body") !== undefined
     ? "" : node.nodeName === "#text" ? node.value : (node.childNodes ?? []).map(currentSiteText).join(" ");
-  assert.ok(!/Military|Psychological (?:assessment|testing)/i.test(route.startsWith("/news/") ? currentSiteText(doc) : normalizedText(doc)), route + ": removed service");
+  assert.ok(!/Military|Psychological (?:assessment|testing)/i.test((route.startsWith("/news/") || ["/blog/anxiety-therapist-texas/", "/blog/christian-counseling-insurance/"].includes(route)) ? currentSiteText(doc) : normalizedText(doc)), route + ": removed service");
   for (const node of all(
     doc,
     (entry) =>
