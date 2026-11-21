@@ -52,7 +52,7 @@ export default async function BlogPage() {
             <a className="blog-card-link" href={`/blog/${post.slug}/`}>
               {safeImageUrl(post.hero_image_url) && <img src={`/api/cms-media/?slug=${encodeURIComponent(post.slug)}&file=${encodeURIComponent(new URL(post.hero_image_url).pathname.split("/").pop()!)}`} alt={post.title} loading="lazy" />}
               <div className="blog-card-copy">
-                {publication && <time dateTime={publication.date}>{publication.label}</time>}
+                {publication && <><time dateTime={publication.date}>{publication.label}</time>{" · "}</>}
                 <span>Draft: awaiting publication approval</span>
                 <h2>{post.title}</h2>
                 {stagingArticleAuthor(post) && <p>{stagingArticleAuthor(post)!.name}</p>}
