@@ -1,6 +1,6 @@
 import { VerifiedArticleAuthorCard } from "@/components/blog/article-author-card";
 import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
-import { stagingArticleMetadata } from "@/lib/babylovegrowth/presentation";
+import { stagingArticleMetadata, stagingArticlePublication } from "@/lib/babylovegrowth/presentation";
 import { therapists } from "@/lib/seo/schema-data";
 import { StructuredData } from "@/components/structured-data";
 import { canonicalUrl } from "@/lib/seo/policy";
@@ -14,6 +14,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
   const attribution = stagingArticleAuthor(article);
   const author = attribution && therapists.find(person => person.path === attribution.profilePath);
   const seo = stagingArticleMetadata(article);
+  const publication = stagingArticlePublication(article);
   const hero = articleImageUrls(article.content_html)[0];
   const presentation = articlePresentation(presentArticleBody(cleanArticleHtml(article.content_html, article.slug, article.title)));
   return <SiteShell styles={[...blogStyles, "/cms-article.css"]}>
@@ -23,6 +24,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
       headline: article.title,
       description: seo.description,
       inLanguage: "en-US",
+      ...(publication ? { datePublished: publication.date } : {}),
       ...(hero ? { image: hero } : {}),
       author: { "@type": "Person", "@id": personId(author.path), name: attribution.name, url: canonicalUrl(author.path) },
       publisher: { "@id": ORGANIZATION_ID },
@@ -30,7 +32,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
     <main id="main" className="blog-page">
       <nav className="blog-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li aria-current="page">{article.title}</li></ol></nav>
       <article aria-labelledby="article-title" className="blog-article cms-article" data-cms-article-id={article.id} data-cms-updated-at={article.updated_at}>
-        <header className="blog-article-header"><h1 id="article-title">{article.title}</h1><div className="blog-meta"><span>Draft: awaiting publication approval</span>{attribution && author && <span>Written By <a href={author.path}>{attribution.name}</a></span>}</div></header>
+        <header className="blog-article-header"><h1 id="article-title">{article.title}</h1><div className="blog-meta">{publication && <time dateTime={publication.date}>{publication.label}</time>}<span>Draft: awaiting publication approval</span>{attribution && author && <span>Written By <a href={author.path}>{attribution.name}</a></span>}</div></header>
         {presentation.heroHtml && <div className="cms-article-hero" dangerouslySetInnerHTML={{ __html: presentation.heroHtml }} />}
         <div className="legacy-article-body cms-article-body" dangerouslySetInnerHTML={{ __html: presentation.bodyHtml }} />
         {attribution && author && <VerifiedArticleAuthorCard author={author} displayedByline={attribution.name} />}

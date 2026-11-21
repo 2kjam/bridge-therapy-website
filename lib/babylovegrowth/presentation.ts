@@ -32,3 +32,17 @@ export function stagingArticleMetadata(article: Pick<BlogArticle, "id" | "slug" 
   const reviewed = reviewedMetadata.find(item => item.id === article.id && item.slug === article.slug);
   return reviewed ?? { title: `${article.title} | The Bridge`, description: article.meta_description };
 }
+
+// Owner-approved staging dates, verified against the vendor calendar on November 21.
+// Exact identity matches prevent assigning these dates to any other drafts.
+export function stagingArticlePublication(article: Pick<BlogArticle, "id" | "slug">) {
+  if (article.id === 1133079 && article.slug === "therapy-for-emotional-abuse") {
+    return { date: "2026-11-20", timezone: "America/Chicago", label: "November 20, 2026" } as const;
+  }
+  if (article.id !== 1131611 || article.slug !== "adhd-relationship-problems") return undefined;
+  return {
+    date: "2026-11-21",
+    timezone: "America/Chicago",
+    label: "November 21, 2026",
+  } as const;
+}

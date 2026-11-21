@@ -8,6 +8,7 @@ import { blogDate, getVisibleBlogPosts } from "@/lib/blog";
 import { previewEnabled, previewArticles } from "@/lib/babylovegrowth/client";
 import { safeImageUrl } from "@/lib/babylovegrowth/policy.mjs";
 import { blogThumbnail } from "@/lib/presentation-images";
+import { stagingArticlePublication } from "@/lib/babylovegrowth/presentation";
 import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 
 export const metadata: Metadata = {
@@ -45,10 +46,13 @@ export default async function BlogPage() {
         </header>
         {cmsUnavailable && <p role="status">New articles are temporarily unavailable. Please try again shortly.</p>}
         <div className="blog-grid">
-          {cmsPosts.map(post => <article className="blog-card" key={`cms-${post.id}`} data-cms-article-id={post.id} data-cms-updated-at={post.updated_at}>
+          {cmsPosts.map(post => {
+            const publication = stagingArticlePublication(post);
+            return <article className="blog-card" key={`cms-${post.id}`} data-cms-article-id={post.id} data-cms-updated-at={post.updated_at}>
             <a className="blog-card-link" href={`/blog/${post.slug}/`}>
               {safeImageUrl(post.hero_image_url) && <img src={`/api/cms-media/?slug=${encodeURIComponent(post.slug)}&file=${encodeURIComponent(new URL(post.hero_image_url).pathname.split("/").pop()!)}`} alt={post.title} loading="lazy" />}
               <div className="blog-card-copy">
+                {publication && <time dateTime={publication.date}>{publication.label}</time>}
                 <span>Draft: awaiting publication approval</span>
                 <h2>{post.title}</h2>
                 {stagingArticleAuthor(post) && <p>{stagingArticleAuthor(post)!.name}</p>}
@@ -56,7 +60,7 @@ export default async function BlogPage() {
                 <span className="blog-read">Read article <span aria-hidden="true">→</span></span>
               </div>
             </a>
-          </article>)}
+          </article>;})}
           {getVisibleBlogPosts().map((post, index) => (
             <article className="blog-card" key={post.id}>
               <a className="blog-card-link" href={post.legacyPath}>
