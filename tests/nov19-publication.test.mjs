@@ -53,7 +53,7 @@ for(const [slug,date] of [['christian-counseling-insurance','2026-11-18'],['anxi
   assert.equal(article.datePublished,date);assert.equal(article.author['@type'],'Person');assert.equal(article.author.name,'Jennifer Wood LPC-S');assert.equal(article.author.url,'https://www.thebridgetherapy.com/therapists/jennifer-wood/');
  });
 }
-test('only the approved two articles lead the published collection in date order',()=>{
- assert.equal(getPublishedBlogPosts().length,34);
- assert.deepEqual(getPublishedBlogPosts().slice(0,2).map(p=>[p.id,p.publicationDate]),[['anxiety-therapist-texas','2026-11-19'],['christian-counseling-insurance','2026-11-18']]);
+test('November 18–19 approved articles retain their date order',()=>{
+
+ assert.deepEqual(getPublishedBlogPosts().filter(p=>['anxiety-therapist-texas','christian-counseling-insurance'].includes(p.id)).map(p=>[p.id,p.publicationDate]),[['anxiety-therapist-texas','2026-11-19'],['christian-counseling-insurance','2026-11-18']]);
 });

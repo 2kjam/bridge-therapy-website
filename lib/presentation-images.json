@@ -1184,5 +1184,130 @@
         "height": 1080
       }
     ]
+  },
+  "/assets/blog/reviewed-2026-11-20-21/1795132990138_Couple-pauses-for-a-calm-kitchen-conversation.jpeg": {
+    "sha256": "d4acd286ee6e58d003a69ac1c53018348fc919dcb9e1b0109a548471c4070d9c",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/reviewed-2026-11-20-21/1795132990138_Couple-pauses-for-a-calm-kitchen-conversation-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795132990138_Couple-pauses-for-a-calm-kitchen-conversation-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795132990138_Couple-pauses-for-a-calm-kitchen-conversation-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795132990138_Couple-pauses-for-a-calm-kitchen-conversation-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/reviewed-2026-11-20-21/1795133097972_Set-boundaries-without-withdrawing.jpeg": {
+    "sha256": "ac9fe29a8748ab4375bf38e46f7c43bd2b49b4efa0da5f5436843c6e5f09e9ed",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/reviewed-2026-11-20-21/1795133097972_Set-boundaries-without-withdrawing-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795133097972_Set-boundaries-without-withdrawing-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795133097972_Set-boundaries-without-withdrawing-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795133097972_Set-boundaries-without-withdrawing-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/reviewed-2026-11-20-21/1795155916825_Two-chairs-in-a-private-counseling-room.jpeg": {
+    "sha256": "b03c0d7374aa85b0e12522d87e85457ea7212fbb4bad8303f9486f5e3281b651",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/reviewed-2026-11-20-21/1795155916825_Two-chairs-in-a-private-counseling-room-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155916825_Two-chairs-in-a-private-counseling-room-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155916825_Two-chairs-in-a-private-counseling-room-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155916825_Two-chairs-in-a-private-counseling-room-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/reviewed-2026-11-20-21/1795155960631_Early-therapy-stabilization-before-later-memory-work.jpeg": {
+    "sha256": "aad8607f1cfdc63485bf9e706a03aed0b0e79a69b207fe4870c0dfe3c7af90c6",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/reviewed-2026-11-20-21/1795155960631_Early-therapy-stabilization-before-later-memory-work-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155960631_Early-therapy-stabilization-before-later-memory-work-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155960631_Early-therapy-stabilization-before-later-memory-work-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155960631_Early-therapy-stabilization-before-later-memory-work-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "/assets/blog/reviewed-2026-11-20-21/1795155993168_If-the-abuse-is-still-happening.jpeg": {
+    "sha256": "32319fd51e75494532698e3208b33a4777579f075180d563a06334bcfdc501c4",
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "src": "/assets/blog/reviewed-2026-11-20-21/1795155993168_If-the-abuse-is-still-happening-480.webp",
+    "width": 480,
+    "height": 270,
+    "variants": [
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155993168_If-the-abuse-is-still-happening-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155993168_If-the-abuse-is-still-happening-840.webp",
+        "width": 840,
+        "height": 472
+      },
+      {
+        "src": "/assets/blog/reviewed-2026-11-20-21/1795155993168_If-the-abuse-is-still-happening-1280.webp",
+        "width": 1280,
+        "height": 720
+      }
+    ]
   }
 }
