@@ -3,6 +3,12 @@ import type { BlogArticle } from "babylovegrowth-next-js-blog";
 // These presentation overrides do not alter the vendor content or publish drafts.
 const reviewedMetadata = [
   {
+    id: 1178256,
+    slug: "family-stress-management",
+    title: "Family Stress Management: Practical Ways to Help | The Bridge",
+    description: "Learn what drives family stress and the habits that ease it: talking, pausing, routines, boundaries and support. Plus when counseling in Tyler or online helps.",
+  },
+  {
     id: 1089880,
     slug: "adjustment-disorder-therapy",
     title: "Adjustment Disorder Therapy: What to Expect | The Bridge",
@@ -33,9 +39,12 @@ export function stagingArticleMetadata(article: Pick<BlogArticle, "id" | "slug" 
   return reviewed ?? { title: `${article.title} | The Bridge`, description: article.meta_description };
 }
 
-// Owner-approved staging dates, verified against the vendor calendar on November 21.
+// Owner-approved staging dates, verified against the vendor calendar.
 // Exact identity matches prevent assigning these dates to any other drafts.
 export function stagingArticlePublication(article: Pick<BlogArticle, "id" | "slug">) {
+  if (article.id === 1178256 && article.slug === "family-stress-management") {
+    return { date: "2026-11-22", timezone: "America/Chicago", label: "November 22, 2026" } as const;
+  }
   if (article.id === 1133079 && article.slug === "therapy-for-emotional-abuse") {
     return { date: "2026-11-20", timezone: "America/Chicago", label: "November 20, 2026" } as const;
   }
