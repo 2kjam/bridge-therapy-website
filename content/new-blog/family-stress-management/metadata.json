@@ -1,0 +1,29 @@
+{
+  "id": "family-stress-management",
+  "legacyPath": "/blog/family-stress-management/",
+  "status": "published",
+  "title": "Family Stress Management: Practical Ways to Calm Your Home",
+  "publishedAt": "2026-11-22",
+  "publicationDate": "2026-11-22",
+  "publicationTimezone": "America/Chicago",
+  "displayedByline": "Jennifer Wood LPC-S",
+  "authorType": "Person",
+  "authorProfilePath": "/therapists/jennifer-wood/",
+  "excerptHtml": "",
+  "categories": [
+    "Family"
+  ],
+  "tags": [],
+  "seo": {
+    "title": "Family Stress Management: Practical Ways to Help | The Bridge",
+    "description": "Learn what drives family stress and the habits that ease it: talking, pausing, routines, boundaries and support. Plus when counseling in Tyler or online helps.",
+    "sourceCanonical": "https://www.thebridgetherapy.com/blog/family-stress-management/",
+    "sourceOpenGraphImage": "https://www.thebridgetherapy.com/assets/blog/family-stress-management/1795216469640_Family-tidying-their-den-before-dinner-1280.webp"
+  },
+  "featuredImage": {
+    "src": "/assets/blog/family-stress-management/1795216469640_Family-tidying-their-den-before-dinner-1280.webp",
+    "width": 1280,
+    "height": 720,
+    "alt": "Family tidying their den before dinner"
+  }
+}

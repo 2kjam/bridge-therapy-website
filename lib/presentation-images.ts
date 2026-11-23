@@ -10,7 +10,17 @@ export function blogThumbnail(source: string) {
           originalHeight: 960,
           variants: announcementVariants,
         }
-      : images[source as keyof typeof images];
+      : Object.hasOwn(images, source)
+        ? images[source as keyof typeof images]
+        : undefined;
+  if (!image) {
+    if (!/^\/assets\/[a-zA-Z0-9_./-]+\.(?:jpe?g|png|webp|avif)$/.test(source) ||
+        source.split("/").some((part) => part === "." || part === "..")) {
+      throw new Error("Blog thumbnail must use a safe local asset path");
+    }
+    return { src: source, width: undefined, height: undefined, srcSet: undefined,
+      sizes: undefined, style: undefined };
+  }
   return {
     src: image.src,
     width: image.width,
