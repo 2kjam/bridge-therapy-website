@@ -1,5 +1,4 @@
 import { optimizedImageProps, heroImageSizes, backgroundAvifProps } from "@/lib/optimized-images";
-import { FindTherapistButton } from "../site-interactions";
 export function Hero() {
   return (
     <section className={"ivory-hero"} aria-labelledby={"hero-title"}>
@@ -27,9 +26,9 @@ export function Hero() {
           <a className={"button"} href={"/contact/"}>
             {"Book an Appointment"}
           </a>
-          <FindTherapistButton className="button button-outline">
+          <a className="button button-outline" href="/therapists/">
             {"Find a Therapist"}
-          </FindTherapistButton>
+          </a>
         </div>
       </div>
       <p className={"hero-script"} aria-hidden={"true"}>
