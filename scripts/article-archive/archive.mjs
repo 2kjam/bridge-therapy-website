@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { parseFragment } from 'parse5';
 
 const sha = b => crypto.createHash('sha256').update(b).digest('hex');
@@ -69,7 +70,25 @@ function validate(root) {
   assert(files(root).every(p => allowed.has(p)), 'Unexpected/private source file');
   return m;
 }
+export function assertPrivateArchive(repo) {
+  const root = path.resolve(repo);
+  assert(fs.realpathSync(root) === root, 'Symlink repository root forbidden');
+  const git = args => execFileSync('git', ['-C', root, ...args], { encoding: 'utf8', stdio: ['ignore','pipe','pipe'] });
+  try {
+    assert(git(['rev-parse','--show-toplevel']).trim() === root, 'Git repository root mismatch');
+    assert(git(['ls-files','--cached','-z','--','content/article-archive']).length === 0, 'Archive path is tracked; private packages forbidden');
+    for(const p of ['content/article-archive/', 'content/article-archive/privacy-check/nested/body.html']) {
+      assert(git(['check-ignore','--',p]).trim() === p, 'Archive path must be ignored');
+    }
+  } catch(e) { throw new Error(`Private archive Git verification failed: ${e.message}`); }
+  for(const relative of ['content','content/article-archive']) {
+    const p=path.join(root,relative);
+    if(fs.existsSync(p) || fs.lstatSync(path.dirname(p)).isSymbolicLink()) assert(fs.realpathSync(p) === p && !fs.lstatSync(p).isSymbolicLink(), 'Symlink archive escape forbidden');
+  }
+  if(fs.existsSync(path.join(root,'content/article-archive'))) files(path.join(root,'content/article-archive'));
+}
 export function pack(input, repo) {
+  assertPrivateArchive(repo);
   const m = validate(input);
   for (const group of ['blog','new-blog']) {
     for (const f of files(path.join(repo,'content',group)).filter(p=>p.endsWith('/metadata.json'))) {
@@ -87,7 +106,7 @@ export function pack(input, repo) {
   try {
     for (const p of Object.keys(entries)) { fs.mkdirSync(path.dirname(path.join(temp,p)),{recursive:true});fs.writeFileSync(path.join(temp,p),read(input,p),{flag:'wx'}); }
     fs.writeFileSync(path.join(temp,'manifest.json'),json({version:1,kind:'bridge-private-article-archive',contentHash:hash,files:entries}));
-    verify(temp);fs.renameSync(temp,dest);
+    verify(temp);assertPrivateArchive(repo);fs.renameSync(temp,dest);
   } finally { if(fs.existsSync(temp)) fs.rmSync(temp,{recursive:true}); }
   return dest;
 }

@@ -37,3 +37,6 @@ Thumbs.db
 *.tmp
 *.bak
 *~
+
+# Pending article captures must never enter this public repository
+/content/article-archive/
