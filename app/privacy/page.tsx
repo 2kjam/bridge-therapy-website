@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       <p>We use Google Analytics cookies to understand website traffic.</p>
       <h2>Website analytics</h2>
       <p>Google receives connection and device information, including your IP address, and pseudonymous cookie identifiers. Analytics cookies last up to 90 days. Advertising features are disabled.</p>
-      <p>Analytics is configured to exclude detailed page addresses, URL parameters, external referrers, and form or chat contents. Page views use the website’s home address and business name. We do not configure customer names, email addresses or custom user IDs for analytics.</p>
+      <p>Analytics records the canonical addresses of reviewed public marketing and article pages, using our business name as the page title. Contact, booking, intake, private and unknown pages are excluded, along with URL parameters, fragments, external referrers, and form or chat contents. We do not configure customer names, email addresses or custom user IDs for analytics.</p>
       <p><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google collects and uses information</a></p>
       <h2>Your analytics choice</h2>
       <p>You can turn analytics off for this browser. We preserve saved opt-outs and honor Global Privacy Control and Do Not Track. Your choice is saved on this device; clearing browser storage removes that saved choice.</p>

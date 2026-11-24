@@ -12,7 +12,7 @@ test('verified GA4 destination is distinct from unapproved GTM; activation fails
  for(const patch of [{SITE_ID:'c9ac64dc-b248-4666-bc90-6219f2b483a4'},{CONTEXT:'deploy-preview'},{BRANCH:'staging'},{URL:'https://bridge-therapy-staging.netlify.app'},{URL:'https://main--bridge-therapy-website.netlify.app'},{PULL_REQUEST:'true'},{REVIEW_ID:'123'},{NETLIFY_PREVIEW_SERVER:'true'},{NODE_ENV:'development'}])assert.equal(analyticsBuildAllowed({...env,...patch},'phase-production-build',true),false);
  assert.equal(analyticsBuildAllowed({...env,BRIDGE_BUILD_ANALYTICS:'true'},'phase-development-server',true),false);
 });
-test('safe payloads have no treatment path, title, referrer, campaign data or user fields',()=>{
+test('safe payloads contain only reviewed canonical paths and neutral metadata',()=>{
  assert.deepEqual(safePageView(),{page_location:productionOrigin+'/',page_title:'The Bridge Therapeutic Services',page_referrer:'',content_group:'Website'});
  const config=analyticsConfiguration();assert.equal(config.send_page_view,false);assert.equal(config.allow_google_signals,false);assert.equal(config.allow_ad_personalization_signals,false);assert.equal(config.allow_interest_groups,false);assert.equal(config.ignore_referrer,true);
  assert.ok(!('user_id' in config));assert.ok(!('user_properties' in config));assert.ok(!('client_id' in config));
@@ -23,15 +23,19 @@ function browser(origin=productionOrigin){
  const doc={head:{appendChild:s=>appended.push(s)},createElement:tag=>{assert.equal(tag,'script');return{};},set cookie(s){cookies.push(s);},get cookie(){throw Error('Do not read cookie values');},get body(){throw Error('Do not read page or form content');}};
  return {win,doc,appended,cookies,controller:createAnalyticsController(win,doc),commands:()=>win.dataLayer?.map(a=>[...a])??[]};
 }
-test('controller is inert until enabled by caller and sends only fixed pageviews',()=>{
- const b=browser();assert.equal(b.appended.length,0);assert.equal(b.commands().length,0);
- b.controller.pageview('/religious-trauma-therapy/?email=synthetic@example.test#private');
- assert.equal(b.appended.length,1);assert.equal(b.appended[0].src,'https://www.googletagmanager.com/gtag/js?id=G-61RSPK36Y0');assert.equal(b.appended[0].referrerPolicy,'no-referrer');assert.equal(b.appended[0].async,true);
- const consent=b.commands().filter(a=>a[0]==='consent');assert.ok(consent.every(a=>a[2].analytics_storage==='granted' && a[2].ad_storage==='denied' && a[2].ad_user_data==='denied' && a[2].ad_personalization==='denied'));
- const event=b.commands().find(a=>a[0]==='event');assert.deepEqual(event,['event','page_view',{send_to:measurementId,...safePageView()}]);
- assert.doesNotMatch(JSON.stringify(b.commands()),/synthetic|trauma|private|email|user_id|user_properties/);
- b.controller.pageview('/religious-trauma-therapy/?email=synthetic@example.test#private');assert.equal(b.commands().filter(a=>a[0]==='event').length,1);
- b.controller.pageview('/contact/');assert.equal(b.appended.length,1);assert.equal(b.commands().filter(a=>a[0]==='event').length,2);
+test('controller sends one canonical event per public transition and excludes sensitive routes',()=>{
+ const b=browser();assert.equal(b.appended.length,0);
+ b.controller.pageview('/blog/christian-counseling-for-teens/');
+ assert.equal(b.appended.length,1);assert.equal(b.appended[0].src,'https://www.googletagmanager.com/gtag/js?id=G-61RSPK36Y0');assert.equal(b.appended[0].referrerPolicy,'no-referrer');
+ const events=()=>b.commands().filter(a=>a[0]==='event');
+ assert.deepEqual(events()[0],['event','page_view',{send_to:measurementId,...safePageView('/blog/christian-counseling-for-teens/')}]);
+ b.controller.pageview('/blog/christian-counseling-for-teens');assert.equal(events().length,1);
+ b.controller.pageview('/about/');assert.equal(events().length,2);
+ for(const path of ['/contact/','/privacy/','/booking/','/intake/','/unknown/','/about/?email=synthetic@example.test#private'])b.controller.pageview(path);
+ assert.equal(events().length,2);assert.equal(b.win['ga-disable-'+measurementId],true);
+ assert.doesNotMatch(JSON.stringify(b.commands()),/synthetic|private|email|user_id|user_properties/);
+ b.controller.pageview('/about/');assert.equal(events().length,3);assert.equal(b.appended.length,1);
+ for(const command of b.commands().filter(a=>a[0]==='config'))assert.equal(command[2].send_page_view,false);
 });
 test('nonproduction hosts never load or queue Analytics even if controller is invoked',()=>{
  for(const origin of ['https://bridge-therapy-staging.netlify.app','https://www.thebridgetherapy.com.attacker.example','http://www.thebridgetherapy.com','http://localhost:3000']){const b=browser(origin);b.controller.pageview('/');assert.equal(b.appended.length,0);assert.equal(b.commands().length,0);}
