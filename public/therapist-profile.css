@@ -76,7 +76,8 @@
 .therapist-profile .profile-inquiry {
   font-size: 14px;
   color: var(--muted);
-  margin: 12px 0 0;
+  margin: 12px auto 0;
+  text-align: center;
   line-height: 1.5;
 }
 .profile-details {
