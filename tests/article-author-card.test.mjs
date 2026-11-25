@@ -9,6 +9,7 @@ import { therapists } from "../lib/seo/schema-data.ts";
 
 const approvedNative = new Set([
   "/blog/counseling-after-divorce/",
+  "/blog/emotional-regulation-therapy/",
   "/blog/therapy-for-emotional-abuse/",
   "/blog/adhd-relationship-problems/",
   "/blog/anxiety-therapist-texas/",
