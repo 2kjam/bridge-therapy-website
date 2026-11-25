@@ -1,3 +1,4 @@
+import { stagingArticleCover } from "@/lib/babylovegrowth/cover";
 import { VerifiedArticleAuthorCard } from "@/components/blog/article-author-card";
 import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 import { stagingArticleMetadata, stagingArticlePublication } from "@/lib/babylovegrowth/presentation";
@@ -15,7 +16,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
   const author = attribution && therapists.find(person => person.path === attribution.profilePath);
   const seo = stagingArticleMetadata(article);
   const publication = stagingArticlePublication(article);
-  const hero = articleImageUrls(article.content_html)[0];
+  const hero = stagingArticleCover(article)?.metadataUrl ?? articleImageUrls(article.content_html)[0];
   const presentation = articlePresentation(presentArticleBody(cleanArticleHtml(article.content_html, article.slug, article.title)));
   return <SiteShell styles={[...blogStyles, "/cms-article.css"]}>
     {attribution && author && <StructuredData data={{

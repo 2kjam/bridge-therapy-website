@@ -1,3 +1,4 @@
+import { stagingArticleCover } from "@/lib/babylovegrowth/cover";
 import { StructuredData } from "@/components/structured-data";
 import { staticPageSchema } from "@/lib/seo/schema";
 import { publicPageMetadata } from "@/lib/seo/metadata";
@@ -48,9 +49,14 @@ export default async function BlogPage() {
         <div className="blog-grid">
           {cmsPosts.map(post => {
             const publication = stagingArticlePublication(post);
-            return <article className="blog-card" key={`cms-${post.id}`} data-cms-article-id={post.id} data-cms-updated-at={post.updated_at}>
+            const cover = stagingArticleCover(post);
+            const thumbnail = cover ?? (safeImageUrl(post.hero_image_url) ? {
+              src: `/api/cms-media/?slug=${encodeURIComponent(post.slug)}&file=${encodeURIComponent(new URL(post.hero_image_url).pathname.split("/").pop()!)}`,
+              alt: post.title, width: undefined, height: undefined,
+            } : undefined);
+            return <article className="blog-card" key={`cms-${post.id}`} data-cms-article-id={post.id} data-cms-updated-at={post.updated_at} data-cms-cover-state={cover?.state}>
             <a className="blog-card-link" href={`/blog/${post.slug}/`}>
-              {safeImageUrl(post.hero_image_url) && <img src={`/api/cms-media/?slug=${encodeURIComponent(post.slug)}&file=${encodeURIComponent(new URL(post.hero_image_url).pathname.split("/").pop()!)}`} alt={post.title} loading="lazy" />}
+              {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} width={thumbnail.width} height={thumbnail.height} loading="lazy" />}
               <div className="blog-card-copy">
                 {publication && <><time dateTime={publication.date}>{publication.label}</time>{" · "}</>}
                 <span>Draft: awaiting publication approval</span>

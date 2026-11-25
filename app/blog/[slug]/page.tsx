@@ -1,3 +1,4 @@
+import { stagingArticleCover } from "@/lib/babylovegrowth/cover";
 import { articleImageUrls } from "@/lib/babylovegrowth/policy.mjs";
 import { stagingArticleAuthor } from "@/lib/babylovegrowth/authorship";
 import { stagingArticleMetadata, stagingArticlePublication } from "@/lib/babylovegrowth/presentation";
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const attribution = stagingArticleAuthor(article);
     const seo = stagingArticleMetadata(article);
     const publication = stagingArticlePublication(article);
-    const hero = articleImageUrls(article.content_html)[0];
+    const hero = stagingArticleCover(article)?.metadataUrl ?? articleImageUrls(article.content_html)[0];
     return {
       title: { absolute: seo.title },
       description: seo.description,
