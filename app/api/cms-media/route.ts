@@ -1,3 +1,4 @@
+import { stagingArticleCover } from "@/lib/babylovegrowth/cover";
 import { previewEnabled, previewArticle } from "@/lib/babylovegrowth/client";
 import { articleImageUrls, safeImageUrl } from "@/lib/babylovegrowth/policy.mjs";
 export const dynamic = "force-dynamic";
@@ -9,8 +10,10 @@ export async function GET(request: Request) {
   if (!/^[a-zA-Z0-9_-]+\.(jpeg|jpg|png|webp)$/i.test(file)) return new Response(null, { status: 404 });
   try {
     const article = await previewArticle(slug);
-    const url = `https://media.babylovegrowth.ai/blog-images/organization-65684/${file}`;
-    if (!article || ![...articleImageUrls(article.content_html), safeImageUrl(article.hero_image_url)].includes(url)) return new Response(null, { status: 404 });
+    if (!article) return new Response(null, { status: 404 });
+    const cover = stagingArticleCover(article);
+    const url = cover?.file === file ? cover.metadataUrl : `https://media.babylovegrowth.ai/blog-images/organization-65684/${file}`;
+    if (![...articleImageUrls(article.content_html), safeImageUrl(article.hero_image_url), cover?.metadataUrl].includes(url)) return new Response(null, { status: 404 });
     // No browser cookies, API keys, referrers, redirects or arbitrary upstream hosts.
     const upstream = await fetch(url, { redirect: "error", signal: AbortSignal.timeout(15000), cache: "no-store" });
     const type = upstream.headers.get("content-type")?.split(";")[0] ?? "";

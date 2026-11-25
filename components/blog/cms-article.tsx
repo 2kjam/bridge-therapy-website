@@ -16,7 +16,8 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
   const author = attribution && therapists.find(person => person.path === attribution.profilePath);
   const seo = stagingArticleMetadata(article);
   const publication = stagingArticlePublication(article);
-  const hero = stagingArticleCover(article)?.metadataUrl ?? articleImageUrls(article.content_html)[0];
+  const cover = stagingArticleCover(article);
+  const hero = cover?.metadataUrl ?? articleImageUrls(article.content_html)[0];
   const presentation = articlePresentation(presentArticleBody(cleanArticleHtml(article.content_html, article.slug, article.title)));
   return <SiteShell styles={[...blogStyles, "/cms-article.css"]}>
     {attribution && author && <StructuredData data={{
@@ -34,7 +35,7 @@ export function CmsArticleTemplate({ article }: { article: BlogArticle }) {
       <nav className="blog-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li aria-current="page">{article.title}</li></ol></nav>
       <article aria-labelledby="article-title" className="blog-article cms-article" data-cms-article-id={article.id} data-cms-updated-at={article.updated_at}>
         <header className="blog-article-header"><h1 id="article-title">{article.title}</h1><div className="blog-meta">{publication && <time dateTime={publication.date}>{publication.label}</time>}<span>Draft: awaiting publication approval</span>{attribution && author && <span>Written By <a href={author.path}>{attribution.name}</a></span>}</div></header>
-        {presentation.heroHtml && <div className="cms-article-hero" dangerouslySetInnerHTML={{ __html: presentation.heroHtml }} />}
+        {cover ? <img className="blog-hero" src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} loading="eager" fetchPriority="high" decoding="async" referrerPolicy="no-referrer" /> : presentation.heroHtml && <div className="cms-article-hero" dangerouslySetInnerHTML={{ __html: presentation.heroHtml }} />}
         <div className="legacy-article-body cms-article-body" dangerouslySetInnerHTML={{ __html: presentation.bodyHtml }} />
         {attribution && author && <VerifiedArticleAuthorCard author={author} displayedByline={attribution.name} />}
       </article>

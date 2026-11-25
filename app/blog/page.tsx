@@ -56,7 +56,7 @@ export default async function BlogPage() {
             } : undefined);
             return <article className="blog-card" key={`cms-${post.id}`} data-cms-article-id={post.id} data-cms-updated-at={post.updated_at} data-cms-cover-state={cover?.state}>
             <a className="blog-card-link" href={`/blog/${post.slug}/`}>
-              {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} width={thumbnail.width} height={thumbnail.height} style={cover && cover.state !== "vendor-cover" ? { aspectRatio: "16 / 9", objectFit: "cover" } : undefined} loading="lazy" />}
+              {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} width={thumbnail.width} height={thumbnail.height} loading="lazy" />}
               <div className="blog-card-copy">
                 {publication && <><time dateTime={publication.date}>{publication.label}</time>{" · "}</>}
                 <span>Draft: awaiting publication approval</span>
