@@ -59,10 +59,10 @@ export default async function BlogPage() {
               {thumbnail && <img src={thumbnail.src} alt={thumbnail.alt} width={thumbnail.width} height={thumbnail.height} loading="lazy" />}
               <div className="blog-card-copy">
                 {publication && <><time dateTime={publication.date}>{publication.label}</time>{" · "}</>}
-                <span>Draft: awaiting publication approval</span>
+                <span style={cover ? { fontSize: "14px", color: "var(--muted)" } : undefined}>Draft: awaiting publication approval</span>
                 <h2>{post.title}</h2>
                 {stagingArticleAuthor(post) && <p>{stagingArticleAuthor(post)!.name}</p>}
-                <p>{post.excerpt || post.meta_description}</p>
+                {!cover && <p>{post.excerpt || post.meta_description}</p>}
                 <span className="blog-read">Read article <span aria-hidden="true">→</span></span>
               </div>
             </a>
